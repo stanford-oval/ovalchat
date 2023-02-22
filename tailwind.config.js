@@ -13,17 +13,17 @@ module.exports = {
       colors: {
         factgpt: {
           primary: {
-            light: "#4779c9",
-            DEFAULT: "#406db6",
-            dark: "#375e9e",
-            dark1: "#224378",
-            dark2: "#152f59",
+            DEFAULT: "#6940b6",
+            light: "#7447c9",
+            dark: "#5b379e",
+            dark1: "#3f2278",
+            dark2: "#2c1458",
           },
           secondary: {
-            bright: "#287175",
-            light: "#1f676b",
-            DEFAULT: "#194345",
-            dark: "#0d2a2b",
+            bright: "#283975",
+            light: "#1f306b",
+            DEFAULT: "#192245",
+            dark: "#0d142b",
           },
         },
       },

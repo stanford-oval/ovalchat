@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.pulse-button {
+    box-shadow: 0 0 0 0 #6940b663;
+    transform: scale(1);
+    animation: pulse 1.6s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 #6940b645;
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px #6940b63e;
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 #6940b659;
+    }
+}
+
+.pulse-button-light {
+    box-shadow: 0 0 0 0 #a09ea263;
+    transform: scale(1);
+    animation: pulse-light 2s infinite;
+}
+
+@keyframes pulse-light {
+    0% {
+        transform: scale(0.96);
+        box-shadow: 0 0 0 0 #a09ea263;
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 7px #a09ea263;
+    }
+
+    100% {
+        transform: scale(0.96);
+        box-shadow: 0 0 0 0 #a09ea263;
+    }
+}
+
+/* PLAYGROUND */
+
+#chat-window {
+    height: 56vh;
+    max-height: 56vh;
+    overflow: auto !important;
+}
+
+.gray-slider-thumb::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #bbb;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+    transition: all 0.5s ease-out;
+    box-shadow: none;
+}
+
+.gray-slider-thumb::-webkit-slider-thumb:hover {
+    background: #aaa;
+    box-shadow: none;
+}
+
+.gray-slider-thumb:disabled::-webkit-slider-thumb {
+    background: #d1d5db;
+}
+
+/* Scrollbar */
+.pretty-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+.pretty-scroll::-webkit-scrollbar-track {
+    background: #eaeaea;
+}
+
+/* Handle */
+.pretty-scroll::-webkit-scrollbar-thumb {
+    background: #d2d0d6;
+    transition: all 0.55s ease;
+    border-radius: 50px;
+}
+
+/* Handle on hover */
+.pretty-scroll::-webkit-scrollbar-thumb:hover {
+    background: #dbd9df;
+}
+
+#askNooraHero {
+    background-color: #BEBFD5;
+    background-image: url('/img/page-bg/light.png');
+    box-shadow: inset 0 0 0 2000px #ffffff80;
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
+}
+
+@media only screen and (max-width: 768px) {
+    #askNooraHero {
+        border-bottom-left-radius: 50% 13%;
+        border-bottom-right-radius: 50% 13%;
+    }
+}
+
+.button {
+    @apply rounded-full py-2 px-4 outline-none;
+}
+
+.button-light {
+    @apply bg-indigo-200 active:bg-indigo-400 hover:bg-indigo-100 text-slate-900;
+}
+
+#homeHero {
+    background-image: url('/img/page-bg/home.png');
+    box-shadow: inset 0 0 0 2000px #ffffffbd;
+}
+
+#modulesHero {
+    background-image: url('/img/page-bg/light.png');
+    box-shadow: inset 0 0 0 2000px #ffffff92;
+}
+
+@media only screen and (max-width: 768px) {
+    #homeHero {
+        background-position: 95% 60%;
+        box-shadow: inset 0 0 0 2000px #ffffffc0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #homeHero {
+        background-position: 75% 60%;
+        box-shadow: inset 0 0 0 2000px #ffffffc0;
+    }
+}
+
+.blue-link {
+    @apply text-factgpt-secondary hover:text-factgpt-secondary font-semibold;
+}
+
+.container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.trans {
+    @apply transition ease-in-out;
+}
+
+.trans-150 {
+    @apply transition ease-in-out duration-150;
+}
+
+.trans-300,
+a,
+button {
+    @apply transition ease-in-out duration-300;
+}
+
+input {
+    @apply placeholder-slate-400 ring-0 focus:ring-0;
+    opacity: 1
+}
+
+.border-1 {
+    border-width: 1px;
+}
+
+.dot-flashing {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #969696;
+    color: #555555;
+    animation: dotFlashing 0.5s infinite linear alternate;
+    animation-delay: .25s;
+}
+
+.dot-flashing::before,
+.dot-flashing::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+}
+
+.dot-flashing::before {
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #969696;
+    color: #555555;
+    animation: dotFlashing 0.5s infinite alternate;
+    animation-delay: 0s;
+}
+
+.dot-flashing::after {
+    left: 15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #969696;
+    color: #555555;
+    animation: dotFlashing 0.5s infinite alternate;
+    animation-delay: 0.5s;
+}
+
+@keyframes dotFlashing {
+    0% {
+        background-color: #969696;
+    }
+
+    50%,
+    100% {
+        background-color: #e0e0e0;
+    }
+}
+
+/*-------------------------------*/
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    overscroll-behavior: contain;
+    font-family: "Lexend", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+    /* font-family: 'Noto Sans', sans-serif; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.lexend {
+    font-family: "Lexend", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+*::selection {
+    background-color: #6940b629;
+}
+
+button,
+img {
+    user-select: none;
+}
+
+button:focus,
+button:active:focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button.active.focus {
+    outline: none !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #222b4d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #6940b6;
+    transition: all 0.55s ease;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #7447c9;
+}
+
+.special-underline {
+    @apply bg-gradient-to-r from-indigo-200 to-indigo-200 bg-no-repeat [background-position:0_88%] [background-size:100%_0.2em]
+        /* motion-safe:transition-all motion-safe:duration-200
+      hover:[background-size:100%_100%]
+      focus:[background-size:100%_100%]; */
+}

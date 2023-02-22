@@ -1,0 +1,1468 @@
+{
+  "data": [
+    {
+      "text": "I love hiking.",
+      "response": "Hiking is a great way to get some exercise.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "positive"
+    },
+    {
+      "text": "We went to the beach last weekend.",
+      "response": "That sounds like a lot of fun. I'm glad you had a good time.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "positive"
+    },
+    {
+      "text": "I sold a bunch of stuff at my garage sale last weekend.",
+      "response": "That's great! I'm so happy for you!",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "positive"
+    },
+    {
+      "text": "It's beautiful weather today.",
+      "response": "Yes, it's lovely weather.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "positive"
+    },
+    {
+      "text": "I just started a workout routine.",
+      "response": "Good for you! How is it going?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "positive"
+    },
+    {
+      "text": "It's really fun going to the dog park.",
+      "response": "We should go together some time!",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "positive"
+    },
+    {
+      "text": "My friend is helping me learn Spanish.",
+      "response": "That's really cool! How are you finding it?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "positive"
+    },
+    {
+      "text": "I got a really cheap airplane ticket for my vacation.",
+      "response": "That's great! I'm sure you'll have a wonderful time.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "positive"
+    },
+    {
+      "text": "The weather was great last weekend.",
+      "response": "Yes, it was! What did you do last weekend?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "positive"
+    },
+    {
+      "text": "My daughter loves to take walks.",
+      "response": "That's wonderful! It's great that she enjoys getting some exercise.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "positive"
+    },
+    {
+      "text": "I just joined a volunteer group.",
+      "response": "Why did you join a volunteer group?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "positive"
+    },
+    {
+      "text": "I love working in my garden.",
+      "response": "Gardening is a great hobby!",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "positive"
+    },
+    {
+      "text": "Tomorrow is supposed to be warm.",
+      "response": "What's the temperature supposed to be?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "I take a run every morning.",
+      "response": "Good for you! Where do you run?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "There are still a lot of businesses that mail paper catalogs.",
+      "response": "Yes, there are. Many people enjoy receiving catalogs in the mail.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "It's a good idea to study every night instead of waiting until the test.",
+      "response": "I think that's a great idea!",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "We went to the beach over the weekend.",
+      "response": "That sounds like a lot of fun! I'm glad you had a good time.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "I usually go out on Friday nights, but this week I'm staying home.",
+      "response": "That's sounds like a good plan.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "I've been listening to books on tape.",
+      "response": "What books have you been listening to?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "There are some new shows on tv.",
+      "response": "That's great! I'd love to watch some with you.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "I talked with my professor about the class.",
+      "response": "Good for you! I hope it went well.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "I'm looking for a job.",
+      "response": "What kind of job are you looking for?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "I applied for a few jobs.",
+      "response": "That's great, I hope you get one of them!",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "My brother and I got in an argument last night.",
+      "response": "I'm sorry to hear that, what happened?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "negative"
+    },
+    {
+      "text": "I had an upset stomach last night.",
+      "response": "I'm sorry to hear that. I hope you're feeling better now.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "negative"
+    },
+    {
+      "text": "I was so sick over the weekend.",
+      "response": "That sounds terrible. I hope you're feeling better now.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "negative"
+    },
+    {
+      "text": "My boyfriend lost his job.",
+      "response": "I'm sorry to hear that. I hope he's doing okay.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "negative"
+    },
+    {
+      "text": "My cat ate something and was so sick last night.",
+      "response": "Oh no, what did your cat eat?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "negative"
+    },
+    {
+      "text": "I had to take my daughter to the emergency room last week.",
+      "response": "I'm so sorry to hear that. Is she doing better?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "negative"
+    },
+    {
+      "text": "I had the flu that lasted a week.",
+      "response": "I'm sorry to hear that, I hope you're feeling better now.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "negative"
+    },
+    {
+      "text": "My aunt wants to visit but my house is too small.",
+      "response": "That sounds really tough. I know how you feel.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "negative"
+    },
+    {
+      "text": "I couldn't figure out the new computer program.",
+      "response": "What was the problem?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "negative"
+    },
+    {
+      "text": "My friend's mother died over the weekend.",
+      "response": "I'm so sorry for her loss. If there's anything I can do to help, please let me know.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "negative"
+    },
+    {
+      "text": "My best friend just found out she has cancer.",
+      "response": "I'm so sorry to hear that. How are you holding up?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "negative"
+    },
+    {
+      "text": "I have to move out of my apartment.",
+      "response": "I hope everything works out for you. Let me know if I can help in any way.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "negative"
+    },
+    {
+      "text": "My landlord sold the house so I have to move out.",
+      "response": "Why did he sell the house?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": "negative"
+    },
+    {
+      "text": "It's really nice to work for such a great place.",
+      "response": "I'm glad you enjoy working here.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "positive"
+    },
+    {
+      "text": "My boss always gets everyone's input.",
+      "response": "It's good that he values everyone's opinion.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "positive"
+    },
+    {
+      "text": "It's super fun working at my job.",
+      "response": "I'm glad to hear that you're enjoying your work.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "positive"
+    },
+    {
+      "text": "I always feel supported by my boss.",
+      "response": "I'm glad to hear that you feel supported by your boss.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "positive"
+    },
+    {
+      "text": "My coworkers are always there when I need support.",
+      "response": "That's great! I'm glad you have supportive coworkers.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "positive"
+    },
+    {
+      "text": "We had so much fun at our last work party.",
+      "response": "I'm glad you had a good time! I love work parties!",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "positive"
+    },
+    {
+      "text": "Work had been going well.",
+      "response": "I'm glad to hear that. I hope it continues to go well for you.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "positive"
+    },
+    {
+      "text": "I like having lunch with my coworkers.",
+      "response": "It's always nice to have a chance to catch up with friends during lunchtime.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "positive"
+    },
+    {
+      "text": "I really have learned a lot at this job.",
+      "response": "That's great! Learning is an important part of any job.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "positive"
+    },
+    {
+      "text": "I like having a job with low stress. I feel more productive.",
+      "response": "I know how you feel, I've been in a low-stress job before and it's great.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "positive"
+    },
+    {
+      "text": "My job is so close to my house.",
+      "response": "That's great! It's so convenient to have a job that's close to home.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "positive"
+    },
+    {
+      "text": "The office is typically very quiet.",
+      "response": "That's good to know. Do you like that it's quiet?",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "We had a plumber come in today.",
+      "response": "Why did you need a plumber to come in?",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "We had pest control come into the office today.",
+      "response": "I hope that wasn't very disruptive for you.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "There may some changes around the office in the coming weeks.",
+      "response": "I'm looking forward to hearing more about the changes.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "Some days at the office feel short and other days can feel very long.",
+      "response": "I know what you mean. I sometimes feel that way too.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "I'm going to call in a few more people since we're so busy.",
+      "response": "I'm glad you have help for your work. Let me know if there's anything I can do.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "We need more hours for this week.",
+      "response": "I completely understand. You should definitely talk to your boss about it.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "No one should work in a place where they don't feel happy.",
+      "response": "Why do you feel that way?",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "There is parking in front of the offices.",
+      "response": "That sounds convenient. Do you park your car there?",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "I'm taking a mental health day from work next week.",
+      "response": "That's great! You deserve a break.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "Communication is very important.",
+      "response": "It really is. couldn't agree more.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "There's a lot of collaboration that goes on.",
+      "response": "That sounds great! Do you enjoy the collaboration?",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "neutral"
+    },
+    {
+      "text": "No one cleans out the refrigerator at work.",
+      "response": "That's so strange, why do you think that is?",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "negative"
+    },
+    {
+      "text": "The microwave at work is really filthy.",
+      "response": "That's unfortunate. I hope it gets cleaned soon.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "negative"
+    },
+    {
+      "text": "The internet is always crashing at work.",
+      "response": "I know how frustrating that can be.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "negative"
+    },
+    {
+      "text": "My boss cut back my hours.",
+      "response": "I'm so sorry to hear that. I hope you're doing okay.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "negative"
+    },
+    {
+      "text": "I had to fire someone today.",
+      "response": "That sounds difficult. Why did you have to fire them?",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "negative"
+    },
+    {
+      "text": "Some of my coworkers always leave work early.",
+      "response": "I hope they're not skipping out on work.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "negative"
+    },
+    {
+      "text": "My project manager is so lazy.",
+      "response": "That's the worst. How have you been dealing with that?",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "negative"
+    },
+    {
+      "text": "I did most of the work on our group project and didn't get credit.",
+      "response": "That sounds really frustrating. I'm sorry to hear that.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "negative"
+    },
+    {
+      "text": "My coworker always takes credit for my work.",
+      "response": "I'm sorry to hear that. Have you talked to your coworker about it?",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "negative"
+    },
+    {
+      "text": "My office mate talks so much and it's distracting.",
+      "response": "I'm sorry to hear that, is there anything I can do to help you?",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "negative"
+    },
+    {
+      "text": "I'm so tired of my job.",
+      "response": "I know exactly how you feel.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "negative"
+    },
+    {
+      "text": "Work is so boring.",
+      "response": "I know how you feel. That sounds really tough.",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "negative"
+    },
+    {
+      "text": "There's nothing to do at work but my boss won't let me check my personal emails.",
+      "response": "I'm sorry to hear that. Have you talked with your boss about it?",
+      "task_type": "old",
+      "task_name": "work",
+      "sentiment": "negative"
+    },
+    {
+      "text": "I’m really full from lunch.",
+      "response": "Really? What did you have for lunch?",
+      "task_type": "new",
+      "task_name": "listenAndRespond"
+    },
+    {
+      "text": "I'm going to the library later.",
+      "response": "Oh. I love the library. Do you have to go for a class?",
+      "task_type": "new",
+      "task_name": "listenAndRespond"
+    },
+    {
+      "text": "I'm so tired of school.",
+      "response": "I know. It's hard sometimes. Are you almost done?",
+      "task_type": "new",
+      "task_name": "listenAndRespond"
+    },
+    {
+      "text": "I'm getting a new car tomorrow.",
+      "response": "Nice! What kind of car are you getting?",
+      "task_type": "new",
+      "task_name": "listenAndRespond"
+    },
+    {
+      "text": "I'm going on vacation next week.",
+      "response": "That sounds fun! Where are you going?",
+      "task_type": "new",
+      "task_name": "listenAndRespond"
+    },
+    {
+      "text": "I'm going home for the weekend.",
+      "response": "Oh, that will be nice. I'm going home next weekend, too.",
+      "task_type": "new",
+      "task_name": "listenAndRespond"
+    },
+    {
+      "text": "I was up all night studying for finals.",
+      "response": "I know. Finals are the worst. Are you done with them?",
+      "task_type": "new",
+      "task_name": "listenAndRespond"
+    },
+    {
+      "text": "I'm so excited for summer break.",
+      "response": "I know. Me too. What are you going to do?",
+      "task_type": "new",
+      "task_name": "listenAndRespond"
+    },
+    {
+      "text": "I'm not sure what I want to do after graduation.",
+      "response": "I know. It's a big decision. Have you given it any thought?",
+      "task_type": "new",
+      "task_name": "listenAndRespond"
+    },
+    {
+      "text": "I'll be out of town this weekend.",
+      "response": "Where are you going?",
+      "task_type": "new",
+      "task_name": "listenAndRespond"
+    },
+    {
+      "text": "I'm going to the library later.",
+      "response": "Do you have to return any books?",
+      "task_type": "new",
+      "task_name": "listenAndRespond"
+    },
+    {
+      "text": "I'm going to the park later.",
+      "response": "Do you want to go with me?",
+      "task_type": "new",
+      "task_name": "listenAndRespond"
+    },
+    {
+      "text": "I'm not feeling very well today.",
+      "response": "I'm sorry to hear that. What's wrong?",
+      "task_type": "new",
+      "task_name": "listenAndRespond"
+    },
+    {
+      "text": "I'm so tired today.",
+      "response": "You should take a nap. Did you get any sleep last night?",
+      "task_type": "new",
+      "task_name": "listenAndRespond"
+    },
+    {
+      "text": "I can’t wait to read this new book I got!",
+      "response": "Wow, that sounds super exciting! Which book is it?",
+      "task_type": "new",
+      "task_name": "listenAndRespond"
+    },
+    {
+      "text": "I'm so happy it's raining.",
+      "response": "I love the sound of rain. Do you want to go for a walk?",
+      "task_type": "new",
+      "task_name": "listenAndRespond"
+    },
+    {
+      "text": "I just got a new car.",
+      "response": "Cool! What kind of car is it?",
+      "task_type": "new",
+      "task_name": "listenAndRespond"
+    },
+    {
+      "text": "I can't wait for summer break.",
+      "response": "I know, me too. It's only a few weeks away. What are you going to do this summer?",
+      "task_type": "new",
+      "task_name": "listenAndRespond"
+    },
+    {
+      "text": "I'm failing my math class.",
+      "response": "I’m sorry to hear that! What's been going on?",
+      "task_type": "new",
+      "task_name": "listenAndRespond"
+    },
+    {
+      "text": "I'm going to go on a run.",
+      "response": "I love going on runs. It's a great way to clear your head. Where are you going to run?",
+      "task_type": "new",
+      "task_name": "listenAndRespond"
+    },
+    {
+      "text": "I'm going to the grocery store, do you need anything?",
+      "response": "Yes, I need milk and eggs. What are you going to get?",
+      "task_type": "new",
+      "task_name": "relevantQuestions"
+    },
+    {
+      "text": "The game was so exciting, I couldn't believe we won.",
+      "response": "That's great! Who was it against?",
+      "task_type": "new",
+      "task_name": "relevantQuestions"
+    },
+    {
+      "text": "I'm going out for lunch with my co-workers, do you want to come?",
+      "response": "Sure, where are you going?",
+      "task_type": "new",
+      "task_name": "relevantQuestions"
+    },
+    {
+      "text": "I'm so nervous for my interview tomorrow, I really want this job.",
+      "response": "I'm sure you'll do great. What position are you interviewing for?",
+      "task_type": "new",
+      "task_name": "relevantQuestions"
+    },
+    {
+      "text": "I'm getting a new car tomorrow, I'm so excited!",
+      "response": "That's fantastic! What kind of car are you getting?",
+      "task_type": "new",
+      "task_name": "relevantQuestions"
+    },
+    {
+      "text": "I made a cake for my friend's birthday, it was so much fun.",
+      "response": "That sounds like a delicious cake. What kind of cake was it?",
+      "task_type": "new",
+      "task_name": "relevantQuestions"
+    },
+    {
+      "text": "Yesterday was my sister's wedding, it was so beautiful.",
+      "response": "That's wonderful! What did she wear?",
+      "task_type": "new",
+      "task_name": "relevantQuestions"
+    },
+    {
+      "text": "I'm going on vacation next week, I can't wait!",
+      "response": "That sounds like a lot of fun. Where are you going?",
+      "task_type": "new",
+      "task_name": "relevantQuestions"
+    },
+    {
+      "text": "I'm so nervous, I have to give a speech in front of the whole school.",
+      "response": "Don't worry, you'll be great. What's the speech about?",
+      "task_type": "new",
+      "task_name": "relevantQuestions"
+    },
+    {
+      "text": "I'm so excited for my vacation next week, I'm going to the Caribbean.",
+      "response": "That sounds amazing! What island are you going to be visiting?",
+      "task_type": "new",
+      "task_name": "relevantQuestions"
+    },
+    {
+      "text": "I'm not sure if I'm ready for this new job, it's a lot of responsibility.",
+      "response": "I completely understand. What are you most worried about?",
+      "task_type": "new",
+      "task_name": "relevantQuestions"
+    },
+    {
+      "text": "I can't believe it's already December, the year has gone by so fast.",
+      "response": "I know, time seems to be moving faster and faster. What are you doing for the holidays?",
+      "task_type": "new",
+      "task_name": "relevantQuestions"
+    },
+    {
+      "text": "I'm so tired, I didn't sleep well last night.",
+      "response": "I'm sorry to hear that. Why didn't you sleep well?",
+      "task_type": "new",
+      "task_name": "relevantQuestions"
+    },
+    {
+      "text": "I'm not sure what I want to do with my life, there are so many options.",
+      "response": "That can be a difficult decision. What do you enjoy doing most?",
+      "task_type": "new",
+      "task_name": "relevantQuestions"
+    },
+    {
+      "text": "I'm so excited for my party tomorrow, I've been planning it for weeks.",
+      "response": "That sounds like it will be a lot of fun. What kind of party is it?",
+      "task_type": "new",
+      "task_name": "relevantQuestions"
+    },
+    {
+      "text": "I'm not sure if I'm ready to graduate yet, I'm going to miss college.",
+      "response": "I completely understand. What are you going to miss most about college?",
+      "task_type": "new",
+      "task_name": "relevantQuestions"
+    },
+    {
+      "text": "I can't believe it's already summer, it feels like just yesterday it was winter.",
+      "response": "I know, time seems to be moving faster and faster. What are your plans for summer?",
+      "task_type": "new",
+      "task_name": "relevantQuestions"
+    },
+    {
+      "text": "I'm so excited, I'm going to the concert tonight.",
+      "response": "That sounds like a lot of fun. Who's performing?",
+      "task_type": "new",
+      "task_name": "relevantQuestions"
+    },
+    {
+      "text": "I'm going to the park, do you want to come?",
+      "response": "I would love to! What are you going to do there?",
+      "task_type": "new",
+      "task_name": "relevantQuestions"
+    },
+    {
+      "text": "I'm going to the library, do you want to come?",
+      "response": "Sure, what are you planning to do there?",
+      "task_type": "new",
+      "task_name": "relevantQuestions"
+    },
+    {
+      "text": "Do you like to read?",
+      "response": "Yes, I love to read, especially horror and romance novels. What type of books do you like?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you have any siblings?",
+      "response": "Yes, I have two sisters. Do you have any siblings?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Have you seen the new Marvel movie?",
+      "response": "No, I haven't seen it yet. Are you planning on seeing it?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What's your favorite color?",
+      "response": "My favorite color is green. What's your favorite color?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like to ski?",
+      "response": "No, I don't like to ski. Do you like to ski?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like to play video games?",
+      "response": "Yes, I love to play video games. What type of video games do you like to play?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you have any pets?",
+      "response": "No, I don't have any pets. Do you have any pets?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What's your favorite music genre?",
+      "response": "My favorite music genre is country. What's your favorite music genre?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Did you do anything fun this weekend?",
+      "response": "No, I didn't do anything fun this weekend. Did you do anything fun this weekend?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like to go hiking?",
+      "response": "No, I don't like to go hiking. Do you like to go hiking?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you have any siblings?",
+      "response": "Yes, I have an older brother and a younger sister. Do you have any siblings?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What's your favorite animal?",
+      "response": "My favorite animal is a lion. What's your favorite animal?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What's your favorite season?",
+      "response": "My favorite season is winter. I love the snow. What's your favorite season?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like to go out or stay in on your days off?",
+      "response": "I like to stay in on my days off. I do enough running around during the week. What do you like to do on your days off?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Are you a morning person or a night person?",
+      "response": "I'm definitely a night person. I can't function in the morning. How about you?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like spicy food?",
+      "response": "I love spicy food. I can't get enough of it. Do you like spicy food?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What's your favorite TV show?",
+      "response": "My favorite TV show is The Office. It's hilarious. What's your favorite TV show?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like to cook?",
+      "response": "Yes, I love to cook. It's one of my favorite hobbies. Do you like to cook?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you have any plans for the weekend?",
+      "response": "Not really, but I was thinking of staying in and watching some movies. Do you have any plans?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What's your favorite movie?",
+      "response": "My favorite movie is The Shawshank Redemption. It has an incredible plotline. What's yours?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like to read?",
+      "response": "Yes, I love to read, especially horror and romance novels. What type of books do you like?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you have any siblings?",
+      "response": "Yes, I have two sisters. Do you have any siblings?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Have you seen the new Marvel movie?",
+      "response": "No, I haven't seen it yet. Are you planning on seeing it?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What's your favorite color?",
+      "response": "My favorite color is green. What's your favorite color?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like to ski?",
+      "response": "No, I don't like to ski. Do you like to ski?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like to play video games?",
+      "response": "Yes, I love to play video games. What type of video games do you like to play?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you have any pets?",
+      "response": "No, I don't have any pets. Do you have any pets?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What's your favorite music genre?",
+      "response": "My favorite music genre is country. What's your favorite music genre?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Did you do anything fun this weekend?",
+      "response": "No, I didn't do anything fun this weekend. Did you do anything fun this weekend?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like to go hiking?",
+      "response": "No, I don't like to go hiking. Do you like to go hiking?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you have any siblings?",
+      "response": "Yes, I have an older brother and a younger sister. Do you have any siblings?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What's your favorite animal?",
+      "response": "My favorite animal is a lion. What's your favorite animal?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What's your favorite season?",
+      "response": "My favorite season is winter. I love the snow. What's your favorite season?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like to go out or stay in on your days off?",
+      "response": "I like to stay in on my days off. I do enough running around during the week. What do you like to do on your days off?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Are you a morning person or a night person?",
+      "response": "I'm definitely a night person. I can't function in the morning. How about you?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like spicy food?",
+      "response": "I love spicy food. I can't get enough of it. Do you like spicy food?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What's your favorite TV show?",
+      "response": "My favorite TV show is The Office. It's hilarious. What's your favorite TV show?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like to cook?",
+      "response": "Yes, I love to cook. It's one of my favorite hobbies. Do you like to cook?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you have any plans for the weekend?",
+      "response": "Not really, but I was thinking of staying in and watching some movies. Do you have any plans?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What's your favorite movie?",
+      "response": "My favorite movie is The Shawshank Redemption. It has an incredible plotline. What's yours?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I can't wait to go on vacation.",
+      "response": "Me too. I can't wait to see my family over winter break!",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "This class is so hard!",
+      "response": "It really is. I find it helpful to read the textbook carefully before coming to lecture.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don't like winter! It's so cold and depressing.",
+      "response": "I can see what you mean:  it can get really cold in this region. That being said, the snow is nice change of scenery!",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "My favorite place to go is the beach. How about you?",
+      "response": "The beach is very relaxing, but the mountains take the cake for me. The views are just so breathtaking!",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I love dogs; they're just so cute!",
+      "response": "I love dogs too, especially Golden Retrievers. They are the friendliest dogs I've ever met.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "Pineapples on pizza are delicious.",
+      "response": "I'm not a fan of pineapple on pizza, but I can see why some people like it. Everyone has different tastes!",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I'm so excited for the holidays!",
+      "response": "Me too! I can't wait to spend time with my family and enjoy all the festive activities.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I'm so stressed about my upcoming exams.",
+      "response": "I understand. Taking breaks and staying organized can really help manage the stress. What do you find helps you the most?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I'm not a fan of spicy food.",
+      "response": "That's totally fine! Everyone has different tastes. What type of food do you like?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I hate going to the store; it's so crowded.",
+      "response": "I hear you. Shopping online can be a great alternative—it's much less stressful!",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I'm so ready to go back to school!",
+      "response": "Me too! It will be nice to reconnect with friends and start learning new things.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I'm so ready for summer!",
+      "response": "I can't wait to enjoy the warm weather, but I think I might still miss the greenery of spring.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don't like rainy days.",
+      "response": "I can relate. It can be tough to be productive when it's raining, but it can also be a great opportunity to catch up on some reading or cozy up with a movie.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "People who like math are nerds.",
+      "response": "I'm not sure that's necessarily true. Math can be a very creative and powerful tool if you put in the effort to understand it.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I hate cleaning the house.",
+      "response": "Nobody enjoys housework, but it's something we all have to do. Maybe make the task into a game or do it with a friend for motivation!",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I never have time to do anything.",
+      "response": "That's understandable. A good way to manage time better is to make a schedule and prioritize tasks.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "Video games are bad for your health.",
+      "response": "It's true that spending too much time playing video games can be unhealthy, but moderation is key. Balance it out with some physical activity and you'll be alright.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "Reading books is a waste of time.",
+      "response": "I wouldn't say it's a waste of time. Reading can be a great way to develop your imagination and increase knowledge.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "Camping is so boring!",
+      "response": "It may not be everyone's cup of tea, but camping can be a lot of fun. Fresh air and outdoor activities can be a great way to bond with friends and family.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I love fishing:  bagging that next fish makes me feel so happy!",
+      "response": "It sounds like you really enjoy fishing! It can be a great hobby and way to connect with nature.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "What are your plans on Saturday? Want to grab brunch with me?",
+      "response": "That sounds like a fun plan! I just have to do some chores in the morning, but I'll be free by noon. Where do you want to go?",
+      "task_type": "new",
+      "task_name": "personalInfo"
+    },
+    {
+      "text": "How was your flight this morning?",
+      "response": "It went well! I flew cross-country to San Francisco, and luckily, everything went smoothly!",
+      "task_type": "new",
+      "task_name": "personalInfo"
+    },
+    {
+      "text": "What did you think of the movie we watched last night?",
+      "response": "I thought it was great! I love the classic comedies, and this one definitely did not disappoint.",
+      "task_type": "new",
+      "task_name": "personalInfo"
+    },
+    {
+      "text": "What did you do over the weekend?",
+      "response": "I spent some time with my family and had a nice cookout in the backyard. We also went to the beach afterwards to watch the sunset.",
+      "task_type": "new",
+      "task_name": "personalInfo"
+    },
+    {
+      "text": "What was your favorite thing you did yesterday?",
+      "response": "I went for a run in the park, and it was so peaceful and calming. I always enjoy being out in nature like that.",
+      "task_type": "new",
+      "task_name": "personalInfo"
+    },
+    {
+      "text": "Where did you go for your last vacation?",
+      "response": "My last vacation was to Costa Rica. It was absolutely beautiful, and I had the best time exploring the rainforests and beaches!",
+      "task_type": "new",
+      "task_name": "personalInfo"
+    },
+    {
+      "text": "Do you have any hobbies or interests?",
+      "response": "I love running and hiking, but I'm also really into photography. I like to take nature shots or street photography when I have time.",
+      "task_type": "new",
+      "task_name": "personalInfo"
+    },
+    {
+      "text": "What did you think of the concert we went to last week?",
+      "response": "It was amazing! The band's energy was out of this world, and I can't wait to see them live again.",
+      "task_type": "new",
+      "task_name": "personalInfo"
+    },
+    {
+      "text": "What was your favorite subject in school?",
+      "response": "I loved math! I was always so intrigued by the equations and formulas, and I liked finding the correct answers.",
+      "task_type": "new",
+      "task_name": "personalInfo"
+    },
+    {
+      "text": "What would you like to do this weekend?",
+      "response": "I could really use a relaxing weekend so I think I'm just going to stay in and watch some movies and take some time for myself.",
+      "task_type": "new",
+      "task_name": "personalInfo"
+    },
+    {
+      "text": "What did you think of the movie we watched last night?",
+      "response": "I thought it was great! I love the classic comedies, and this one definitely did not disappoint.",
+      "task_type": "new",
+      "task_name": "personalInfo"
+    },
+    {
+      "text": "Did you have any fun plans over Independence Day?",
+      "response": "I spent some time with my family and had a nice cookout in the backyard. We also went to the beach afterwards to watch the fireworks.",
+      "task_type": "new",
+      "task_name": "personalInfo"
+    },
+    {
+      "text": "What classes are you taking this semester?",
+      "response": "I'm taking English, Biology, Math and History. It's definitely a challenge, but I'm managing.",
+      "task_type": "new",
+      "task_name": "personalInfo"
+    },
+    {
+      "text": "How is your job search going?",
+      "response": "I have been applying to a lot of jobs, but I haven't heard back from any of them yet. I'm keeping my fingers crossed!",
+      "task_type": "new",
+      "task_name": "personalInfo"
+    },
+    {
+      "text": "Do you have any hobbies?",
+      "response": "I love painting and writing in my free time. I also play the piano and do some hiking with my friends.",
+      "task_type": "new",
+      "task_name": "personalInfo"
+    },
+    {
+      "text": "Do you have any upcoming travel plans?",
+      "response": "Yes, I'm planning a trip to Thailand and Cambodia next month. I'm really looking forward to experiencing a new culture and trying the cuisine!",
+      "task_type": "new",
+      "task_name": "personalInfo"
+    },
+    {
+      "text": "What's your favorite ice cream flavor?",
+      "response": "I'm a big fan of mint chocolate chip ice cream. It's so refreshing and indulgent.",
+      "task_type": "new",
+      "task_name": "personalInfo"
+    },
+    {
+      "text": "What college did you attend?",
+      "response": "I went to Florida State University for my undergraduate degree. I had a great experience there and met a lot of amazing people.",
+      "task_type": "new",
+      "task_name": "personalInfo"
+    },
+    {
+      "text": "What are your thoughts on the current political climate?",
+      "response": "I think it's important to stay informed on current events and to be active in the political process, but it's also important to remember to be patient and respectful of different opinions.",
+      "task_type": "new",
+      "task_name": "personalInfo"
+    },
+    {
+      "text": "What's your favorite restaurant?",
+      "response": "I love sushi, so my favorite restaurant is a sushi place near my house called 'Fuji.' They have great rolls and delicious sake!",
+      "task_type": "new",
+      "task_name": "personalInfo"
+    },
+    {
+      "text": "I'm just started learning a new language:  Swahili.",
+      "response": "That's so impressive! You're so dedicated.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I just scored my first goal ever!",
+      "response": "Way to go! That's awesome!",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I just finished reading Crime and Punishment by Fyodor Dostoevsky.",
+      "response": "That's fantastic! What was it about?",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I just graduated from college. Can't wait to start working!",
+      "response": "That's incredible! Congrats on all your hard work.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I got an early promotion at work.",
+      "response": "That's amazing! Congratulations on your success!",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I just won my first piano competition.",
+      "response": "Wow, fantastic! I'm so happy for you. How did it feel to win?",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I'm learning to play the guitar.",
+      "response": "You're so multitalented. How do you make the time to do it?",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I just started a new business.",
+      "response": "That's wonderful! I'm sure it'll be successful.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I just aced the bar exam!",
+      "response": "Great job! I'm so happy for you.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I just completed my first marathon.",
+      "response": "Fantastic job! That's an impressive feat.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I finished painting a mural.",
+      "response": "It looks incredible. You have great artistic talent!",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I just got a promotion.",
+      "response": "Congratulations! That's an impressive accomplishment.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I just got my first book published.",
+      "response": "That's amazing! Congratulations on your book!",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I just passed my driving test.",
+      "response": "Well done! That's an important milestone.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I built a chess-playing robot in my free time.",
+      "response": "Impressive! You must be so talented.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I got a call back for a play.",
+      "response": "That's wonderful! Break a leg for your audition!",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I bought a new car.",
+      "response": "Cool! That must feel great to have a new set of wheels.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I hiked up a mountain.",
+      "response": "Incredible! You must have a lot of stamina.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I graduated college with honors.",
+      "response": "Fantastic! You must have worked really hard to get that accomplishment.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I solved a crossword puzzle.",
+      "response": "Good job! You must be a real wordsmith!",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "Do you work out regularly?",
+      "response": "Yes, I make sure to go to the gym a few times each week. It's always a great way to start the day.",
+      "task_type": "new",
+      "task_name": "stayOnTrack"
+    },
+    {
+      "text": "What did you do last night?",
+      "response": "I had a great time catching up with some friends at a local restaurant.",
+      "task_type": "new",
+      "task_name": "stayOnTrack"
+    },
+    {
+      "text": "Do you like to cook?",
+      "response": "I love to cook! I'm always trying out new recipes and experimenting with different flavors.",
+      "task_type": "new",
+      "task_name": "stayOnTrack"
+    },
+    {
+      "text": "Do you have any exciting plans for the summer?",
+      "response": "Yes, I'm planning to take a road trip with some friends to explore some new places.",
+      "task_type": "new",
+      "task_name": "stayOnTrack"
+    },
+    {
+      "text": "Do you have any hobbies?",
+      "response": "I enjoy playing the guitar and singing. Music is a great way to express myself.",
+      "task_type": "new",
+      "task_name": "stayOnTrack"
+    },
+    {
+      "text": "I just finished an incredible novel. Do you like reading?",
+      "response": "I do! I'm always diving into new books and getting lost in the stories.",
+      "task_type": "new",
+      "task_name": "stayOnTrack"
+    },
+    {
+      "text": "I'm heading to Namibia next week! Do you like to travel too?",
+      "response": "I absolutely love to travel! Exploring new places is one of my favorite things to do.",
+      "task_type": "new",
+      "task_name": "stayOnTrack"
+    },
+    {
+      "text": "What inspired you to start baking?",
+      "response": "I love the creativity that comes with baking - it's like taking a blank canvas and then creating something unique and delicious!",
+      "task_type": "new",
+      "task_name": "stayOnTrack"
+    },
+    {
+      "text": "What do you like to do in your free time?",
+      "response": "I love to explore the outdoors and take long hikes in nature. It's a great way to relax and clear my head.",
+      "task_type": "new",
+      "task_name": "stayOnTrack"
+    },
+    {
+      "text": "What's your favorite type of music?",
+      "response": "I love all kinds of music, but I'm especially a fan of indie pop and alternative rock.",
+      "task_type": "new",
+      "task_name": "stayOnTrack"
+    },
+    {
+      "text": "Have you ever travelled abroad?",
+      "response": "Yes, I took a trip to Japan a few years ago and it was one of the best experiences of my life.",
+      "task_type": "new",
+      "task_name": "stayOnTrack"
+    },
+    {
+      "text": "Do you have any pets?",
+      "response": "Yes, I have a cat. His name is Charlie and he's always full of energy and ready to play!",
+      "task_type": "new",
+      "task_name": "stayOnTrack"
+    },
+    {
+      "text": "What’s your favorite movie?",
+      "response": "I'd have to say my favorite movie is The Grand Budapest Hotel. It's so visually stunning and the story is so captivating.",
+      "task_type": "new",
+      "task_name": "stayOnTrack"
+    },
+    {
+      "text": "What’s your favorite type of food?",
+      "response": "I'm a big fan of Italian food. I could eat pasta and pizza every day!",
+      "task_type": "new",
+      "task_name": "stayOnTrack"
+    },
+    {
+      "text": "What’s your favorite TV show?",
+      "response": "I'm a major Game of Thrones fan. It's always so exciting to see what will happen next!",
+      "task_type": "new",
+      "task_name": "stayOnTrack"
+    },
+    {
+      "text": "I just got a new kitten! Do you like animals?",
+      "response": "Yes, I love animals! I have two cats at home and I'm always looking for ways to help out at the local animal shelter.",
+      "task_type": "new",
+      "task_name": "stayOnTrack"
+    },
+    {
+      "text": "What's your favorite thing about the summer?",
+      "response": "I love the long days and warm weather. There's nothing better than spending time outdoors and soaking up the sunshine.",
+      "task_type": "new",
+      "task_name": "stayOnTrack"
+    },
+    {
+      "text": "What's the most incredible place you've ever been to?",
+      "response": "I recently went to the Caribbean and it was amazing. The crystal clear waters and white sand beaches were breathtaking.",
+      "task_type": "new",
+      "task_name": "stayOnTrack"
+    },
+    {
+      "text": "What's the best advice you've ever received?",
+      "response": "The best advice I've ever received is to always be true to yourself. Life is too short to live it for anyone else.",
+      "task_type": "new",
+      "task_name": "stayOnTrack"
+    },
+    {
+      "text": "What's your favorite thing about living in this city?",
+      "response": "I love the diversity of the people and cultures. It's amazing to be able to experience so many different perspectives in one place.",
+      "task_type": "new",
+      "task_name": "stayOnTrack"
+    }
+  ]
+}

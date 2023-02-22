@@ -1,13 +1,14 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import React from "react";
+import Page from "../components/global/utility/Page";
+import Hero from "../components/home/Hero";
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">About</Link>
-    </p>
-  </Layout>
-)
-
-export default IndexPage
+export default function index() {
+  return (
+    <Page
+      fullTitle="Noora"
+      desc="A platform utilizing conversational AI to improve the social conversation of individuals with ASD."
+    >
+      <Hero />
+    </Page>
+  );
+}
