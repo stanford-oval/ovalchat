@@ -5,7 +5,7 @@ import modules from "../../data/modules";
 import Preamble from "./Preamble";
 import ModuleChat from "./ModuleChat";
 
-export default function Noora() {
+export default function FactGpt() {
   const router = useRouter();
 
   const [selectedModule, setSelectedModule] = useState(modules["general"]);

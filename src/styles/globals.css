@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 .pulse-button {
-    box-shadow: 0 0 0 0 #6940b663;
+    box-shadow: 0 0 0 0 #047857;
     transform: scale(1);
     animation: pulse 1.6s infinite;
 }
@@ -12,22 +12,22 @@
 @keyframes pulse {
     0% {
         transform: scale(0.95);
-        box-shadow: 0 0 0 0 #6940b645;
+        box-shadow: 0 0 0 0 #04785745;
     }
 
     70% {
         transform: scale(1);
-        box-shadow: 0 0 0 10px #6940b63e;
+        box-shadow: 0 0 0 10px #0478573e;
     }
 
     100% {
         transform: scale(0.95);
-        box-shadow: 0 0 0 0 #6940b659;
+        box-shadow: 0 0 0 0 #04785759;
     }
 }
 
 .pulse-button-light {
-    box-shadow: 0 0 0 0 #a09ea263;
+    box-shadow: 0 0 0 0 #9ea29f63;
     transform: scale(1);
     animation: pulse-light 2s infinite;
 }
@@ -35,17 +35,17 @@
 @keyframes pulse-light {
     0% {
         transform: scale(0.96);
-        box-shadow: 0 0 0 0 #a09ea263;
+        box-shadow: 0 0 0 0 #9ea29f63;
     }
 
     70% {
         transform: scale(1);
-        box-shadow: 0 0 0 7px #a09ea263;
+        box-shadow: 0 0 0 7px #9ea29f63;
     }
 
     100% {
         transform: scale(0.96);
-        box-shadow: 0 0 0 0 #a09ea263;
+        box-shadow: 0 0 0 0 #9ea29f63;
     }
 }
 
@@ -118,7 +118,7 @@
 }
 
 .button-light {
-    @apply bg-indigo-200 active:bg-indigo-400 hover:bg-indigo-100 text-slate-900;
+    @apply bg-emerald-200 active:bg-emerald-400 hover:bg-emerald-100 text-slate-900;
 }
 
 #homeHero {
@@ -293,17 +293,17 @@ button.active.focus {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #6940b6;
+    background: #047857;
     transition: all 0.55s ease;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #7447c9;
+    background: #059669;
 }
 
 .special-underline {
-    @apply bg-gradient-to-r from-indigo-200 to-indigo-200 bg-no-repeat [background-position:0_88%] [background-size:100%_0.2em]
+    @apply bg-gradient-to-r from-emerald-200 to-emerald-200 bg-no-repeat [background-position:0_88%] [background-size:100%_0.2em]
         /* motion-safe:transition-all motion-safe:duration-200
       hover:[background-size:100%_100%]
       focus:[background-size:100%_100%]; */

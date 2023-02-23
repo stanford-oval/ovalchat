@@ -1,10 +1,10 @@
 import React from "react";
-import Noora from "../components/noora/Noora";
+import FactGpt from "../components/factgpt/FactGpt";
 
 export default function factgpt() {
   return (
     <div>
-      <Noora />
+      <FactGpt />
     </div>
   );
 }

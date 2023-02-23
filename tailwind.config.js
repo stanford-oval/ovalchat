@@ -13,11 +13,11 @@ module.exports = {
       colors: {
         factgpt: {
           primary: {
-            DEFAULT: "#6940b6",
-            light: "#7447c9",
-            dark: "#5b379e",
-            dark1: "#3f2278",
-            dark2: "#2c1458",
+            DEFAULT: "#047857",
+            light: "#059669",
+            dark: "#047857",
+            dark1: "#065F46",
+            dark2: "#064E3B",
           },
           secondary: {
             bright: "#283975",

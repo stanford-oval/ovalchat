@@ -28,7 +28,7 @@ export default function Custom404() {
                     </button>
                   </Link>
                   <Link href="/noora">
-                    <button className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-factgpt-primary-dark bg-indigo-100 hover:bg-indigo-200 focus:outline-none">
+                    <button className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-factgpt-primary-dark bg-emerald-100 hover:bg-emerald-200 focus:outline-none">
                       Noora Chat
                     </button>
                   </Link>

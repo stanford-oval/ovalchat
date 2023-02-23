@@ -13,7 +13,7 @@ const routes = [
   },
   {
     name: "Ask Noora",
-    href: "/ask-factgpt",
+    href: "/ask-noora",
   },
 ];
 

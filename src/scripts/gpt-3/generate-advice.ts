@@ -1,5 +1,5 @@
 import Completion from "./Completion";
-import askNooraPrompt from "../../data/prompts/ask-factgpt";
+import askNooraPrompt from "../../data/prompts/ask-noora";
 
 const temp = 0.9;
 const freqPenalty = 0.6;
