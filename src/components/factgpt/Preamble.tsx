@@ -11,7 +11,7 @@ export default function Preamble({ module }: any) {
           <span className="text-factgpt-primary font-medium">FactGPT</span>
         </h1>
         <div className="mt-3 text-lg font-base tracking-tight text-gray-700 flex flex-col gap-y-2">
-          <p>Contribute to FactGPT by picking the better reply option and evaluating replies.</p>
+          <p>Contribute to FactGPT by picking the best reply option and evaluating replies.</p>
 
           {/* <p>
             For example, if Noora says “

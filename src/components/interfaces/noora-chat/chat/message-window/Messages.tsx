@@ -36,38 +36,20 @@ export default function Messages({ history, convoState, currModule}: any) {
       id: -1,
       show: true,
       fromNoora: true,
-      text: "Hi! I am Noora.",
-      read: "Hi. I am Nora.",
-      style: "cheerful"
+      text: "Hi! I am FactGPT.",
     };
     history.value[1] = {
-      id: -2,
-      show: true,
-      fromNoora: true,
-      text: `Imagine that I am your ${activeModules.length == 1 && activeModules[0].title == "work"
-        ? "co-worker"
-        : "friend"
-        }.`,
-    };
-    history.value[2] = {
       id: -3,
       fromNoora: true,
       show: true,
       component: <MicrophoneInfo />,
       read: "You can tap on the microphone button to start speaking. When you're done talking, click it again. Click the audio button to hear my replies"
     };
-    history.value[3] = {
-      id: -4,
-      show: true,
-      fromNoora: true,
-      component: Instructions(activeModules).text,
-      read: Instructions(activeModules).speech,
-    };
-    history.value[4] = {
+    history.value[2] = {
         id: -6,
         fromNoora: true,
         show: true,
-        text: "Are you ready to begin?",
+        text: "Ask me anything!",
     };
     convoState.setValue((cs: any) => ({ ...cs, turn: "user-answer-start" }));
   }, []);
