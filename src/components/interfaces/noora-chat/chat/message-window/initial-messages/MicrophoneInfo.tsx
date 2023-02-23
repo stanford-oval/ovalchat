@@ -43,7 +43,7 @@ export default function MicrophoneInfo() {
     };
 
     return (
-        <div>
+        <div className="text-left">
             <JoyRideNoSSR
                 steps={joyrideState.steps}
                 run={joyrideState.run}

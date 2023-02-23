@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import Message from "./Message";
 import MicrophoneInfo from "./initial-messages/MicrophoneInfo";
-import Instructions from "./initial-messages/Instructions";
 
 export default function Messages({ history, convoState, currModule}: any) {
   const messagesBottom = useRef<HTMLDivElement>(null);
@@ -9,26 +8,6 @@ export default function Messages({ history, convoState, currModule}: any) {
   let audioRef = useRef();
 
   audioRef.current = convoState.value.audio;
-
-  if (currModule != 'general' && currModule != 'work') {
-    history.value[1] = {
-      id: -2,
-      show: true,
-      fromNoora: true,
-      text: `Imagine that I am your ${activeModules.length == 1 && activeModules[0].title == "work"
-        ? "co-worker"
-        : "friend"
-        }.`,
-    };
-
-    history.value[3] = {
-      id: -4,
-      show: true,
-      fromNoora: true,
-      component: Instructions(activeModules).text,
-      read: Instructions(activeModules).speech,
-    };
-  }
 
   useEffect(() => {
     // if (history.value.length > 0) return; // only run this on first render
