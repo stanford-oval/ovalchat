@@ -98,14 +98,6 @@
     background: #dbd9df;
 }
 
-#askNooraHero {
-    background-color: #BEBFD5;
-    background-image: url('/img/page-bg/light.png');
-    box-shadow: inset 0 0 0 2000px #ffffff80;
-    border-bottom-left-radius: 50% 20%;
-    border-bottom-right-radius: 50% 20%;
-}
-
 @media only screen and (max-width: 768px) {
     #askNooraHero {
         border-bottom-left-radius: 50% 13%;
@@ -119,16 +111,6 @@
 
 .button-light {
     @apply bg-emerald-200 active:bg-emerald-400 hover:bg-emerald-100 text-slate-900;
-}
-
-#homeHero {
-    background-image: url('/img/page-bg/home.png');
-    box-shadow: inset 0 0 0 2000px #ffffffbd;
-}
-
-#modulesHero {
-    background-image: url('/img/page-bg/light.png');
-    box-shadow: inset 0 0 0 2000px #ffffff92;
 }
 
 @media only screen and (max-width: 768px) {
