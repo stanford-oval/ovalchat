@@ -1,5 +1,4 @@
 import React from "react";
-import MobileMenu from "../menu/MobileMenu";
 
 export default function Header() {
   return (
@@ -8,7 +7,6 @@ export default function Header() {
       <div className="text-2xl text-center font-bold text-factgpt-secondary">
         Noora
       </div>
-      <MobileMenu />
     </div>
   );
 }

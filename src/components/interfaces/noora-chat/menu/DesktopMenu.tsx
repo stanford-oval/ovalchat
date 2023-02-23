@@ -1,7 +1,6 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon, VolumeUpIcon } from "@heroicons/react/solid";
-import Modules from "./sections/modules/Modules";
 import Progress from "./sections/Progress";
 import Technical from "./sections/Technical";
 import DisclosureTransition from "../../../global/utility/DisclosureTransition";
@@ -13,11 +12,6 @@ import { isIOS } from 'react-device-detect';
 export default function DesktopMenu({ convoState }: any) {
   const sections = [
     { title: "Progress", component: <Progress convoState={convoState} /> },
-    {
-      title: "Modules",
-      component: <Modules convoState={convoState} />,
-      defaultHide: !convoState.value.showTechnical,
-    },
     {
       title: "Technical",
       component: <Technical convoState={convoState} />,
