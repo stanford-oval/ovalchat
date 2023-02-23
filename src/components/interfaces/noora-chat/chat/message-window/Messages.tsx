@@ -100,7 +100,7 @@ export default function Messages({ history, convoState, currModule}: any) {
         {(!convoState.value.turn.startsWith("user") && !convoState.value.turn.includes("read")) && (
           <div
             className={
-              "rounded-xl w-fit px-4 py-3 mt-1.5 max-w-xs break-words bg-gray-200 mr-auto"
+              "rounded-3xl w-fit px-4 py-3 mt-1.5 max-w-xs break-words bg-gray-200 mr-auto"
             }
           >
             <div className="px-3 py-1">

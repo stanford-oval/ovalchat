@@ -14,13 +14,13 @@ export default function MicrophoneInfo() {
             {
                 target: ".joyride-step-1",
                 content:
-                    "Tap this button, then start speaking!\n Noora will turn what you say into text. When you're done talking, click this button again.",
+                    "Tap this button, then start speaking!\n When you're done talking, click this button again.",
                 disableBeacon: true,
             },
             {
                 target: ".demo-audio",
                 content:
-                    "Tap this button to hear Noora speak! Noora can speak in sad and happy tones.",
+                    "Tap this button to hear FactGPT speak!",
                 disableBeacon: true,
             },
         ],
@@ -53,7 +53,7 @@ export default function MicrophoneInfo() {
                 styles={{
                     options: {
                         // overlayColor: "rgba(79, 26, 0, 0.4)",
-                        primaryColor: "#6940b6",
+                        primaryColor: "#047857",
                         zIndex: 1000,
                     },
                 }}
