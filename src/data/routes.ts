@@ -4,16 +4,8 @@ const routes = [
     name: "Home",
   },
   {
-    name: "Noora",
-    href: "/noora",
-  },
-  {
-    name: "Dashboard",
-    href: "/dashboard",
-  },
-  {
-    name: "Ask Noora",
-    href: "/ask-noora",
+    name: "Improve FactGPT",
+    href: "/improve-factgpt",
   },
 ];
 

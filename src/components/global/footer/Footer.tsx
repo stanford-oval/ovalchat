@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
 
         <p className="mt-8 text-center text-base text-gray-300">
-          Noora is part of a research project at Stanford University&apos;s{" "}
+          FactGPT is part of a research project at Stanford University&apos;s{" "}
           <a
             href="https://oval.cs.stanford.edu"
             target="_blank"
