@@ -32,8 +32,8 @@ export default function Hero() {
           </defs>
         </svg>
       </div>
-      <div className="container py-12 sm:py-20 md:py-24">
-        <div className="flex mx-auto items-center justify-between text-center gap-y-8 sm:gap-y-6 sm:gap-x-12 lg:gap-x-0 max-w-xl sm:max-w-2xl md:max-w-3xl">
+      <div className="container pt-12 sm:pt-16 md:pt-20 pb-6 md:pb-8">
+        <div className="flex mx-auto items-center flex-col text-center gap-y-8 sm:gap-y-6 sm:gap-x-12 lg:gap-x-0 max-w-xl sm:max-w-2xl md:max-w-3xl">
           <div className="px-4 sm:px-0">
             <p className="inline leading-tight bg-gradient-to-r from-factgpt-primary via-teal-900 to-factgpt-primary-dark bg-clip-text font-bold text-4xl xl:text-5xl tracking-tight text-transparent">
               Stay informed with FactGPT.
@@ -61,15 +61,17 @@ export default function Hero() {
                 />
               </div>
             </div>
-            <ModuleChat modules={[{
-              title: "Empathy: General",
-              active: true,
-              module: "general",
-              desc: "In this module, you will learn how to respond appropriately to a variety of topics including family, weather, and school. ",
-              selectedDesc:
-                "Noora is your friend and you will practice replying to statements of a variety of general topics.",
-            }]} />
           </div>
+        </div>
+        <div className="pt-4">
+          <ModuleChat modules={[{
+            title: "Empathy: General",
+            active: true,
+            module: "general",
+            desc: "In this module, you will learn how to respond appropriately to a variety of topics including family, weather, and school. ",
+            selectedDesc:
+              "Noora is your friend and you will practice replying to statements of a variety of general topics.",
+          }]} />
         </div>
       </div>
     </div>

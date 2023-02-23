@@ -62,7 +62,7 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
 
 
   return (
-    <div className="bg-gray-100 py-4" id="homeChat">
+    <div id="homeChat">
       <div className="py-4 container flex items-stretch flex-col md:flex-row justify-center md:space-x-2 space-y-2 md:space-y-0">
         <div className="basis-auto md:basis-7/12  lg:basis-3/4 w-full mx-auto">
           {convoState.value.turn == "summary" ? (
