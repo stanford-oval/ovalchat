@@ -23,40 +23,30 @@ export default function FactGpt() {
   }, [router.query]);
   return (
     <div>
-      <Page
-        title={
-          selectedModule
-            ? `${selectedModule.title} ${selectedModule.title == "All" ? "Modules" : "Module"
-            }`
-            : "Noora"
-        }
-        desc="Practice social scenarios with Noora. Noora is a conversational AI designed to improve the social conversation of individuals with ASD."
-      >
-        {selectedModule ? (
-          <div>
-            <Preamble module={selectedModule} />
-            <ModuleChat
-              modules={(selectedModule.module == "all"
-                ? Object.values(modules).map((m: any) => {
-                  if (m.module == "all") return;
-                  return { title: m.module, displayName: m.title, active: true, fixed: true };
-                })
-                : Object.values(modules).map((m: any) => {
-                  if (m.module == "all") return;
-                  return {
-                    title: m.module,
-                    displayName: m.title,
-                    active: selectedModule.module == m.module,
-                    fixed: true,
-                  };
-                })
-              ).filter((m: any) => m)}
-            />
-          </div>
-        ) : (
-          <div className="h-screen"></div>
-        )}
-      </Page>
+      {selectedModule ? (
+        <div>
+          <Preamble module={selectedModule} />
+          <ModuleChat
+            modules={(selectedModule.module == "all"
+              ? Object.values(modules).map((m: any) => {
+                if (m.module == "all") return;
+                return { title: m.module, displayName: m.title, active: true, fixed: true };
+              })
+              : Object.values(modules).map((m: any) => {
+                if (m.module == "all") return;
+                return {
+                  title: m.module,
+                  displayName: m.title,
+                  active: selectedModule.module == m.module,
+                  fixed: true,
+                };
+              })
+            ).filter((m: any) => m)}
+          />
+        </div>
+      ) : (
+        <div className="h-screen"></div>
+      )}
     </div>
   );
 }

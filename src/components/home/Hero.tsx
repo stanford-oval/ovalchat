@@ -1,11 +1,10 @@
 import React from "react";
-import Link from "next/link";
-import { ArrowSmRightIcon } from "@heroicons/react/solid";
+import ModuleChat from '../factgpt/ModuleChat';
 
 export default function Hero() {
   return (
     <div
-      className="bg-white isolate overflow-hidden min-h-screen flex flex-col justify-center align-center"
+      className="bg-white isolate flex flex-col justify-center align-center pt-16"
       id="homeHero"
     >
       <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
@@ -33,11 +32,11 @@ export default function Hero() {
           </defs>
         </svg>
       </div>
-      <div className="container">
+      <div className="container py-12 sm:py-20 md:py-24">
         <div className="flex mx-auto items-center justify-between text-center gap-y-8 sm:gap-y-6 sm:gap-x-12 lg:gap-x-0 max-w-xl sm:max-w-2xl md:max-w-3xl">
           <div className="px-4 sm:px-0">
             <p className="inline leading-tight bg-gradient-to-r from-factgpt-primary via-teal-900 to-factgpt-primary-dark bg-clip-text font-bold text-4xl xl:text-5xl tracking-tight text-transparent">
-              Stay informed with FactGPT. 
+              Stay informed with FactGPT.
             </p>
             <p className="mt-3 text-xl xl:text-2xl tracking-tight text-gray-600">
               FactGPT is a chatbot who provides factually accurate and up-to-date information about a wide range of topics.
@@ -62,6 +61,14 @@ export default function Hero() {
                 />
               </div>
             </div>
+            <ModuleChat modules={[{
+              title: "Empathy: General",
+              active: true,
+              module: "general",
+              desc: "In this module, you will learn how to respond appropriately to a variety of topics including family, weather, and school. ",
+              selectedDesc:
+                "Noora is your friend and you will practice replying to statements of a variety of general topics.",
+            }]} />
           </div>
         </div>
       </div>
