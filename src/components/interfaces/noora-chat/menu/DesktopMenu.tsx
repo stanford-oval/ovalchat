@@ -11,11 +11,10 @@ import { isIOS } from 'react-device-detect';
 
 export default function DesktopMenu({ convoState }: any) {
   const sections = [
-    { title: "Progress", component: <Progress convoState={convoState} /> },
     {
       title: "Technical",
       component: <Technical convoState={convoState} />,
-      defaultHide: !convoState.value.showTechnical,
+      defaultHide: false //!convoState.value.showTechnical,
     },
   ];
 
