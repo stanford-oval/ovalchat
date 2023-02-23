@@ -32,7 +32,7 @@ export default function Hero() {
           </defs>
         </svg>
       </div>
-      <div className="container pt-12 sm:pt-16 md:pt-20 pb-6 md:pb-8">
+      <div className="container pt-12 sm:pt-16 md:pt-20">
         <div className="flex mx-auto items-center flex-col text-center gap-y-8 sm:gap-y-6 sm:gap-x-12 lg:gap-x-0 max-w-xl sm:max-w-2xl md:max-w-3xl">
           <div className="px-4 sm:px-0">
             <p className="inline leading-tight bg-gradient-to-r from-factgpt-primary via-teal-900 to-factgpt-primary-dark bg-clip-text font-bold text-4xl xl:text-5xl tracking-tight text-transparent">
@@ -63,7 +63,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="pt-4">
+        <div className="py-4 sm:py-6 md:py-8">
           <ModuleChat modules={[{
             title: "Empathy: General",
             active: true,

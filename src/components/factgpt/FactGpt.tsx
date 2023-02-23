@@ -26,23 +26,25 @@ export default function FactGpt() {
       {selectedModule ? (
         <div>
           <Preamble module={selectedModule} />
-          <ModuleChat
-            modules={(selectedModule.module == "all"
-              ? Object.values(modules).map((m: any) => {
-                if (m.module == "all") return;
-                return { title: m.module, displayName: m.title, active: true, fixed: true };
-              })
-              : Object.values(modules).map((m: any) => {
-                if (m.module == "all") return;
-                return {
-                  title: m.module,
-                  displayName: m.title,
-                  active: selectedModule.module == m.module,
-                  fixed: true,
-                };
-              })
-            ).filter((m: any) => m)}
-          />
+          <div className="bg-gray-100 py-4">
+            <ModuleChat
+              modules={(selectedModule.module == "all"
+                ? Object.values(modules).map((m: any) => {
+                  if (m.module == "all") return;
+                  return { title: m.module, displayName: m.title, active: true, fixed: true };
+                })
+                : Object.values(modules).map((m: any) => {
+                  if (m.module == "all") return;
+                  return {
+                    title: m.module,
+                    displayName: m.title,
+                    active: selectedModule.module == m.module,
+                    fixed: true,
+                  };
+                })
+              ).filter((m: any) => m)}
+            />
+          </div>
         </div>
       ) : (
         <div className="h-screen"></div>
