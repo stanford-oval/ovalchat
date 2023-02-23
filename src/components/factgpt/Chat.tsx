@@ -2,23 +2,13 @@ import React, { useState, useEffect } from "react";
 import NooraChat from "../interfaces/noora-chat/chat/NooraChat";
 import DesktopMenu from "../interfaces/noora-chat/menu/DesktopMenu";
 import Summary from "../interfaces/noora-chat/summary/Summary";
-import { isIOS } from 'react-device-detect';
 
-const OLD = "old";
-const NEW = "new";
-
-export default function ModuleChat({ modules }: ModuleChatProps) {
+export default function Chat() {
   const [h, setH] = useState([]);
-  const active_modules = modules?.filter((m: any) => m.active);
-  let questionType = NEW;
-  if (active_modules && ["general", "work"].includes(active_modules[0].title)) {
-    questionType = OLD;
-  }
 
   const [cs, setCs] = useState({
     draft: "",
     turn: "user-answer-start",
-    modules: modules,
     model: {
       name: "text-davinci-002",
       temperature: 0.9,
@@ -31,10 +21,9 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
       player: null,
       messageId: null,
       autoPlaying: false,
-      shouldAutoPlay: isIOS ? false : true,
+      shouldAutoPlay: false,
     },
     numProblems: 10,
-    questionType: questionType,
     sentiments: [
       { title: "positive", active: true },
       { title: "neutral", active: true },
@@ -42,7 +31,6 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
     ]
   });
 
-  cs.questionType = questionType;
   const history = {
     value: h,
     setValue: setH,
@@ -52,13 +40,6 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
     value: cs,
     setValue: setCs,
   };
-
-  useEffect(() => {
-    if (modules)
-      setCs((c: any) => {
-        return { ...c, modules: modules };
-      });
-  }, [modules]);
 
 
   return (
@@ -78,7 +59,3 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
     </div>
   );
 }
-
-type ModuleChatProps = {
-  modules?: any[];
-};

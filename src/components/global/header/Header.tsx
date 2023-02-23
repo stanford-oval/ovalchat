@@ -47,22 +47,6 @@ export default function Header() {
                   }
                 />
               ))}
-              {/* <div className="flex items-center">
-                <div className="flex-shrink-0">
-                  <Link href="/modules">
-                    <a
-                      type="button"
-                      className="trans-300 relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full text-white bg-factgpt-primary shadow-sm hover:bg-factgpt-primary-dark"
-                    >
-                      <FontAwesomeIcon
-                        icon={faComment}
-                        className="-ml-1 mr-2 h-3 w-3"
-                      />
-                      <span>Get Started</span>
-                    </a>
-                  </Link>
-                </div>
-              </div> */}
             </div>
             {/* mobile navigation */}
             <div className="-ml-2 mr-2 flex items-center md:hidden">
@@ -93,17 +77,6 @@ export default function Header() {
                               }
                             />
                           ))}
-                          {/* <div className="flex items-center mx-4 py-1">
-                            <Link href="/modules">
-                              <span className="justify-center w-full inline-flex items-center px-4 py-2 border border-transparent text-md font-medium rounded-full text-white bg-factgpt-primary shadow-sm hover:bg-factgpt-primary-dark">
-                                <FontAwesomeIcon
-                                  icon={faComment}
-                                  className="-ml-1 mr-2 h-3 w-3"
-                                />
-                                <span>Get Started</span>
-                              </span>
-                            </Link>
-                          </div> */}
                         </div>
                       </div>
                     </Disclosure.Panel>

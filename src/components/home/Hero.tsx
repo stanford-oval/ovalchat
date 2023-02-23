@@ -1,5 +1,5 @@
 import React from "react";
-import ModuleChat from '../factgpt/ModuleChat';
+import Chat from '../factgpt/Chat';
 
 export default function Hero() {
   return (
@@ -64,14 +64,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="py-4 sm:py-6 md:py-8">
-          <ModuleChat modules={[{
-            title: "Empathy: General",
-            active: true,
-            module: "general",
-            desc: "In this module, you will learn how to respond appropriately to a variety of topics including family, weather, and school. ",
-            selectedDesc:
-              "Noora is your friend and you will practice replying to statements of a variety of general topics.",
-          }]} />
+          <Chat />
         </div>
       </div>
     </div>

@@ -2,9 +2,8 @@ import React, { useRef, useEffect } from "react";
 import Message from "./Message";
 import MicrophoneInfo from "./initial-messages/MicrophoneInfo";
 
-export default function Messages({ history, convoState, currModule}: any) {
+export default function Messages({ history, convoState }: any) {
   const messagesBottom = useRef<HTMLDivElement>(null);
-  let activeModules = convoState.value.modules.filter((m: any) => m.active);
   let audioRef = useRef();
 
   audioRef.current = convoState.value.audio;
