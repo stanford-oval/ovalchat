@@ -13,7 +13,7 @@ export default function NavItem({
     const activeStyles = "border-factgpt-primary text-gray-900";
     const defaultStyles =
         "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700";
-    const navItemStyle = clsx("trans-300 inline-flex items-center cursor-pointer px-1 pt-1 border-b-4 text-lg font-medium", active ? activeStyles : defaultStyles);
+    const navItemStyle = clsx("trans-300 inline-flex items-center cursor-pointer px-1 pt-1 border-b-4 text-lg font-medium h-full", active ? activeStyles : defaultStyles);
 
     if (dropRoutes)
       return (

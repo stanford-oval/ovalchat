@@ -43,7 +43,7 @@ export default function Progress({ convoState }: any) {
 function CheckMarks({ convoState }: any) {
   return (
     <div className="mx-auto flex flex-row flex-wrap justify-center py-2">
-      {[...Array(convoState.value.numProblems).keys()].map((i: number) => {
+      {[...Array.from(Array(convoState.value.numProblems).keys())].map((i: number) => {
         const baseStyles =
           "h-10 w-10 rounded-full flex items-center justify-center border-2";
         const wrongStyles = "bg-red-400 text-white border-red-600";

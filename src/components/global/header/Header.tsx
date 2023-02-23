@@ -15,20 +15,20 @@ export default function Header() {
   return (
     <nav className="z-40 w-screen bg-white shadow fixed">
       <div className="container">
-        <div className="flex justify-between h-16 align-middle">
-          <Link href="/">
-            <span className="flex-shrink-0 flex items-center">
+        <div className="flex justify-between align-middle h-16">
+          <Link href="/" className="h-fit my-auto">
+            <div className="flex-shrink-0 flex items-center my-auto">
               <Image
-                className="block h-12 w-auto mr-1"
-                width="52"
-                height="52"
-                src="/img/logos/noora/lamp.png"
-                alt="Noora logo"
+                className="block h-12 w-auto mr-2"
+                width="50"
+                height="50"
+                src="/img/logos/noora/puzzle.png"
+                alt="FactGPT logo"
               />
-              <span className="font-bold tracking-wide text-xl text-factgpt-primary">
-                NOORA
-              </span>
-            </span>
+              <div className="font-bold tracking-wide my-auto text-xl text-factgpt-primary">
+                FactGPT
+              </div>
+            </div>
           </Link>
           <div className="flex">
             {/* desktop navigation */}
