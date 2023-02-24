@@ -12,7 +12,7 @@ export default async function getReply(
     {
       id: uuidv4(),
       fromChatbot: true,
-      text: "Oops! Something went wrong.",
+      text: "Echo: " + message,
     },
   ];
 
