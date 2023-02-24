@@ -9,22 +9,19 @@ export default async function getReply(
   // response loading
   convoState.setValue((cs: any) => ({ ...cs, turn: command }));
 
-  let output = await Completion({
-    question: message,
-    systems: ["gpt3_correction", "gpt3_repeat_generation"]
-  });
+  let output = await getAiOutput(convoState, message);
 
-  let ai_resp1 = output["resp1"];
-  let ai_resp2 = output["resp2"];
-  let session_name = output["session_name"];
-  let dialog_state1 = output["dialog_state1"]
-  let dialog_state2 = output["dialog_state2"]
+  let aiResp1 = output["resp1"];
+  let aiResp2 = output["resp2"];
+  let sessionName = output["session_name"];
+  let dialogState1 = output["dialog_state1"]
+  let dialogState2 = output["dialog_state2"]
 
   let replies = [
     {
       id: uuidv4(),
       fromChatbot: true,
-      text: ai_resp2,
+      text: aiResp2,
     },
   ];
 
@@ -32,12 +29,36 @@ export default async function getReply(
     ...cs,
     responseInfo: {
       ...cs.responseInfo,
-      responses: [ai_resp1, ai_resp2],
-      dialog_states: [dialog_state1, dialog_state2],
-      session_name: session_name,
+      responses: [aiResp1, aiResp2],
+      dialogStates: [dialogState1, dialogState2],
+      sessionName: cs.responseInfo.sessionName ?? sessionName,
+      rating: "resp2" // update
     },
-    turn: "user-answer", // update this
+    turn: "user-answer", // update
   }));
 
   return replies;
+}
+
+async function getAiOutput(convoState, message) {
+  let completionParameters = {}
+
+  if (convoState.value.responseInfo.sessionName) {
+    completionParameters = {
+      session_name: convoState.value.responseInfo.sessionName,
+      rating: convoState.value.responseInfo.rating,
+      user_response: message,
+    }
+  } else {
+    completionParameters = {
+      question: message,
+    }
+  }
+
+  completionParameters["systems"] = ["gpt3_correction", "gpt3_repeat_generation"]
+
+  let output = await Completion(completionParameters);
+
+  console.log(output)
+  return output;
 }

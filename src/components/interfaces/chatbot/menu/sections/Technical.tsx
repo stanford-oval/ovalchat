@@ -6,6 +6,7 @@ export default function Technical({ convoState }: any) {
       <div>
         <span className="font-bold">Current turn: </span>
         {convoState.value.turn}
+        {convoState.value.responseInfo.sessionName}
       </div>
     </div>
   );
