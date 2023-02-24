@@ -277,6 +277,7 @@ button.active.focus {
 ::-webkit-scrollbar-thumb {
     background: #047857;
     transition: all 0.55s ease;
+    border-radius: 25px;
 }
 
 /* Handle on hover */

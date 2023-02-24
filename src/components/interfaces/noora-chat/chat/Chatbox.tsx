@@ -5,7 +5,7 @@ import Messages from "./message-window/Messages";
 import { messageToSpeechParams } from "../../../../scripts/noora-chat/audio_utils";
 import { textToSpeech } from "../../speech/SpeechSynthesizer";
 
-export default function NooraChat({
+export default function Chatbox({
   convoState,
   history,
 }: any) {
