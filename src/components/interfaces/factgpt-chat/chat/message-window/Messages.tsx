@@ -29,7 +29,7 @@ export default function Messages({ history, convoState }: any) {
         show: true,
         text: "Ask me anything!",
     };
-    convoState.setValue((cs: any) => ({ ...cs, turn: "user-answer-start" }));
+    convoState.setValue((cs: any) => ({ ...cs, turn: "user-answer" }));
   }, []);
 
   // scrolling

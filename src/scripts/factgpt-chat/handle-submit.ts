@@ -22,38 +22,6 @@ export default async function handleSubmit(e: any, convoState: any, history: any
     ]);
     convoState.setValue((cs: any) => ({ ...cs, draft: "" }));
 
-    let m = message.trim().toLowerCase();
-
-    if (convoState.value.turn.includes("start")) {
-        if (m.includes("no") || m.includes("don")) {
-            history.setValue((h: any) => [
-                ...h,
-                { id: uuidv4(), fromChatbot: true, text: "Are you ready to begin?" },
-            ]);
-        } else {
-            await factgptsTurn(message, convoState, history, true);
-        }
-    } else if (
-        convoState.value.progress.length < convoState.value.numProblems
-    ) {
-        await factgptsTurn(message, convoState, history);
-    } else {
-        if (m == "yes") {
-            convoState.setValue((cs: any) => ({
-                ...cs,
-                numProblems: cs.numProblems + 3,
-            }));
-            await factgptsTurn(message, convoState, history, true);
-        } else {
-            handleSessionEnd(convoState)
-        }
-    }
-};
-
-
-function handleSessionEnd(convoState: any) {
-    saveSessionResult(convoState.value.progress)
     
-    // show summary
-    convoState.setValue((cs: any) => ({ ...cs, turn: "summary" }));
-}
+    await factgptsTurn(message, convoState, history);
+};
