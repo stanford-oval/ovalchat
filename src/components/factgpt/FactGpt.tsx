@@ -5,11 +5,9 @@ import Chat from "./Chat";
 export default function FactGpt() {
   return (
     <div>
-      <div>
-        <Preamble />
-        <div className="bg-gray-100 py-4">
-          <Chat />
-        </div>
+      <Preamble />
+      <div className="bg-gray-100 py-4">
+        <Chat />
       </div>
     </div>
   );

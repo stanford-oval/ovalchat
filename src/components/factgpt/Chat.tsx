@@ -8,26 +8,12 @@ export default function Chat() {
   const [cs, setCs] = useState({
     draft: "",
     turn: "user-answer-start",
-    model: {
-      name: "text-davinci-002",
-      temperature: 0.9,
-      frequencyPenalty: 0.6,
-      presencePenalty: 0.5,
-      goodReplyThreshold: 0.5,
-    },
-    progress: [],
     audio: {
       player: null,
       messageId: null,
       autoPlaying: false,
       shouldAutoPlay: false,
     },
-    numProblems: 10,
-    sentiments: [
-      { title: "positive", active: true },
-      { title: "neutral", active: true },
-      { title: "negative", active: true },
-    ]
   });
 
   const history = {

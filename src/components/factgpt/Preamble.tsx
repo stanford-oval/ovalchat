@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Preamble({ module }: any) {
+export default function Preamble() {
   return (
     <div className="pt-16">
       <div className="container pt-4 pb-6 md:pt-5 md:pb-8">
