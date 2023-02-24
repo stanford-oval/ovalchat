@@ -1,7 +1,7 @@
 import React from "react";
 import routes from "../../../data/routes";
 import { useRouter } from "next/router";
-import { faComment, faBars, faClose } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
