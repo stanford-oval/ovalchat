@@ -22,7 +22,7 @@ export default function Header() {
                 className="block h-12 w-auto mr-2"
                 width="50"
                 height="50"
-                src="/img/logos/noora/puzzle.png"
+                src="/img/logos/factgpt/puzzle.png"
                 alt="FactGPT logo"
               />
               <div className="font-bold tracking-wide my-auto text-xl text-factgpt-primary">
