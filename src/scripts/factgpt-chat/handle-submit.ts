@@ -1,5 +1,4 @@
 import { v4 as uuidv4 } from "uuid";
-import { saveSessionResult } from "../user-info/session-results";
 import factgptsTurn from "./factgpts-turn";
 
 export default async function handleSubmit(e: any, convoState: any, history: any, message?: string) {

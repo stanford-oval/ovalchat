@@ -13,14 +13,12 @@ export default async function getReply(
       id: uuidv4(),
       fromChatbot: true,
       text: "Oops! Something went wrong.",
-      // sentiment: "neutral",
-      statement: false,
     },
   ];
 
   convoState.setValue((cs: any) => ({
     ...cs,
-    turn: command == (convoState.value.questionType == "old" && "get-statement") ? "user-select" : "user-answer",
+    turn: "user-answer", // update this
   }));
 
   return replies;
