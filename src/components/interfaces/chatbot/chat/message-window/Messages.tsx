@@ -17,17 +17,23 @@ export default function Messages({ history, convoState }: any) {
       text: "Hi! I am WikiChat.",
     };
     history.value[1] = {
+      id: -2,
+      show: true,
+      fromChatbot: true,
+      text: "Your responses are recorded for research purposes, so please do not share any Personal Identifiable Information.",
+    };
+    history.value[2] = {
       id: -3,
       fromChatbot: true,
       show: true,
       component: <MicrophoneInfo />,
       read: "You can tap on the microphone button to start speaking. When you're done talking, click it again. Click the audio button to hear my replies"
     };
-    history.value[2] = {
-        id: -6,
-        fromChatbot: true,
-        show: true,
-        text: "Ask me anything!",
+    history.value[3] = {
+      id: -4,
+      fromChatbot: true,
+      show: true,
+      text: "Let's chat!",
     };
     convoState.setValue((cs: any) => ({ ...cs, turn: "user-answer" }));
   }, []);
