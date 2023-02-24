@@ -20,11 +20,6 @@ export default async function getReply(
   let dialog_state1 = output["dialog_state1"]
   let dialog_state2 = output["dialog_state2"]
 
-  let explanation = "AI response 1: " + ai_resp1 + "\n"
-  explanation += "AI response 2: " + ai_resp2
-
-  console.log("Explanation: " + explanation);
-
   let replies = [
     {
       id: uuidv4(),
@@ -35,6 +30,12 @@ export default async function getReply(
 
   convoState.setValue((cs: any) => ({
     ...cs,
+    responseInfo: {
+      ...cs.responseInfo,
+      responses: [ai_resp1, ai_resp2],
+      dialog_states: [dialog_state1, dialog_state2],
+      session_name: session_name,
+    },
     turn: "user-answer", // update this
   }));
 

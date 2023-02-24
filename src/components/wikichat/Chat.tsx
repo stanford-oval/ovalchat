@@ -7,13 +7,18 @@ export default function Chat() {
 
   const [cs, setCs] = useState({
     draft: "",
-    turn: "user-answer",
+    turn: "user-answer-start",
     audio: {
       player: null,
       messageId: null,
       autoPlaying: false,
       shouldAutoPlay: false,
     },
+    responseInfo: {
+      responses: [],
+      dialog_states: [],
+      session_name: null,
+    }
   });
 
   const history = {
