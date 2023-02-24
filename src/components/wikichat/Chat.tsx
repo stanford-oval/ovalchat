@@ -17,7 +17,8 @@ export default function Chat() {
     responseInfo: {
       responses: [],
       dialog_states: [],
-      session_name: null,
+      sessionName: null,
+      systems: ["gpt3_correction", "gpt3_repeat_generation"],
     }
   });
 

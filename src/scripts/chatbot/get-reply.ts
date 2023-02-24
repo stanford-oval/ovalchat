@@ -55,7 +55,7 @@ async function getAiOutput(convoState, message) {
     }
   }
 
-  completionParameters["systems"] = ["gpt3_correction", "gpt3_repeat_generation"]
+  completionParameters["systems"] = convoState.value.responseInfo.systems;
 
   let output = await Completion(completionParameters);
 
