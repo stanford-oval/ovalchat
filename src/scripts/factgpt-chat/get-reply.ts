@@ -11,7 +11,7 @@ export default async function getReply(
   let replies = [
     {
       id: uuidv4(),
-      fromNoora: true,
+      fromChatbot: true,
       text: "Oops! Something went wrong.",
       // sentiment: "neutral",
       statement: false,

@@ -13,19 +13,19 @@ export default function Messages({ history, convoState }: any) {
     history.value[0] = {
       id: -1,
       show: true,
-      fromNoora: true,
+      fromChatbot: true,
       text: "Hi! I am FactGPT.",
     };
     history.value[1] = {
       id: -3,
-      fromNoora: true,
+      fromChatbot: true,
       show: true,
       component: <MicrophoneInfo />,
       read: "You can tap on the microphone button to start speaking. When you're done talking, click it again. Click the audio button to hear my replies"
     };
     history.value[2] = {
         id: -6,
-        fromNoora: true,
+        fromChatbot: true,
         show: true,
         text: "Ask me anything!",
     };
@@ -39,7 +39,7 @@ export default function Messages({ history, convoState }: any) {
         if (
           history.value
             .slice(0, Math.min(history.value.length, 10))
-            .filter((h: any) => !h.fromNoora).length > 0
+            .filter((h: any) => !h.fromChatbot).length > 0
         )
           messagesBottom.current.scrollIntoView({
             behavior: "smooth",

@@ -18,7 +18,7 @@ export default async function handleSubmit(e: any, convoState: any, history: any
 
     history.setValue((h: any) => [
         ...h,
-        { id: userMsgId, fromNoora: false, text: message, show: true },
+        { id: userMsgId, fromChatbot: false, text: message, show: true },
     ]);
     convoState.setValue((cs: any) => ({ ...cs, draft: "" }));
 
@@ -28,7 +28,7 @@ export default async function handleSubmit(e: any, convoState: any, history: any
         if (m.includes("no") || m.includes("don")) {
             history.setValue((h: any) => [
                 ...h,
-                { id: uuidv4(), fromNoora: true, text: "Are you ready to begin?" },
+                { id: uuidv4(), fromChatbot: true, text: "Are you ready to begin?" },
             ]);
         } else {
             await factgptsTurn(message, convoState, history, true);

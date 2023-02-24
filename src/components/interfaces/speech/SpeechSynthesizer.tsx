@@ -4,7 +4,7 @@ import clsx from "clsx";
 import React from "react";
 import getSpeechSSMLStr from "../../../data/azure-speech/speech-ssml";
 import { getTokenOrRefresh } from "../../../scripts/utils/token_util";
-import { messageToSpeechParams } from "../../../scripts/noora-chat/audio_utils";
+import { messageToSpeechParams } from "../../../scripts/factgpt-chat/audio_utils";
 
 const sdk = require("microsoft-cognitiveservices-speech-sdk");
 

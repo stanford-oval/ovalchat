@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import MessageBox from "./message-box/MessageBox";
 import Header from "./Header";
 import Messages from "./message-window/Messages";
-import { messageToSpeechParams } from "../../../../scripts/noora-chat/audio_utils";
+import { messageToSpeechParams } from "../../../../scripts/factgpt-chat/audio_utils";
 import { textToSpeech } from "../../speech/SpeechSynthesizer";
 
 export default function Chatbox({
@@ -65,7 +65,7 @@ export default function Chatbox({
 
     let item = history.value[idxHidden]
 
-    const prevFromUser = !history.value[idxHidden - 1].fromNoora
+    const prevFromUser = !history.value[idxHidden - 1].fromChatbot
 
     if (prevFromUser) {
       let hidden = history.value.filter((m: any) => !m.show);

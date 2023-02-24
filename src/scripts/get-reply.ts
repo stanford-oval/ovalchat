@@ -9,7 +9,7 @@ export default async function getReply(
   await timeout(5000);
   return {
     id: id,
-    fromNoora: true,
+    fromChatbot: true,
     text: "I currently only echo you. Here was your message: " + reply,
   };
 }
