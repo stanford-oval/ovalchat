@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from "react";
 import MessageBox from "./message-box/MessageBox";
 import Header from "./Header";
 import Messages from "./message-window/Messages";
-import { messageToSpeechParams } from "../../../../scripts/factgpt-chat/audio_utils";
 import { textToSpeech } from "../../speech/SpeechSynthesizer";
+import { messageToSpeechParams } from '../../../../scripts/wikitest-chat/audio_utils';
 
 export default function Chatbox({
   convoState,
@@ -26,7 +26,7 @@ export default function Chatbox({
 
   useEffect(() => {
     if (!convoState.value.audio.shouldAutoPlay) {
-      convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-factgpt-reads")[0], audio: { ...cs.audio, autoPlaying: false } }))
+      convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-wikitest-reads")[0], audio: { ...cs.audio, autoPlaying: false } }))
       // stop audio
       if (convoState.value.audio.player && convoState.autoPlaying) {
         convoState.value.audio.player.pause()
@@ -57,11 +57,11 @@ export default function Chatbox({
     let idxHidden = history.value.findIndex((m: any) => !m.show);
 
     if (idxHidden == -1) {
-      convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-factgpt-reads")[0] }))
+      convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-wikitest-reads")[0] }))
       return;
     }
 
-    convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-factgpt-reads")[0] + "-factgpt-reads" }))
+    convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-wikitest-reads")[0] + "-wikitest-reads" }))
 
     let item = history.value[idxHidden]
 

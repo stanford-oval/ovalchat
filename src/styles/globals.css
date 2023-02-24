@@ -121,7 +121,7 @@
 }
 
 .blue-link {
-    @apply text-factgpt-secondary hover:text-factgpt-secondary font-semibold;
+    @apply text-wikitest-secondary hover:text-wikitest-secondary font-semibold;
 }
 
 .container {

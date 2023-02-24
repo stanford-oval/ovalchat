@@ -18,7 +18,7 @@ export default function MobileNavItem({
   const [expanded, setExpanded] = useState(active); // for collapsable
   const toggle = () => setExpanded(!expanded);
 
-  const activeStyles = "bg-emerald-50 border-factgpt-primary text-gray-900";
+  const activeStyles = "bg-emerald-50 border-wikitest-primary text-gray-900";
   const defaultStyles =
     "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700";
   const navItemStyle = `trans-150 flex justify-items-stretch items-center pl-3 pr-4 py-2 border-l-4 text-base font-medium sm:pl-5 sm:pr-6 ${
@@ -68,7 +68,7 @@ export default function MobileNavItem({
 }
 
 function NestedItem({ href, name, active }: NestedItemProps) {
-  const activeStyles = "bg-emerald-50 border-factgpt-primary text-green-900";
+  const activeStyles = "bg-emerald-50 border-wikitest-primary text-green-900";
   const defaultStyles =
     "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700";
   const navItemStyle = `trans-300 block pl-8 pr-4 py-2 border-l-4 text-base font-medium sm:pr-6 ${

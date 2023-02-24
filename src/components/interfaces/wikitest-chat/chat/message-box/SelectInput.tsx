@@ -7,8 +7,8 @@ export default function SelectInput({ convoState, history, options, handleSubmit
             onClick={(e: any) => {
                 handleSubmit(e, convoState, history, o);
             }}
-            disabled={convoState.value.turn.includes("factgpt-reads")}
-            className="block focus:ring-0 py-3 px-4 sm:px-6 md:px-8 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-white border-factgpt-secondary-bright bg-factgpt-secondary-bright hover:bg-factgpt-secondary-light disabled:bg-slate-400 disabled:border-slate-400 hover:border-factgpt-secondary-light"
+            disabled={convoState.value.turn.includes("wikitest-reads")}
+            className="block focus:ring-0 py-3 px-4 sm:px-6 md:px-8 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-white border-wikitest-secondary-bright bg-wikitest-secondary-bright hover:bg-wikitest-secondary-light disabled:bg-slate-400 disabled:border-slate-400 hover:border-wikitest-secondary-light"
         >{o}
         </button>)}
     </div>)

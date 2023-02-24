@@ -4,7 +4,7 @@ export default async function getReply(
   convoState: any,
   setConvoState: any
 ) {
-  setConvoState({ turn: "factgpt-reply" });
+  setConvoState({ turn: "wikitest-reply" });
   let reply = message;
   await timeout(5000);
   return {

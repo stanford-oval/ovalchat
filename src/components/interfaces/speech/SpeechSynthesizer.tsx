@@ -4,7 +4,7 @@ import clsx from "clsx";
 import React from "react";
 import getSpeechSSMLStr from "../../../data/azure-speech/speech-ssml";
 import { getTokenOrRefresh } from "../../../scripts/utils/token_util";
-import { messageToSpeechParams } from "../../../scripts/factgpt-chat/audio_utils";
+import { messageToSpeechParams } from "../../../scripts/wikitest-chat/audio_utils";
 
 const sdk = require("microsoft-cognitiveservices-speech-sdk");
 
@@ -31,7 +31,7 @@ export default function SpeechSynthesizer({
         buttonColor = "text-gray-400"
         if (convoState.value.audio.messageId == id) {
             // THIS message's audio is playing
-            buttonColor = "text-factgpt-primary"
+            buttonColor = "text-wikitest-primary"
         }
     }
     if (convoState.value.turn.includes("microphone"))
@@ -45,7 +45,7 @@ export default function SpeechSynthesizer({
                 handler();
             }}
             className={clsx("inline-block", buttonColor)}
-            disabled={convoState.value.turn.includes("factgpt-reads") || convoState.value.turn.includes("microphone")}
+            disabled={convoState.value.turn.includes("wikitest-reads") || convoState.value.turn.includes("microphone")}
         >
             <FontAwesomeIcon
                 icon={faVolumeUp}
@@ -87,8 +87,8 @@ export async function textToSpeech(
 
     // Create the speech synthesizer.
     let synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
-    let originalTurn = convoState.value.turn.split("-factgpt-reads")[0]
-    if (originalTurn.startsWith("user")) setTurn(originalTurn + "-factgpt-reads")
+    let originalTurn = convoState.value.turn.split("-wikitest-reads")[0]
+    if (originalTurn.startsWith("user")) setTurn(originalTurn + "-wikitest-reads")
 
     const ssmlStr = getSpeechSSMLStr(text, preText, postText, style, styleDegree)
 
@@ -135,7 +135,7 @@ export async function textToSpeech(
         hidden = hidden.slice(1)
         // show the next one and play its audio
         if (hidden.length == 0) {
-            convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-factgpt-reads")[0], audio: { ...cs.audio, autoPlaying: false } }))
+            convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-wikitest-reads")[0], audio: { ...cs.audio, autoPlaying: false } }))
             return;
         }
         let item = hidden[0]

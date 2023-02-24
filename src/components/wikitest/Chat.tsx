@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Chatbox from "../interfaces/factgpt-chat/chat/Chatbox";
-import DesktopMenu from "../interfaces/factgpt-chat/menu/DesktopMenu";
+import Chatbox from "../interfaces/wikitest-chat/chat/Chatbox";
+import DesktopMenu from "../interfaces/wikitest-chat/menu/DesktopMenu";
 
 export default function Chat() {
   const [h, setH] = useState([]);

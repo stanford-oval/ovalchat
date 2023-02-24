@@ -2,7 +2,7 @@ import React from "react";
 import Preamble from "./Preamble";
 import Chat from "./Chat";
 
-export default function FactGpt() {
+export default function WikiTest() {
   return (
     <div>
       <Preamble />

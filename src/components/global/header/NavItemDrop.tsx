@@ -45,7 +45,7 @@ export default function NavItemDrop({
 }
 
 function DropdownItem({ href, name, active }: any) {
-  const activeStyles = "bg-gray-100 border-factgpt-primary text-gray-900";
+  const activeStyles = "bg-gray-100 border-wikitest-primary text-gray-900";
   const defaultStyles =
     "border-transparent w-full text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 pr-10";
   const navItemStyle = `trans-300 block px-4 py-2 text-lg border-l-4 text-base font-medium ${

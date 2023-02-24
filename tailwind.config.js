@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        factgpt: {
+        wikitest: {
           primary: {
             DEFAULT: "#047857",
             light: "#059669",

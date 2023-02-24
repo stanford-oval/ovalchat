@@ -1,5 +1,5 @@
 import React from "react";
-import Chat from '../factgpt/Chat';
+import Chat from '../wikitest/Chat';
 
 export default function Hero() {
   return (
@@ -35,11 +35,11 @@ export default function Hero() {
       <div className="container pt-12 sm:pt-16 md:pt-20">
         <div className="flex mx-auto items-center flex-col text-center gap-y-8 sm:gap-y-6 sm:gap-x-12 lg:gap-x-0 max-w-xl sm:max-w-2xl md:max-w-3xl">
           <div className="px-4 sm:px-0">
-            <p className="inline leading-tight bg-gradient-to-r from-factgpt-primary via-teal-900 to-factgpt-primary-dark bg-clip-text font-bold text-4xl xl:text-5xl tracking-tight text-transparent">
-              Stay informed with FactGPT.
+            <p className="inline leading-tight bg-gradient-to-r from-wikitest-primary via-teal-900 to-wikitest-primary-dark bg-clip-text font-bold text-4xl xl:text-5xl tracking-tight text-transparent">
+              Stay informed with WikiTest.
             </p>
             <p className="mt-3 text-xl xl:text-2xl tracking-tight text-gray-600">
-              FactGPT is a chatbot who provides factually accurate and up-to-date information about a wide range of topics.
+              WikiTest is an experimental chatbot aimed at improving the factuality of GPT-3 by retrieving data from Wikipedia.
             </p>
             <div className="mt-6 w-full">
               <h2 className="text-gray-500 text-lg">
