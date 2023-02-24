@@ -98,13 +98,6 @@
     background: #dbd9df;
 }
 
-@media only screen and (max-width: 768px) {
-    #askNooraHero {
-        border-bottom-left-radius: 50% 13%;
-        border-bottom-right-radius: 50% 13%;
-    }
-}
-
 .button {
     @apply rounded-full py-2 px-4 outline-none;
 }

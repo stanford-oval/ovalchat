@@ -33,7 +33,7 @@ export default function TextInput({ convoState, inputBoxRef, handleSubmit }: any
                     ? (convoState.value.turn.includes("microphone")
                         ? "Speak into your microphone..."
                         : "Send message...")
-                    : "Please wait for Noora..."
+                    : "Please wait for FactGPT..."
             }
             disabled={
                 !convoState.value.turn.startsWith("user-answer") ||
