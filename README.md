@@ -18,6 +18,5 @@ Create a `.env.local` file for the following environment variables.
 For the speech-to-text and text-to-speech functionality, create an Azure speech resource (and a corresponding resource group).
 
 ```
-OPENAI_API_KEY=[your API key]
 SPEECH_KEY=[your API key]
 SPEECH_REGION=[your API key]
