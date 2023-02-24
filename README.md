@@ -1,6 +1,6 @@
 # WikiTest
 
-WikiTest is a research project led by Prof. Monica Lam from Stanford University with the goal of improving the factuality of GPT-3 by retrieving data from Wikipedia. See [wiki_llm](https://github.com/stanford-oval/wiki_llm/).
+WikiTest is a research project led by Prof. Monica Lam from Stanford University with the goal of improving the factuality of GPT-3 by retrieving data from Wikipedia.
 
 This project built with Next.js, Tailwind CSS, OpenAI's GPT-3, and Microsoft Azure.
 
