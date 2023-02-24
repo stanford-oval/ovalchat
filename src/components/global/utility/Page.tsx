@@ -20,6 +20,7 @@ export default function Page({ fullTitle, title, desc, children }: PageProps) {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={desc} />
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
