@@ -5,8 +5,8 @@ import Hero from "../components/home/Hero";
 export default function index() {
   return (
     <Page
-      fullTitle="WikiTest"
-      desc="WikiTest is an experimental chatbot aimed at improving the factuality of GPT-3 by retrieving data from Wikipedia."
+      fullTitle="WikiChat"
+      desc="WikiChat is an experimental chatbot aimed at improving the factuality of GPT-3 by retrieving data from Wikipedia."
     >
       <Hero />
     </Page>

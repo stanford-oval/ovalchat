@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        wikitest: {
+        wikichat: {
           primary: {
             DEFAULT: "#047857",
             light: "#059669",

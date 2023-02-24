@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import handleSubmit from "../../../../../scripts/wikitest-chat/handle-submit";
+import handleSubmit from "../../../../../scripts/chatbot/handle-submit";
 import SelectInput from "./SelectInput";
 import TextInput from "./TextInput";
 

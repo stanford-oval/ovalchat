@@ -9,7 +9,7 @@ export default function Custom404() {
         <div className="bg-white min-h-full px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
           <div className="max-w-max mx-auto">
             <main className="sm:flex">
-              <p className="text-4xl font-extrabold text-wikitest-primary sm:text-5xl">
+              <p className="text-4xl font-extrabold text-wikichat-primary sm:text-5xl">
                 404
               </p>
               <div className="sm:ml-6">
@@ -23,7 +23,7 @@ export default function Custom404() {
                 </div>
                 <div className="mt-5 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6">
                   <Link href="/">
-                    <button className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-wikitest-primary hover:bg-wikitest-primary-dark focus:outline-none">
+                    <button className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-wikichat-primary hover:bg-wikichat-primary-dark focus:outline-none">
                       Go Back Home
                     </button>
                   </Link>

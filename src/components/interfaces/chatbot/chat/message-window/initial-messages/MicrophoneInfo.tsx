@@ -20,7 +20,7 @@ export default function MicrophoneInfo() {
             {
                 target: ".demo-audio",
                 content:
-                    "Tap this button to hear WikiTest speak!",
+                    "Tap this button to hear WikiChat speak!",
                 disableBeacon: true,
             },
         ],
@@ -68,20 +68,20 @@ export default function MicrophoneInfo() {
                 onClick={() => {
                     setJoyrideState((js: any) => ({ ...js, run: true }));
                 }}
-                className="w-4 h-4 text-wikitest-primary inline-block mb-1 px-0.5 cursor-pointer"
+                className="w-4 h-4 text-wikichat-primary inline-block mb-1 px-0.5 cursor-pointer"
             />{" "}
             button to start speaking. When you&apos;re done talking, click it again. Click the <FontAwesomeIcon
                 icon={faVolumeUp}
                 onClick={() => {
                     setJoyrideState((js: any) => ({ ...js, run: true, stepIndex: 1 }));
                 }}
-                className="w-5 h-5 text-wikitest-primary inline-block mb-1 px-0.5 cursor-pointer"
+                className="w-5 h-5 text-wikichat-primary inline-block mb-1 px-0.5 cursor-pointer"
             /> button to hear my replies.
             <button
                 onClick={() => {
                     setJoyrideState((js: any) => ({ ...js, run: true }));
                 }}
-                className="button text-xs bg-wikitest-secondary-bright hover:bg-wikitest-secondary-light text-white block mt-3"
+                className="button text-xs bg-wikichat-secondary-bright hover:bg-wikichat-secondary-light text-white block mt-3"
             >
                 <span>Show me where</span>
                 <InformationCircleIcon className="w-4 h-4 inline-block ml-1 -mt-0.5" />

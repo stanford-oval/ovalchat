@@ -23,7 +23,7 @@ export default function DesktopMenu({ convoState }: any) {
       className="w-full bg-white border-2 border-gray-400 rounded-md h-fit md:min-h-full overflow-y-auto pretty-scroll"
     >
       <div className="border-b-2 border-gray-400 py-4">
-        <div className="text-2xl text-center font-bold text-wikitest-secondary">
+        <div className="text-2xl text-center font-bold text-wikichat-secondary">
           Menu
         </div>
 
@@ -43,7 +43,7 @@ export default function DesktopMenu({ convoState }: any) {
               }
             }}
             className={clsx(
-              convoState.value.audio.shouldAutoPlay ? 'bg-wikitest-primary' : 'bg-gray-200',
+              convoState.value.audio.shouldAutoPlay ? 'bg-wikichat-primary' : 'bg-gray-200',
               'relative inline-flex flex-shrink-0 h-5 w-9 border-2 border-transparent mx-1.5 -bottom-0.5 rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0'
             )}
           >
@@ -64,7 +64,7 @@ export default function DesktopMenu({ convoState }: any) {
           <Disclosure key={section.title} defaultOpen={!section.defaultHide}>
             {({ open }) => (
               <div className="mx-auto w-full rounded-2xl bg-white py-1">
-                <Disclosure.Button className="flex w-full justify-between rounded-lg bg-gray-200 px-4 py-2 text-left text-sm font-medium text-wikitest-secondary hover:bg-gray-300 focus:outline-none focus-visible:ring focus-visible:ring-opacity-75">
+                <Disclosure.Button className="flex w-full justify-between rounded-lg bg-gray-200 px-4 py-2 text-left text-sm font-medium text-wikichat-secondary hover:bg-gray-300 focus:outline-none focus-visible:ring focus-visible:ring-opacity-75">
                   <span>{section.title}</span>
                   <ChevronUpIcon
                     className={`${open ? "rotate-180 transform" : ""

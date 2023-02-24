@@ -121,7 +121,7 @@
 }
 
 .blue-link {
-    @apply text-wikitest-secondary hover:text-wikitest-secondary font-semibold;
+    @apply text-wikichat-secondary hover:text-wikichat-secondary font-semibold;
 }
 
 .container {

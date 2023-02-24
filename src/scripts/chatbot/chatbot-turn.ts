@@ -1,6 +1,6 @@
 import getReply from "./get-reply";
 
-export default async function factGptsTurn(
+export default async function chatbotsTurn(
     message: string,
     convoState: any,
     history: any,

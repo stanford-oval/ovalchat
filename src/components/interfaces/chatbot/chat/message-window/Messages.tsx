@@ -14,7 +14,7 @@ export default function Messages({ history, convoState }: any) {
       id: -1,
       show: true,
       fromChatbot: true,
-      text: "Hi! I am WikiTest.",
+      text: "Hi! I am WikiChat.",
     };
     history.value[1] = {
       id: -3,

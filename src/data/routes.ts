@@ -4,8 +4,8 @@ const routes = [
     name: "Home",
   },
   {
-    name: "Improve WikiTest",
-    href: "/improve-wikitest",
+    name: "Improve WikiChat",
+    href: "/improve-wikichat",
   },
 ];
 

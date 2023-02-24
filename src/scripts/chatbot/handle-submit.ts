@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import wikitestsTurn from "./chatbot-turn";
+import wikichatsTurn from "./chatbot-turn";
 
 export default async function handleSubmit(e: any, convoState: any, history: any, message?: string) {
     e.preventDefault();
@@ -22,5 +22,5 @@ export default async function handleSubmit(e: any, convoState: any, history: any
     convoState.setValue((cs: any) => ({ ...cs, draft: "" }));
 
     
-    await wikitestsTurn(message, convoState, history);
+    await wikichatsTurn(message, convoState, history);
 };

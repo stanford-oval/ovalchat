@@ -1,7 +1,7 @@
 import React from "react"
 import { clsx } from "clsx";
 import SpeechSynthesizer from "../../../speech/SpeechSynthesizer";
-import { messageToSpeechParams } from '../../../../../scripts/wikitest-chat/audio_utils';
+import { messageToSpeechParams } from '../../../../../scripts/chatbot/audio_utils';
 
 export default function MessageWrapper({ message, audioRef, convoState, children }: any) {
     return <div
@@ -9,7 +9,7 @@ export default function MessageWrapper({ message, audioRef, convoState, children
             "rounded-3xl w-fit px-4 py-3 mt-1.5 max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl break-words",
             message.fromChatbot
                 ? "bg-gray-200 mr-auto"
-                : "bg-wikitest-primary text-white ml-auto"
+                : "bg-wikichat-primary text-white ml-auto"
         )}
     >
         <div className="flex flex-row items-center gap-x-2">

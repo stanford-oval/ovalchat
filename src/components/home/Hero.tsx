@@ -1,5 +1,5 @@
 import React from "react";
-import Chat from '../wikitest/Chat';
+import Chat from '../wikichat/Chat';
 
 export default function Hero() {
   return (
@@ -35,11 +35,11 @@ export default function Hero() {
       <div className="container pt-12 sm:pt-16 md:pt-18 2xl:pt-20">
         <div className="flex mx-auto items-center flex-col text-center gap-y-8 sm:gap-y-6 sm:gap-x-12 lg:gap-x-0 max-w-xl sm:max-w-2xl md:max-w-3xl">
           <div className="px-4 sm:px-0">
-            <p className="inline leading-tight bg-gradient-to-r from-wikitest-primary via-teal-900 to-wikitest-primary-dark bg-clip-text font-bold text-4xl xl:text-5xl tracking-tight text-transparent">
-              Stay informed with WikiTest.
+            <p className="inline leading-tight bg-gradient-to-r from-wikichat-primary via-teal-900 to-wikichat-primary-dark bg-clip-text font-bold text-4xl xl:text-5xl tracking-tight text-transparent">
+              Stay informed with WikiChat.
             </p>
             <p className="mt-4 text-xl xl:text-2xl tracking-tight text-gray-600">
-              WikiTest is an experimental chatbot aimed at improving the factuality of GPT-3 by retrieving data from Wikipedia.
+              WikiChat is an experimental chatbot aimed at improving the factuality of GPT-3 by retrieving data from Wikipedia.
             </p>
             <div className="mt-4 w-full">
               <h2 className="text-gray-500 text-lg">
