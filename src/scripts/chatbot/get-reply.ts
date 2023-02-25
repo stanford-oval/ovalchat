@@ -9,13 +9,27 @@ export default async function getReply(
   // response loading
   convoState.setValue((cs: any) => ({ ...cs, turn: command }));
 
-  let output = await getAiOutput(convoState, message);
+  let output = {}
+  try {
+    output = await getAiOutput(convoState, message);
+  } catch (error) {
+    console.log(error);
+    convoState.setValue((cs: any) => ({
+      ...cs,
+      turn: "user-answer", 
+    }));
+    return [
+      {
+        id: uuidv4(),
+        fromChatbot: true,
+        text: "Oops! Something went wrong. Please refresh the page and try again.",
+      },
+    ];
+  }
 
   let aiResp1 = output["resp1"];
   let aiResp2 = output["resp2"];
   let sessionName = output["session_name"];
-  let dialogState1 = output["dialog_state1"]
-  let dialogState2 = output["dialog_state2"]
 
   let replies = [
     {
@@ -30,7 +44,7 @@ export default async function getReply(
     responseInfo: {
       ...cs.responseInfo,
       responses: [aiResp1, aiResp2],
-      dialogStates: [dialogState1, dialogState2],
+      dialogStates: [output["dialog_state1"], output["dialog_state2"]],
       sessionName: cs.responseInfo.sessionName ?? sessionName,
       rating: "resp2" // update
     },
