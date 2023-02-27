@@ -66,7 +66,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="py-4 sm:py-6 md:py-7 2xl:py-8">
-          <Chat />
+          <Chat autoPickMode={false} />
         </div>
       </div>
     </div>

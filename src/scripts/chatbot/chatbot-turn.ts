@@ -5,6 +5,6 @@ export default async function chatbotsTurn(
     convoState: any,
     history: any,
 ) {
-    const replies = await getReply(message, convoState, "rate-reply");
+    const replies = await getReply(message, convoState, "get-reply");
     history.setValue((h: any) => [...h, ...replies]);
 }

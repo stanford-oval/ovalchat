@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Chatbox from "../interfaces/chatbot/chat/Chatbox";
 import DesktopMenu from "../interfaces/chatbot/menu/DesktopMenu";
 
-export default function Chat() {
+export default function Chat({ autoPickMode }: any) {
   const [h, setH] = useState([]);
 
   const [cs, setCs] = useState({
@@ -19,7 +19,8 @@ export default function Chat() {
       dialog_states: [],
       sessionName: null,
       systems: ["gpt3_correction", "gpt3_repeat_generation"],
-    }
+    },
+    autoPickMode: autoPickMode,
   });
 
   const history = {

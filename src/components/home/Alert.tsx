@@ -30,8 +30,8 @@ export default function Alert() {
                             y2="96.115"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop stopColor="#a3f0c1" />
-                            <stop offset={1} stopColor="#ff80b5" />
+                            <stop stopColor="#5cf77d" />
+                            <stop offset={1} stopColor="#251d2e" />
                         </linearGradient>
                     </defs>
                 </svg>
@@ -48,13 +48,13 @@ export default function Alert() {
                         <svg viewBox="0 0 2 2" className="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true">
                             <circle cx={1} cy={1} r={1} />
                         </svg>
-                        Contribute by providing feedback.
+                        Replies may be inaccurate.
                     </p>
                     <Link
                         href="/improve-wikichat"
                         className="mx-auto lg:mx-0 flex-none rounded-full bg-wikichat-secondary py-1 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-wikichat-secondary-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
                     >
-                        Improve WikiChat <span aria-hidden="true">&rarr;</span>
+                        Contribute <span aria-hidden="true">&rarr;</span>
                     </Link>
                 </div>
                 <div className="flex flex-1 justify-end">

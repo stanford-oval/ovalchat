@@ -7,7 +7,7 @@ export default function WikiChat() {
     <div>
       <Preamble />
       <div className="bg-gray-100 py-4">
-        <Chat />
+        <Chat autoPickMode={true} />
       </div>
     </div>
   );
