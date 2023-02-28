@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import Message from "../message-window/Message";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 export default function EvalInput({ convoState, history, audioRef, handleSubmit }: any) {
     const [rating, setRating] = useState(3);
+    const messageText = convoState.value.responseInfo.responses[parseInt(convoState.value.turn.substr(convoState.value.turn.length - 1)) - 1]
 
-    return (<div className="text-center">
+    return (<div className="text-center py-1">
         <div className="font-bold text-lg">How natural is this response?</div>
         <ul className="mb-2">
             <Message message={
@@ -12,11 +15,11 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
                     show: true,
                     fromChatbot: true,
                     center: true,
-                    text: convoState.value.responseInfo.responses[parseInt(convoState.value.turn.substr(convoState.value.turn.length - 1)) - 1],
+                    text: messageText,
                 }
             } audioRef={audioRef} convoState={convoState} />
         </ul>
-        <div className="flex gap-x-2 md:gap-x-4 lg:gap-x-8 xl:gap-x-12 justify-center flex-wrap md:flex-nowrap gap-y-2">
+        <div className="flex w-full px-4 gap-x-4 md:gap-x-6 lg:gap-x-8 justify-center flex-wrap md:flex-nowrap gap-y-2">
             <Slider parameter={{
                 name: "Rating",
                 min: 1,
@@ -31,8 +34,11 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
                     handleSubmit(e, convoState, history, rating);
                 }}
                 disabled={convoState.value.turn.includes("wikichat-reads")}
-                className="block focus:ring-0 py-1 px-2 sm:px-3 md:px-4 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-white border-wikichat-secondary-bright bg-wikichat-secondary-bright hover:bg-wikichat-secondary-light disabled:bg-slate-400 disabled:border-slate-400 hover:border-wikichat-secondary-light"
-            >Next
+                className="block focus:ring-0 py-1 px-3 md:px-4 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-white border-wikichat-secondary-bright bg-wikichat-secondary-bright hover:bg-wikichat-secondary-light disabled:bg-slate-400 disabled:border-slate-400 hover:border-wikichat-secondary-light"
+            ><div className="flex flex-row">
+                <b>{rating}</b>
+                    <FontAwesomeIcon icon={faCheck} className="h-4 w-4 ml-1.5 my-auto" />
+            </div>
             </button>
         </div>
     </div>)
@@ -40,15 +46,7 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
 
 function Slider({ parameter, convoState }: any) {
     return (
-        <div className="my-auto">
-            {/* <div className="flex items-stretch mt-1">
-                <label htmlFor={parameter.propertyName} className="font-bold">
-                    {parameter.name}:
-                </label>
-                <div className="ml-auto">
-                    {convoState.value.model[parameter.propertyName]}
-                </div>
-            </div> */}
+        <div className="my-auto flex-grow max-w-sm">
             {/* {parameter.description && (
                 <div className="text-gray-500 text-xs">({parameter.description})</div>
             )} */}
@@ -65,6 +63,14 @@ function Slider({ parameter, convoState }: any) {
                 step="1"
                 className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-gray-300 primary-slider-thumb"
             />
+            <div className="flex items-stretch mt-1 text-gray-600 text-sm">
+                <label className="">
+                    unnatural (1)
+                </label>
+                <div className="ml-auto">
+                    humanlike (5)
+                </div>
+            </div>
         </div>
     );
 }
