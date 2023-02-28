@@ -49,20 +49,17 @@ function ResponseInfo({ ri }: any) {
 
 function Response({ response, dialogState, status }: any) {
   let icon = faQuestion;
-  let bgColor = "bg-gray-200"
-  let color = "text-gray-600"
+  let color = "gray"
   if (status == "selected") {
     icon = faCheck;
-    bgColor = "bg-green-200"
-    color = "text-green-600"
+    color = "green"
   } else if (status == "rejected") {
     icon = faXmark;
-    bgColor = "bg-red-200"
-    color = "text-red-600"
+    color = "red"
   }
   return (
-    <div className={clsx("p-2 rounded flex flex-row space-x-2 align-middle", bgColor)}>
-      <FontAwesomeIcon icon={icon} className={clsx("h-5 w-5 mx-1.5 my-auto", color)} />
+    <div className={clsx("p-2 rounded flex flex-row space-x-2 align-middle", `bg-${color}-200`)}>
+      <FontAwesomeIcon icon={icon} className={clsx("h-5 w-5 mx-1.5 my-auto", `text-${color}-600`)} />
       <div className="flex flex-col text-xs">
         <span className="font-bold">{response.system} output: </span>
         {response.response}
