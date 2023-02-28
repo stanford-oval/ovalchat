@@ -57,9 +57,9 @@
     overflow: auto !important;
 }
 
-.gray-slider-thumb::-webkit-slider-thumb {
+.primary-slider-thumb::-webkit-slider-thumb {
     -webkit-appearance: none;
-    background: #bbb;
+    background: #047857;
     width: 1rem;
     height: 1rem;
     border-radius: 100%;
@@ -67,12 +67,12 @@
     box-shadow: none;
 }
 
-.gray-slider-thumb::-webkit-slider-thumb:hover {
-    background: #aaa;
+.primary-slider-thumb::-webkit-slider-thumb:hover {
+    background: #058d62;
     box-shadow: none;
 }
 
-.gray-slider-thumb:disabled::-webkit-slider-thumb {
+.primary-slider-thumb:disabled::-webkit-slider-thumb {
     background: #d1d5db;
 }
 
