@@ -92,6 +92,7 @@ export default function Chatbox({
       <MessageBox
         history={history}
         convoState={convoState}
+        audioRef={audioRef}
       />
     </div>
   );
