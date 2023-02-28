@@ -31,7 +31,7 @@ export default async function getReply(
   let aiResp2 = output["resp2"];
   let sessionName = output["session_name"];
 
-  if (command === "get-reply-force-second") {
+  if (command.startsWith("get-reply-force-second")) {
     let replies = [
       {
         id: uuidv4(),
@@ -49,12 +49,12 @@ export default async function getReply(
         sessionName: cs.responseInfo.sessionName ?? sessionName,
         rating: "resp2"
       },
-      turn: "user-answer", // update
+      turn: "user-answer",
     }));
 
     return replies;
   }
-  else if (command === "get-reply") {
+  else if (command.startsWith("get-reply")) {
     convoState.setValue((cs: any) => ({
       ...cs,
       responseInfo: {
