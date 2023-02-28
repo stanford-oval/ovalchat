@@ -33,6 +33,21 @@ export default async function handleSubmit(e: any, convoState: any, history: any
             }
         }))
     } else if (convoState.value.turn.startsWith("user-select")) {
-        console.log(convoState.value.responseInfo)
+        history.setValue((h: any) => [
+            ...h,
+            {
+                id: uuidv4(),
+                fromChatbot: true,
+                text: convoState.value.responseInfo.responses[parseInt(message)]
+            },
+        ])
+        convoState.setValue((cs: any) => ({
+            ...cs,
+            turn: "user-answer",
+            responseInfo: {
+                ...cs.responseInfo,
+                rating: "resp" + (message + 1)
+            }
+        }))
     }
 };

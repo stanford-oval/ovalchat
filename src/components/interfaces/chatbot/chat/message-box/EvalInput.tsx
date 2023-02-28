@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Message from "../message-window/Message";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
@@ -46,6 +46,9 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
 }
 
 function Slider({ parameter, convoState }: any) {
+    useEffect(() => {
+        parameter.setValue(3)
+    }, [])
     return (
         <div className="my-auto flex-grow max-w-sm">
             {/* {parameter.description && (

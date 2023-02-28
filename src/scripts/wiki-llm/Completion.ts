@@ -14,8 +14,8 @@ export default async function Completion(parameters: any) {
     // return reply;
 
     return {
-        "resp1": "First response",
-        "resp2": "Second response",
+        "resp1": "This is an example FIRST response from the AI model.",
+        "resp2": "This is an example SECOND response from the AI model.",
         "session_name": "Session name",
         "dialog_state1": "Dialog state 1",
         "dialog_state2": "Dialog state 2"

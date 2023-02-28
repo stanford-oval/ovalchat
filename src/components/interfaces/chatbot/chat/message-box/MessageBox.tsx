@@ -29,7 +29,7 @@ export default function MessageBox({ history, convoState, audioRef }: any) {
       {convoState.value.turn.startsWith("user-eval") ?
         <EvalInput convoState={convoState} history={history} handleSubmit={handleSubmit} audioRef={audioRef} />
         : (convoState.value.turn.startsWith("user-select") ?
-          <SelectInput convoState={convoState} history={history} handleSubmit={handleSubmit} audioRef={audioRef} /> :
+          <SelectInput convoState={convoState} history={history} handleSubmit={handleSubmit} /> :
           <TextInput convoState={convoState} inputBoxRef={inputBoxRef} handleSubmit={(e: any) => { handleSubmit(e, convoState, history) }} />)}
     </form>
   );
