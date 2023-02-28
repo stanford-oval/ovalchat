@@ -39,7 +39,9 @@ function ResponseInfo({ ri }: any) {
             <Response key={index}
               response={{ system: ri.systems[index], response: response }}
               dialogState={ri.dialogStates[index]}
-              status={status} />
+              status={status}
+              naturalnessRating={ri.naturalnessRatings.length > index ? ri.naturalnessRatings[index] : "?"}
+            />
           )
         })}
       </div>
@@ -47,7 +49,7 @@ function ResponseInfo({ ri }: any) {
   );
 }
 
-function Response({ response, dialogState, status }: any) {
+function Response({ response, dialogState, status, naturalnessRating }: any) {
   let icon = faQuestion;
   let color = "gray"
   if (status == "selected") {
@@ -59,7 +61,10 @@ function Response({ response, dialogState, status }: any) {
   }
   return (
     <div className={clsx("p-2 rounded flex flex-row space-x-2 align-middle", `bg-${color}-200`)}>
-      <FontAwesomeIcon icon={icon} className={clsx("h-5 w-5 mx-1.5 my-auto", `text-${color}-600`)} />
+      <div className={clsx("flex flex-col justify-center align-middle text-center", `text-${color}-600`)}>
+        <FontAwesomeIcon icon={icon} className={clsx("h-5 w-5 mx-1.5 my-1", `text-${color}-600`)} />
+        <span className="text-xs"><b>{naturalnessRating}</b>/5</span>
+      </div>
       <div className="flex flex-col text-xs">
         <span className="font-bold">{response.system} output: </span>
         {response.response}
