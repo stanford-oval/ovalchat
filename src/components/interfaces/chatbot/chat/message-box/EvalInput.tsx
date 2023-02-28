@@ -10,7 +10,7 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
                     show: true,
                     fromChatbot: true,
                     center: true,
-                    text: convoState.value.responseInfo.responses[0],
+                    text: convoState.value.responseInfo.responses[parseInt(convoState.value.turn.substr(convoState.value.turn.length - 1)) - 1],
                 }
             } audioRef={audioRef} convoState={convoState} />
         </ul>
