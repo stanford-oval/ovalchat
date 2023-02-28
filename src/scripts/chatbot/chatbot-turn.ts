@@ -5,6 +5,13 @@ export default async function chatbotsTurn(
     convoState: any,
     history: any,
 ) {
-    const replies = await getReply(message, convoState, "get-reply");
-    history.setValue((h: any) => [...h, ...replies]);
+    let replies = []
+    if (convoState.value.autoPickMode)
+        replies = await getReply(message, convoState, "get-reply-force-second");
+    else {
+        replies = await getReply(message, convoState, "get-reply");
+    }
+    
+    if (replies)
+        history.setValue((h: any) => [...h, ...replies]);
 }

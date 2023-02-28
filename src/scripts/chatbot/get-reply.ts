@@ -16,7 +16,7 @@ export default async function getReply(
     console.log(error);
     convoState.setValue((cs: any) => ({
       ...cs,
-      turn: "user-answer", 
+      turn: "user-answer",
     }));
     return [
       {
@@ -31,27 +31,41 @@ export default async function getReply(
   let aiResp2 = output["resp2"];
   let sessionName = output["session_name"];
 
-  let replies = [
-    {
-      id: uuidv4(),
-      fromChatbot: true,
-      text: aiResp2,
-    },
-  ];
+  if (command === "get-reply-force-second") {
+    let replies = [
+      {
+        id: uuidv4(),
+        fromChatbot: true,
+        text: aiResp2,
+      },
+    ];
 
-  convoState.setValue((cs: any) => ({
-    ...cs,
-    responseInfo: {
-      ...cs.responseInfo,
-      responses: [aiResp1, aiResp2],
-      dialogStates: [output["dialog_state1"], output["dialog_state2"]],
-      sessionName: cs.responseInfo.sessionName ?? sessionName,
-      rating: "resp2" // update
-    },
-    turn: "user-answer", // update
-  }));
+    convoState.setValue((cs: any) => ({
+      ...cs,
+      responseInfo: {
+        ...cs.responseInfo,
+        responses: [aiResp1, aiResp2],
+        dialogStates: [output["dialog_state1"], output["dialog_state2"]],
+        sessionName: cs.responseInfo.sessionName ?? sessionName,
+        rating: "resp2"
+      },
+      turn: "user-answer", // update
+    }));
 
-  return replies;
+    return replies;
+  }
+  else if (command === "get-reply") {
+    convoState.setValue((cs: any) => ({
+      ...cs,
+      responseInfo: {
+        ...cs.responseInfo,
+        responses: [aiResp1, aiResp2],
+        dialogStates: [output["dialog_state1"], output["dialog_state2"]],
+        sessionName: cs.responseInfo.sessionName ?? sessionName,
+      },
+      turn: "user-eval1",
+    }));
+  }
 }
 
 async function getAiOutput(convoState, message) {
