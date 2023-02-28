@@ -8,7 +8,7 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
     const responseIdx = parseInt(convoState.value.turn.substr(convoState.value.turn.length - 1)) - 1
     const messageText = convoState.value.responseInfo.responses[responseIdx]
 
-    return (<div className="text-center py-1">
+    return (<div className="text-center py-1 px-3">
         <div className="font-bold text-lg">How natural is this <span className="text-wikichat-primary">{responseIdx == 0 ? "first" : "second"}</span> reply?</div>
         <ul className="mb-2">
             <Message message={
