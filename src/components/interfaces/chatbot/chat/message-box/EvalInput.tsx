@@ -5,10 +5,11 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 export default function EvalInput({ convoState, history, audioRef, handleSubmit }: any) {
     const [rating, setRating] = useState(3);
-    const messageText = convoState.value.responseInfo.responses[parseInt(convoState.value.turn.substr(convoState.value.turn.length - 1)) - 1]
+    const responseIdx = parseInt(convoState.value.turn.substr(convoState.value.turn.length - 1)) - 1
+    const messageText = convoState.value.responseInfo.responses[responseIdx]
 
     return (<div className="text-center py-1">
-        <div className="font-bold text-lg">How natural is this response?</div>
+        <div className="font-bold text-lg">How natural is this <span className="text-wikichat-primary">{responseIdx == 0 ? "first" : "second"}</span> reply?</div>
         <ul className="mb-2">
             <Message message={
                 {
@@ -36,9 +37,9 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
                 disabled={convoState.value.turn.includes("wikichat-reads")}
                 className="block focus:ring-0 py-1 px-3 md:px-4 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-white border-wikichat-secondary-bright bg-wikichat-secondary-bright hover:bg-wikichat-secondary-light disabled:bg-slate-400 disabled:border-slate-400 hover:border-wikichat-secondary-light"
             ><div className="flex flex-row">
-                <b>{rating}</b>
+                    <b>{rating}</b>
                     <FontAwesomeIcon icon={faCheck} className="h-4 w-4 ml-1.5 my-auto" />
-            </div>
+                </div>
             </button>
         </div>
     </div>)

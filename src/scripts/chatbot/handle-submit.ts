@@ -10,17 +10,19 @@ export default async function handleSubmit(e: any, convoState: any, history: any
         convoState.value.audio.player.close()
     }
 
-    message = message ? message : convoState.value.draft.slice();
-    if (!message) message = ""
+    if (convoState.value.turn.startsWith("user-answer")) {
+        message = message ? message : convoState.value.draft.slice();
+        if (!message) message = ""
 
-    let userMsgId = uuidv4();
+        let userMsgId = uuidv4();
 
-    history.setValue((h: any) => [
-        ...h,
-        { id: userMsgId, fromChatbot: false, text: message, show: true },
-    ]);
-    convoState.setValue((cs: any) => ({ ...cs, draft: "" }));
-
-
-    await chatbotsTurn(message, convoState, history);
+        history.setValue((h: any) => [
+            ...h,
+            { id: userMsgId, fromChatbot: false, text: message, show: true },
+        ]);
+        convoState.setValue((cs: any) => ({ ...cs, draft: "" }));
+        await chatbotsTurn(message, convoState, history);
+    } else if (convoState.value.turn.startsWith("user-eval1")) {
+        convoState.setValue((cs: any) => ({ ...cs, turn: "user-eval2" }));
+    }
 };
