@@ -19,7 +19,7 @@ export function userSelect(convoState, history, idx: number, ri?: any) {
         ...cs,
         turn: "user-answer",
         responseInfo: {
-            ...cs.ri,
+            ...cs.responseInfo,
             rating: "resp" + (idx + 1)
         }
     }))
