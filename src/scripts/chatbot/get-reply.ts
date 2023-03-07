@@ -27,38 +27,13 @@ export default async function getReply(
     ];
   }
 
-  let aiResp1 = output[0]["agent_utterance"];
-  let aiResp2 = output[1]["agent_utterance"];
 
-  if (command.startsWith("get-reply-force-second")) {
-    // TODO: force second on /user-rating
-    let replies = [
-      {
-        id: uuidv4(),
-        fromChatbot: true,
-        text: aiResp2,
-      },
-    ];
-
+  if (command.startsWith("get-reply")) {
     convoState.setValue((cs: any) => ({
       ...cs,
       responseInfo: {
         ...cs.responseInfo,
-        responses: [aiResp1, aiResp2],
-        logObjects: [output[0]["log_object"], output[1]["log_object"]],
-        rating: "resp2"
-      },
-      turn: "user-answer",
-    }));
-
-    return replies;
-  }
-  else if (command.startsWith("get-reply")) {
-    convoState.setValue((cs: any) => ({
-      ...cs,
-      responseInfo: {
-        ...cs.responseInfo,
-        responses: [aiResp1, aiResp2],
+        responses: [output[0]["agent_utterance"], output[1]["agent_utterance"]],
         logObjects: [output["log_object1"], output["log_object2"]],
         experimentId: cs.responseInfo.experimentId,
       },
