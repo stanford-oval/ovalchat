@@ -55,7 +55,7 @@ export default function Chat({ autoPickMode }: any) {
     value: cs,
     setValue: setCs,
   };
-
+  
   return (
     <div id="homeChat">
       <div className="py-4 container flex items-stretch flex-col md:flex-row justify-center md:space-x-2 space-y-2 md:space-y-0">

@@ -6,9 +6,8 @@ export default async function chatbotsTurn(
     convoState: any,
     history: any,
 ) {
-    let replies = []
-    replies = await getReply(message, convoState, "get-reply");
+    const responseInfo = await getReply(message, convoState, "get-reply");
 
     if (convoState.value.autoPickMode)
-        userSelect(convoState, history, 1, replies)
+        userSelect(convoState, history, 1, responseInfo)
 }

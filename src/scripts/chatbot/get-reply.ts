@@ -27,16 +27,24 @@ export default async function getReply(
     ];
   }
 
+  const newInfo = {
+    responses: [output[0]["agent_utterance"], output[1]["agent_utterance"]],
+    logObjects: [output["log_object1"], output["log_object2"]],
+  }
+
   convoState.setValue((cs: any) => ({
     ...cs,
+    turn: "user-eval1",
     responseInfo: {
       ...cs.responseInfo,
-      responses: [output[0]["agent_utterance"], output[1]["agent_utterance"]],
-      logObjects: [output["log_object1"], output["log_object2"]],
-      experimentId: cs.responseInfo.experimentId,
-    },
-    turn: "user-eval1",
+      ...newInfo
+    }
   }));
+
+  return {
+    ...convoState.value.responseInfo,
+    ...newInfo
+  }
 }
 
 async function getAiOutput(convoState, message) {
