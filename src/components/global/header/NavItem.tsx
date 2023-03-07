@@ -36,7 +36,7 @@ export default function NavItem({
     );
 
   return (
-    <Link href={href}>
+    <Link href={href} onClick={() => { if (active) window.location.reload() }}>
       <span className={navItemStyle}>{name}</span>
     </Link>
   );
