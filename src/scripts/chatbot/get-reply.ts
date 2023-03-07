@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import Completion from "../wiki-llm/ChatRequest";
+import ChatRequest from "../wiki-llm/ChatRequest";
 
 export default async function getReply(
   message: string,
@@ -64,7 +64,7 @@ async function getAiOutput(convoState, message) {
 
   let replies = [];
   for (let i = 0; i < 2; i++) {
-    let reply = await Completion(ri.experimentId, ri.currentDialogId, ri.turnId, message, ri.systems[i]);
+    let reply = await ChatRequest(ri.experimentId, ri.currentDialogId, ri.turnId, message, ri.systems[i]);
     replies.push(reply);
   }
 

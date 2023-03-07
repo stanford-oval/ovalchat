@@ -1,5 +1,6 @@
 import chatbotsTurn from "./chatbot-turn";
 import { userSelect } from './actions';
+import RatingRequest from "../wiki-llm/RatingRequest";
 
 export default async function handleSubmit(e: any, convoState: any, history: any, message?: string) {
     if (e) e.preventDefault();
@@ -21,13 +22,19 @@ export default async function handleSubmit(e: any, convoState: any, history: any
         convoState.setValue((cs: any) => ({ ...cs, draft: "" }));
         await chatbotsTurn(message, convoState, history);
     } else if (convoState.value.turn.startsWith("user-eval")) {
+        // TODO: refactor and abstract away to rateReply (put in actions.ts)
         const responseIdx = parseInt(convoState.value.turn.substr(convoState.value.turn.length - 1)) - 1
+        const rating = parseInt(message)
+        
+        const ri = convoState.value.responseInfo
+        RatingRequest(ri.experimentId, ri.currentDialogId, ri.turnId, ri.systems[responseIdx], rating)
+
         convoState.setValue((cs: any) => ({
             ...cs,
             turn: responseIdx == 1 ? "user-select" : "user-eval2",
             responseInfo: {
                 ...cs.responseInfo,
-                naturalnessRatings: cs.responseInfo.naturalnessRatings.concat([message]),
+                naturalnessRatings: cs.responseInfo.naturalnessRatings.concat([rating]),
             }
         }))
     } else if (convoState.value.turn.startsWith("user-select")) {
