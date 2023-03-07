@@ -21,7 +21,7 @@ export default function Chat({ autoPickMode }: any) {
     },
     responseInfo: {
       responses: [],
-      log_objects: [],
+      logObjects: [],
       naturalnessRatings: [],
       experimentId: null,
       currentDialogId: uuidv4(),

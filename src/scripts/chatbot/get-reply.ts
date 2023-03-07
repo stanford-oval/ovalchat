@@ -29,7 +29,7 @@ export default async function getReply(
 
   const newInfo = {
     responses: [output[0]["agent_utterance"], output[1]["agent_utterance"]],
-    logObjects: [output["log_object1"], output["log_object2"]],
+    logObjects: [output[0]["log_object"], output[1]["log_object"]],
   }
 
   convoState.setValue((cs: any) => ({

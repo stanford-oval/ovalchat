@@ -73,7 +73,7 @@ function Response({ response, logObject, status, naturalnessRating }: any) {
       <div className="flex flex-col text-xs">
         <span className="font-bold">{response.system} output: </span>
         {response.response}
-        <Disclosure defaultOpen={false}>
+        {logObject && <Disclosure defaultOpen={false}>
           {({ open }) => (
             <div className="w-full mt-2">
               <Disclosure.Button className="flex w-full rounded-lg text-left font-medium text-gray-600 focus:outline-none">
@@ -90,7 +90,7 @@ function Response({ response, logObject, status, naturalnessRating }: any) {
               </DisclosureTransition>{" "}
             </div>
           )}
-        </Disclosure>
+        </Disclosure>}
       </div>
     </div>
   );
