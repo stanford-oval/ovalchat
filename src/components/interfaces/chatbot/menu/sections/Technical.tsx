@@ -14,7 +14,16 @@ export default function Technical({ convoState }: any) {
         {convoState.value.turn}
       </div>
       <div>
-        {convoState.value.responseInfo.experimentId && <ResponseInfo ri={convoState.value.responseInfo} />}
+        <div className="mt-1 text-gray-900">
+          <div>
+            <span className="font-bold">Experiment ID: </span>
+            {convoState.value.responseInfo.experimentId}
+          </div>
+          <div> <span className="font-bold">Turn ID: </span>
+            {convoState.value.responseInfo.turnId}</div>
+
+        </div>
+        {convoState.value.responseInfo.responses.length > 0 && <ResponseInfo ri={convoState.value.responseInfo} />}
       </div>
     </div>
   );
@@ -22,11 +31,7 @@ export default function Technical({ convoState }: any) {
 
 function ResponseInfo({ ri }: any) {
   return (
-    <div className="mt-1 text-gray-900">
-      <div>
-        <span className="font-bold">Experiment ID: </span>
-        {ri.experimentId}
-      </div>
+    <div >
 
       <div className="border-gray-300 bg-gray-300 border-1 my-1.5"></div>
 

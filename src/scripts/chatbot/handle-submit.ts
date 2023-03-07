@@ -1,13 +1,18 @@
 import { v4 as uuidv4 } from "uuid";
 import chatbotsTurn from "./chatbot-turn";
 
-export default async function handleSubmit(e: any, convoState: any, history: any, message?: string, forcePick?: boolean) {
+export default async function handleSubmit(e: any, convoState: any, history: any, message?: string, forcePickStep?: boolean) {
     if (e) e.preventDefault();
 
     // stop audio
     if (convoState.value.audio.player) {
         convoState.value.audio.player.pause()
         convoState.value.audio.player.close()
+    }
+
+    if (forcePickStep) {
+        userSelect(convoState, history, parseInt(message) - 1)
+        return
     }
 
     if (convoState.value.turn.startsWith("user-answer")) {
@@ -22,8 +27,6 @@ export default async function handleSubmit(e: any, convoState: any, history: any
         ]);
         convoState.setValue((cs: any) => ({ ...cs, draft: "" }));
         await chatbotsTurn(message, convoState, history);
-    } else if (forcePick) {
-        userSelect(convoState, history, parseInt(message) - 1)
     } else if (convoState.value.turn.startsWith("user-eval")) {
         const responseIdx = parseInt(convoState.value.turn.substr(convoState.value.turn.length - 1)) - 1
         convoState.setValue((cs: any) => ({
