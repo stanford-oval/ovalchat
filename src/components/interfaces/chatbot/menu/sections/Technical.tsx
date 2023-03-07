@@ -56,18 +56,21 @@ function ResponseInfo({ ri }: any) {
 
 function Response({ response, logObject, status, naturalnessRating }: any) {
   let icon = faQuestion;
-  let color = "gray"
+  let bgColor = "bg-gray-200"
+  let textColor = "text-gray-600"
   if (status == "selected") {
     icon = faCheck;
-    color = "green"
+    bgColor = "bg-green-200"
+    textColor = "text-green-600"
   } else if (status == "rejected") {
     icon = faXmark;
-    color = "red"
+    bgColor = "bg-red-200"
+    textColor = "text-red-600"
   }
   return (
-    <div className={clsx("p-2 rounded flex flex-row space-x-2 align-middle", `bg-${color}-200`)}>
-      <div className={clsx("flex flex-col justify-center align-middle text-center", `text-${color}-600`)}>
-        <FontAwesomeIcon icon={icon} className={clsx("h-5 w-5 mx-1.5 my-1", `text-${color}-600`)} />
+    <div className={clsx("p-2 rounded flex flex-row space-x-2 align-middle", bgColor)}>
+      <div className={clsx("flex flex-col justify-center align-middle text-center", textColor)}>
+        <FontAwesomeIcon icon={icon} className={clsx("h-5 w-5 mx-1.5 my-1", textColor)} />
         <span className="text-xs"><b>{naturalnessRating}</b>/5</span>
       </div>
       <div className="flex flex-col text-xs">
