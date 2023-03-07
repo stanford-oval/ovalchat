@@ -72,7 +72,7 @@ function Response({ response, logObject, status, naturalnessRating }: any) {
           {({ open }) => (
             <div className="w-full mt-2">
               <Disclosure.Button className="flex w-full rounded-lg text-left font-medium text-gray-600 focus:outline-none">
-                <span>Dialog state</span>
+                <span>Log object</span>
                 <ChevronUpIcon
                   className={`${open ? "transform" : "rotate-180"
                     } h-4 w-4 text-gray-600`}
