@@ -1,7 +1,7 @@
-import { v4 as uuidv4 } from "uuid";
 import chatbotsTurn from "./chatbot-turn";
+import { userSelect } from './actions';
 
-export default async function handleSubmit(e: any, convoState: any, history: any, message?: string, forcePickStep?: boolean) {
+export default async function handleSubmit(e: any, convoState: any, history: any, message?: string) {
     if (e) e.preventDefault();
 
     // stop audio
@@ -10,20 +10,13 @@ export default async function handleSubmit(e: any, convoState: any, history: any
         convoState.value.audio.player.close()
     }
 
-    if (forcePickStep) {
-        userSelect(convoState, history, parseInt(message) - 1)
-        return
-    }
-
     if (convoState.value.turn.startsWith("user-answer")) {
         message = message ? message : convoState.value.draft.slice();
         if (!message) message = ""
 
-        let dialogId = convoState.value.responseInfo.currentDialogId;
-
         history.setValue((h: any) => [
             ...h,
-            { id: dialogId, fromChatbot: false, text: message, show: true },
+            { id: convoState.value.responseInfo.currentDialogId, fromChatbot: false, text: message, show: true },
         ]);
         convoState.setValue((cs: any) => ({ ...cs, draft: "" }));
         await chatbotsTurn(message, convoState, history);
@@ -42,21 +35,3 @@ export default async function handleSubmit(e: any, convoState: any, history: any
     }
 };
 
-function userSelect(convoState, history, idx: number) {
-    history.setValue((h: any) => [
-        ...h,
-        {
-            id: uuidv4(),
-            fromChatbot: true,
-            text: convoState.value.responseInfo.responses[idx]
-        },
-    ])
-    convoState.setValue((cs: any) => ({
-        ...cs,
-        turn: "user-answer",
-        responseInfo: {
-            ...cs.responseInfo,
-            rating: "resp" + (idx + 1)
-        }
-    }))
-}

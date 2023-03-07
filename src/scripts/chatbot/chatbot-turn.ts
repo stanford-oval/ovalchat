@@ -1,5 +1,5 @@
 import getReply from "./get-reply";
-import handleSubmit from "./handle-submit";
+import { userSelect } from './actions';
 
 export default async function chatbotsTurn(
     message: string,
@@ -9,9 +9,6 @@ export default async function chatbotsTurn(
     let replies = []
     replies = await getReply(message, convoState, "get-reply");
 
-    if (replies)
-        history.setValue((h: any) => [...h, ...replies]);
-
     if (convoState.value.autoPickMode)
-        handleSubmit(null, convoState, history, "2", true)
+        userSelect(convoState, history, 1, replies)
 }
