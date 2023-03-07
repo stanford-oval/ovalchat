@@ -27,19 +27,16 @@ export default async function getReply(
     ];
   }
 
-
-  if (command.startsWith("get-reply")) {
-    convoState.setValue((cs: any) => ({
-      ...cs,
-      responseInfo: {
-        ...cs.responseInfo,
-        responses: [output[0]["agent_utterance"], output[1]["agent_utterance"]],
-        logObjects: [output["log_object1"], output["log_object2"]],
-        experimentId: cs.responseInfo.experimentId,
-      },
-      turn: "user-eval1",
-    }));
-  }
+  convoState.setValue((cs: any) => ({
+    ...cs,
+    responseInfo: {
+      ...cs.responseInfo,
+      responses: [output[0]["agent_utterance"], output[1]["agent_utterance"]],
+      logObjects: [output["log_object1"], output["log_object2"]],
+      experimentId: cs.responseInfo.experimentId,
+    },
+    turn: "user-eval1",
+  }));
 }
 
 async function getAiOutput(convoState, message) {
@@ -47,8 +44,21 @@ async function getAiOutput(convoState, message) {
 
   completionParameters["systems"] = convoState.value.responseInfo.systems;
 
-  let system1Output = await Completion(convoState.value.responseInfo.experimentId, uuidv4(), convoState.value.responseInfo.turnId, message, convoState.value.responseInfo.systems[0]);
-  let system2Output = await Completion(convoState.value.responseInfo.experimentId, uuidv4(), convoState.value.responseInfo.turnId, message, convoState.value.responseInfo.systems[1]);
+  convoState.setValue((cs: any) => ({
+    ...cs,
+    responseInfo: {
+      ...cs.responseInfo,
+      currentDialogId: uuidv4(),
+    },
+  }));
 
-  return [system1Output, system2Output];
+  const ri = convoState.value.responseInfo;
+
+  let replies = [];
+  for (let i = 0; i < 2; i++) {
+    let reply = await Completion(ri.experimentId, ri.currentDialogId, ri.turnId, message, ri.systems[i]);
+    replies.push(reply);
+  }
+
+  return replies
 }

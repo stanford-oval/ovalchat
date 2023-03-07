@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from "uuid";
 import chatbotsTurn from "./chatbot-turn";
 
-export default async function handleSubmit(e: any, convoState: any, history: any, message?: string) {
-    e.preventDefault();
+export default async function handleSubmit(e: any, convoState: any, history: any, message?: string, forcePick?: boolean) {
+    if (e) e.preventDefault();
 
     // stop audio
     if (convoState.value.audio.player) {
@@ -14,14 +14,16 @@ export default async function handleSubmit(e: any, convoState: any, history: any
         message = message ? message : convoState.value.draft.slice();
         if (!message) message = ""
 
-        let userMsgId = uuidv4();
+        let dialogId = convoState.value.responseInfo.currentDialogId;
 
         history.setValue((h: any) => [
             ...h,
-            { id: userMsgId, fromChatbot: false, text: message, show: true },
+            { id: dialogId, fromChatbot: false, text: message, show: true },
         ]);
         convoState.setValue((cs: any) => ({ ...cs, draft: "" }));
         await chatbotsTurn(message, convoState, history);
+    } else if (forcePick) {
+        userSelect(convoState, history, parseInt(message) - 1)
     } else if (convoState.value.turn.startsWith("user-eval")) {
         const responseIdx = parseInt(convoState.value.turn.substr(convoState.value.turn.length - 1)) - 1
         convoState.setValue((cs: any) => ({
@@ -33,21 +35,25 @@ export default async function handleSubmit(e: any, convoState: any, history: any
             }
         }))
     } else if (convoState.value.turn.startsWith("user-select")) {
-        history.setValue((h: any) => [
-            ...h,
-            {
-                id: uuidv4(),
-                fromChatbot: true,
-                text: convoState.value.responseInfo.responses[parseInt(message)]
-            },
-        ])
-        convoState.setValue((cs: any) => ({
-            ...cs,
-            turn: "user-answer",
-            responseInfo: {
-                ...cs.responseInfo,
-                rating: "resp" + (message + 1)
-            }
-        }))
+        userSelect(convoState, history, parseInt(message) - 1)
     }
 };
+
+function userSelect(convoState, history, idx: number) {
+    history.setValue((h: any) => [
+        ...h,
+        {
+            id: uuidv4(),
+            fromChatbot: true,
+            text: convoState.value.responseInfo.responses[idx]
+        },
+    ])
+    convoState.setValue((cs: any) => ({
+        ...cs,
+        turn: "user-answer",
+        responseInfo: {
+            ...cs.responseInfo,
+            rating: "resp" + (idx + 1)
+        }
+    }))
+}
