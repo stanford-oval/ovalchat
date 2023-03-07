@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Chatbox from "../interfaces/chatbot/chat/Chatbox";
 import DesktopMenu from "../interfaces/chatbot/menu/DesktopMenu";
+import { useRouter } from 'next/router';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Chat({ autoPickMode }: any) {
+
+  const router = useRouter();
+
   const [h, setH] = useState([]);
 
   const [cs, setCs] = useState({
@@ -24,6 +29,21 @@ export default function Chat({ autoPickMode }: any) {
     autoPickMode: autoPickMode,
   });
 
+  useEffect(() => {
+    const key = router.asPath.match(new RegExp(`[&?]experiment_id=(.*)(&|$)`));
+    let id = uuidv4()
+
+    if (key && key[0]) {
+      id = key[0].replace("?experiment_id=", "")
+    } else {
+      if (!autoPickMode) {
+        router.push(router.asPath + "?experiment_id=" + id);
+        return
+      }
+    }
+    setCs((cs) => ({ ...cs, responseInfo: { ...cs.responseInfo, experimentId: id } }));
+  }, [router.query]);
+
   const history = {
     value: h,
     setValue: setH,
@@ -33,7 +53,6 @@ export default function Chat({ autoPickMode }: any) {
     value: cs,
     setValue: setCs,
   };
-
 
   return (
     <div id="homeChat">
