@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import Completion from "../wiki-llm/Completion";
+import Completion from "../wiki-llm/ChatRequest";
 
 export default async function getReply(
   message: string,
@@ -29,7 +29,6 @@ export default async function getReply(
 
   let aiResp1 = output["resp1"];
   let aiResp2 = output["resp2"];
-  let sessionName = output["session_name"];
 
   if (command.startsWith("get-reply-force-second")) {
     let replies = [
@@ -46,7 +45,7 @@ export default async function getReply(
         ...cs.responseInfo,
         responses: [aiResp1, aiResp2],
         dialogStates: [output["dialog_state1"], output["dialog_state2"]],
-        sessionName: cs.responseInfo.sessionName ?? sessionName,
+        experimentId: cs.responseInfo.experimentId,
         rating: "resp2"
       },
       turn: "user-answer",
@@ -61,7 +60,7 @@ export default async function getReply(
         ...cs.responseInfo,
         responses: [aiResp1, aiResp2],
         dialogStates: [output["dialog_state1"], output["dialog_state2"]],
-        sessionName: cs.responseInfo.sessionName ?? sessionName,
+        experimentId: cs.responseInfo.experimentId,
       },
       turn: "user-eval1",
     }));
@@ -71,9 +70,9 @@ export default async function getReply(
 async function getAiOutput(convoState, message) {
   let completionParameters = {}
 
-  if (convoState.value.responseInfo.sessionName) {
+  if (convoState.value.responseInfo.experimentId) {
     completionParameters = {
-      session_name: convoState.value.responseInfo.sessionName,
+      experimentId: convoState.value.responseInfo.experimentId,
       rating: convoState.value.responseInfo.rating,
       user_response: message,
     }

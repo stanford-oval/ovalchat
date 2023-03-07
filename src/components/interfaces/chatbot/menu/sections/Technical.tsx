@@ -14,7 +14,7 @@ export default function Technical({ convoState }: any) {
         {convoState.value.turn}
       </div>
       <div>
-        {convoState.value.responseInfo.sessionName && <ResponseInfo ri={convoState.value.responseInfo} />}
+        {convoState.value.responseInfo.experimentId && <ResponseInfo ri={convoState.value.responseInfo} />}
       </div>
     </div>
   );
@@ -24,8 +24,8 @@ function ResponseInfo({ ri }: any) {
   return (
     <div className="mt-1 text-gray-900">
       <div>
-        <span className="font-bold">Session ID: </span>
-        {ri.sessionName}
+        <span className="font-bold">Experiment ID: </span>
+        {ri.experimentId}
       </div>
 
       <div className="border-gray-300 bg-gray-300 border-1 my-1.5"></div>

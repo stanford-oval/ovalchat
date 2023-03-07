@@ -43,7 +43,7 @@ export default function Alert() {
                     <use href="#1d77c128-3ec1-4660-a7f6-26c7006705ad" />
                 </svg>
                 <div className="flex flex-wrap items-center gap-y-2 gap-x-4 justify-center">
-                    <p className="text-sm leading-6 text-white">
+                    <p className="text-sm leading-6 text-white text-center">
                         <strong className="font-semibold">WikiChat is under development</strong>
                         <svg viewBox="0 0 2 2" className="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true">
                             <circle cx={1} cy={1} r={1} />
