@@ -38,7 +38,7 @@ function ResponseInfo({ ri }: any) {
           return (
             <Response key={index}
               response={{ system: ri.systems[index], response: response }}
-              dialogState={ri.dialogStates[index]}
+              logObject={ri.logObjects[index]}
               status={status}
               naturalnessRating={ri.naturalnessRatings.length > index ? ri.naturalnessRatings[index] : "?"}
             />
@@ -49,7 +49,7 @@ function ResponseInfo({ ri }: any) {
   );
 }
 
-function Response({ response, dialogState, status, naturalnessRating }: any) {
+function Response({ response, logObject, status, naturalnessRating }: any) {
   let icon = faQuestion;
   let color = "gray"
   if (status == "selected") {
@@ -80,7 +80,7 @@ function Response({ response, dialogState, status, naturalnessRating }: any) {
               </Disclosure.Button>
               <DisclosureTransition>
                 <Disclosure.Panel className="text-gray-500">
-                  <code>{JSON.stringify(dialogState)}</code>
+                  <code>{JSON.stringify(logObject)}</code>
                 </Disclosure.Panel>
               </DisclosureTransition>{" "}
             </div>

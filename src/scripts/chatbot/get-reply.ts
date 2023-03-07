@@ -9,7 +9,7 @@ export default async function getReply(
   // response loading
   convoState.setValue((cs: any) => ({ ...cs, turn: command }));
 
-  let output = {}
+  let output = []
   try {
     output = await getAiOutput(convoState, message);
   } catch (error) {
@@ -27,10 +27,11 @@ export default async function getReply(
     ];
   }
 
-  let aiResp1 = output["resp1"];
-  let aiResp2 = output["resp2"];
+  let aiResp1 = output[0]["agent_utterance"];
+  let aiResp2 = output[1]["agent_utterance"];
 
   if (command.startsWith("get-reply-force-second")) {
+    // TODO: force second on /user-rating
     let replies = [
       {
         id: uuidv4(),
@@ -44,8 +45,7 @@ export default async function getReply(
       responseInfo: {
         ...cs.responseInfo,
         responses: [aiResp1, aiResp2],
-        dialogStates: [output["dialog_state1"], output["dialog_state2"]],
-        experimentId: cs.responseInfo.experimentId,
+        logObjects: [output[0]["log_object"], output[1]["log_object"]],
         rating: "resp2"
       },
       turn: "user-answer",
@@ -59,7 +59,7 @@ export default async function getReply(
       responseInfo: {
         ...cs.responseInfo,
         responses: [aiResp1, aiResp2],
-        dialogStates: [output["dialog_state1"], output["dialog_state2"]],
+        logObjects: [output["log_object1"], output["log_object2"]],
         experimentId: cs.responseInfo.experimentId,
       },
       turn: "user-eval1",
@@ -70,22 +70,10 @@ export default async function getReply(
 async function getAiOutput(convoState, message) {
   let completionParameters = {}
 
-  if (convoState.value.responseInfo.experimentId) {
-    completionParameters = {
-      experimentId: convoState.value.responseInfo.experimentId,
-      rating: convoState.value.responseInfo.rating,
-      user_response: message,
-    }
-  } else {
-    completionParameters = {
-      question: message,
-    }
-  }
-
   completionParameters["systems"] = convoState.value.responseInfo.systems;
 
-  let output = await Completion(completionParameters);
+  let system1Output = await Completion(convoState.value.responseInfo.experimentId, uuidv4(), convoState.value.responseInfo.turnId, message, convoState.value.responseInfo.systems[0]);
+  let system2Output = await Completion(convoState.value.responseInfo.experimentId, uuidv4(), convoState.value.responseInfo.turnId, message, convoState.value.responseInfo.systems[1]);
 
-  console.log(output)
-  return output;
+  return [system1Output, system2Output];
 }

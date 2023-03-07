@@ -1,4 +1,4 @@
-export default async function ChatRequest(parameters: any) {
+export default async function ChatRequest(experimentId: string, dialog_id: string, turn_id: number, new_user_utterance: string, system_name: string) {
     // let reply = await fetch("http://factgpt.westus2.cloudapp.azure.com:6001/chat", {
     //     method: 'POST',
     //     headers: {
