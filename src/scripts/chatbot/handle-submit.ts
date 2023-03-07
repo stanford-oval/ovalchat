@@ -38,7 +38,7 @@ export default async function handleSubmit(e: any, convoState: any, history: any
             }
         }))
     } else if (convoState.value.turn.startsWith("user-select")) {
-        userSelect(convoState, history, parseInt(message) - 1)
+        userSelect(convoState, history, parseInt(message))
     }
 };
 

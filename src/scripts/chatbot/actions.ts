@@ -1,9 +1,9 @@
 import { v4 as uuidv4 } from "uuid";
 import PreferenceRequest from "../wiki-llm/PreferenceRequest";
 
-export function userSelect(convoState, history, idx: number, ri?: any) {
+export function userSelect(convoState, history, idx: number, responseInfo?: any) {
     // in the case of autoPickMode, we need to pass in the responseInfo because convoState for some reason doesn't have the latest updates
-    if (!ri) ri = convoState.value.responseInfo
+    const ri = responseInfo ?? convoState.value.responseInfo
 
     history.setValue((h: any) => [
         ...h,
