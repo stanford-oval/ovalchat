@@ -51,6 +51,12 @@
 
 /* PLAYGROUND */
 
+#small-chat-window {
+    height: 25vh;
+    max-height: 25vh;
+    overflow: auto !important;
+}
+
 #chat-window {
     height: 56vh;
     max-height: 56vh;

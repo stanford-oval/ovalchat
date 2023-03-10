@@ -56,8 +56,8 @@ export default function Messages({ history, convoState }: any) {
 
   return (
     <div
-      className="bg-white border-x-2 border-gray-400 p-2 overflow-y-auto pretty-scroll"
-      id="chat-window"
+      className="bg-white border-x-2 border-gray-400 p-2 overflow-y-auto pretty-scroll h-full"
+      id={convoState.value.turn.includes("eval") || convoState.value.turn.includes("select") ? "small-chat-window" : "chat-window"}
     >
       <ul>
         {history.value.map((message: any) => (

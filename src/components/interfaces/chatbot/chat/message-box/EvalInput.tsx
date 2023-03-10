@@ -22,7 +22,7 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
                 }
             } audioRef={audioRef} convoState={convoState} />
         </ul>
-        <div className="flex mx-auto px-4 justify-center align-middle flex-col gap-y-4 mt-5">
+        <div className="flex mx-auto px-4 justify-center align-middle flex-col gap-y-8 mt-5">
             <div className="flex flex-col text-center">
                 <p>How natural is the reply? <br /> <b>Naturalness: {naturalnessRating}</b></p>
                 <Slider parameter={{
@@ -53,8 +53,8 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
                     name: "Confidence in Factual Correctness",
                     min: 1,
                     max: 5,
-                    value: factualCorrectness,
-                    setValue: setFactualCorrectness
+                    value: confidenceRating,
+                    setValue: setConfidenceRating
                 }}
                     convoState={convoState}
                 />
