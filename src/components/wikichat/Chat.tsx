@@ -24,7 +24,7 @@ export default function Chat({ autoPickMode }: any) {
       logObjects: [],
       naturalnessRatings: [],
       experimentId: null,
-      currentDialogId: null,
+      dialogId: null,
       turnId: 0,
       systems: ["gpt3_correction", "gpt3_repeat_generation"],
     },

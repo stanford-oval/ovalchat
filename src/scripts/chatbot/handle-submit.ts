@@ -17,7 +17,7 @@ export default async function handleSubmit(e: any, convoState: any, history: any
 
         history.setValue((h: any) => [
             ...h,
-            { id: convoState.value.responseInfo.currentDialogId, fromChatbot: false, text: message, show: true },
+            { id: convoState.value.responseInfo.dialogId, fromChatbot: false, text: message, show: true },
         ]);
         convoState.setValue((cs: any) => ({ ...cs, draft: "" }));
         await chatbotsTurn(message, convoState, history);
@@ -27,7 +27,7 @@ export default async function handleSubmit(e: any, convoState: any, history: any
         const rating = parseInt(message)
         
         const ri = convoState.value.responseInfo
-        RatingRequest(ri.experimentId, ri.currentDialogId, ri.turnId, ri.systems[responseIdx], rating)
+        RatingRequest(ri.experimentId, ri.dialogId, ri.turnId, ri.systems[responseIdx], rating)
 
         convoState.setValue((cs: any) => ({
             ...cs,

@@ -56,7 +56,7 @@ async function getAiOutput(convoState, message) {
     ...cs,
     responseInfo: {
       ...cs.responseInfo,
-      currentDialogId: cs.responseInfo.currentDialogId ? uuidv4() : cs.responseInfo.currentDialogId,
+      dialogId: cs.responseInfo.dialogId ? uuidv4() : cs.responseInfo.dialogId,
     },
   }));
 
@@ -64,7 +64,7 @@ async function getAiOutput(convoState, message) {
 
   let replies = [];
   for (let i = 0; i < 2; i++) {
-    let reply = await ChatRequest(ri.experimentId, ri.currentDialogId, ri.turnId, message, ri.systems[i]);
+    let reply = await ChatRequest(ri.experimentId, ri.dialogId, ri.turnId, message, ri.systems[i]);
     replies.push(reply);
   }
 

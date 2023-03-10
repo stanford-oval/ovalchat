@@ -19,6 +19,10 @@ export default function Technical({ convoState }: any) {
             <span className="font-bold">Experiment ID: </span>
             {convoState.value.responseInfo.experimentId}
           </div>
+          {convoState.value.responseInfo.dialogId && <div>
+            <span className="font-bold">Dialog ID: </span>
+            {convoState.value.responseInfo.dialogId}
+          </div>}
           <div> <span className="font-bold">Turn ID: </span>
             {convoState.value.responseInfo.turnId}</div>
 
