@@ -36,7 +36,7 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
                 />
             </div>
             <div className="flex flex-col text-center">
-                <p>Is this reply factually correct? <br /> <b>Factually Correct: {factualCorrectness !== null ? <span className="capitalize">factualCorrectness.toString()</span> : "[please select]"}</b></p>
+                <p>Is this reply factually correct? <br /> <b>Factually Correct: {factualCorrectness !== null ? <span className="capitalize">{factualCorrectness.toString()}</span> : "[please select]"}</b></p>
                 <BinaryPillSelect parameter={{
                     name: "Naturalness",
                     min: 1,
@@ -63,8 +63,8 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
                 onClick={(e: any) => {
                     handleSubmit(e, convoState, history, naturalnessRating);
                 }}
-                disabled={convoState.value.turn.includes("wikichat-reads")}
-                className="mx-auto block focus:ring-0 py-1 px-4 md:px-6 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-white border-wikichat-secondary-bright bg-wikichat-secondary-bright hover:bg-wikichat-secondary-light disabled:bg-slate-400 disabled:border-slate-400 hover:border-wikichat-secondary-light"
+                disabled={convoState.value.turn.includes("wikichat-reads") || (factualCorrectness === null)}
+                className="mx-auto block focus:ring-0 py-1 px-4 md:px-6 focus:outline-none shadow-sm sm:text-base border-0 rounded-full text-white bg-wikichat-primary hover:bg-wikichat-primary-dark1 disabled:bg-slate-400 disabled:border-slate-400 hover:border-wikichat-secondary-light"
             >
                 <div className="flex flex-row">
                     <b>Next</b>
@@ -77,36 +77,29 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
 
 function BinaryPillSelect({ parameter, convoState }: any) {
     // using tailwind
-    // two buttons, one for true, one for false
-    // the two buttons are connected by a line and the borders are rounded
-    return <div>
-        <div className="flex flex-row justify-center">
-            <button
-                onClick={(e: any) => {
-                    e.preventDefault();
-                    parameter.setValue(true);
-                }}
-                disabled={!convoState.value.turn.startsWith("user")}
-                className="mx-auto block focus:ring-0 py-1 px-4 md:px-6 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-white border-wikichat-secondary-bright bg-wikichat-secondary-bright hover:bg-wikichat-secondary-light disabled:bg-slate-400 disabled:border-slate-400 hover:border-wikichat-secondary-light"
-            >
-                <div className="flex flex-row">
-                    <b>True</b>
-                </div>
-            </button>
-            <div className="mx-2 my-auto border border-gray-400 rounded-full w-1 h-1"></div>
-            <button
-                onClick={(e: any) => {
-                    e.preventDefault();
-                    parameter.setValue(false);
-                }}
-                disabled={!convoState.value.turn.startsWith("user")}
-                className="mx-auto block focus:ring-0 py-1 px-4 md:px-6 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-white border-wikichat-secondary-bright bg-wikichat-secondary-bright hover:bg-wikichat-secondary-light disabled:bg-slate-400 disabled:border-slate-400 hover:border-wikichat-secondary-light"
-            >
-                <div className="flex flex-row">
-                    <b>False</b>
-                </div>
-            </button>
-        </div>
+    // two buttons, connected side by side, one for true and one for false
+    // if value is chosen, the button is color of primary color, otherwise it is gray
+    return <div className="flex flex-row justify-center mt-2 px-4">
+        <button
+            onClick={(e: any) => {
+                e.preventDefault();
+                parameter.setValue(true);
+            }}
+            disabled={!convoState.value.turn.startsWith("user")}
+            className={`py-1 px-4 md:px-6 focus:outline-none shadow-sm sm:text-base border-r-2 border-gray-500 rounded-l-full ${parameter.value === true ? "bg-wikichat-secondary-bright text-white font-semibold hover:bg-wikichat-secondary-light" : "bg-gray-300 text-gray-700 hover:bg-[#c2c6cc]"}`}
+        >
+            True
+        </button>
+        <button
+            onClick={(e: any) => {
+                e.preventDefault();
+                parameter.setValue(false);
+            }}
+            disabled={!convoState.value.turn.startsWith("user")}
+            className={`py-1 px-4 md:px-6 focus:outline-none shadow-sm sm:text-base rounded-r-full  ${parameter.value === false ? "bg-wikichat-secondary-bright text-white font-semibold hover:bg-wikichat-secondary-light" : "bg-gray-300 text-gray-700 hover:bg-[#c2c6cc]"}`}
+        >
+            False
+        </button>
     </div>
 }
 
@@ -127,7 +120,7 @@ function Slider({ parameter, convoState }: any) {
                     parameter.setValue(e.target.value);
                 }}
                 step="1"
-                className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-gray-300 primary-slider-thumb"
+                className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-gray-300 secondary-slider-thumb"
             />
             <div className="flex items-stretch text-gray-600 text-sm">
                 <label className="">
