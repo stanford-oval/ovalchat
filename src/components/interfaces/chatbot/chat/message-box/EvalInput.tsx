@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Message from "../message-window/Message";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 export default function EvalInput({ convoState, history, audioRef, handleSubmit }: any) {
     const [naturalnessRating, setNaturalnessRating] = useState(3);
@@ -11,7 +11,7 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
     const messageText = convoState.value.responseInfo.responses[responseIdx]
 
     return (<div className="text-center py-1 px-3">
-        <div className="font-bold text-lg">Evaluate the <span className="text-wikichat-primary">{responseIdx == 0 ? "first" : "second"}</span> reply</div>
+        <div className="font-bold text-lg">Evaluate the <span className="text-wikichat-primary">{responseIdx == 0 ? "first" : "second"}</span> reply:</div>
         <ul className="mb-2">
             <Message message={
                 {
@@ -22,7 +22,7 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
                 }
             } audioRef={audioRef} convoState={convoState} />
         </ul>
-        <div className="flex mx-auto px-4 justify-center align-middle flex-col gap-y-2">
+        <div className="flex mx-auto px-4 justify-center align-middle flex-col gap-y-4 mt-5">
             <div className="flex flex-col text-center">
                 <p>How natural is the reply? <b>Naturalness: {naturalnessRating}</b></p>
                 <Slider parameter={{
@@ -35,24 +35,28 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
                     convoState={convoState}
                 />
             </div>
-            <Slider parameter={{
-                name: "Confidence in Factual Correctness",
-                min: 1,
-                max: 5,
-                value: confidenceRating,
-                setValue: setConfidenceRating
-            }}
-                convoState={convoState}
-            />
+            <div className="flex flex-col text-center">
+                <p>How confident are you in the choice above? <br /> <b>Factual Correctness Rating Confidence: {factualCorrectness}</b></p>
+                <Slider parameter={{
+                    name: "Confidence in Factual Correctness",
+                    min: 1,
+                    max: 5,
+                    value: factualCorrectness,
+                    setValue: setFactualCorrectness
+                }}
+                    convoState={convoState}
+                />
+            </div>
             <button
                 onClick={(e: any) => {
                     handleSubmit(e, convoState, history, naturalnessRating);
                 }}
                 disabled={convoState.value.turn.includes("wikichat-reads")}
-                className="block focus:ring-0 py-1 px-3 md:px-4 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-white border-wikichat-secondary-bright bg-wikichat-secondary-bright hover:bg-wikichat-secondary-light disabled:bg-slate-400 disabled:border-slate-400 hover:border-wikichat-secondary-light"
-            ><div className="flex flex-row">
-                    <b>{naturalnessRating}</b>
-                    <FontAwesomeIcon icon={faCheck} className="h-4 w-4 ml-1.5 my-auto" />
+                className="mx-auto block focus:ring-0 py-1 px-4 md:px-6 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-white border-wikichat-secondary-bright bg-wikichat-secondary-bright hover:bg-wikichat-secondary-light disabled:bg-slate-400 disabled:border-slate-400 hover:border-wikichat-secondary-light"
+            >
+                <div className="flex flex-row">
+                    <b>Next</b>
+                    <FontAwesomeIcon icon={faArrowRight} className="h-4 w-4 ml-1.5 my-auto" />
                 </div>
             </button>
         </div>
@@ -72,7 +76,7 @@ function Slider({ parameter, convoState }: any) {
         parameter.setValue(3)
     }, [])
     return (
-        <div className="my-auto">
+        <div className="my-auto w-72 sm:w-80 mx-auto">
             {/* {parameter.description && (
                 <div className="text-gray-500 text-xs">({parameter.description})</div>
             )} */}
