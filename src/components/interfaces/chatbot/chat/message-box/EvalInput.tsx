@@ -24,13 +24,25 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
         </ul>
         <div className="flex mx-auto px-4 justify-center align-middle flex-col gap-y-4 mt-5">
             <div className="flex flex-col text-center">
-                <p>How natural is the reply? <b>Naturalness: {naturalnessRating}</b></p>
+                <p>How natural is the reply? <br /> <b>Naturalness: {naturalnessRating}</b></p>
                 <Slider parameter={{
                     name: "Naturalness",
                     min: 1,
                     max: 5,
                     value: naturalnessRating,
                     setValue: setNaturalnessRating
+                }}
+                    convoState={convoState}
+                />
+            </div>
+            <div className="flex flex-col text-center">
+                <p>Is this reply factually correct? <br /> <b>Factually Correct: {factualCorrectness !== null ? <span className="capitalize">factualCorrectness.toString()</span> : "[please select]"}</b></p>
+                <BinaryPillSelect parameter={{
+                    name: "Naturalness",
+                    min: 1,
+                    max: 5,
+                    value: factualCorrectness,
+                    setValue: setFactualCorrectness
                 }}
                     convoState={convoState}
                 />
@@ -64,17 +76,41 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
 }
 
 function BinaryPillSelect({ parameter, convoState }: any) {
-    useEffect(() => {
-        parameter.setValue(null)
-    }, [])
-
-    return 
+    // using tailwind
+    // two buttons, one for true, one for false
+    // the two buttons are connected by a line and the borders are rounded
+    return <div>
+        <div className="flex flex-row justify-center">
+            <button
+                onClick={(e: any) => {
+                    e.preventDefault();
+                    parameter.setValue(true);
+                }}
+                disabled={!convoState.value.turn.startsWith("user")}
+                className="mx-auto block focus:ring-0 py-1 px-4 md:px-6 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-white border-wikichat-secondary-bright bg-wikichat-secondary-bright hover:bg-wikichat-secondary-light disabled:bg-slate-400 disabled:border-slate-400 hover:border-wikichat-secondary-light"
+            >
+                <div className="flex flex-row">
+                    <b>True</b>
+                </div>
+            </button>
+            <div className="mx-2 my-auto border border-gray-400 rounded-full w-1 h-1"></div>
+            <button
+                onClick={(e: any) => {
+                    e.preventDefault();
+                    parameter.setValue(false);
+                }}
+                disabled={!convoState.value.turn.startsWith("user")}
+                className="mx-auto block focus:ring-0 py-1 px-4 md:px-6 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-white border-wikichat-secondary-bright bg-wikichat-secondary-bright hover:bg-wikichat-secondary-light disabled:bg-slate-400 disabled:border-slate-400 hover:border-wikichat-secondary-light"
+            >
+                <div className="flex flex-row">
+                    <b>False</b>
+                </div>
+            </button>
+        </div>
+    </div>
 }
 
 function Slider({ parameter, convoState }: any) {
-    useEffect(() => {
-        parameter.setValue(3)
-    }, [])
     return (
         <div className="my-auto w-72 sm:w-80 mx-auto">
             {/* {parameter.description && (
