@@ -4,12 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 export default function EvalInput({ convoState, history, audioRef, handleSubmit }: any) {
-    const [rating, setRating] = useState(3);
+    const [naturalnessRating, setNaturalnessRating] = useState(3);
+    const [factualCorrectness, setFactualCorrectness] = useState(null);
+    const [confidenceRating, setConfidenceRating] = useState(3);
     const responseIdx = parseInt(convoState.value.turn.substr(convoState.value.turn.length - 1)) - 1
     const messageText = convoState.value.responseInfo.responses[responseIdx]
 
     return (<div className="text-center py-1 px-3">
-        <div className="font-bold text-lg">How natural is this <span className="text-wikichat-primary">{responseIdx == 0 ? "first" : "second"}</span> reply?</div>
+        <div className="font-bold text-lg">Evaluate the <span className="text-wikichat-primary">{responseIdx == 0 ? "first" : "second"}</span> reply</div>
         <ul className="mb-2">
             <Message message={
                 {
@@ -20,24 +22,36 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
                 }
             } audioRef={audioRef} convoState={convoState} />
         </ul>
-        <div className="flex w-full px-4 gap-x-4 md:gap-x-6 lg:gap-x-8 justify-center flex-wrap md:flex-nowrap gap-y-2">
+        <div className="flex mx-auto px-4 justify-center align-middle flex-col gap-y-2">
+            <div className="flex flex-col text-center">
+                <p>How natural is the reply? <b>Naturalness: {naturalnessRating}</b></p>
+                <Slider parameter={{
+                    name: "Naturalness",
+                    min: 1,
+                    max: 5,
+                    value: naturalnessRating,
+                    setValue: setNaturalnessRating
+                }}
+                    convoState={convoState}
+                />
+            </div>
             <Slider parameter={{
-                name: "Rating",
+                name: "Confidence in Factual Correctness",
                 min: 1,
                 max: 5,
-                value: rating,
-                setValue: setRating
+                value: confidenceRating,
+                setValue: setConfidenceRating
             }}
                 convoState={convoState}
             />
             <button
                 onClick={(e: any) => {
-                    handleSubmit(e, convoState, history, rating);
+                    handleSubmit(e, convoState, history, naturalnessRating);
                 }}
                 disabled={convoState.value.turn.includes("wikichat-reads")}
                 className="block focus:ring-0 py-1 px-3 md:px-4 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-white border-wikichat-secondary-bright bg-wikichat-secondary-bright hover:bg-wikichat-secondary-light disabled:bg-slate-400 disabled:border-slate-400 hover:border-wikichat-secondary-light"
             ><div className="flex flex-row">
-                    <b>{rating}</b>
+                    <b>{naturalnessRating}</b>
                     <FontAwesomeIcon icon={faCheck} className="h-4 w-4 ml-1.5 my-auto" />
                 </div>
             </button>
@@ -45,12 +59,20 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
     </div>)
 }
 
+function BinaryPillSelect({ parameter, convoState }: any) {
+    useEffect(() => {
+        parameter.setValue(null)
+    }, [])
+
+    return 
+}
+
 function Slider({ parameter, convoState }: any) {
     useEffect(() => {
         parameter.setValue(3)
     }, [])
     return (
-        <div className="my-auto flex-grow max-w-sm">
+        <div className="my-auto">
             {/* {parameter.description && (
                 <div className="text-gray-500 text-xs">({parameter.description})</div>
             )} */}
@@ -67,7 +89,7 @@ function Slider({ parameter, convoState }: any) {
                 step="1"
                 className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-gray-300 primary-slider-thumb"
             />
-            <div className="flex items-stretch mt-1 text-gray-600 text-sm">
+            <div className="flex items-stretch text-gray-600 text-sm">
                 <label className="">
                     unnatural (1)
                 </label>

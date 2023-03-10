@@ -56,7 +56,7 @@ async function getAiOutput(convoState, message) {
     ...cs,
     responseInfo: {
       ...cs.responseInfo,
-      dialogId: cs.responseInfo.dialogId ? uuidv4() : cs.responseInfo.dialogId,
+      dialogId: cs.responseInfo.dialogId ?  cs.responseInfo.dialogId : uuidv4(),
     },
   }));
 
