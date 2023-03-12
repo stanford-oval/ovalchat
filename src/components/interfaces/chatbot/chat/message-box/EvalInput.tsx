@@ -39,6 +39,7 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
                     value: naturalnessRating,
                     setValue: setNaturalnessRating
                 }}
+                    date={Date.now()}
                     convoState={convoState}
                 />
             </div>
@@ -55,7 +56,7 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
                 />
             </div>
             <div className="flex flex-col text-center">
-                <p>How confident are you in the choice above? <br /> <b>Factual Correctness Rating Confidence: {factualCorrectness}</b></p>
+                <p>How confident are you in the choice above? <br /> <b>Factual Correctness Rating Confidence: {confidenceRating}</b></p>
                 <Slider parameter={{
                     name: "Confidence in Factual Correctness",
                     min: 1,
@@ -63,6 +64,7 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
                     value: confidenceRating,
                     setValue: setConfidenceRating
                 }}
+                    date={Date.now()}
                     convoState={convoState}
                 />
             </div>
@@ -110,13 +112,14 @@ function BinaryPillSelect({ parameter, convoState }: any) {
     </div>
 }
 
-function Slider({ parameter, convoState }: any) {
+function Slider({ parameter, convoState, date }: any) {
     return (
         <div className="my-auto w-72 sm:w-80 mx-auto">
             {/* {parameter.description && (
                 <div className="text-gray-500 text-xs">({parameter.description})</div>
             )} */}
             <input
+                key={date}
                 id={parameter.propertyName}
                 type="range"
                 disabled={!convoState.value.turn.startsWith("user")}
