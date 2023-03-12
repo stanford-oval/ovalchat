@@ -73,6 +73,7 @@ async function getAiOutput(convoState, message) {
     responseInfo: {
       ...cs.responseInfo,
       turnId: cs.responseInfo.turnId + 1,
+      rating: null,
     },
   }));
 

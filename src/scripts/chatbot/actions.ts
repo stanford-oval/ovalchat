@@ -20,7 +20,7 @@ export function userSelect(convoState, history, idx: number, responseInfo?: any)
         turn: "user-answer",
         responseInfo: {
             ...cs.responseInfo,
-            rating: "resp" + (idx + 1)
+            rating: "resp" + (idx + 1) // resp1 or resp2 instead of null
         }
     }))
 
