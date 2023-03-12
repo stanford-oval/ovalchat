@@ -44,8 +44,6 @@ export default async function handleSubmit(e: any, convoState: any, history: any
             responseInfo: {
                 ...cs.responseInfo,
                 naturalnessRatings: cs.responseInfo.naturalnessRatings.concat([naturalnessRating]),
-                factualCorrectnessRatings: cs.responseInfo.factualCorrectnessRatings.concat([factualCorrectness]),
-                confidenceRatings: cs.responseInfo.confidenceRatings.concat([confidenceRating])
             }
         }))
     } else if (convoState.value.turn.startsWith("user-select")) {
