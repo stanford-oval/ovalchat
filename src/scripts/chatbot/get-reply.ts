@@ -56,16 +56,25 @@ async function getAiOutput(convoState, message) {
     ...cs,
     responseInfo: {
       ...cs.responseInfo,
-      dialogId: cs.responseInfo.dialogId ?  cs.responseInfo.dialogId : uuidv4(),
+      dialogId: cs.responseInfo.dialogId ? cs.responseInfo.dialogId : uuidv4(),
     },
   }));
 
   const ri = convoState.value.responseInfo;
 
   let replies = [];
-  for (let i = 0; i < 2; i++) {
-    let reply = await ChatRequest(ri.experimentId, ri.dialogId, ri.turnId, message, ri.systems[i]);
+  if (convoState.value.autoPickMode) {
+    // only need one request
+    // first, push a dummy object for the first response
+    replies.push({ agent_utterance: "", log_object: {} });
+    // then, push the actual response for second response
+    let reply = await ChatRequest(ri.experimentId, ri.dialogId, ri.turnId, message, ri.systems[1]);
     replies.push(reply);
+  } else {
+    for (let i = 0; i < 2; i++) {
+      let reply = await ChatRequest(ri.experimentId, ri.dialogId, ri.turnId, message, ri.systems[i]);
+      replies.push(reply);
+    }
   }
 
   convoState.setValue((cs: any) => ({

@@ -6,6 +6,7 @@ export default async function chatbotsTurn(
     convoState: any,
     history: any,
 ) {
+    // get two responses from the backend and update convoState with them
     const responseInfo = await getReply(message, convoState, "get-reply");
 
     if (convoState.value.autoPickMode)
