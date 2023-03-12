@@ -26,6 +26,7 @@ export default function Chatbox({
 
   useEffect(() => {
     if (!convoState.value.audio.shouldAutoPlay) {
+      // autoplay is false, so we can show all the messages at once
       convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-wikichat-reads")[0], audio: { ...cs.audio, autoPlaying: false } }))
       // stop audio
       if (convoState.value.audio.player && convoState.autoPlaying) {
@@ -42,7 +43,7 @@ export default function Chatbox({
       history.setValue((h: any) => {
         return h.map((m: any) => {
           if (m.id == item.id)
-            return { ...item, show: true }
+            return { ...item, show: true } // show the message
           else
             return m
         })
@@ -50,6 +51,9 @@ export default function Chatbox({
 
       return;
     }
+
+    // TODO: add comments
+    // autoplay occurs here
 
     if (convoState.value.audio.autoPlaying)
       return;
