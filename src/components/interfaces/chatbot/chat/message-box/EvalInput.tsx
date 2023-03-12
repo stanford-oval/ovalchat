@@ -61,7 +61,7 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
             </div>
             <button
                 onClick={(e: any) => {
-                    handleSubmit(e, convoState, history, naturalnessRating);
+                    handleSubmit(e, convoState, history, naturalnessRating + ";" + factualCorrectness + ";" + confidenceRating);
                 }}
                 disabled={convoState.value.turn.includes("wikichat-reads") || (factualCorrectness === null)}
                 className="mx-auto block focus:ring-0 py-1 px-4 md:px-6 focus:outline-none shadow-sm sm:text-base border-0 rounded-full text-white bg-wikichat-primary hover:bg-wikichat-primary-dark1 disabled:bg-slate-400 disabled:border-slate-400 hover:border-wikichat-secondary-light"
