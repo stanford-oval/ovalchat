@@ -92,7 +92,7 @@ function Response({ response, logObject, status, naturalnessRating }: any) {
               </Disclosure.Button>
               <DisclosureTransition>
                 <Disclosure.Panel className="text-gray-500">
-                  <code>{JSON.stringify(logObject)}</code>
+                  <code>{JSON.stringify(logObject, null, 4)}</code>
                 </Disclosure.Panel>
               </DisclosureTransition>{" "}
             </div>

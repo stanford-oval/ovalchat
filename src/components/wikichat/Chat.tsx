@@ -63,7 +63,7 @@ export default function Chat({ autoPickMode }: any) {
         <div className="basis-auto md:basis-7/12  lg:basis-3/4 w-full mx-auto">
           <Chatbox history={history} convoState={convoState} />
         </div>
-        <div className="basis-auto md:basis-5/12 lg:basis-1/4 w-full mx-auto md:min-h-full">
+        <div className="basis-auto md:basis-5/12 lg:basis-1/4 w-fit mx-auto md:min-h-full">
           <DesktopMenu convoState={convoState} />
         </div>
       </div>
