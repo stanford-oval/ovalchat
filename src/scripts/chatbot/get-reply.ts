@@ -27,9 +27,10 @@ export default async function getReply(
     ];
   }
 
+  // instead of hardcoding the two responses, we can use the length of the responses array
   const newInfo = {
-    responses: [output[0]["agent_utterance"], output[1]["agent_utterance"]],
-    logObjects: [output[0]["log_object"], output[1]["log_object"]],
+    responses: output.map((o) => o["agent_utterance"]),
+    logObjects: output.map((o) => o["log_object"]),
   }
 
   convoState.setValue((cs: any) => ({
@@ -64,10 +65,7 @@ async function getAiOutput(convoState, message) {
 
   let replies = [];
   if (convoState.value.autoPickMode) {
-    // only need one request
-    // first, push a dummy object for the first response
-    replies.push({ agent_utterance: "", log_object: {} });
-    // then, push the actual response for second response
+    // only need one request, so the returned replies array will have one item
     let reply = await ChatRequest(ri.experimentId, ri.dialogId, ri.turnId, message, ri.systems[1]);
     replies.push(reply);
   } else {

@@ -12,6 +12,7 @@ export default async function handleSubmit(e: any, convoState: any, history: any
     }
 
     if (convoState.value.turn.startsWith("user-answer")) {
+        // on user submit text, clear the draft and add the message to the history
         message = message ? message : convoState.value.draft.slice();
         if (!message) message = ""
 
@@ -20,10 +21,12 @@ export default async function handleSubmit(e: any, convoState: any, history: any
             { id: convoState.value.responseInfo.dialogId, fromChatbot: false, text: message, show: true },
         ]);
         convoState.setValue((cs: any) => ({ ...cs, draft: "" }));
+        // then, get the response(s) from the backend
         await chatbotsTurn(message, convoState, history);
     } else if (convoState.value.turn.startsWith("user-eval")) {
+        // display the rating buttons
         // TODO: refactor and abstract away to rateReply (put in actions.ts)
-        const responseIdx = parseInt(convoState.value.turn.substr(convoState.value.turn.length - 1)) - 1
+        const responseIdx = parseInt(convoState.value.turn.substr(convoState.value.turn.length - 1)) - 1 // are we on eval1 or eval2?
         const rating = parseInt(message)
         
         const ri = convoState.value.responseInfo
@@ -31,13 +34,14 @@ export default async function handleSubmit(e: any, convoState: any, history: any
 
         convoState.setValue((cs: any) => ({
             ...cs,
-            turn: responseIdx == 1 ? "user-select" : "user-eval2",
+            turn: responseIdx == 1 ? "user-select" : "user-eval2", // if evaluating second response, go to user-select, otherwise go to user-eval2
             responseInfo: {
                 ...cs.responseInfo,
                 naturalnessRatings: cs.responseInfo.naturalnessRatings.concat([rating]),
             }
         }))
     } else if (convoState.value.turn.startsWith("user-select")) {
+        // pick which reply to use
         userSelect(convoState, history, parseInt(message))
     }
 };
