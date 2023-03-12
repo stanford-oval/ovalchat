@@ -10,6 +10,13 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
     const responseIdx = parseInt(convoState.value.turn.substr(convoState.value.turn.length - 1)) - 1
     const messageText = convoState.value.responseInfo.responses[responseIdx]
 
+    useEffect(() => {
+        // reset all rating values
+        setNaturalnessRating(3)
+        setFactualCorrectness(null)
+        setConfidenceRating(3)
+    }, [convoState.value.turn])
+
     return (<div className="text-center py-1 px-3">
         <div className="font-bold text-lg">Evaluate the <span className="text-wikichat-primary">{responseIdx == 0 ? "first" : "second"}</span> reply:</div>
         <ul className="mb-2">

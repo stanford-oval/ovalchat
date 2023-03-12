@@ -3,10 +3,10 @@ import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon, VolumeUpIcon } from "@heroicons/react/solid";
 import Technical from "./sections/Technical";
 import DisclosureTransition from "../../../global/utility/DisclosureTransition";
-import { Switch } from '@headlessui/react'
-import clsx from "clsx";
-import { MenuAlt2Icon } from "@heroicons/react/outline";
-import { isIOS } from 'react-device-detect';
+// import { Switch } from '@headlessui/react'
+// import clsx from "clsx";
+// import { MenuAlt2Icon } from "@heroicons/react/outline";
+// import { isIOS } from 'react-device-detect';
 
 export default function DesktopMenu({ convoState }: any) {
   const sections = [
