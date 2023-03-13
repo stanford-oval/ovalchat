@@ -20,7 +20,7 @@ export default function MicrophoneInfo() {
             {
                 target: ".demo-audio",
                 content:
-                    "Tap this button to hear WikiChat speak!",
+                    "Tap this button to hear the agent speak!",
                 disableBeacon: true,
             },
         ],

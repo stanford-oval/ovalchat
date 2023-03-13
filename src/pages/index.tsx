@@ -5,8 +5,8 @@ import Hero from "../components/home/Hero";
 export default function index() {
   return (
     <Page
-      fullTitle="WikiChat"
-      desc="WikiChat is an experimental chatbot aimed at improving the factuality of GPT-3 by retrieving data from Wikipedia."
+      fullTitle="Restaurant Genie"
+      desc="Supported functions: dispute charge, replace card, ask for card arrival, ask for card expiry, search for transactions, and search for accounts."
     >
       <Hero />
     </Page>

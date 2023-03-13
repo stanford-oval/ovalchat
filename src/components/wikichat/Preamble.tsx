@@ -6,10 +6,10 @@ export default function Preamble() {
       <div className="container pt-4 pb-6 md:pt-5 md:pb-8">
         <h1 className="text-wikichat-secondary font-display text-4xl tracking-tight mt-2">
           Help improve{" "}
-          <span className="text-wikichat-primary font-medium">WikiChat</span>
+          <span className="text-wikichat-primary font-medium">Restaurant Genie</span>
         </h1>
         <div className="mt-3 text-lg font-base tracking-tight text-gray-700 flex flex-col gap-y-2">
-          <p>Contribute to WikiChat by picking the best reply option and evaluating replies.</p>
+          <p>Contribute to the development by picking the best reply option and evaluating replies.</p>
         </div>
       </div>
     </div>

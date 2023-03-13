@@ -13,11 +13,11 @@ module.exports = {
       colors: {
         wikichat: {
           primary: {
-            DEFAULT: "#047857",
-            light: "#059669",
-            dark: "#047857",
-            dark1: "#065F46",
-            dark2: "#064E3B",
+            DEFAULT: "#a70505",
+            light: "#ed5959",
+            dark: "#e83737",
+            dark1: "#e71e1e",
+            dark2: "#b60303",
           },
           secondary: {
             bright: "#1e4a69",

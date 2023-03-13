@@ -22,11 +22,11 @@ export default function Header() {
                 className="block h-12 w-auto mr-2"
                 width="50"
                 height="50"
-                src="/img/logos/chatbot/puzzle.png"
+                src="/img/logos/chatbot/ramen.png"
                 alt="WikiChat logo"
               />
               <div className="font-bold tracking-wide my-auto text-xl text-wikichat-primary">
-                WikiChat
+                Restaurant Genie
               </div>
             </div>
           </Link>

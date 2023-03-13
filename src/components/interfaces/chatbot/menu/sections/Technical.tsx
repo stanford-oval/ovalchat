@@ -74,7 +74,7 @@ function Response({ response, logObject, status, naturalnessRating }: any) {
         <span className="text-xs"><b>{naturalnessRating}</b>/5</span>
       </div>
       <div className="flex flex-col text-xs">
-        <span className="font-bold">{response.system} output: </span>
+        <span className="font-bold">Restaurant Genie output: </span>
         {response.response}
         {logObject && <Disclosure defaultOpen={false}>
           {({ open }) => (

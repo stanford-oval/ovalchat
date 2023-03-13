@@ -1,5 +1,5 @@
 export default async function RatingRequest(experimentId: string, dialogId: string, turnId: number, systemName: string, userNaturalnessRating: number) {
-    await fetch("http://factgpt.westus2.cloudapp.azure.com:5001/user_rating", {
+    await fetch("http://localhost:5001/user_rating", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
