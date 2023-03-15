@@ -37,7 +37,9 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
                     min: 1,
                     max: 5,
                     value: naturalnessRating,
-                    setValue: setNaturalnessRating
+                    setValue: setNaturalnessRating,
+                    label1: "Unnatural",
+                    label2: "Humanlike"
                 }}
                     date={Date.now()}
                     convoState={convoState}
@@ -62,7 +64,9 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
                     min: 1,
                     max: 5,
                     value: confidenceRating,
-                    setValue: setConfidenceRating
+                    setValue: setConfidenceRating,
+                    label1: "Not sure at all",
+                    label2: "Completely sure"
                 }}
                     date={Date.now()}
                     convoState={convoState}
@@ -134,10 +138,10 @@ function Slider({ parameter, convoState, date }: any) {
             />
             <div className="flex items-stretch text-gray-600 text-sm">
                 <label className="">
-                    unnatural (1)
+                    {parameter.label1} (1)
                 </label>
                 <div className="ml-auto">
-                    humanlike (5)
+                    {parameter.label2} (5)
                 </div>
             </div>
         </div>
