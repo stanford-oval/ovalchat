@@ -27,7 +27,7 @@ export default function Chat({ autoPickMode }: any) {
       dialogId: null,
       turnId: 0,
       rating: null,
-      systems: ["gpt3_correction", "gpt3_repeat_generation"],
+      systems: ["generate", "retrieve_and_generate"],
     },
     autoPickMode: autoPickMode,
   });
