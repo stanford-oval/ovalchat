@@ -2,7 +2,7 @@ export default async function PreferenceRequest(experimentId: string, dialogId: 
     console.log("im here")
     console.log(winnerSystem, loserSystem)
     
-    await fetch("http://factgpt.westus2.cloudapp.azure.com:5001/user_preference", {
+    await fetch(process.env.CHAT_BACKEND + "/user_preference", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
