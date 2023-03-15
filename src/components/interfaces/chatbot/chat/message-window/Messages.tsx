@@ -22,14 +22,14 @@ export default function Messages({ history, convoState }: any) {
       fromChatbot: true,
       text: "Your responses are recorded for research purposes, so please do not share any Personal Identifiable Information.",
     };
+    // history.value[2] = {
+    //   id: -3,
+    //   fromChatbot: true,
+    //   show: true,
+    //   component: <MicrophoneInfo />,
+    //   read: "You can tap on the microphone button to start speaking. When you're done talking, click it again. Click the audio button to hear my replies"
+    // };
     history.value[2] = {
-      id: -3,
-      fromChatbot: true,
-      show: true,
-      component: <MicrophoneInfo />,
-      read: "You can tap on the microphone button to start speaking. When you're done talking, click it again. Click the audio button to hear my replies"
-    };
-    history.value[3] = {
       id: -4,
       fromChatbot: true,
       show: true,
@@ -51,12 +51,12 @@ export default function Messages({ history, convoState }: any) {
             behavior: "smooth",
             block: "nearest",
           });
-    }, 5);
+    }, 200);
   }, [history.value]);
 
   return (
     <div
-      className="bg-white border-x-2 border-gray-400 p-2 overflow-y-auto pretty-scroll h-full"
+      className="bg-white border-x-2 border-t-2 border-gray-400 p-2 overflow-y-auto pretty-scroll h-full"
       id={convoState.value.turn.includes("eval") || convoState.value.turn.includes("select") ? "small-chat-window" : "chat-window"}
     >
       <ul>

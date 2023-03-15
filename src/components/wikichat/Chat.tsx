@@ -4,7 +4,7 @@ import DesktopMenu from "../interfaces/chatbot/menu/DesktopMenu";
 import { useRouter } from 'next/router';
 import { v4 as uuidv4 } from 'uuid';
 
-export default function Chat({ autoPickMode }: any) {
+export default function Chat({autoPickMode, showSideBar, showHeader}: any) {
 
   const router = useRouter();
 
@@ -34,7 +34,7 @@ export default function Chat({ autoPickMode }: any) {
 
   useEffect(() => {
     const key = router.asPath.match(new RegExp(`[&?]experiment_id=(.*)(&|$)`));
-    let id = uuidv4()
+    let id = "experiment_"+uuidv4()
 
     if (key && key[0]) {
       id = key[0].replace("?experiment_id=", "")
@@ -56,16 +56,16 @@ export default function Chat({ autoPickMode }: any) {
     value: cs,
     setValue: setCs,
   };
-  
+
   return (
     <div id="homeChat">
       <div className="py-4 container flex items-stretch flex-col md:flex-row justify-center md:space-x-2 space-y-2 md:space-y-0">
         <div className="basis-auto md:basis-7/12  lg:basis-3/4 w-full mx-auto">
-          <Chatbox history={history} convoState={convoState} />
+          <Chatbox history={history} convoState={convoState} showHeader={showHeader}/>
         </div>
-        <div className="basis-auto md:basis-5/12 lg:basis-1/4 w-fit mx-auto md:min-h-full">
-          <DesktopMenu convoState={convoState} />
-        </div>
+        {showSideBar &&
+          <div className="basis-auto md:basis-5/12 lg:basis-1/4 w-fit mx-auto md:min-h-full"><DesktopMenu convoState={convoState} /></div>
+        }
       </div>
     </div>
   );

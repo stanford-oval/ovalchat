@@ -8,6 +8,7 @@ import { messageToSpeechParams } from '../../../../scripts/chatbot/audio_utils';
 export default function Chatbox({
   convoState,
   history,
+  showHeader
 }: any) {
   let audioRef = useRef()
 
@@ -91,7 +92,9 @@ export default function Chatbox({
 
   return (
     <div>
-      <Header />
+      {showHeader &&
+       <Header />
+      }
       <Messages history={history} convoState={convoState} />
       <MessageBox
         history={history}
