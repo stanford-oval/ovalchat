@@ -22,3 +22,11 @@ For the speech-to-text and text-to-speech functionality, create an Azure speech 
 ```
 SPEECH_KEY=[your API key]
 SPEECH_REGION=[your API key]
+```
+
+## Test with back-end
+A mock back-end implementation is available in `test_backend.py`. You can install `flask`, `flask_cors` and `flask_restful` python packages, then run
+
+```
+python test_backend.py
+```
