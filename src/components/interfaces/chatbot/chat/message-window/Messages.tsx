@@ -10,31 +10,54 @@ export default function Messages({ history, convoState }: any) {
 
   useEffect(() => {
     // if (history.value.length > 0) return; // only run this on first render
-    history.value[0] = {
-      id: -1,
-      show: true,
-      fromChatbot: true,
-      text: "Hi! I am WikiChat.",
-    };
-    history.value[1] = {
-      id: -2,
-      show: true,
-      fromChatbot: true,
-      text: "Your responses are recorded for research purposes, so please do not share any Personal Identifiable Information.",
-    };
-    // history.value[2] = {
-    //   id: -3,
-    //   fromChatbot: true,
-    //   show: true,
-    //   component: <MicrophoneInfo />,
-    //   read: "You can tap on the microphone button to start speaking. When you're done talking, click it again. Click the audio button to hear my replies"
-    // };
-    history.value[2] = {
-      id: -3,
-      fromChatbot: true,
-      show: true,
-      text: "Let's chat!",
-    };
+    if (convoState.value.autoPickMode) {
+      history.value.push({
+        id: -1,
+        show: true,
+        fromChatbot: true,
+        text: "Hi! I am WikiChat.",
+      });
+      history.value.push({
+        id: -2,
+        show: true,
+        fromChatbot: true,
+        text: "Your responses are recorded for research purposes, so please do not share any Personal Identifiable Information.",
+      });
+      history.value.push({
+        id: -3,
+        fromChatbot: true,
+        show: true,
+        component: <MicrophoneInfo />,
+        read: "You can tap on the microphone button to start speaking. When you're done talking, click it again. Click the audio button to hear my replies"
+      });
+      history.value.push({
+        id: -4,
+        fromChatbot: true,
+        show: true,
+        text: "Let's chat!",
+      });
+    }
+    else {
+      // for crowdsourcing experiments
+      history.value.push({
+        id: -1,
+        show: true,
+        fromChatbot: true,
+        text: "Your responses are recorded for research purposes, so please do not share any Personal Identifiable Information.",
+      });
+      history.value.push({
+        id: -2,
+        fromChatbot: true,
+        show: true,
+        text: "I can talk about recent events until February 1st of this year. For example, I can talk about movies, books, music, celebrities, political events, history, geography and many more topics.",
+      });
+      history.value.push({
+        id: -4,
+        fromChatbot: true,
+        show: true,
+        text: "Let's chat!",
+      });
+    }
     convoState.setValue((cs: any) => ({ ...cs, turn: "user-answer" }));
   }, []);
 
