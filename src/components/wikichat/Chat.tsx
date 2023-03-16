@@ -2,13 +2,26 @@ import React, { useState, useEffect } from "react";
 import Chatbox from "../interfaces/chatbot/chat/Chatbox";
 import DesktopMenu from "../interfaces/chatbot/menu/DesktopMenu";
 import { useRouter } from 'next/router';
-import getUniqueId  from '../../scripts/utils/unique-id';
+import getUniqueId from '../../scripts/utils/unique-id';
 
-export default function Chat({autoPickMode, showSideBar, showHeader}: any) {
+export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
 
   const router = useRouter();
 
   const [h, setH] = useState([]);
+
+  const key = router.asPath.match(new RegExp(`[&?]experiment_id=(.*)(&|$)`));
+
+  var experiment_id: string;
+  if (key && key[0]) {
+    // extract the experiment_id from the URL
+    experiment_id = key[0].replace("?experiment_id=", "")
+  } else {
+    // default value if not provided in the URL
+    experiment_id = getUniqueId();
+  }
+
+  var dialogId = getUniqueId();
 
   const [cs, setCs] = useState({
     turn: "user-answer-start",
@@ -22,8 +35,8 @@ export default function Chat({autoPickMode, showSideBar, showHeader}: any) {
       responses: [],
       logObjects: [],
       naturalnessRatings: [],
-      experimentId: null,
-      dialogId: null,
+      experimentId: experiment_id,
+      dialogId: dialogId,
       turnId: 0,
       rating: null,
       systems: ["generate", "retrieve_and_generate"],
@@ -32,29 +45,11 @@ export default function Chat({autoPickMode, showSideBar, showHeader}: any) {
   });
 
   useEffect(() => {
-    const key = router.asPath.match(new RegExp(`[&?]experiment_id=(.*)(&|$)`));
-    let id = "experiment_" + getUniqueId()
-
-    if (key && key[0]) {
-      id = key[0].replace("?experiment_id=", "")
-    } else {
-      if (!autoPickMode) {
-        router.push(router.asPath + "?experiment_id=" + id);
-        return
-      }
+    if ((!key || !key[0]) && !autoPickMode) {
+      router.push(router.asPath + "?experiment_id=" + experiment_id);
+      return
     }
-    setCs((cs) => ({ ...cs, responseInfo: { ...cs.responseInfo, experimentId: id } }));
     
-    // set the dialogId if not already set
-    const dialogId = convoState.value.responseInfo.dialogId ? convoState.value.responseInfo.dialogId : getUniqueId();
-    convoState.setValue((cs: any) => ({
-        ...convoState.value,
-        responseInfo: {
-          ...convoState.value.responseInfo,
-          dialogId: dialogId,
-        },
-      }));
-
   }, [router.query]);
 
   const history = {
