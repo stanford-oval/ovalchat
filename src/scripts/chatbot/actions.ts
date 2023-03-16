@@ -24,6 +24,16 @@ export function userSelect(convoState, history, idx: number, responseInfo?: any)
         }
     }))
 
+    // this turn has ended, so increment turn_id
+    convoState.setValue((cs: any) => ({
+        ...cs,
+        responseInfo: {
+          ...cs.responseInfo,
+          turnId: cs.responseInfo.turnId + 1,
+          rating: null,
+        },
+      }));
+
     if (!convoState.value.autoPickMode) {
         PreferenceRequest(ri.experimentId, ri.dialogId, ri.turnId, ri.systems[idx], ri.systems[1 - idx]);
     }

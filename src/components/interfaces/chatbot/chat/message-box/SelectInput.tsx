@@ -10,9 +10,12 @@ export default function SelectInput({ convoState, history, handleSubmit }: any) 
                 onClick={(e: any) => {
                     handleSubmit(e, convoState, history, i);
                     const MAX_USER_TURNS = 2;
-                    if (convoState.value.responseInfo.turnId == MAX_USER_TURNS) {
+                    if (convoState.value.responseInfo.turnId == MAX_USER_TURNS-1) {
                         // alert the user that their job to improve wikichat is finished
-                        navigator.clipboard.writeText(convoState.value.responseInfo.dialogId.toString());
+                        if (navigator.clipboard && window.isSecureContext) {
+                            // copy the text automatically
+                            navigator.clipboard.writeText(convoState.value.responseInfo.dialogId.toString());
+                        }
                         alert("Thank you, please copy " + convoState.value.responseInfo.dialogId.toString() + " then close this window");
                     }
                 }}

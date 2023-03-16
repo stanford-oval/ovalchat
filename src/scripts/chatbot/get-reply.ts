@@ -67,14 +67,5 @@ async function getAiOutput(convoState, message) {
     }
   }
 
-  convoState.setValue((cs: any) => ({
-    ...cs,
-    responseInfo: {
-      ...cs.responseInfo,
-      turnId: cs.responseInfo.turnId + 1,
-      rating: null,
-    },
-  }));
-
   return replies
 }
