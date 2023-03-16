@@ -15,7 +15,7 @@ yarn run dev
 
 Create a `.env.local` file for the following environment variables. 
 
-For the chatbot to talk to the back-end, you should set `CHAT_BACKEND=https://[your back-end domain]:[port number]` (without `/` at the end).
+For the chatbot to talk to the back-end, you should set `NEXT_PUBLIC_CHAT_BACKEND=https://[your back-end domain]:[port number]` (without `/` at the end).
 
 For the speech-to-text and text-to-speech functionality, create an Azure speech resource (and a corresponding resource group).
 

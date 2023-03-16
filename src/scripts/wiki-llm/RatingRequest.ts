@@ -1,5 +1,5 @@
 export default async function RatingRequest(experimentId: string, dialogId: string, turnId: number, systemName: string, userNaturalnessRating: number, userFactualityRating: boolean, userFactualityConfidence: number) {
-    await fetch(process.env.CHAT_BACKEND + "/user_rating", {
+    await fetch(process.env.NEXT_PUBLIC_CHAT_BACKEND + "/user_rating", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

@@ -1,5 +1,5 @@
 export default async function ChatRequest(experimentId: string, dialogId: string, turnId: number, newUserUtterance: string, systemName: string) {
-    let reply = await fetch(process.env.CHAT_BACKEND + "/chat", {
+    let reply = await fetch(process.env.NEXT_PUBLIC_CHAT_BACKEND + "/chat", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
