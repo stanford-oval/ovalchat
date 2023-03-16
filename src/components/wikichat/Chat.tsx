@@ -11,7 +11,6 @@ export default function Chat({autoPickMode, showSideBar, showHeader}: any) {
   const [h, setH] = useState([]);
 
   const [cs, setCs] = useState({
-    draft: "",
     turn: "user-answer-start",
     audio: {
       player: null,
@@ -45,6 +44,17 @@ export default function Chat({autoPickMode, showSideBar, showHeader}: any) {
       }
     }
     setCs((cs) => ({ ...cs, responseInfo: { ...cs.responseInfo, experimentId: id } }));
+    
+    // set the dialogId if not already set
+    const dialogId = convoState.value.responseInfo.dialogId ? convoState.value.responseInfo.dialogId : uuidv4();
+    convoState.setValue((cs: any) => ({
+        ...convoState.value,
+        responseInfo: {
+          ...convoState.value.responseInfo,
+          dialogId: dialogId,
+        },
+      }));
+      
   }, [router.query]);
 
   const history = {

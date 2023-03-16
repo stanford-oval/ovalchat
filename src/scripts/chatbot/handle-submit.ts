@@ -13,27 +13,18 @@ export default async function handleSubmit(e: any, convoState: any, history: any
     }
 
     if (convoState.value.turn.startsWith("user-answer")) {
-        // on user submit text, clear the draft and add the message to the history
-        message = message ? message : convoState.value.draft.slice();
+        // on user submit text, add the message to the history
         if (!message) message = ""
 
         history.setValue((h: any) => [
             ...h,
             { id: uuidv4(), fromChatbot: false, text: message, show: true },
         ]);
-        convoState.setValue((cs: any) => ({ ...cs, draft: "" }));
+        
 
-        // set the dialogId if not already set
-        const dialogId = convoState.value.responseInfo.dialogId ? convoState.value.responseInfo.dialogId : uuidv4();
-        convoState.setValue((cs: any) => ({
-            ...convoState.value,
-            responseInfo: {
-              ...convoState.value.responseInfo,
-              dialogId: dialogId,
-            },
-          }));
+        
         // then, get the response(s) from the backend
-        await chatbotsTurn(message, convoState, history, dialogId);
+        await chatbotsTurn(message, convoState, history);
     } else if (convoState.value.turn.startsWith("user-eval")) {
         // display the rating buttons
         // TODO: refactor and abstract away to rateReply (put in actions.ts)

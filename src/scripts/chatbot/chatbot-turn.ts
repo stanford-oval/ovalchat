@@ -5,10 +5,9 @@ export default async function chatbotsTurn(
     message: string,
     convoState: any,
     history: any,
-    dialogId: string
 ) {
     // get two responses from the backend and update convoState with them
-    const responseInfo = await getReply(message, convoState, "get-reply", dialogId);
+    const responseInfo = await getReply(message, convoState, "get-reply");
 
     // because we never see the evaluation or user select screen, we can force pick the first (and only) response
     if (convoState.value.autoPickMode)

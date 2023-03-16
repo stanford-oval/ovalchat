@@ -4,15 +4,14 @@ import ChatRequest from "../wiki-llm/ChatRequest";
 export default async function getReply(
   message: string,
   convoState: any,
-  command: string,
-  dialogId: string
+  command: string
 ) {
   // response loading
   convoState.setValue((cs: any) => ({ ...cs, turn: command }));
 
   let output = []
   try {
-    output = await getAiOutput(convoState, message, dialogId);
+    output = await getAiOutput(convoState, message);
   } catch (error) {
     console.log(error);
     convoState.setValue((cs: any) => ({
@@ -49,23 +48,21 @@ export default async function getReply(
   }
 }
 
-async function getAiOutput(convoState, message, dialogId) {
+async function getAiOutput(convoState, message) {
   let completionParameters = {}
 
   completionParameters["systems"] = convoState.value.responseInfo.systems;
-
-
 
   const ri = convoState.value.responseInfo;
 
   let replies = [];
   if (convoState.value.autoPickMode) {
     // only need one request, so the returned replies array will have one item
-    let reply = await ChatRequest(ri.experimentId, dialogId, ri.turnId, message, ri.systems[1]);
+    let reply = await ChatRequest(ri.experimentId, ri.dialogId, ri.turnId, message, ri.systems[1]);
     replies.push(reply);
   } else {
     for (let i = 0; i < 2; i++) {
-      let reply = await ChatRequest(ri.experimentId, dialogId, ri.turnId, message, ri.systems[i]);
+      let reply = await ChatRequest(ri.experimentId, ri.dialogId, ri.turnId, message, ri.systems[i]);
       replies.push(reply);
     }
   }
