@@ -12,16 +12,7 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
 
   const key = router.asPath.match(new RegExp(`[&?]experiment_id=(.*)(&|$)`));
 
-  var experiment_id: string;
-  if (key && key[0]) {
-    // extract the experiment_id from the URL
-    experiment_id = key[0].replace("?experiment_id=", "")
-  } else {
-    // default value if not provided in the URL
-    experiment_id = getUniqueId();
-  }
-
-  var dialogId = getUniqueId();
+  
 
   const [cs, setCs] = useState({
     turn: "user-answer-start",
@@ -35,8 +26,8 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
       responses: [],
       logObjects: [],
       naturalnessRatings: [],
-      experimentId: experiment_id,
-      dialogId: dialogId,
+      experimentId: null,
+      dialogId: null,
       turnId: 0,
       rating: null,
       systems: ["generate", "retrieve_and_generate"],
@@ -45,10 +36,38 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
   });
 
   useEffect(() => {
-    if ((!key || !key[0]) && !autoPickMode) {
-      router.push(router.asPath + "?experiment_id=" + experiment_id);
-      return
+    var experiment_id: string;
+    if (key && key[0]) {
+      // extract the experiment_id from the URL
+      experiment_id = key[0].replace("?experiment_id=", "")
+    } else {
+      // default value if not provided in the URL
+      experiment_id = getUniqueId();
+      if (!autoPickMode) {
+        router.push(router.asPath + "?experiment_id=" + experiment_id);
+        return
+      }
     }
+
+    // set experimentId
+    convoState.setValue((cs: any) => ({
+      ...cs,
+      responseInfo: {
+        ...cs.responseInfo,
+        experimentId: experiment_id,
+      },
+    }));
+    
+    // set the dialogId if not already set
+    convoState.setValue((cs: any) => ({
+        ...cs,
+        responseInfo: {
+          ...cs.responseInfo,
+          dialogId: getUniqueId(),
+        },
+    }));
+
+    
     
   }, [router.query]);
 
