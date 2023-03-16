@@ -73,12 +73,14 @@ function Response({ response, logObject, status, naturalnessRating }: any) {
   }
   return (
     <div className={clsx("p-2 rounded flex flex-row space-x-2 align-middle", bgColor)}>
+      { naturalnessRating === null &&
       <div className={clsx("flex flex-col justify-center align-middle text-center", textColor)}>
         <FontAwesomeIcon icon={icon} className={clsx("h-5 w-5 mx-1.5 my-1", textColor)} />
         <span className="text-xs"><b>{naturalnessRating}</b>/5</span>
       </div>
+      }
       <div className="flex flex-col text-xs">
-        <span className="font-bold">{response.system} output: </span>
+        <span className="font-bold">"{response.system}":</span>
         {response.response}
         {logObject && <Disclosure defaultOpen={false}>
           {({ open }) => (
