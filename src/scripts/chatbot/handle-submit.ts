@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 import chatbotsTurn from "./chatbot-turn";
 import { userSelect } from './actions';
 import RatingRequest from "../wiki-llm/RatingRequest";
@@ -18,11 +19,21 @@ export default async function handleSubmit(e: any, convoState: any, history: any
 
         history.setValue((h: any) => [
             ...h,
-            { id: convoState.value.responseInfo.dialogId, fromChatbot: false, text: message, show: true },
+            { id: uuidv4(), fromChatbot: false, text: message, show: true },
         ]);
         convoState.setValue((cs: any) => ({ ...cs, draft: "" }));
+
+        // set the dialogId if not already set
+        const dialogId = convoState.value.responseInfo.dialogId ? convoState.value.responseInfo.dialogId : uuidv4();
+        convoState.setValue((cs: any) => ({
+            ...convoState.value,
+            responseInfo: {
+              ...convoState.value.responseInfo,
+              dialogId: dialogId,
+            },
+          }));
         // then, get the response(s) from the backend
-        await chatbotsTurn(message, convoState, history);
+        await chatbotsTurn(message, convoState, history, dialogId);
     } else if (convoState.value.turn.startsWith("user-eval")) {
         // display the rating buttons
         // TODO: refactor and abstract away to rateReply (put in actions.ts)

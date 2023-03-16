@@ -30,7 +30,7 @@ export default function Messages({ history, convoState }: any) {
     //   read: "You can tap on the microphone button to start speaking. When you're done talking, click it again. Click the audio button to hear my replies"
     // };
     history.value[2] = {
-      id: -4,
+      id: -3,
       fromChatbot: true,
       show: true,
       text: "Let's chat!",
