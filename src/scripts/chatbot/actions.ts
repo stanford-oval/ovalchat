@@ -24,5 +24,8 @@ export function userSelect(convoState, history, idx: number, responseInfo?: any)
         }
     }))
 
-    PreferenceRequest(ri.experimentId, ri.dialogId, ri.turnId, ri.systems[idx], ri.systems[1 - idx])
+    if (!convoState.value.autoPickMode) {
+        PreferenceRequest(ri.experimentId, ri.dialogId, ri.turnId, ri.systems[idx], ri.systems[1 - idx]);
+    }
+    
 }
