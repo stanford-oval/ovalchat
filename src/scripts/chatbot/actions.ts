@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from "uuid";
+import getUniqueId from "../utils/unique-id";
 import PreferenceRequest from "../wiki-llm/PreferenceRequest";
 
 export function userSelect(convoState, history, idx: number, responseInfo?: any) {
@@ -8,7 +8,7 @@ export function userSelect(convoState, history, idx: number, responseInfo?: any)
     history.setValue((h: any) => [
         ...h,
         {
-            id: uuidv4(),
+            id: getUniqueId(),
             fromChatbot: true,
             text: ri.responses[idx],
             show: true

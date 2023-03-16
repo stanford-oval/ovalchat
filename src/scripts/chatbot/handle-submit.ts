@@ -1,7 +1,7 @@
-import { v4 as uuidv4 } from "uuid";
 import chatbotsTurn from "./chatbot-turn";
 import { userSelect } from './actions';
 import RatingRequest from "../wiki-llm/RatingRequest";
+import getUniqueId from "../utils/unique-id";
 
 export default async function handleSubmit(e: any, convoState: any, history: any, message?: string) {
     if (e) e.preventDefault();
@@ -18,7 +18,7 @@ export default async function handleSubmit(e: any, convoState: any, history: any
 
         history.setValue((h: any) => [
             ...h,
-            { id: uuidv4(), fromChatbot: false, text: message, show: true },
+            { id: getUniqueId(), fromChatbot: false, text: message, show: true },
         ]);
         
 

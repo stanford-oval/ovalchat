@@ -1,5 +1,4 @@
 import React from "react";
-import Message from '../message-window/Message';
 
 export default function SelectInput({ convoState, history, handleSubmit }: any) {
     console.log(convoState.value.responseInfo.responses)
@@ -13,6 +12,7 @@ export default function SelectInput({ convoState, history, handleSubmit }: any) 
                     const MAX_USER_TURNS = 2;
                     if (convoState.value.responseInfo.turnId == MAX_USER_TURNS) {
                         // alert the user that their job to improve wikichat is finished
+                        navigator.clipboard.writeText(convoState.value.responseInfo.dialogId.toString());
                         alert("Thank you, please copy " + convoState.value.responseInfo.dialogId.toString() + " then close this window");
                     }
                 }}

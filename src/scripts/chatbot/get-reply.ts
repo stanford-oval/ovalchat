@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from "uuid";
+import getUniqueId from "../utils/unique-id";
 import ChatRequest from "../wiki-llm/ChatRequest";
 
 export default async function getReply(
@@ -20,7 +20,7 @@ export default async function getReply(
     }));
     return [
       {
-        id: uuidv4(),
+        id: getUniqueId(),
         fromChatbot: true,
         text: "Oops! Something went wrong. Please refresh the page and try again.",
       },

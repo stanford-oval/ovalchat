@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Chatbox from "../interfaces/chatbot/chat/Chatbox";
 import DesktopMenu from "../interfaces/chatbot/menu/DesktopMenu";
 import { useRouter } from 'next/router';
-import { v4 as uuidv4 } from 'uuid';
+import getUniqueId  from '../../scripts/utils/unique-id';
 
 export default function Chat({autoPickMode, showSideBar, showHeader}: any) {
 
@@ -33,7 +33,7 @@ export default function Chat({autoPickMode, showSideBar, showHeader}: any) {
 
   useEffect(() => {
     const key = router.asPath.match(new RegExp(`[&?]experiment_id=(.*)(&|$)`));
-    let id = "experiment_"+uuidv4()
+    let id = "experiment_" + getUniqueId()
 
     if (key && key[0]) {
       id = key[0].replace("?experiment_id=", "")
@@ -46,7 +46,7 @@ export default function Chat({autoPickMode, showSideBar, showHeader}: any) {
     setCs((cs) => ({ ...cs, responseInfo: { ...cs.responseInfo, experimentId: id } }));
     
     // set the dialogId if not already set
-    const dialogId = convoState.value.responseInfo.dialogId ? convoState.value.responseInfo.dialogId : uuidv4();
+    const dialogId = convoState.value.responseInfo.dialogId ? convoState.value.responseInfo.dialogId : getUniqueId();
     convoState.setValue((cs: any) => ({
         ...convoState.value,
         responseInfo: {
@@ -54,7 +54,7 @@ export default function Chat({autoPickMode, showSideBar, showHeader}: any) {
           dialogId: dialogId,
         },
       }));
-      
+
   }, [router.query]);
 
   const history = {
