@@ -7,8 +7,8 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="bg-wikichat-secondary">
-      <div className="max-w-7xl mx-auto pt-12 pb-12 px-4 overflow-hidden sm:px-6 lg:px-8">
-        <nav
+      <div className="max-w-7xl mx-auto pt-4 pb-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+        {/* <nav
           className="-mx-5 -my-2 flex flex-wrap justify-center"
           aria-label="Footer"
         >
@@ -25,7 +25,7 @@ export default function Footer() {
                 </div>
               );
           })}
-        </nav>
+        </nav> */}
         <div className="mt-8 flex justify-center space-x-6">
           {socials.map((s: any) => (
             <a key={s.name} href={s.href}>
@@ -37,7 +37,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <p className="mt-8 text-center text-base text-gray-300">
+        {/* <p className="mt-8 text-center text-base text-gray-300">
           WikiChat is part of a research project at Stanford University&apos;s{" "}
           <a
             href="https://oval.cs.stanford.edu"
@@ -48,7 +48,7 @@ export default function Footer() {
             Open Virtual Assistant Lab
           </a>
           .
-        </p>
+        </p> */}
         <div className="mt-7 ml-auto text-center text-base text-gray-300">
           <a
             href="https://vercel.com/?utm_source=[stanford-oval]&utm_campaign=oss"
