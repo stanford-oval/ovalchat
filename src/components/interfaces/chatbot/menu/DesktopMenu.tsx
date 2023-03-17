@@ -22,10 +22,10 @@ export default function DesktopMenu({ convoState }: any) {
       id="chat-window"
       className="w-full bg-white border-2 border-gray-400 rounded-md h-fit md:min-h-full overflow-y-auto pretty-scroll"
     >
-      <div className="border-b-2 border-gray-400 py-4">
-        <div className="text-2xl text-center font-bold text-wikichat-secondary">
+      {/* <div className="border-b-2 border-gray-400 py-4"> */}
+        {/* <div className="text-2xl text-center font-bold text-wikichat-secondary">
           Menu
-        </div>
+        </div> */}
         {/* TODO: fix autoplay */}
         {/* 
         {!isIOS && <div className="text-gray-600 text-center mx-auto mt-1 text-sm">
@@ -59,7 +59,7 @@ export default function DesktopMenu({ convoState }: any) {
           <span>autoplay <VolumeUpIcon className="h-4 w-4 -mt-0.5 inline-block" /></span>
         </div>} */}
 
-      </div>
+      {/* </div> */}
       <div className="px-2 py-1">
         {sections.map((section) => (
           <Disclosure key={section.title} defaultOpen={!section.defaultHide}>
