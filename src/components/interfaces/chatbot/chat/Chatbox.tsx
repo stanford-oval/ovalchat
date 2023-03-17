@@ -97,13 +97,27 @@ export default function Chatbox({
       {showHeader &&
        <Header />
       }
-      <Messages history={history} convoState={convoState} messagesBottom={messagesBottom} />
-      <MessageBox
-        history={history}
-        convoState={convoState}
-        audioRef={audioRef}
-        messagesBottom={messagesBottom}
-      />
+      {convoState.value.finishedJob ?
+        <div
+        className="bg-white border-x-2 border-y-2 border-gray-400 p-2 overflow-y-auto pretty-scroll h-full flex"
+        id="chat-window">
+            <span className="m-auto text-3xl text-center leading-loose">
+              Thank You! <br/>
+              Please copy this code {' '}
+              <span className="text-wikichat-primary hover:bg-gray-200">
+                {convoState.value.responseInfo.dialogId}
+              </span>
+              <br/>
+              And close this tab.
+            </span>
+        </div>
+        :
+        <><Messages history={history} convoState={convoState} messagesBottom={messagesBottom} /><MessageBox
+          history={history}
+          convoState={convoState}
+          audioRef={audioRef}
+          messagesBottom={messagesBottom} /></>
+      }
     </div>
   );
 }

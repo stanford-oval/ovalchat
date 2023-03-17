@@ -34,6 +34,7 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
       systems: ["generate", "retrieve_and_generate"],
     },
     autoPickMode: autoPickMode,
+    finishedJob: false // whether the crowdsourcing job has finished
   });
 
   useEffect(() => {

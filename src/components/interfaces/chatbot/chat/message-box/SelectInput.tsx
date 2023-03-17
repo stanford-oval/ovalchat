@@ -12,12 +12,14 @@ export default function SelectInput({ convoState, history, handleSubmit }: any) 
                     handleSubmit(e, convoState, history, i);
                     const MAX_USER_TURNS = 2;
                     if (convoState.value.responseInfo.turnId == MAX_USER_TURNS-1) {
-                        // alert the user that their job to improve wikichat is finished
+                        // alert the user that their job is finished
                         if (navigator.clipboard && window.isSecureContext) {
                             // copy the text automatically
                             navigator.clipboard.writeText(convoState.value.responseInfo.dialogId.toString());
                         }
-                        alert("Thank you, please copy " + convoState.value.responseInfo.dialogId.toString() + " then close this window");
+                        //say thank you, please copy dialogId
+                        convoState.setValue((cs: any) => ({ ...cs, finishedJob: true}));
+                        
                     }
                 }}
                 disabled={convoState.value.turn.includes("wikichat-reads")}
