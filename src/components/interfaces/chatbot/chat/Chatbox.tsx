@@ -90,16 +90,19 @@ export default function Chatbox({
 
   }, [history.value, convoState.value.audio.shouldAutoPlay])
 
+  const messagesBottom = useRef<HTMLDivElement>(null);
+
   return (
     <div>
       {showHeader &&
        <Header />
       }
-      <Messages history={history} convoState={convoState} />
+      <Messages history={history} convoState={convoState} messagesBottom={messagesBottom} />
       <MessageBox
         history={history}
         convoState={convoState}
         audioRef={audioRef}
+        messagesBottom={messagesBottom}
       />
     </div>
   );

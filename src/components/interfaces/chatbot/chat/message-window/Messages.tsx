@@ -2,8 +2,7 @@ import React, { useRef, useEffect } from "react";
 import Message from "./Message";
 import MicrophoneInfo from "./initial-messages/MicrophoneInfo";
 
-export default function Messages({ history, convoState }: any) {
-  const messagesBottom = useRef<HTMLDivElement>(null);
+export default function Messages({ history, convoState, messagesBottom }: any) {
   let audioRef = useRef();
 
   audioRef.current = convoState.value.audio;
@@ -64,7 +63,7 @@ export default function Messages({ history, convoState }: any) {
   // scrolling
   useEffect(() => {
     setTimeout(() => {
-      if (messagesBottom.current)
+      if (messagesBottom.current) {
         if (
           history.value
             .slice(0, Math.min(history.value.length, 10))
@@ -74,6 +73,7 @@ export default function Messages({ history, convoState }: any) {
             behavior: "smooth",
             block: "nearest",
           });
+      }
     }, 200);
   }, [history.value]);
 

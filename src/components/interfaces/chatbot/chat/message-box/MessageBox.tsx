@@ -4,7 +4,7 @@ import TextInput from "./TextInput";
 import EvalInput from './EvalInput';
 import SelectInput from './SelectInput';
 
-export default function MessageBox({ history, convoState, audioRef }: any) {
+export default function MessageBox({ history, convoState, audioRef, messagesBottom }: any) {
   const inputBoxRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -20,6 +20,20 @@ export default function MessageBox({ history, convoState, audioRef }: any) {
       if (inputBoxRef.current) inputBoxRef.current.focus();
     }
   }, [convoState.value]);
+
+  useEffect(() => {
+    if (messagesBottom.current) {
+      if (
+        history.value
+          .slice(0, Math.min(history.value.length, 10))
+          .filter((h: any) => !h.fromChatbot).length > 0
+      )
+        messagesBottom.current.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+        });
+    }
+  });
 
   return (
     <form
