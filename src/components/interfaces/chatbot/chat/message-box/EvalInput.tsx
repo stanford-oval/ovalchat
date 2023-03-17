@@ -3,13 +3,12 @@ import Message from "../message-window/Message";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-export default function EvalInput({ convoState, history, audioRef, handleSubmit }: any) {
+export default function EvalInput({ convoState, history, audioRef, handleSubmit, responseIndex }: any) {
     const [naturalnessRating, setNaturalnessRating] = useState(null);
     const [factualCorrectness, setFactualCorrectness] = useState(null);
     const [confidenceRating, setConfidenceRating] = useState(null);
     const [key, setKey] = useState(1);
-    const responseIdx = parseInt(convoState.value.turn.substr(convoState.value.turn.length - 1)) - 1
-    const messageText = convoState.value.responseInfo.responses[responseIdx]
+    const messageText = convoState.value.responseInfo.responses[responseIndex]
 
     useEffect(() => {
         // reset all rating values
@@ -21,7 +20,7 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit 
     return (
         
     <div className="py-1 px-3">
-        <div className="font-bold text-lg text-left">Here is the <span className="text-wikichat-primary">{responseIdx == 0 ? "first" : "second"}</span> reply:</div>
+        <div className="font-bold text-lg text-left">Here is the <span className="text-wikichat-primary">{responseIndex == 0 ? "first" : "second"}</span> reply:</div>
         <ul className="mb-2">
             <Message message={
                 {

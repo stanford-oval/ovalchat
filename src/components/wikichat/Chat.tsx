@@ -3,6 +3,7 @@ import Chatbox from "../interfaces/chatbot/chat/Chatbox";
 import DesktopMenu from "../interfaces/chatbot/menu/DesktopMenu";
 import { useRouter } from 'next/router';
 import getUniqueId from '../../scripts/utils/unique-id';
+import shuffleArray from "../../scripts/utils/shuffle-array";
 
 export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
 
@@ -45,8 +46,19 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
       experiment_id = getUniqueId();
       if (!autoPickMode) {
         router.push(router.asPath + "?experiment_id=" + experiment_id);
-        return
       }
+
+    }
+
+    if (!cs.autoPickMode){
+      // shuffle the systems so that the order users see them is random
+      convoState.setValue((cs: any) => ({
+        ...cs,
+        responseInfo: {
+          ...cs.responseInfo,
+          systems: shuffleArray(cs.responseInfo.systems),
+        },
+      }));
     }
 
     // set experimentId
@@ -84,7 +96,7 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
   return (
     <div id="homeChat">
       <div className="py-4 container flex items-stretch flex-col md:flex-row justify-center md:space-x-2 space-y-2 md:space-y-0">
-        <div className="basis-auto w-full mx-auto">
+        <div className="basis-3/4 w-full mx-auto">
           <Chatbox history={history} convoState={convoState} showHeader={showHeader}/>
         </div>
         {showSideBar &&

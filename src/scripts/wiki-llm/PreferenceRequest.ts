@@ -1,5 +1,4 @@
 export default async function PreferenceRequest(experimentId: string, dialogId: string, turnId: number, winnerSystem: string, loserSystem: string) {
-    console.log("im here")
     console.log(winnerSystem, loserSystem)
     
     await fetch(process.env.NEXT_PUBLIC_CHAT_BACKEND + "/user_preference", {

@@ -26,11 +26,19 @@ export default function MessageBox({ history, convoState, audioRef }: any) {
       className="px-2 bg-white rounded-b-md py-2 border-gray-400 border-2"
       id="messageBox"
     >
-      {convoState.value.turn.startsWith("user-eval") ?
-        <EvalInput convoState={convoState} history={history} handleSubmit={handleSubmit} audioRef={audioRef} />
-        : (convoState.value.turn.startsWith("user-select") ?
-          <SelectInput convoState={convoState} history={history} handleSubmit={handleSubmit} /> :
-          <TextInput convoState={convoState} inputBoxRef={inputBoxRef} handleSubmit={(e: any, message:string) => { handleSubmit(e, convoState, history, message) }} />)}
+      {(() => {
+        if (convoState.value.turn == "user-eval1") {
+          return <EvalInput convoState={convoState} history={history} handleSubmit={handleSubmit} audioRef={audioRef} responseIndex={0} />
+        } else if (convoState.value.turn == "user-eval2") {
+          return <EvalInput convoState={convoState} history={history} handleSubmit={handleSubmit} audioRef={audioRef} responseIndex={1} />
+        }
+        else if (convoState.value.turn.startsWith("user-select")) {
+          return <SelectInput convoState={convoState} history={history} handleSubmit={handleSubmit} />
+        } else {
+          return <TextInput convoState={convoState} inputBoxRef={inputBoxRef} handleSubmit={(e: any, message: string) => { handleSubmit(e, convoState, history, message) }} />
+        }
+      })()}
+
     </form>
   );
 }
