@@ -87,11 +87,8 @@ export default function Messages({ history, convoState, messagesBottom }: any) {
           <Message message={message} audioRef={audioRef} convoState={convoState} key={message.id} />
         ))}
         {(!convoState.value.turn.startsWith("user") && !convoState.value.turn.includes("read")) && (
-          <div
-            className={
-              "rounded-3xl w-fit px-4 py-3 mt-1.5 max-w-xs break-words bg-gray-200 mr-auto"
-            }
-          >
+          // show loading animation
+          <div className="rounded-3xl w-fit px-5 py-3 mx-2 mt-1.5 max-w-xs break-words bg-gray-200 mr-auto">
             <div className="px-3 py-1">
               <div className="snippet" data-title=".dot-flashing">
                 <div className="stage">

@@ -19,9 +19,9 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit,
 
     return (
         
-    <div className="py-1 px-3">
+    <div className="py-3 px-3">
         <div className="font-bold text-lg text-left">Here is the <span className="text-wikichat-primary">{responseIndex == 0 ? "first" : "second"}</span> reply:</div>
-        <ul className="mb-2">
+        <ul className="mb-2 -ml-3 pt-2">
             <Message message={
                 {
                     show: true,
