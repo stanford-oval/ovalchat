@@ -27,7 +27,9 @@ export default function Technical({ convoState }: any) {
             {convoState.value.responseInfo.turnId}</div>
 
         </div>
-        {convoState.value.responseInfo.responses.length > 0 && <ResponseInfo ri={convoState.value.responseInfo} />}
+        {convoState.value.responseInfo.responses.length > 0 && 
+          <ResponseInfo ri={convoState.value.responseInfo} />
+        }
       </div>
     </div>
   );
