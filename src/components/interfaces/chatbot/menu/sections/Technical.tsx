@@ -81,13 +81,13 @@ function Response({ response, logObject, status, naturalnessRating }: any) {
         <span className="text-xs"><b>{naturalnessRating}</b>/5</span>
       </div>
       }
-      <div className="flex flex-col text-xs">
-        <span className="font-bold">"{response.system}":</span>
+      <div className="flex flex-col text-xs w-full">
+        <span className="font-bold break-words">"{response.system}":</span>
         {response.response}
         {logObject && <Disclosure defaultOpen={false}>
           {({ open }) => (
-            <div className="w-full mt-2">
-              <Disclosure.Button className="flex w-full rounded-lg text-left font-medium text-gray-600 focus:outline-none">
+            <div className="mt-2">
+              <Disclosure.Button className="flex rounded-lg text-left font-medium text-gray-600 focus:outline-none">
                 <span>Log object</span>
                 <ChevronUpIcon
                   className={`${open ? "transform" : "rotate-180"
@@ -96,7 +96,7 @@ function Response({ response, logObject, status, naturalnessRating }: any) {
               </Disclosure.Button>
               <DisclosureTransition>
                 <Disclosure.Panel className="text-gray-500">
-                  <code>{JSON.stringify(logObject, null, 4)}</code>
+                  <code className="break-words">{JSON.stringify(logObject, null, 4)}</code>
                 </Disclosure.Panel>
               </DisclosureTransition>{" "}
             </div>

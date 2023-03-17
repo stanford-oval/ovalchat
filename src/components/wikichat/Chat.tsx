@@ -100,7 +100,7 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
           <Chatbox history={history} convoState={convoState} showHeader={showHeader}/>
         </div>
         {showSideBar &&
-          <div className="basis-auto md:basis-5/12 lg:basis-1/4 w-fit mx-auto md:min-h-full"><DesktopMenu convoState={convoState} /></div>
+          <div className="w-1/4 mx-auto"><DesktopMenu convoState={convoState} /></div>
         }
       </div>
     </div>
