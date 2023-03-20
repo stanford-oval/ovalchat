@@ -41,7 +41,7 @@ export default function Hero() {
               Stay informed with WikiChat.
             </p>
             <p className="mt-4 text-xl xl:text-2xl tracking-tight text-gray-600">
-              WikiChat is an experimental chatbot aimed at improving the factuality of GPT-3 by retrieving data from Wikipedia.
+              WikiChat is an experimental chatbot aimed at improving the factuality of large language models such as GPT-3 by retrieving data from Wikipedia.
             </p>
             <div className="mt-4 w-full">
               <h2 className="text-gray-500 text-lg">

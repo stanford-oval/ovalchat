@@ -13,7 +13,7 @@ export default function DesktopMenu({ convoState }: any) {
     {
       title: "Technical",
       component: <Technical convoState={convoState} />,
-      defaultHide: false //!convoState.value.showTechnical,
+      defaultHide: false,
     },
   ];
 
