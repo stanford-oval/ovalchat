@@ -44,7 +44,7 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
       experiment_id = key[0].replace("?experiment_id=", "")
     } else {
       // default value if not provided in the URL
-      experiment_id = getUniqueId();
+      experiment_id = "main-page"
       if (!autoPickMode) {
         router.push(router.asPath + "?experiment_id=" + experiment_id);
       }
