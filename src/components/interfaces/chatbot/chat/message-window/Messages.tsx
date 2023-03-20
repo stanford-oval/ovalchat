@@ -48,6 +48,12 @@ export default function Messages({ history, convoState, messagesBottom }: any) {
         id: -2,
         fromChatbot: true,
         show: true,
+        text: "I'm still in development, so if I don't understand something you said, please try and continue the conversation.",
+      });
+      history.value.push({
+        id: -3,
+        fromChatbot: true,
+        show: true,
         text: "I can talk about recent events until February 1st of this year. For example, I can talk about movies, books, music, celebrities, political events, history, geography and many more topics.",
       });
       history.value.push({

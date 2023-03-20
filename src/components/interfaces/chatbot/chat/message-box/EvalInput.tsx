@@ -74,7 +74,7 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit,
                             value: naturalnessRating,
                             setValue: setNaturalnessRating,
                             label1: "Unnatural",
-                            label2: "Humanlike"
+                            label2: "Natural"
                         }}
                             date={key}
                             convoState={convoState}
