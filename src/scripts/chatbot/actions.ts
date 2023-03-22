@@ -43,7 +43,7 @@ export function userSelect(convoState, history, idx: number, responseInfo?: any)
             ...cs,
             responseInfo: {
               ...cs.responseInfo,
-              systems: shuffleArray(cs.responseInfo.systems),
+              systems: shuffleArray(cs.allAvailableSystems),
             },
           }));
     }

@@ -28,14 +28,14 @@ export default function Technical({ convoState }: any) {
 
         </div>
         {convoState.value.responseInfo.responses.length > 0 && 
-          <ResponseInfo ri={convoState.value.responseInfo} />
+          <ResponseInfo ri={convoState.value.responseInfo} convoState={convoState} />
         }
       </div>
     </div>
   );
 }
 
-function ResponseInfo({ ri }: any) {
+function ResponseInfo({ ri, convoState }: any) {
   return (
     <div >
 

@@ -31,8 +31,10 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
       dialogId: null,
       turnId: 0,
       rating: null,
-      systems: ["generate", "retrieve_and_generate"],
+      systems: [], // the systems used to obtain responses, in the same order
     },
+    allAvailableSystems: ["generate", "retrieve_and_generate"],
+    selectedSystem: null,
     autoPickMode: autoPickMode,
     finishedJob: false // whether the crowdsourcing job has finished
   });
@@ -57,10 +59,27 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
         ...cs,
         responseInfo: {
           ...cs.responseInfo,
-          systems: shuffleArray(cs.responseInfo.systems),
+          systems: shuffleArray(cs.allAvailableSystems),
         },
       }));
     }
+    else{
+      // just initialize the systems
+      convoState.setValue((cs: any) => ({
+        ...cs,
+        responseInfo: {
+          ...cs.responseInfo,
+          systems: [...cs.allAvailableSystems],
+        },
+      }));
+    }
+
+    // set the default selectedSystem
+    convoState.setValue((cs: any) => ({
+      ...cs,
+      selectedSystem: cs.allAvailableSystems[0]
+    }));
+  
 
     // set experimentId
     convoState.setValue((cs: any) => ({

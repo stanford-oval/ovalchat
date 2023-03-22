@@ -1,5 +1,7 @@
 export default function shuffleArray(array){
-    let currentIndex = array.length
+    // Returns a shuffled copy of the array
+    let copy = [...array]
+    let currentIndex = copy.length
     let randomIndex;
     
     // While there remain elements to shuffle.
@@ -10,9 +12,9 @@ export default function shuffleArray(array){
         currentIndex -= 1;
     
         // swap it with the current element.
-        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+        [copy[currentIndex], copy[randomIndex]] = [copy[randomIndex], copy[currentIndex]];
     }
     console.log('randomized the order of systems');
       
-    return array
+    return copy
 }

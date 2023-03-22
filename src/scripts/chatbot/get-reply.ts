@@ -32,6 +32,8 @@ export default async function getReply(
     responses: output.map((o) => o["agent_utterance"]),
     logObjects: output.map((o) => o["log_object"]),
   }
+  if (convoState.value.autoPickMode)
+    newInfo["systems"] = [convoState.value.selectedSystem]
 
   convoState.setValue((cs: any) => ({
     ...cs,
@@ -49,16 +51,12 @@ export default async function getReply(
 }
 
 async function getAiOutput(convoState, message) {
-  let completionParameters = {}
-
-  completionParameters["systems"] = convoState.value.responseInfo.systems;
-
   const ri = convoState.value.responseInfo;
 
   let replies = [];
   if (convoState.value.autoPickMode) {
     // only need one request, so the returned replies array will have one item
-    let reply = await ChatRequest(ri.experimentId, ri.dialogId, ri.turnId, message, ri.systems[0]);
+    let reply = await ChatRequest(ri.experimentId, ri.dialogId, ri.turnId, message, convoState.value.selectedSystem);
     replies.push(reply);
   } else {
     for (let i = 0; i < 2; i++) {
