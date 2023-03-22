@@ -51,7 +51,7 @@ export default function Alert() {
                         Replies may be inaccurate.
                     </p>
                     <Link
-                        href="/improve-wikichat"
+                        href="/improve"
                         className="mx-auto lg:mx-0 flex-none rounded-full bg-wikichat-secondary py-1 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-wikichat-secondary-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
                     >
                         Contribute <span aria-hidden="true">&rarr;</span>

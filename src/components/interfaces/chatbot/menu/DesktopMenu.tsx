@@ -3,17 +3,17 @@ import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon, VolumeUpIcon } from "@heroicons/react/solid";
 import Technical from "./sections/Technical";
 import DisclosureTransition from "../../../global/utility/DisclosureTransition";
-import { Switch } from '@headlessui/react'
-import clsx from "clsx";
-import { MenuAlt2Icon } from "@heroicons/react/outline";
-import { isIOS } from 'react-device-detect';
+// import { Switch } from '@headlessui/react'
+// import clsx from "clsx";
+// import { MenuAlt2Icon } from "@heroicons/react/outline";
+// import { isIOS } from 'react-device-detect';
 
 export default function DesktopMenu({ convoState }: any) {
   const sections = [
     {
       title: "Technical",
       component: <Technical convoState={convoState} />,
-      defaultHide: false //!convoState.value.showTechnical,
+      defaultHide: false,
     },
   ];
 
@@ -22,11 +22,12 @@ export default function DesktopMenu({ convoState }: any) {
       id="chat-window"
       className="w-full bg-white border-2 border-gray-400 rounded-md h-fit md:min-h-full overflow-y-auto pretty-scroll"
     >
-      <div className="border-b-2 border-gray-400 py-4">
-        <div className="text-2xl text-center font-bold text-wikichat-secondary">
+      {/* <div className="border-b-2 border-gray-400 py-4"> */}
+        {/* <div className="text-2xl text-center font-bold text-wikichat-secondary">
           Menu
-        </div>
-
+        </div> */}
+        {/* TODO: fix autoplay */}
+        {/* 
         {!isIOS && <div className="text-gray-600 text-center mx-auto mt-1 text-sm">
           <span><MenuAlt2Icon className="h-4 w-4 -mt-0.5 inline-block" /> text-only</span>
           <Switch
@@ -56,9 +57,9 @@ export default function DesktopMenu({ convoState }: any) {
             />
           </Switch>
           <span>autoplay <VolumeUpIcon className="h-4 w-4 -mt-0.5 inline-block" /></span>
-        </div>}
+        </div>} */}
 
-      </div>
+      {/* </div> */}
       <div className="px-2 py-1">
         {sections.map((section) => (
           <Disclosure key={section.title} defaultOpen={!section.defaultHide}>

@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from "uuid";
+import getUniqueId from "../utils/unique-id";
 import ChatRequest from "../wiki-llm/ChatRequest";
 
 export default async function getReply(
@@ -20,16 +20,17 @@ export default async function getReply(
     }));
     return [
       {
-        id: uuidv4(),
+        id: getUniqueId(),
         fromChatbot: true,
         text: "Oops! Something went wrong. Please refresh the page and try again.",
       },
     ];
   }
 
+  // output might have 1 or 2 items
   const newInfo = {
-    responses: [output[0]["agent_utterance"], output[1]["agent_utterance"]],
-    logObjects: [output[0]["log_object"], output[1]["log_object"]],
+    responses: output.map((o) => o["agent_utterance"]),
+    logObjects: output.map((o) => o["log_object"]),
   }
 
   convoState.setValue((cs: any) => ({
@@ -52,29 +53,19 @@ async function getAiOutput(convoState, message) {
 
   completionParameters["systems"] = convoState.value.responseInfo.systems;
 
-  convoState.setValue((cs: any) => ({
-    ...cs,
-    responseInfo: {
-      ...cs.responseInfo,
-      currentDialogId: uuidv4(),
-    },
-  }));
-
   const ri = convoState.value.responseInfo;
 
   let replies = [];
-  for (let i = 0; i < 2; i++) {
-    let reply = await ChatRequest(ri.experimentId, ri.currentDialogId, ri.turnId, message, ri.systems[i]);
+  if (convoState.value.autoPickMode) {
+    // only need one request, so the returned replies array will have one item
+    let reply = await ChatRequest(ri.experimentId, ri.dialogId, ri.turnId, message, ri.systems[0]);
     replies.push(reply);
+  } else {
+    for (let i = 0; i < 2; i++) {
+      let reply = await ChatRequest(ri.experimentId, ri.dialogId, ri.turnId, message, ri.systems[i]);
+      replies.push(reply);
+    }
   }
-
-  convoState.setValue((cs: any) => ({
-    ...cs,
-    responseInfo: {
-      ...cs.responseInfo,
-      turnId: cs.responseInfo.turnId + 1,
-    },
-  }));
 
   return replies
 }

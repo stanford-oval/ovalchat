@@ -1,5 +1,5 @@
-export default async function RatingRequest(experimentId: string, dialogId: string, turnId: number, systemName: string, userNaturalnessRating: number) {
-    await fetch("http://localhost:5001/user_rating", {
+export default async function RatingRequest(experimentId: string, dialogId: string, turnId: number, systemName: string, userNaturalnessRating: number, userFactualityRating: boolean, userFactualityConfidence: number) {
+    await fetch(process.env.NEXT_PUBLIC_CHAT_BACKEND + "/user_rating", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -9,6 +9,8 @@ export default async function RatingRequest(experimentId: string, dialogId: stri
             dialog_id: dialogId,
             turn_id: turnId,
             user_naturalness_rating: userNaturalnessRating,
+            user_factuality_rating: userFactualityRating,
+            user_factuality_confidence: userFactualityConfidence,
             system_name: systemName
         })
     }).then((res) => res.json())

@@ -25,8 +25,7 @@
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-joyride": "^2.5.3",
-    "universal-cookie": "^4.0.4",
-    "uuid": "^9.0.0"
+    "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
     "@types/node": "^12.12.21",

@@ -19,11 +19,17 @@ export default function Technical({ convoState }: any) {
             <span className="font-bold">Experiment ID: </span>
             {convoState.value.responseInfo.experimentId}
           </div>
+          {convoState.value.responseInfo.dialogId && <div>
+            <span className="font-bold">Dialog ID: </span>
+            {convoState.value.responseInfo.dialogId}
+          </div>}
           <div> <span className="font-bold">Turn ID: </span>
             {convoState.value.responseInfo.turnId}</div>
 
         </div>
-        {convoState.value.responseInfo.responses.length > 0 && <ResponseInfo ri={convoState.value.responseInfo} />}
+        {convoState.value.responseInfo.responses.length > 0 && 
+          <ResponseInfo ri={convoState.value.responseInfo} />
+        }
       </div>
     </div>
   );
@@ -69,17 +75,19 @@ function Response({ response, logObject, status, naturalnessRating }: any) {
   }
   return (
     <div className={clsx("p-2 rounded flex flex-row space-x-2 align-middle", bgColor)}>
+      { naturalnessRating === null &&
       <div className={clsx("flex flex-col justify-center align-middle text-center", textColor)}>
         <FontAwesomeIcon icon={icon} className={clsx("h-5 w-5 mx-1.5 my-1", textColor)} />
         <span className="text-xs"><b>{naturalnessRating}</b>/5</span>
       </div>
-      <div className="flex flex-col text-xs">
-        <span className="font-bold">Restaurant Genie output: </span>
+      }
+      <div className="flex flex-col text-xs w-full">
+        <span className="font-bold break-words">"{response.system}":</span>
         {response.response}
         {logObject && <Disclosure defaultOpen={false}>
           {({ open }) => (
-            <div className="w-full mt-2">
-              <Disclosure.Button className="flex w-full rounded-lg text-left font-medium text-gray-600 focus:outline-none">
+            <div className="mt-2">
+              <Disclosure.Button className="flex rounded-lg text-left font-medium text-gray-600 focus:outline-none">
                 <span>Log object</span>
                 <ChevronUpIcon
                   className={`${open ? "transform" : "rotate-180"
@@ -88,7 +96,7 @@ function Response({ response, logObject, status, naturalnessRating }: any) {
               </Disclosure.Button>
               <DisclosureTransition>
                 <Disclosure.Panel className="text-gray-500">
-                  <code>{JSON.stringify(logObject)}</code>
+                  <code className="break-words">{JSON.stringify(logObject, null, 4)}</code>
                 </Disclosure.Panel>
               </DisclosureTransition>{" "}
             </div>

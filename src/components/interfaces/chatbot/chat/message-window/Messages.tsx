@@ -2,8 +2,7 @@ import React, { useRef, useEffect } from "react";
 import Message from "./Message";
 import MicrophoneInfo from "./initial-messages/MicrophoneInfo";
 
-export default function Messages({ history, convoState }: any) {
-  const messagesBottom = useRef<HTMLDivElement>(null);
+export default function Messages({ history, convoState, messagesBottom }: any) {
   let audioRef = useRef();
 
   audioRef.current = convoState.value.audio;
@@ -29,7 +28,7 @@ export default function Messages({ history, convoState }: any) {
   // scrolling
   useEffect(() => {
     setTimeout(() => {
-      if (messagesBottom.current)
+      if (messagesBottom.current) {
         if (
           history.value
             .slice(0, Math.min(history.value.length, 10))
@@ -39,24 +38,22 @@ export default function Messages({ history, convoState }: any) {
             behavior: "smooth",
             block: "nearest",
           });
-    }, 5);
+      }
+    }, 200);
   }, [history.value]);
 
   return (
     <div
-      className="bg-white border-x-2 border-gray-400 p-2 overflow-y-auto pretty-scroll"
-      id="chat-window"
+      className="bg-white border-x-2 border-t-2 border-gray-400 p-2 overflow-y-auto pretty-scroll h-full"
+      id={convoState.value.turn.includes("eval") || convoState.value.turn.includes("select") ? "small-chat-window" : "chat-window"}
     >
       <ul>
         {history.value.map((message: any) => (
           <Message message={message} audioRef={audioRef} convoState={convoState} key={message.id} />
         ))}
         {(!convoState.value.turn.startsWith("user") && !convoState.value.turn.includes("read")) && (
-          <div
-            className={
-              "rounded-3xl w-fit px-4 py-3 mt-1.5 max-w-xs break-words bg-gray-200 mr-auto"
-            }
-          >
+          // show loading animation
+          <div className="rounded-3xl w-fit px-5 py-3 mx-2 mt-1.5 max-w-xs break-words bg-gray-200 mr-auto">
             <div className="px-3 py-1">
               <div className="snippet" data-title=".dot-flashing">
                 <div className="stage">

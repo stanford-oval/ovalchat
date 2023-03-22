@@ -8,6 +8,7 @@ import { messageToSpeechParams } from '../../../../scripts/chatbot/audio_utils';
 export default function Chatbox({
   convoState,
   history,
+  showHeader
 }: any) {
   let audioRef = useRef()
 
@@ -26,6 +27,7 @@ export default function Chatbox({
 
   useEffect(() => {
     if (!convoState.value.audio.shouldAutoPlay) {
+      // autoplay is false, so we can show all the messages at once
       convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-wikichat-reads")[0], audio: { ...cs.audio, autoPlaying: false } }))
       // stop audio
       if (convoState.value.audio.player && convoState.autoPlaying) {
@@ -42,7 +44,7 @@ export default function Chatbox({
       history.setValue((h: any) => {
         return h.map((m: any) => {
           if (m.id == item.id)
-            return { ...item, show: true }
+            return { ...item, show: true } // show the message
           else
             return m
         })
@@ -50,6 +52,9 @@ export default function Chatbox({
 
       return;
     }
+
+    // TODO: add comments
+    // autoplay occurs here
 
     if (convoState.value.audio.autoPlaying)
       return;
@@ -85,15 +90,34 @@ export default function Chatbox({
 
   }, [history.value, convoState.value.audio.shouldAutoPlay])
 
+  const messagesBottom = useRef<HTMLDivElement>(null);
+
   return (
     <div>
-      <Header />
-      <Messages history={history} convoState={convoState} />
-      <MessageBox
-        history={history}
-        convoState={convoState}
-        audioRef={audioRef}
-      />
+      {showHeader &&
+       <Header />
+      }
+      {convoState.value.finishedJob ?
+        <div
+        className="bg-white border-x-2 border-y-2 border-gray-400 p-2 overflow-y-auto pretty-scroll h-full flex"
+        id="chat-window">
+            <span className="m-auto text-3xl text-center leading-loose">
+              Thank You! <br/>
+              Please copy this code {' '}
+              <span className="text-wikichat-primary hover:bg-gray-200">
+                {convoState.value.responseInfo.dialogId}
+              </span>
+              <br/>
+              And close this tab.
+            </span>
+        </div>
+        :
+        <><Messages history={history} convoState={convoState} messagesBottom={messagesBottom} /><MessageBox
+          history={history}
+          convoState={convoState}
+          audioRef={audioRef}
+          messagesBottom={messagesBottom} /></>
+      }
     </div>
   );
 }

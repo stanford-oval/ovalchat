@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { faMicrophone, faPen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Microphone from "../../../speech/Microphone";
 import { clsx } from "clsx";
 
 export default function TextInput({ convoState, inputBoxRef, handleSubmit }: any) {
+    const [message, setMessage] = useState("");
     return <div className="relative">
         <div className="flex absolute inset-y-0 left-0 items-center pl-5 pointer-events-none  z-10">
             {convoState.value.turn.includes("microphone") ? (
@@ -21,13 +22,8 @@ export default function TextInput({ convoState, inputBoxRef, handleSubmit }: any
         <input
             ref={inputBoxRef}
             type="text"
-            onChange={(e) => {
-                convoState.setValue((cs: any) => ({
-                    ...cs,
-                    draft: e.target.value,
-                }));
-            }}
-            value={convoState.value.draft}
+            onChange={(e) => setMessage(e.target.value)}
+            value={message}
             placeholder={
                 (convoState.value.turn.startsWith("user-answer") && !convoState.value.turn.includes("wikichat-reads"))
                     ? (convoState.value.turn.includes("microphone")
@@ -57,20 +53,15 @@ export default function TextInput({ convoState, inputBoxRef, handleSubmit }: any
                         turn: str,
                     }))
                 }
-                setText={(str: string) =>
-                    convoState.setValue((cs: any) => ({
-                        ...cs,
-                        draft: str,
-                    }))
-                }
-                currText={convoState.value.draft}
+                setText={(str: string) => setMessage(str)}
+                currText={message}
             />
         </div>
         <button
             type="submit"
-            onClick={(e) => handleSubmit(e)}
+            onClick={(e) => {setMessage(""); handleSubmit(e, message)}}
             disabled={
-                convoState.value.draft.length == 0 ||
+                message.length == 0 ||
                 convoState.value.turn.includes("microphone") || convoState.value.turn.includes("read")
             }
             className="text-white absolute right-2.5 bottom-3 md:bottom-2.5 bg-wikichat-primary hover:bg-wikichat-primary-dark disabled:bg-slate-400 focus:outline-none font-medium rounded-full text-sm px-4 py-2"

@@ -1,4 +1,5 @@
-import { v4 as uuidv4 } from "uuid";
+import shuffleArray from "../utils/shuffle-array";
+import getUniqueId from "../utils/unique-id";
 import PreferenceRequest from "../wiki-llm/PreferenceRequest";
 
 export function userSelect(convoState, history, idx: number, responseInfo?: any) {
@@ -8,7 +9,7 @@ export function userSelect(convoState, history, idx: number, responseInfo?: any)
     history.setValue((h: any) => [
         ...h,
         {
-            id: uuidv4(),
+            id: getUniqueId(),
             fromChatbot: true,
             text: ri.responses[idx],
             show: true
@@ -20,9 +21,31 @@ export function userSelect(convoState, history, idx: number, responseInfo?: any)
         turn: "user-answer",
         responseInfo: {
             ...cs.responseInfo,
-            rating: "resp" + (idx + 1)
+            rating: "resp" + (idx + 1) // resp1 or resp2 instead of null
         }
     }))
 
-    PreferenceRequest(ri.experimentId, ri.currentDialogId, ri.turnId, ri.systems[idx], ri.systems[1 - idx])
+    // this turn has ended, so increment turn_id
+    convoState.setValue((cs: any) => ({
+        ...cs,
+        responseInfo: {
+          ...cs.responseInfo,
+          turnId: cs.responseInfo.turnId + 1,
+          rating: null,
+        },
+      }));
+
+    if (!convoState.value.autoPickMode) {
+        PreferenceRequest(ri.experimentId, ri.dialogId, ri.turnId, ri.systems[idx], ri.systems[1 - idx]);
+
+        // shuffle the systems so that the order users see them is random
+        convoState.setValue((cs: any) => ({
+            ...cs,
+            responseInfo: {
+              ...cs.responseInfo,
+              systems: shuffleArray(cs.responseInfo.systems),
+            },
+          }));
+    }
+    
 }
