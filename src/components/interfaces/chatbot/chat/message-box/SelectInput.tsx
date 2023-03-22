@@ -10,7 +10,7 @@ export default function SelectInput({ convoState, history, handleSubmit }: any) 
                 key={i}
                 onClick={(e: any) => {
                     handleSubmit(e, convoState, history, i);
-                    const MAX_USER_TURNS = 5;
+                    const MAX_USER_TURNS = parseInt(process.env.NEXT_PUBLIC_CROWDSOURCE_MAX_TURNS);
                     if (convoState.value.responseInfo.turnId == MAX_USER_TURNS-1) {
                         // alert the user that their job is finished
                         if (navigator.clipboard && window.isSecureContext) {

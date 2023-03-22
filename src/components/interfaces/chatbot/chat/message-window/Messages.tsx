@@ -42,7 +42,7 @@ export default function Messages({ history, convoState, messagesBottom }: any) {
         id: -1,
         show: true,
         fromChatbot: true,
-        text: "Your responses are recorded for research purposes, so please do not share any Personal Identifiable Information.",
+        text: "Your responses will be recorded for research purposes, so please do not share any Personal Identifiable Information.",
       });
       history.value.push({
         id: -2,
@@ -54,13 +54,13 @@ export default function Messages({ history, convoState, messagesBottom }: any) {
         id: -3,
         fromChatbot: true,
         show: true,
-        text: "I can talk about recent events until February 1st of this year. For example, I can talk about movies, books, music, celebrities, political events, history, geography and many more topics.",
+        text: "I can talk about anything recent until February 1st of this year. For example, I can talk about movies, books, music, celebrities, and many more topics.",
       });
       history.value.push({
         id: -4,
         fromChatbot: true,
         show: true,
-        text: "Let's chat!",
+        text: "What would you like to talk about today?",
       });
     }
     convoState.setValue((cs: any) => ({ ...cs, turn: "user-answer" }));
