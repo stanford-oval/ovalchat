@@ -2,7 +2,7 @@ import React from "react";
 import routes from "../../../data/routes";
 import socials from "../../../data/socials";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
+import { footerMessage, footerSponsors } from "../custom";
 
 export default function Footer() {
   return (
@@ -37,26 +37,11 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* <p className="mt-8 text-center text-base text-gray-300">
-          WikiChat is part of a research project at Stanford University&apos;s{" "}
-          <a
-            href="https://oval.cs.stanford.edu"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-bold hover:text-gray-200 trans-150"
-          >
-            Open Virtual Assistant Lab
-          </a>
-          .
-        </p> */}
+        <p className="mt-8 text-center text-base text-gray-300">
+          {footerMessage()}
+        </p>
         <div className="mt-7 ml-auto text-center text-base text-gray-300">
-          <a
-            href="https://vercel.com/?utm_source=[stanford-oval]&utm_campaign=oss"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image alt="vercel logo" src="/img/logos/vercel/powered-by.svg" className="mx-auto" height="38" width="200" />
-          </a>
+          {footerSponsors()}
         </div>
       </div>
     </footer>

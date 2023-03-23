@@ -3,6 +3,7 @@ import { faMicrophone, faPen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Microphone from "../../../speech/Microphone";
 import { clsx } from "clsx";
+import { chatbotName } from "../../../../global/custom";
 
 export default function TextInput({ convoState, inputBoxRef, handleSubmit }: any) {
     const [message, setMessage] = useState("");
@@ -29,7 +30,7 @@ export default function TextInput({ convoState, inputBoxRef, handleSubmit }: any
                     ? (convoState.value.turn.includes("microphone")
                         ? "Speak into your microphone..."
                         : "Send message...")
-                    : "Please wait for WikiChat..."
+                    : "Please wait for " + chatbotName() + "..."
             }
             disabled={
                 !convoState.value.turn.startsWith("user-answer") ||

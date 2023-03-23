@@ -8,6 +8,7 @@ import Link from "next/link";
 import NavItem from "./NavItem";
 import Image from "next/image";
 import MobileNavItem from "./MobileNavItem";
+import { chatbotLogo, chatbotName } from "../custom";
 
 export default function Header() {
   const currPath = useRouter().pathname;
@@ -22,11 +23,11 @@ export default function Header() {
                 className="block h-12 w-auto mr-2"
                 width="50"
                 height="50"
-                src="/img/logos/chatbot/puzzle.png"
-                alt="WikiChat logo"
+                src={chatbotLogo()}
+                alt={chatbotName() + " logo"}
               />
               <div className="font-bold tracking-wide my-auto text-xl text-wikichat-primary">
-                WikiChat
+                {chatbotName()}
               </div>
             </div>
           </Link>

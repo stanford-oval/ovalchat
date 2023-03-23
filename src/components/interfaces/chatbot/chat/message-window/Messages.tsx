@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import Message from "./Message";
 import MicrophoneInfo from "./initial-messages/MicrophoneInfo";
+import { chatbotName, crowdsourcingMessages, mainPageMessages } from "../../../../global/custom";
 
 export default function Messages({ history, convoState, messagesBottom }: any) {
   let audioRef = useRef();
@@ -9,60 +10,48 @@ export default function Messages({ history, convoState, messagesBottom }: any) {
 
   useEffect(() => {
     // if (history.value.length > 0) return; // only run this on first render
+
     if (convoState.value.autoPickMode) {
+      // for the main page
+
       history.value.push({
-        id: -1,
+        id: -mainPageMessages().length-1,
         show: true,
         fromChatbot: true,
-        text: "Hi! I am WikiChat.",
+        text: "Hi! I am " + chatbotName() + ".",
       });
+      // Always add the microphone message
       history.value.push({
-        id: -2,
-        show: true,
-        fromChatbot: true,
-        text: "Your responses are recorded for research purposes, so please do not share any Personal Identifiable Information.",
-      });
-      history.value.push({
-        id: -3,
+        id: -mainPageMessages().length,
         fromChatbot: true,
         show: true,
         component: <MicrophoneInfo />,
         read: "You can tap on the microphone button to start speaking. When you're done talking, click it again. Click the audio button to hear my replies"
       });
-      history.value.push({
-        id: -4,
-        fromChatbot: true,
-        show: true,
-        text: "Let's chat!",
-      });
+
+      // Add custom messages
+      mainPageMessages().forEach((message, index) => {
+        history.value.push({
+          id: -index,
+          show: true,
+          fromChatbot: true,
+          text: message,
+        });
+      })
+
     }
     else {
       // for crowdsourcing experiments
-      history.value.push({
-        id: -1,
-        show: true,
-        fromChatbot: true,
-        text: "Your responses will be recorded for research purposes, so please do not share any Personal Identifiable Information.",
-      });
-      history.value.push({
-        id: -2,
-        fromChatbot: true,
-        show: true,
-        text: "I'm still in development, so if I don't understand something you said, please try and continue the conversation.",
-      });
-      history.value.push({
-        id: -3,
-        fromChatbot: true,
-        show: true,
-        text: "I can talk about anything recent until February 1st of this year. For example, I can talk about movies, books, music, celebrities, and many more topics.",
-      });
-      history.value.push({
-        id: -4,
-        fromChatbot: true,
-        show: true,
-        text: "What would you like to talk about today?",
-      });
+      crowdsourcingMessages().forEach((message, index) => {
+        history.value.push({
+          id: -index,
+          show: true,
+          fromChatbot: true,
+          text: message,
+        });
+      })
     }
+
     convoState.setValue((cs: any) => ({ ...cs, turn: "user-answer" }));
   }, []);
 

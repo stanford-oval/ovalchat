@@ -5,6 +5,7 @@ import { InformationCircleIcon } from "@heroicons/react/outline";
 
 import dynamic from "next/dynamic";
 import { ACTIONS, EVENTS, STATUS } from "react-joyride";
+import { chatbotName } from "../../../../../global/custom";
 const JoyRideNoSSR = dynamic(() => import("react-joyride"), { ssr: false });
 
 export default function MicrophoneInfo() {
@@ -20,7 +21,7 @@ export default function MicrophoneInfo() {
             {
                 target: ".demo-audio",
                 content:
-                    "Tap this button to hear WikiChat speak!",
+                    "Tap this button to hear" + chatbotName() + "speak!",
                 disableBeacon: true,
             },
         ],
