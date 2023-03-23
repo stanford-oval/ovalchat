@@ -1,3 +1,20 @@
+<p align="center">
+    <h1 align="center"><b>WikiChat</b></h1>
+    <p align="center">Quick and easy way to conduct user studies with chatbots</p>
+    <p align="center">
+        <a href="https://stanford.edu" target="_blank">
+            <img src="./public/img/logos/stanford/university.png" width="140px" alt="Stanford University" />
+        </a>
+    </p>
+    <p align="center" style="align: center;">
+        <a href="https://vercel.com/?utm_source=[stanford-oval]&utm_campaign=oss" target="_blank">
+            <img src="./public/img/logos/vercel/powered-by.svg" width="150px" alt="Powered by Vercel" />
+        </a>
+    </p>
+</p>
+
+<hr />
+
 ## About
 
 This repository contains researcher-friendly code to quickly bring up a web-based chatbot to conduct user studies.
