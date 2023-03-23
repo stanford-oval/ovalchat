@@ -8,7 +8,7 @@ import { ChevronUpIcon } from '@heroicons/react/solid';
 
 export default function Technical({ convoState }: any) {
   return (
-    <div className="px-1 mt-1 text-gray-900">
+    <div className="px-2 mt-1 text-gray-900">
       <div>
         <span className="font-bold">Current turn: </span>
         {convoState.value.turn}
