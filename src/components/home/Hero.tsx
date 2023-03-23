@@ -1,5 +1,5 @@
 import React from "react";
-import { chatbotDescription, chatbotTagLine, developedByHeader } from "../global/custom";
+import { chatbotDescription, chatbotTagLine, developedByHeader } from "../global/branding";
 import Chat from '../wikichat/Chat';
 import Alert from './Alert';
 

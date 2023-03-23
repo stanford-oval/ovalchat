@@ -12,7 +12,7 @@ This project built with Next.js, Tailwind CSS, OpenAI's GPT-3, and Microsoft Azu
 ## Customize the UI
 
 To customize the UI, start by changing the following files:
-- `src/components/global/custom.tsx`: Contains "branding" information for the website. Update all functions to match your brand.
+- `src/components/global/branding.tsx`: Contains "branding" information for the website. Update all functions to match your brand.
 - `src/data/socials.ts`: Update social media and website links.
 - `tailwind.config.js`: Update the theme colors uner `wikichat`.
 

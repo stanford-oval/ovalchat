@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import { useState } from 'react';
-import { chatbotName } from '../global/custom';
+import { chatbotName } from '../global/branding';
 export default function Alert() {
     // state to show or hide alert
     const [showAlert, setShowAlert] = useState(true);

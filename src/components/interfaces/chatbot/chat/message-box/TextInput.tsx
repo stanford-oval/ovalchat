@@ -3,7 +3,7 @@ import { faMicrophone, faPen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Microphone from "../../../speech/Microphone";
 import { clsx } from "clsx";
-import { chatbotName } from "../../../../global/custom";
+import { chatbotName } from "../../../../global/branding";
 
 export default function TextInput({ convoState, inputBoxRef, handleSubmit }: any) {
     const [message, setMessage] = useState("");

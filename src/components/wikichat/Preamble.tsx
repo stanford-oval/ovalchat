@@ -1,5 +1,5 @@
 import React from "react";
-import { chatbotName } from "../global/custom";
+import { chatbotName } from "../global/branding";
 
 export default function Preamble() {
   return (

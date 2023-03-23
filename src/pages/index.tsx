@@ -1,5 +1,5 @@
 import React from "react";
-import { chatbotName, pageDescription } from "../components/global/custom";
+import { chatbotName, pageDescription } from "../components/global/branding";
 import Page from "../components/global/utility/Page";
 import Hero from "../components/home/Hero";
 

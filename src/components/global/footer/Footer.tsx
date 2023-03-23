@@ -2,7 +2,7 @@ import React from "react";
 import routes from "../../../data/routes";
 import socials from "../../../data/socials";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { footerMessage, footerSponsors } from "../custom";
+import { footerMessage, footerSponsors } from "../branding";
 
 export default function Footer() {
   return (

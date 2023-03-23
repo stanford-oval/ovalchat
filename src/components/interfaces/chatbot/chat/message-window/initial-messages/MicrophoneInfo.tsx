@@ -5,7 +5,7 @@ import { InformationCircleIcon } from "@heroicons/react/outline";
 
 import dynamic from "next/dynamic";
 import { ACTIONS, EVENTS, STATUS } from "react-joyride";
-import { chatbotName } from "../../../../../global/custom";
+import { chatbotName } from "../../../../../global/branding";
 const JoyRideNoSSR = dynamic(() => import("react-joyride"), { ssr: false });
 
 export default function MicrophoneInfo() {

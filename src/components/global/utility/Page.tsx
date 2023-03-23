@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../global/header/Header";
 import Footer from "../../global/footer/Footer";
 import Head from "next/head";
-import { chatbotName } from "../custom";
+import { chatbotName } from "../branding";
 
 export default function Page({ fullTitle, title, desc, children }: PageProps) {
   let pageTitle = fullTitle ? fullTitle : title + " | " + chatbotName();

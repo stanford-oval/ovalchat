@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import Message from "./Message";
 import MicrophoneInfo from "./initial-messages/MicrophoneInfo";
-import { chatbotName, crowdsourcingMessages, mainPageMessages } from "../../../../global/custom";
+import { chatbotName, crowdsourcingMessages, mainPageMessages } from "../../../../global/branding";
 
 export default function Messages({ history, convoState, messagesBottom }: any) {
   let audioRef = useRef();
