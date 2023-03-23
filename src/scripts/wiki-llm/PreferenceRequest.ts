@@ -1,5 +1,5 @@
-export default async function PreferenceRequest(experimentId: string, dialogId: string, turnId: number, winnerSystem: string, loserSystem: string) {
-    console.log(winnerSystem, loserSystem)
+export default async function PreferenceRequest(experimentId: string, dialogId: string, turnId: number, winnerSystem: string, loserSystems: string[]) {
+    // console.log(winnerSystem, loserSystems)
     
     await fetch(process.env.NEXT_PUBLIC_CHAT_BACKEND + "/user_preference", {
         method: 'POST',
@@ -11,7 +11,7 @@ export default async function PreferenceRequest(experimentId: string, dialogId: 
             dialog_id: dialogId,
             turn_id: turnId,
             winner_system: winnerSystem,
-            loser_system: loserSystem
+            loser_systems: loserSystems
         })
     }).then((res) => res.json())
 }

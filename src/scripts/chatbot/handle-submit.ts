@@ -42,7 +42,7 @@ export default async function handleSubmit(e: any, convoState: any, history: any
 
         convoState.setValue((cs: any) => ({
             ...cs,
-            turn: responseIdx == 1 ? "user-select" : "user-eval2", // if evaluating second response, go to user-select, otherwise go to user-eval2
+            turn: responseIdx == convoState.value.allAvailableSystems.length-1 ? "user-select" : "user-eval"+(responseIdx+2).toString(), // if evaluating the last response, go to user-select, otherwise go to the next user-eval
             responseInfo: {
                 ...cs.responseInfo,
                 naturalnessRatings: cs.responseInfo.naturalnessRatings.concat([naturalnessRating]),

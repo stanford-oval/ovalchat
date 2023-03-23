@@ -33,7 +33,7 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
       rating: null,
       systems: [], // the systems used to obtain responses, in the same order
     },
-    allAvailableSystems: ["generate", "retrieve_and_generate"],
+    allAvailableSystems: ["generate", "verify_and_correct", "retrieve_and_generate", "retrieve_generate_verify_correct", "retrieve_only"],
     selectedSystem: null,
     autoPickMode: autoPickMode,
     finishedJob: false // whether the crowdsourcing job has finished
@@ -119,7 +119,7 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
         <div className="basis-3/4 w-full mx-auto">
           <Chatbox history={history} convoState={convoState} showHeader={showHeader}/>
         </div>
-        {showSideBar &&
+        {true &&
           <div className="w-1/4 mx-auto"><DesktopMenu convoState={convoState} /></div>
         }
       </div>
