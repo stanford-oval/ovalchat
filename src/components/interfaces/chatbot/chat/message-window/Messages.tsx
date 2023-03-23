@@ -20,7 +20,7 @@ export default function Messages({ history, convoState, messagesBottom }: any) {
       id: -4,
       fromChatbot: true,
       show: true,
-      text: "How may I help you?",
+      text: "Hi there, I am a virtual assistant for health survey. Shall we get started?",
     };
     convoState.setValue((cs: any) => ({ ...cs, turn: "user-answer" }));
   }, []);

@@ -4,7 +4,7 @@ import Footer from "../../global/footer/Footer";
 import Head from "next/head";
 
 export default function Page({ fullTitle, title, desc, children }: PageProps) {
-  let pageTitle = fullTitle ? fullTitle : title + " | Restaurant Genie";
+  let pageTitle = fullTitle ? fullTitle : title + " | Health Survey";
 
   return (
     <>

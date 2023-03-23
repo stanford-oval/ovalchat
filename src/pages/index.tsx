@@ -5,7 +5,7 @@ import Hero from "../components/home/Hero";
 export default function index() {
   return (
     <Page
-      fullTitle="Restaurant Genie"
+      fullTitle="Health Survey"
       desc="Supported functions: dispute charge, replace card, ask for card arrival, ask for card expiry, search for transactions, and search for accounts."
     >
       <Hero />
