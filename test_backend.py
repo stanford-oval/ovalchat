@@ -55,7 +55,7 @@ req_parser.add_argument("system_name", type=str, location='json',
 # arguments for when a user makes a head-to-head comparison
 req_parser.add_argument("winner_system", type=str, location='json',
                         help='The system that was preferred by the user in the current dialog turn')
-req_parser.add_argument("loser_systems", type=str, nargs='+', location='json',
+req_parser.add_argument("loser_systems", type=list, location='json',
                         help='The system that was not preferred by the user in the current dialog turn')
 
 
