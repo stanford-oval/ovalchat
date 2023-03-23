@@ -9,16 +9,16 @@ export default function Settings({ convoState }: any) {
                 : <span className="font-bold">Available Systems: </span>
                 }
                 {convoState.value.allAvailableSystems.map((system: any) => (
-                    <ul key={system}>
+                    <ul key={system} className="flex flex-row w-full">
                         {convoState.value.autoPickMode &&
                             <input name="system"
                                 id={system}
                                 type="radio"
                                 checked={system === convoState.value.selectedSystem}
-                                className="w-4 h-4 mx-1 bg-gray-100 border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600" onChange={(event) => handleChange(event, convoState)}>
+                                className="w-4 h-4 mx-1 bg-gray-100 border-gray-300 dark:bg-gray-700 dark:border-gray-600" onChange={(event) => handleChange(event, convoState)}>
                             </input>
                         }
-                        <label htmlFor={system}>{system}</label>
+                        <label htmlFor={system} className="break-words w-10/12 mx-2">{system}</label>
                     </ul>
                 ))}
             </div>
