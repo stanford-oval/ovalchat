@@ -20,7 +20,7 @@ export function chatbotDescription() {
 }
 
 export function chatbotLogo() {
-    return "/img/logos/chatbot/puzzle.png"
+    return "/img/logos/chatbot/wikipedia.svg"
 }
 
 export function footerMessage() {
