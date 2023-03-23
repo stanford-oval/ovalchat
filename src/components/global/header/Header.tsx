@@ -20,7 +20,7 @@ export default function Header() {
           <Link href="/" className="h-fit my-auto">
             <div className="flex-shrink-0 flex items-center my-auto">
               <Image
-                className="block h-12 w-auto mr-2"
+                className="block h-10 w-auto mr-2"
                 width="50"
                 height="50"
                 src={chatbotLogo()}
