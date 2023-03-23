@@ -2,11 +2,10 @@
 
 This repository contains researcher-friendly code to quickly bring up a web-based chatbot to conduct user studies.
 Features include:
-- Multiple users can talk to your chabot at the same time
-- Users can select between multiple configurations of your system
-- You can easily ask users to select the best system configuration per turn, by showing them side-by-side replies
-- The UI is easily customizable
+- Support for multiple users at the same time
+- Easily customizable UI
 - Ready to deploy to [Vercel](https://vercel.com/)
+- Support for user studies: You can easily ask users to select the best system configuration per turn, by showing them side-by-side replies via the "Improve" page. They will receive a code after finishing a predetermined number of turns, which can be used to link their response to other platforms like Amazon Mechanical Turk.
 
 This project built with Next.js, Tailwind CSS, OpenAI's GPT-3, and Microsoft Azure's Speech Services.
 
@@ -30,6 +29,9 @@ For the speech-to-text and text-to-speech functionality, create an Azure speech 
 SPEECH_KEY=[your API key]
 SPEECH_REGION=[your API key]
 ```
+
+To do crowdsourcing in the "Improve" page, set the following variable to your desired number in the same file.
+`NEXT_PUBLIC_CROWDSOURCE_MAX_TURNS=8`
 
 ## Run in Development Mode
 ### Implement a custom back-end
