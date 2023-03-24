@@ -52,7 +52,12 @@ To do crowdsourcing in the "Improve" page, set the following variable to your de
 
 ## Run in Development Mode
 ### Implement a custom back-end
-A mock back-end implementation is available in `test_backend.py`. You can install `flask`, `flask_cors` and `flask_restful` python packages, then run
+A mock back-end implementation is available in `test_backend.py`. Install `flask`, `flask_cors` and `flask_restful` python packages first.
+
+This mock implementation only echoes back the inputs it receives. To make your chatbot actually work, you need to implement a custom back-end in this file. Read through `test_backend.py` and implement your own logic there. Most applications need to read and write user inputs to/from a database like MongoDB. If you only have a single user, e.g. when testing the application on your local system, you can use a Python data structure for this purpose instaed of a database, but note that these data structures are not [thread-safe](https://en.wikipedia.org/wiki/Thread_safety) and therefore not suitable for applications that have concurrent users.
+
+### Run the back-end
+Run
 
 ```
 python test_backend.py
@@ -60,8 +65,7 @@ python test_backend.py
 This will bring up a local web server on port 5001. Meaning that requests to `http://localhost:5001` will be handled by this server.
 You can set `NEXT_PUBLIC_CHAT_BACKEND` to `http://localhost:5001` to develop and test the application on your local system.
 
-This mock implementation only echoes back the inputs it receives. To make your chatbot actually work, you need to implement a custom back-end in this file. Read through `test_backend.py` and implement your own logic there. Most applicactions need to read and write user inputs to/from a database like MongoDB.
-
+### Run the front-end
 To run the front-end locally for development, install the dependencies from your package manager and start the Next.js app.
 
 ```bash
