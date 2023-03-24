@@ -4,6 +4,7 @@ import { ChevronUpIcon, VolumeUpIcon } from "@heroicons/react/solid";
 import Technical from "./sections/Technical";
 import Settings from "./sections/Settings";
 import DisclosureTransition from "../../../global/utility/DisclosureTransition";
+import Responses from "./sections/Responses";
 // import { Switch } from '@headlessui/react'
 // import clsx from "clsx";
 // import { MenuAlt2Icon } from "@heroicons/react/outline";
@@ -12,13 +13,18 @@ import DisclosureTransition from "../../../global/utility/DisclosureTransition";
 export default function DesktopMenu({ convoState }: any) {
   const sections = [
     {
+      title: "Technical",
+      component: <Technical convoState={convoState} />,
+      defaultHide: true,
+    },
+    {
       title: "Settings",
       component: <Settings convoState={convoState} />,
       defaultHide: false,
     },
     {
-      title: "Technical",
-      component: <Technical convoState={convoState} />,
+      title: "Responses",
+      component: <Responses convoState={convoState} />,
       defaultHide: false,
     },
   ];
@@ -72,7 +78,7 @@ export default function DesktopMenu({ convoState }: any) {
             <Disclosure defaultOpen={!section.defaultHide}>
               {({ open }) => (
                 <div className="mx-auto w-full rounded-2xl bg-white py-1">
-                  <Disclosure.Button className="flex w-full justify-between rounded-lg bg-gray-200 px-4 py-2 text-left text-sm font-medium text-ovalchat-secondary hover:bg-gray-300 focus:outline-none focus-visible:ring focus-visible:ring-opacity-75">
+                  <Disclosure.Button className="flex w-full justify-between rounded-lg bg-gray-200 px-4 py-2 text-left text-sm font-medium text-ovalchat-secondary hover:bg-gray-300 focus:outline-none focus-visible:ring focus-visible:ring-opacity-75 duration-75">
                     <span>{section.title}</span>
                     <ChevronUpIcon
                       className={`${open ? "rotate-180 transform" : ""

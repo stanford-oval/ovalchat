@@ -4,8 +4,8 @@ export default function Settings({ convoState }: any) {
     return (
         <div className="px-2 mt-1 text-gray-900">
             {convoState.value.autoPickMode
-                ? <span className="font-bold">Select System: </span>
-                : <span className="font-bold">Available Systems: </span>
+                ? <div className="font-bold mb-1">Select System: </div>
+                : <div className="font-bold mb-1">Available Systems: </div>
             }
             {convoState.value.allAvailableSystems.map((system: any) => (
                 <ul key={system} className="flex flex-row w-full items-center">
