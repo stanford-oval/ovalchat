@@ -4,6 +4,7 @@ import DesktopMenu from "../interfaces/chatbot/menu/DesktopMenu";
 import { useRouter } from 'next/router';
 import getUniqueId from '../../scripts/utils/unique-id';
 import shuffleArray from "../../scripts/utils/shuffle-array";
+import { allAvailableSystems } from "../global/branding";
 
 export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
 
@@ -33,7 +34,7 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
       rating: null,
       systems: [], // the systems used to obtain responses, in the same order
     },
-    allAvailableSystems: ["generate", "verify_and_correct", "retrieve_and_generate", "retrieve_generate_verify_correct", "retrieve_only"],
+    allAvailableSystems: allAvailableSystems(),
     selectedSystem: null,
     autoPickMode: autoPickMode,
     finishedJob: false // whether the crowdsourcing job has finished

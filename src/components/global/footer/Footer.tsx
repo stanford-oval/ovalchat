@@ -37,10 +37,10 @@ export default function Footer() {
           ))}
         </div>
 
-        <p className="mt-8 text-center text-base text-gray-300">
+        <p className="my-8 text-center text-base text-gray-300">
           {footerMessage()}
         </p>
-        <div className="mt-7 ml-auto text-center text-base text-gray-300">
+        <div className="my-7 ml-auto text-center text-base text-gray-300">
           {footerSponsors()}
         </div>
       </div>

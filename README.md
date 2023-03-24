@@ -31,7 +31,7 @@ This project built with Next.js, Tailwind CSS, OpenAI's GPT-3, and Microsoft Azu
 To customize the UI, start by changing the following files:
 - `src/components/global/branding.tsx`: Contains "branding" information for the website. Update all functions to match your brand.
 - `src/data/socials.ts`: Update social media and website links.
-- `tailwind.config.js`: Update the theme colors uner `ovalchat`.
+- `tailwind.config.js`: Update the theme colors under `ovalchat`.
 
 
 ## Developer Setup
@@ -52,7 +52,7 @@ To do crowdsourcing in the "Improve" page, set the following variable to your de
 
 ## Run in Development Mode
 ### Implement a custom back-end
-A mock back-end implementation is available in `test_backend.py`. Install `flask`, `flask_cors` and `flask_restful` python packages first.
+A mock back-end implementation is available in `test_backend.py`. Install the python packages in `requirements.txt`.
 
 This mock implementation only echoes back the inputs it receives. To make your chatbot actually work, you need to implement a custom back-end in this file. Read through `test_backend.py` and implement your own logic there. Most applications need to read and write user inputs to/from a database like MongoDB. If you only have a single user, e.g. when testing the application on your local system, you can use a Python data structure for this purpose instaed of a database, but note that these data structures are not [thread-safe](https://en.wikipedia.org/wiki/Thread_safety) and therefore not suitable for applications that have concurrent users.
 

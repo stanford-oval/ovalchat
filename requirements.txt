@@ -1,0 +1,4 @@
+# Needed to run test_backend.py 
+flask
+flask_cors
+flask_restful

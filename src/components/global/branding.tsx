@@ -7,6 +7,11 @@ export function chatbotName() {
     return "WikiChat"
 }
 
+export function allAvailableSystems(){
+    return ["generate", "verify_and_correct", "retrieve_and_generate", "retrieve_generate_verify_correct", "retrieve_only"]
+}
+
+
 export function pageDescription() {
     return "WikiChat is an experimental chatbot aimed at improving the factuality of GPT-3 by retrieving data from Wikipedia."
 }
