@@ -28,14 +28,17 @@ export default function Technical({ convoState }: any) {
 
         </div>
         {convoState.value.responseInfo.responses.length > 0 && 
-          <ResponseInfo ri={convoState.value.responseInfo} />
+          <ResponseInfo convoState={convoState} />
         }
       </div>
     </div>
   );
 }
 
-function ResponseInfo({ ri }: any) {
+function ResponseInfo({ convoState }: any) {
+  const ri = convoState.value.responseInfo
+  const autoPickMode = convoState.value.autoPickMode
+  const allAvailableSystems = convoState.value.allAvailableSystems
   return (
     <div >
 
@@ -45,11 +48,10 @@ function ResponseInfo({ ri }: any) {
 
       <div className="space-y-1 mt-0.5">
         {ri.responses.map((response: any, index: number) => {
-          console.log(ri.preferredResponseIdx);
-          let status = ri.preferredResponseIdx ? (ri.preferredResponseIdx == index + 1 ? "selected" : "rejected") : "unrated";
+          let status = ri.preferredResponseIdx ? (ri.preferredResponseIdx == index ? "selected" : "rejected") : "unrated";
           return (
             <Response key={index}
-              response={{ system: ri.systems[index], response: response }}
+              response={{ system: autoPickMode? convoState.value.selectedSystem : allAvailableSystems[index], response: response }}
               logObject={ri.logObjects[index]}
               status={status}
               naturalnessRating={ri.naturalnessRatings.length > index ? ri.naturalnessRatings[index] : null}

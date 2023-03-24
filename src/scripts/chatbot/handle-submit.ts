@@ -48,7 +48,7 @@ export default async function handleSubmit(e: any, convoState: any, history: any
         const confidenceRating = parseInt(ratings[2])
         
         const ri = convoState.value.responseInfo
-        RatingRequest(ri.experimentId, ri.dialogId, ri.turnId, ri.systems[responseIdx], naturalnessRating, factualCorrectness, confidenceRating)
+        RatingRequest(ri.experimentId, ri.dialogId, ri.turnId, convoState.value.allAvailableSystems[convoState.value.responseInfo.randomizedSystemIndices[responseIdx]], naturalnessRating, factualCorrectness, confidenceRating)
 
         convoState.setValue((cs: any) => ({
             ...cs,

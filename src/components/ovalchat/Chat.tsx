@@ -32,7 +32,7 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
       dialogId: null,
       turnId: 0,
       preferredResponseIdx: null,
-      systems: [], // the systems used to obtain responses, in the same order
+      randomizedSystemIndices:  [...Array(allAvailableSystems().length)].map((item, index) => index), // the order in which we display systems responses to users
     },
     allAvailableSystems: allAvailableSystems(),
     selectedSystem: null,
@@ -60,17 +60,7 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
         ...cs,
         responseInfo: {
           ...cs.responseInfo,
-          systems: shuffleArray(cs.allAvailableSystems),
-        },
-      }));
-    }
-    else {
-      // just initialize the systems
-      convoState.setValue((cs: any) => ({
-        ...cs,
-        responseInfo: {
-          ...cs.responseInfo,
-          systems: [...cs.allAvailableSystems],
+          randomizedSystemIndices: shuffleArray(cs.responseInfo.randomizedSystemIndices),
         },
       }));
     }

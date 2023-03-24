@@ -59,8 +59,8 @@ async function getAiOutput(convoState, message) {
     let reply = await ChatRequest(ri.experimentId, ri.dialogId, ri.turnId, message, convoState.value.selectedSystem);
     replies.push(reply);
   } else {
-    for (let i = 0; i < ri.systems.length; i++) {
-      let reply = await ChatRequest(ri.experimentId, ri.dialogId, ri.turnId, message, ri.systems[i]);
+    for (let i = 0; i < convoState.value.allAvailableSystems.length; i++) {
+      let reply = await ChatRequest(ri.experimentId, ri.dialogId, ri.turnId, message, convoState.value.allAvailableSystems[i]);
       replies.push(reply);
     }
   }

@@ -6,15 +6,15 @@ export default function SelectInput({ convoState, history, handleSubmit }: any) 
         <div className="font-bold text-lg">Click on the response you like better, to continue the conversation.</div>
         <div className="flex flex-col flex-wrap md:gap-x-4 gap-y-1 md:flex-row justify-center align-middle mb-2">
             {
-                convoState.value.responseInfo.responses.map((r: any, i: number) => <button
-                    key={i}
+                convoState.value.responseInfo.randomizedSystemIndices.map((randomizedIndex: number) => <button
+                    key={randomizedIndex}
                     onClick={(e: any) => {
-                        handleSubmit(e, convoState, history, i);
+                        handleSubmit(e, convoState, history, randomizedIndex);
                         convoState.setValue((cs: any) => ({
                             ...cs,
                             responseInfo: {
                                 ...cs.responseInfo,
-                                preferredResponseIdx: i,
+                                preferredResponseIdx: randomizedIndex,
                             },
                         }));
 
@@ -32,7 +32,7 @@ export default function SelectInput({ convoState, history, handleSubmit }: any) 
                     }}
                     disabled={convoState.value.turn.includes("ovalchat-reads")}
                     className={"text-left mx-auto rounded-3xl w-fit px-4 py-3 mt-1.5 max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl break-words bg-gray-200 hover:bg-gray-300"}>
-                    {r}
+                    {convoState.value.responseInfo.responses[randomizedIndex]}
                 </button>)
             }
         </div>
