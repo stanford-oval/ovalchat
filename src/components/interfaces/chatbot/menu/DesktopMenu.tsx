@@ -26,7 +26,7 @@ export default function DesktopMenu({ convoState }: any) {
   return (
     <div
       id="chat-window"
-      className="w-full bg-white border-2 border-gray-400 rounded-md h-fit md:min-h-full overflow-y-auto pretty-scroll"
+      className="w-full bg-white border-2 border-gray-400 rounded-md overflow-y-auto pretty-scroll min-h-full"
     >
       {/* <div className="border-b-2 border-gray-400 py-4"> */}
         {/* <div className="text-2xl text-center font-bold text-ovalchat-secondary">

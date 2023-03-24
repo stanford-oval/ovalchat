@@ -39,7 +39,7 @@ function ResponseInfo({ ri }: any) {
   return (
     <div >
 
-      <div className="border-gray-300 bg-gray-300 border-1 my-1.5"></div>
+      {/* <div className="border-gray-300 bg-gray-300 border-1 my-1.5"></div> */}
 
       <div className="font-bold">Responses:</div>
 

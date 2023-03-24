@@ -14,7 +14,7 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
 
   const key = router.asPath.match(new RegExp(`[&?]experiment_id=(.*)(&|$)`));
 
-  
+
 
   const [cs, setCs] = useState({
     turn: "user-answer-start",
@@ -49,12 +49,12 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
       // default value if not provided in the URL
       experiment_id = "default-experiment"
       if (!autoPickMode) {
-        router.push(router.asPath + "?experiment_id=" + experiment_id);
+        router.replace(router.asPath + "?experiment_id=" + experiment_id);
       }
 
     }
 
-    if (!cs.autoPickMode){
+    if (!cs.autoPickMode) {
       // shuffle the systems so that the order users see them is random
       convoState.setValue((cs: any) => ({
         ...cs,
@@ -64,7 +64,7 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
         },
       }));
     }
-    else{
+    else {
       // just initialize the systems
       convoState.setValue((cs: any) => ({
         ...cs,
@@ -80,7 +80,7 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
       ...cs,
       selectedSystem: cs.allAvailableSystems[0]
     }));
-  
+
 
     // set experimentId
     convoState.setValue((cs: any) => ({
@@ -90,18 +90,18 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
         experimentId: experiment_id,
       },
     }));
-    
+
     // set the dialogId if not already set
     convoState.setValue((cs: any) => ({
-        ...cs,
-        responseInfo: {
-          ...cs.responseInfo,
-          dialogId: getUniqueId(),
-        },
+      ...cs,
+      responseInfo: {
+        ...cs.responseInfo,
+        dialogId: getUniqueId(),
+      },
     }));
 
-    
-    
+
+
   }, [router.query]);
 
   const history = {
@@ -115,15 +115,13 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
   };
 
   return (
-    <div id="homeChat">
-      <div className="py-4 container flex items-stretch flex-col md:flex-row justify-center md:space-x-2 space-y-2 md:space-y-0">
-        <div className="basis-3/4 w-full mx-auto">
-          <Chatbox history={history} convoState={convoState} showHeader={showHeader}/>
-        </div>
-        {true &&
-          <div className="w-1/4 mx-auto"><DesktopMenu convoState={convoState} /></div>
-        }
+    <div className="py-4 container flex items-stretch flex-col md:flex-row justify-center md:space-x-2 space-y-2 md:space-y-0">
+      <div className="basis-3/4 w-full mx-auto min-h-full">
+        <Chatbox history={history} convoState={convoState} showHeader={showHeader} />
       </div>
+      {true &&
+        <div className="basis-1/4 w-full mx-auto min-h-full"><DesktopMenu convoState={convoState} /></div>
+      }
     </div>
   );
 }
