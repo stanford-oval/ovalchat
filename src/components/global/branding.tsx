@@ -7,7 +7,7 @@ export function chatbotName() {
     return "WikiChat"
 }
 
-export function allAvailableSystems(){
+export function allAvailableSystems() {
     return ["generate", "verify_and_correct", "retrieve_and_generate", "retrieve_generate_verify_correct", "retrieve_only"]
 }
 
@@ -26,6 +26,10 @@ export function chatbotDescription() {
 
 export function chatbotLogo() {
     return "/img/logos/chatbot/wikipedia.svg"
+}
+
+export function websitePreviewImage() {
+    return "/img/other/preview.png"
 }
 
 export function footerMessage() {

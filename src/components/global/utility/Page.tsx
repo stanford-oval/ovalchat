@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../global/header/Header";
 import Footer from "../../global/footer/Footer";
 import Head from "next/head";
-import { chatbotName } from "../branding";
+import { chatbotName, websitePreviewImage } from "../branding";
 
 export default function Page({ fullTitle, title, desc, children }: PageProps) {
   let pageTitle = fullTitle ? fullTitle : title + " | " + chatbotName();
@@ -16,7 +16,7 @@ export default function Page({ fullTitle, title, desc, children }: PageProps) {
         <meta property="og:type" content="website" />
         <meta name="og:title" property="og:title" content={pageTitle} />
         <meta name="og:description" property="og:description" content={desc} />
-        <meta property="og:image" content="/img/other/preview.png" />
+        <meta property="og:image" content={websitePreviewImage()} />
         <meta property="og:site_name" content={pageTitle} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={pageTitle} />
