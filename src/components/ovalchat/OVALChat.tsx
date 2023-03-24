@@ -2,7 +2,7 @@ import React from "react";
 import Preamble from "./Preamble";
 import Chat from "./Chat";
 
-export default function WikiChat({ autoPickMode }: any) {
+export default function OVALChat({ autoPickMode }: any) {
   return (
     <div>
       {/* <Preamble /> */}

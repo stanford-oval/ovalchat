@@ -22,7 +22,7 @@ export default function SelectInput({ convoState, history, handleSubmit }: any) 
                         
                     }
                 }}
-                disabled={convoState.value.turn.includes("wikichat-reads")}
+                disabled={convoState.value.turn.includes("ovalchat-reads")}
                 className={"text-left mx-auto rounded-3xl w-fit px-4 py-3 mt-1.5 max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl break-words bg-gray-200 hover:bg-gray-300"}>
                     {r}
                 </button>)

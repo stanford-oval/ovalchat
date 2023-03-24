@@ -1,6 +1,6 @@
 import React from "react";
 import { chatbotDescription, chatbotTagLine, developedByHeader } from "../global/branding";
-import Chat from '../wikichat/Chat';
+import Chat from '../ovalchat/Chat';
 import Alert from './Alert';
 
 export default function Hero() {
@@ -38,7 +38,7 @@ export default function Hero() {
       <div className="container pt-12 sm:pt-16 md:pt-18 2xl:pt-20">
         <div className="flex mx-auto items-center flex-col text-center gap-y-8 sm:gap-y-6 sm:gap-x-12 lg:gap-x-0 max-w-xl sm:max-w-2xl md:max-w-3xl">
           <div className="px-4 sm:px-0">
-            <p className="inline leading-tight bg-gradient-to-r from-wikichat-primary via-teal-900 to-wikichat-primary-dark bg-clip-text font-bold text-4xl xl:text-5xl tracking-tight text-transparent">
+            <p className="inline leading-tight bg-gradient-to-r from-ovalchat-primary via-teal-900 to-ovalchat-primary-dark bg-clip-text font-bold text-4xl xl:text-5xl tracking-tight text-transparent">
               {chatbotTagLine()}
             </p>
             <p className="mt-4 text-xl xl:text-2xl tracking-tight text-gray-600">

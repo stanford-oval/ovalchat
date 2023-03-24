@@ -1,5 +1,5 @@
 <p align="center">
-    <h1 align="center"><b>WikiChat</b></h1>
+    <h1 align="center"><b>OVALChat</b></h1>
     <p align="center">Quick and easy way to conduct user studies with chatbots</p>
     <p align="center">
         <a href="https://stanford.edu" target="_blank">
@@ -31,7 +31,7 @@ This project built with Next.js, Tailwind CSS, OpenAI's GPT-3, and Microsoft Azu
 To customize the UI, start by changing the following files:
 - `src/components/global/branding.tsx`: Contains "branding" information for the website. Update all functions to match your brand.
 - `src/data/socials.ts`: Update social media and website links.
-- `tailwind.config.js`: Update the theme colors uner `wikichat`.
+- `tailwind.config.js`: Update the theme colors uner `ovalchat`.
 
 
 ## Developer Setup

@@ -14,7 +14,7 @@ export default function Settings({ convoState }: any) {
                                 id={system}
                                 type="radio"
                                 checked={system === convoState.value.selectedSystem}
-                                className="w-4 h-4 mr-1 bg-gray-100 border-gray-300 text-wikichat-primary-dark1 focus:ring-transparent"
+                                className="w-4 h-4 mr-1 bg-gray-100 border-gray-300 text-ovalchat-primary-dark1 focus:ring-transparent"
                                 onChange={(event) => handleChange(event, convoState)}>
                             </input>
                         }

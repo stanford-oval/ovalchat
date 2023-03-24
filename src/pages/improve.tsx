@@ -1,8 +1,8 @@
 import React from "react";
-import WikiChat from "../components/wikichat/WikiChat";
+import OVALChat from "../components/ovalchat/OVALChat";
 
-export default function wikichat() {
+export default function ovalchat() {
   return (
-      <WikiChat autoPickMode={false}/>
+      <OVALChat autoPickMode={false}/>
   );
 }

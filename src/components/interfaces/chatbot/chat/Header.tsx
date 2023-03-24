@@ -12,7 +12,7 @@ export default function Header() {
         src={chatbotLogo()}
         alt={chatbotName() + " logo"}
       />
-      <div className="text-2xl text-center font-bold text-wikichat-secondary mt-0.5">
+      <div className="text-2xl text-center font-bold text-ovalchat-secondary mt-0.5">
         {chatbotName()}
       </div>
     </div>

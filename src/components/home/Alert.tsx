@@ -10,7 +10,7 @@ export default function Alert() {
 
     if (showAlert)
         return (
-            <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-wikichat-primary py-2.5 px-6 sm:px-3.5 sm:before:flex-1">
+            <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-ovalchat-primary py-2.5 px-6 sm:px-3.5 sm:before:flex-1">
                 <svg
                     viewBox="0 0 577 310"
                     aria-hidden="true"
@@ -53,7 +53,7 @@ export default function Alert() {
                     </p>
                     <Link
                         href="/improve"
-                        className="mx-auto lg:mx-0 flex-none rounded-full bg-wikichat-secondary py-1 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-wikichat-secondary-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+                        className="mx-auto lg:mx-0 flex-none rounded-full bg-ovalchat-secondary py-1 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-ovalchat-secondary-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
                     >
                         Contribute <span aria-hidden="true">&rarr;</span>
                     </Link>

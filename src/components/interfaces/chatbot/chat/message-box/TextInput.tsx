@@ -12,7 +12,7 @@ export default function TextInput({ convoState, inputBoxRef, handleSubmit }: any
             {convoState.value.turn.includes("microphone") ? (
                 <FontAwesomeIcon
                     icon={faMicrophone}
-                    className="w-4 h-4 text-wikichat-primary"
+                    className="w-4 h-4 text-ovalchat-primary"
                 />
             ) : (
                 <FontAwesomeIcon icon={faPen} className="w-4 h-4 text-slate-400" />
@@ -26,7 +26,7 @@ export default function TextInput({ convoState, inputBoxRef, handleSubmit }: any
             onChange={(e) => setMessage(e.target.value)}
             value={message}
             placeholder={
-                (convoState.value.turn.startsWith("user-answer") && !convoState.value.turn.includes("wikichat-reads"))
+                (convoState.value.turn.startsWith("user-answer") && !convoState.value.turn.includes("ovalchat-reads"))
                     ? (convoState.value.turn.includes("microphone")
                         ? "Speak into your microphone..."
                         : "Send message...")
@@ -34,18 +34,18 @@ export default function TextInput({ convoState, inputBoxRef, handleSubmit }: any
             }
             disabled={
                 !convoState.value.turn.startsWith("user-answer") ||
-                convoState.value.turn.includes("microphone") || convoState.value.turn.includes("wikichat-reads")
+                convoState.value.turn.includes("microphone") || convoState.value.turn.includes("ovalchat-reads")
             }
             className={clsx(
                 "block focus:border-gray-400 ring-0 focus:ring-0 p-4 pl-12 pr-32 w-full border-2 focus:outline-none shadow-sm sm:text-sm rounded-full text-slate-800",
                 convoState.value.turn.includes("microphone")
-                    ? "border-wikichat-primary disabled:bg-slate-200 placeholder-slate-600 "
+                    ? "border-ovalchat-primary disabled:bg-slate-200 placeholder-slate-600 "
                     : "border-gray-400  disabled:bg-gray-100"
             )}
         />
         <div className="flex absolute right-20 bottom-3 md:bottom-2.5 z-10 joyride-step-1">
             <Microphone
-                className="bg-wikichat-primary hover:bg-wikichat-primary-dark disabled:bg-slate-400 focus:outline-none font-medium rounded-full text-sm px-2.5 py-2.5"
+                className="bg-ovalchat-primary hover:bg-ovalchat-primary-dark disabled:bg-slate-400 focus:outline-none font-medium rounded-full text-sm px-2.5 py-2.5"
                 turn={convoState.value.turn}
                 convoState={convoState}
                 setTurn={(str: string) =>
@@ -65,7 +65,7 @@ export default function TextInput({ convoState, inputBoxRef, handleSubmit }: any
                 message.length == 0 ||
                 convoState.value.turn.includes("microphone") || convoState.value.turn.includes("read")
             }
-            className="text-white absolute right-2.5 bottom-3 md:bottom-2.5 bg-wikichat-primary hover:bg-wikichat-primary-dark disabled:bg-slate-400 focus:outline-none font-medium rounded-full text-sm px-4 py-2"
+            className="text-white absolute right-2.5 bottom-3 md:bottom-2.5 bg-ovalchat-primary hover:bg-ovalchat-primary-dark disabled:bg-slate-400 focus:outline-none font-medium rounded-full text-sm px-4 py-2"
         >
             Send
         </button>

@@ -10,7 +10,7 @@ export default function MessageWrapper({ message, audioRef, convoState, children
             message.center ? "bg-gray-200 mx-auto" :
                 (message.fromChatbot
                     ? "bg-gray-200 mr-auto"
-                    : "bg-wikichat-primary text-white ml-auto")
+                    : "bg-ovalchat-primary text-white ml-auto")
         )}
     >
         <div className="flex flex-row items-center gap-x-2">

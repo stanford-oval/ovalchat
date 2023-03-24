@@ -127,7 +127,7 @@
 }
 
 .blue-link {
-    @apply text-wikichat-secondary hover:text-wikichat-secondary font-semibold;
+    @apply text-ovalchat-secondary hover:text-ovalchat-secondary font-semibold;
 }
 
 .container {
