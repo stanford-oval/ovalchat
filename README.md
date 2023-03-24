@@ -22,7 +22,7 @@ Features include:
 - Support for multiple users at the same time
 - Easily customizable UI
 - Ready to deploy to [Vercel](https://vercel.com/)
-- Support for user studies: You can easily ask users to select the best system configuration per turn, by showing them side-by-side replies via the "Improve" page. They will receive a code after finishing a predetermined number of turns, which can be used to link their response to other platforms like Amazon Mechanical Turk.
+- Support for user studies: You can easily ask users to select the best system configuration per turn, by showing them side-by-side replies via the "Contribute" page. They will receive a code after finishing a predetermined number of turns, which can be used to link their response to other platforms like Amazon Mechanical Turk.
 
 This project built with Next.js, Tailwind CSS, OpenAI's GPT-3, and Microsoft Azure's Speech Services.
 
@@ -47,7 +47,7 @@ SPEECH_KEY=[your API key]
 SPEECH_REGION=[your API key]
 ```
 
-To do crowdsourcing in the "Improve" page, set the following variables to your desired values in the same file.
+To do crowdsourcing in the "Contribute" page, set the following variables to your desired values in the same file.
 ```bash
 NEXT_PUBLIC_CROWDSOURCE_MAX_TURNS=8     # Users will be prompted to stop after this many turns
 NEXT_PUBLIC_SKIP_EVAL=true              # If true, users will not be asked to rate each chatbot reply, only to select the best reply
