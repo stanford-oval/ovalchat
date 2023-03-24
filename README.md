@@ -15,6 +15,7 @@
 
 <hr />
 
+
 ## About
 
 This repository contains researcher-friendly code to quickly bring up a web-based chatbot to conduct user studies.
@@ -28,7 +29,13 @@ This project built with Next.js, Tailwind CSS, OpenAI's GPT-3, and Microsoft Azu
 
 ## Customize the UI
 
-To customize the UI, start by changing the following files:
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/60150701/227457109-82c5e33e-8c17-4a10-82bf-acbbd87857fb.png" height="300"/>
+    <br>
+    This is what the default chat interface looks like.
+</p>
+
+You can customize this and the full page, by simply changing the following files:
 - `src/components/global/branding.tsx`: Contains "branding" information for the website. Update all functions to match your brand.
 - `src/data/socials.ts`: Update social media and website links.
 - `tailwind.config.js`: Update the theme colors under `ovalchat`.
