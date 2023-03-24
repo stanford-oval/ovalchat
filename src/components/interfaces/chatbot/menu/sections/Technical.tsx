@@ -45,13 +45,14 @@ function ResponseInfo({ ri }: any) {
 
       <div className="space-y-1 mt-0.5">
         {ri.responses.map((response: any, index: number) => {
-          let status = ri.rating ? (parseInt(ri.rating.substr(ri.rating.length - 1)) == index + 1 ? "selected" : "rejected") : "unrated";
+          console.log(ri.preferredResponseIdx);
+          let status = ri.preferredResponseIdx ? (ri.preferredResponseIdx == index + 1 ? "selected" : "rejected") : "unrated";
           return (
             <Response key={index}
               response={{ system: ri.systems[index], response: response }}
               logObject={ri.logObjects[index]}
               status={status}
-              naturalnessRating={ri.naturalnessRatings.length > index ? ri.naturalnessRatings[index] : "?"}
+              naturalnessRating={ri.naturalnessRatings.length > index ? ri.naturalnessRatings[index] : null}
             />
           )
         })}
@@ -70,19 +71,20 @@ function Response({ response, logObject, status, naturalnessRating }: any) {
     textColor = "text-green-600"
   } else if (status == "rejected") {
     icon = faXmark;
-    bgColor = "bg-red-200"
+    bgColor = "bg-gray-200"
     textColor = "text-red-600"
+    return <></>
   }
   return (
-    <div className={clsx("p-2 rounded flex flex-row space-x-2 align-middle", bgColor)}>
-      { naturalnessRating === null &&
+    <div className={clsx("p-2 rounded flex flex-row space-x-2 align-middle max-w-full", bgColor)}>
+      { false && // naturalnessRating === null &&
       <div className={clsx("flex flex-col justify-center align-middle text-center", textColor)}>
         <FontAwesomeIcon icon={icon} className={clsx("h-5 w-5 mx-1.5 my-1", textColor)} />
         <span className="text-xs"><b>{naturalnessRating}</b>/5</span>
       </div>
       }
-      <div className="flex flex-col text-xs w-full">
-        <span className="font-bold break-words">"{response.system}":</span>
+      <div className="flex flex-col text-xs break-words max-w-full">
+        <span className="font-bold">"{response.system}":</span>
         {response.response}
         {logObject && <Disclosure defaultOpen={false}>
           {({ open }) => (

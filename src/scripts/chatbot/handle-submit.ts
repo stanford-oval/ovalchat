@@ -14,7 +14,17 @@ export default async function handleSubmit(e: any, convoState: any, history: any
 
     if (convoState.value.turn.startsWith("user-answer")) {
         // on user submit text, add the message to the history
-        if (!message) message = ""
+        if (!message)
+            message = ""
+
+        // clear user preference
+        convoState.setValue((cs: any) => ({
+            ...cs,
+            responseInfo: {
+                ...cs.responseInfo,
+                preferredResponseIdx: null,
+            },
+        }));
 
         history.setValue((h: any) => [
             ...h,

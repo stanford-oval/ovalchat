@@ -31,7 +31,7 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
       experimentId: null,
       dialogId: null,
       turnId: 0,
-      rating: null,
+      preferredResponseIdx: null,
       systems: [], // the systems used to obtain responses, in the same order
     },
     allAvailableSystems: allAvailableSystems(),
@@ -120,7 +120,7 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
         <Chatbox history={history} convoState={convoState} showHeader={showHeader} />
       </div>
       {true &&
-        <div className="basis-1/4 w-full mx-auto min-h-full"><DesktopMenu convoState={convoState} /></div>
+        <div className="w-1/4 mx-auto min-h-full"><DesktopMenu convoState={convoState} /></div>
       }
     </div>
   );
