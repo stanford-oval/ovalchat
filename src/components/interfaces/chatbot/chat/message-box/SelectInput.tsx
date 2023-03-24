@@ -4,7 +4,7 @@ export default function SelectInput({ convoState, history, handleSubmit }: any) 
     // console.log(convoState.value.responseInfo.responses)
     return (<div className="text-center px-3 py-1">
         <div className="font-bold text-lg">Click on the response you like better, to continue the conversation.</div>
-        <div className="flex flex-col flex-wrap md:gap-x-4 gap-y-1 md:flex-row justify-center align-middle mb-2">
+        <div className="flex flex-col flex-wrap md:gap-x-4 gap-y-1 md:flex-row justify-center align-middle my-2">
             {
                 convoState.value.responseInfo.randomizedSystemIndices.map((randomizedIndex: number) => <button
                     key={randomizedIndex}

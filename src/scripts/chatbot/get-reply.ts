@@ -37,7 +37,7 @@ export default async function getReply(
 
   convoState.setValue((cs: any) => ({
     ...cs,
-    turn: "user-eval1",
+    turn: process.env.NEXT_PUBLIC_SKIP_EVAL ? "user-select" : "user-eval1",
     responseInfo: {
       ...cs.responseInfo,
       ...newInfo

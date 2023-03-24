@@ -42,13 +42,16 @@ For the chatbot to talk to the back-end, you should set `NEXT_PUBLIC_CHAT_BACKEN
 
 For the speech-to-text and text-to-speech functionality, create an Azure speech resource (and a corresponding resource group).
 
-```
+```bash
 SPEECH_KEY=[your API key]
 SPEECH_REGION=[your API key]
 ```
 
-To do crowdsourcing in the "Improve" page, set the following variable to your desired number in the same file.
-`NEXT_PUBLIC_CROWDSOURCE_MAX_TURNS=8`
+To do crowdsourcing in the "Improve" page, set the following variables to your desired values in the same file.
+```bash
+NEXT_PUBLIC_CROWDSOURCE_MAX_TURNS=8     # Users will be prompted to stop after this many turns
+NEXT_PUBLIC_SKIP_EVAL=true              # If true, users will not be asked to rate each chatbot reply, only to select the best reply
+```
 
 ## Run in Development Mode
 ### Implement a custom back-end
@@ -59,7 +62,7 @@ This mock implementation only echoes back the inputs it receives. To make your c
 ### Run the back-end
 Run
 
-```
+```bash
 python test_backend.py
 ```
 This will bring up a local web server on port 5001. Meaning that requests to `http://localhost:5001` will be handled by this server.
