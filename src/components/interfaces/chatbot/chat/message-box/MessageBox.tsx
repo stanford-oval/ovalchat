@@ -41,10 +41,9 @@ export default function MessageBox({ history, convoState, audioRef, messagesBott
       id="messageBox"
     >
       {(() => {
-        if (convoState.value.turn == "user-eval1") {
-          return <EvalInput convoState={convoState} history={history} handleSubmit={handleSubmit} audioRef={audioRef} responseIndex={0} />
-        } else if (convoState.value.turn == "user-eval2") {
-          return <EvalInput convoState={convoState} history={history} handleSubmit={handleSubmit} audioRef={audioRef} responseIndex={1} />
+        if (convoState.value.turn.startsWith("user-eval")) {
+          const responseIdx = parseInt(convoState.value.turn.substr(convoState.value.turn.length - 1)) - 1
+          return <EvalInput convoState={convoState} history={history} handleSubmit={handleSubmit} audioRef={audioRef} responseIndex={responseIdx} />
         }
         else if (convoState.value.turn.startsWith("user-select")) {
           return <SelectInput convoState={convoState} history={history} handleSubmit={handleSubmit} />

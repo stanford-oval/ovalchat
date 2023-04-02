@@ -28,7 +28,7 @@ export default function Chatbox({
   useEffect(() => {
     if (!convoState.value.audio.shouldAutoPlay) {
       // autoplay is false, so we can show all the messages at once
-      convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-wikichat-reads")[0], audio: { ...cs.audio, autoPlaying: false } }))
+      convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-ovalchat-reads")[0], audio: { ...cs.audio, autoPlaying: false } }))
       // stop audio
       if (convoState.value.audio.player && convoState.autoPlaying) {
         convoState.value.audio.player.pause()
@@ -62,11 +62,11 @@ export default function Chatbox({
     let idxHidden = history.value.findIndex((m: any) => !m.show);
 
     if (idxHidden == -1) {
-      convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-wikichat-reads")[0] }))
+      convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-ovalchat-reads")[0] }))
       return;
     }
 
-    convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-wikichat-reads")[0] + "-wikichat-reads" }))
+    convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-ovalchat-reads")[0] + "-ovalchat-reads" }))
 
     let item = history.value[idxHidden]
 
@@ -104,7 +104,7 @@ export default function Chatbox({
             <span className="m-auto text-3xl text-center leading-loose">
               Thank You! <br/>
               Please copy this code {' '}
-              <span className="text-wikichat-primary hover:bg-gray-200">
+              <span className="text-ovalchat-primary hover:bg-gray-200">
                 {convoState.value.responseInfo.dialogId}
               </span>
               <br/>

@@ -14,7 +14,17 @@ export default async function handleSubmit(e: any, convoState: any, history: any
 
     if (convoState.value.turn.startsWith("user-answer")) {
         // on user submit text, add the message to the history
-        if (!message) message = ""
+        if (!message)
+            message = ""
+
+        // clear user preference
+        convoState.setValue((cs: any) => ({
+            ...cs,
+            responseInfo: {
+                ...cs.responseInfo,
+                preferredResponseIdx: null,
+            },
+        }));
 
         history.setValue((h: any) => [
             ...h,
@@ -38,11 +48,11 @@ export default async function handleSubmit(e: any, convoState: any, history: any
         const confidenceRating = parseInt(ratings[2])
         
         const ri = convoState.value.responseInfo
-        RatingRequest(ri.experimentId, ri.dialogId, ri.turnId, ri.systems[responseIdx], naturalnessRating, factualCorrectness, confidenceRating)
+        RatingRequest(ri.experimentId, ri.dialogId, ri.turnId, convoState.value.allAvailableSystems[convoState.value.responseInfo.randomizedSystemIndices[responseIdx]], naturalnessRating, factualCorrectness, confidenceRating)
 
         convoState.setValue((cs: any) => ({
             ...cs,
-            turn: responseIdx == 1 ? "user-select" : "user-eval2", // if evaluating second response, go to user-select, otherwise go to user-eval2
+            turn: responseIdx == convoState.value.allAvailableSystems.length-1 ? "user-select" : "user-eval"+(responseIdx+2).toString(), // if evaluating the last response, go to user-select, otherwise go to the next user-eval
             responseInfo: {
                 ...cs.responseInfo,
                 naturalnessRatings: cs.responseInfo.naturalnessRatings.concat([naturalnessRating]),

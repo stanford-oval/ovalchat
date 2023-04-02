@@ -36,14 +36,16 @@ export function userSelect(convoState, history, idx: number, responseInfo?: any)
       }));
 
     if (!convoState.value.autoPickMode) {
-        PreferenceRequest(ri.experimentId, ri.dialogId, ri.turnId, ri.systems[idx], ri.systems[1 - idx]);
+        let loserSystems = [...convoState.value.allAvailableSystems]
+        loserSystems.splice(idx, 1) // other than idx, every system is a loser
+        PreferenceRequest(ri.experimentId, ri.dialogId, ri.turnId, convoState.value.allAvailableSystems[idx], loserSystems);
 
         // shuffle the systems so that the order users see them is random
         convoState.setValue((cs: any) => ({
             ...cs,
             responseInfo: {
               ...cs.responseInfo,
-              systems: shuffleArray(cs.responseInfo.systems),
+              randomizedSystemIndices: shuffleArray(cs.responseInfo.randomizedSystemIndices),
             },
           }));
     }

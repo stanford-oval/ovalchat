@@ -1,12 +1,13 @@
 import React from "react";
+import { chatbotName, pageDescription } from "../components/global/branding";
 import Page from "../components/global/utility/Page";
 import Hero from "../components/home/Hero";
 
 export default function index() {
   return (
     <Page
-      fullTitle="Restaurant Genie"
-      desc="Supported functions: dispute charge, replace card, ask for card arrival, ask for card expiry, search for transactions, and search for accounts."
+      fullTitle={chatbotName()}
+      desc={pageDescription()}
     >
       <Hero />
     </Page>

@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import Message from "./Message";
 import MicrophoneInfo from "./initial-messages/MicrophoneInfo";
+import { chatbotName, crowdsourcingMessages, mainPageMessages } from "../../../../global/branding";
 
 export default function Messages({ history, convoState, messagesBottom }: any) {
   let audioRef = useRef();
@@ -9,19 +10,48 @@ export default function Messages({ history, convoState, messagesBottom }: any) {
 
   useEffect(() => {
     // if (history.value.length > 0) return; // only run this on first render
-    history.value[0] = {
-      id: -3,
-      fromChatbot: true,
-      show: true,
-      component: <MicrophoneInfo />,
-      read: "You can tap on the microphone button to start speaking. When you're done talking, click it again. Click the audio button to hear my replies"
-    };
-    history.value[1] = {
-      id: -4,
-      fromChatbot: true,
-      show: true,
-      text: "How may I help you?",
-    };
+
+    if (convoState.value.autoPickMode) {
+      // for the main page
+
+      history.value.push({
+        id: -mainPageMessages().length-1,
+        show: true,
+        fromChatbot: true,
+        text: "Hi! I am " + chatbotName() + ".",
+      });
+      // Always add the microphone message
+      history.value.push({
+        id: -mainPageMessages().length,
+        fromChatbot: true,
+        show: true,
+        component: <MicrophoneInfo />,
+        read: "You can tap on the microphone button to start speaking. When you're done talking, click it again. Click the audio button to hear my replies"
+      });
+
+      // Add custom messages
+      mainPageMessages().forEach((message, index) => {
+        history.value.push({
+          id: -index,
+          show: true,
+          fromChatbot: true,
+          text: message,
+        });
+      })
+
+    }
+    else {
+      // for crowdsourcing experiments
+      crowdsourcingMessages().forEach((message, index) => {
+        history.value.push({
+          id: -index,
+          show: true,
+          fromChatbot: true,
+          text: message,
+        });
+      })
+    }
+
     convoState.setValue((cs: any) => ({ ...cs, turn: "user-answer" }));
   }, []);
 

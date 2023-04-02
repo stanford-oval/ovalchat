@@ -4,7 +4,7 @@ const routes = [
     name: "Home",
   },
   {
-    name: "Improve",
+    name: "Contribute",
     href: "/improve",
   },
 ];

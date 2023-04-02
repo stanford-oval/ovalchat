@@ -14,7 +14,7 @@ Outputs: None
 When the user submits their ratings, the front-end should make one call per system to /user_rating. So e.g. it should make two separate calls for two systems.
 
 - `/user_preference`
-Inputs: (experiment_id, dialog_id, turn_id, winner_system, loser_system)
+Inputs: (experiment_id, dialog_id, turn_id, winner_system, loser_systems)
 Outputs: None
 Each time the user selects one of the agent utterances over the other, you make one call to /user_preference.
 
@@ -55,7 +55,7 @@ req_parser.add_argument("system_name", type=str, location='json',
 # arguments for when a user makes a head-to-head comparison
 req_parser.add_argument("winner_system", type=str, location='json',
                         help='The system that was preferred by the user in the current dialog turn')
-req_parser.add_argument("loser_system", type=str, location='json',
+req_parser.add_argument("loser_systems", type=list, location='json',
                         help='The system that was not preferred by the user in the current dialog turn')
 
 
@@ -103,7 +103,7 @@ def user_rating():
 @app.route("/user_preference", methods=["POST"])
 def user_preference():
     """
-    Inputs: (experiment_id, dialog_id, turn_id, winner_system, loser_system)
+    Inputs: (experiment_id, dialog_id, turn_id, winner_system, loser_systems)
     Outputs: None
     """
     logger.info('Entered /user_preference')
@@ -114,7 +114,7 @@ def user_preference():
     dialog_id = request_args['dialog_id']
     turn_id = request_args['turn_id']
     winner_system = request_args['winner_system']
-    loser_system = request_args['loser_system']
+    loser_systems = request_args['loser_systems']
 
     return {}
 

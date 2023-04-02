@@ -2,7 +2,9 @@ import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon, VolumeUpIcon } from "@heroicons/react/solid";
 import Technical from "./sections/Technical";
+import Settings from "./sections/Settings";
 import DisclosureTransition from "../../../global/utility/DisclosureTransition";
+import Responses from "./sections/Responses";
 // import { Switch } from '@headlessui/react'
 // import clsx from "clsx";
 // import { MenuAlt2Icon } from "@heroicons/react/outline";
@@ -13,6 +15,16 @@ export default function DesktopMenu({ convoState }: any) {
     {
       title: "Technical",
       component: <Technical convoState={convoState} />,
+      defaultHide: true,
+    },
+    {
+      title: "Settings",
+      component: <Settings convoState={convoState} />,
+      defaultHide: false,
+    },
+    {
+      title: "Responses",
+      component: <Responses convoState={convoState} />,
       defaultHide: false,
     },
   ];
@@ -20,10 +32,10 @@ export default function DesktopMenu({ convoState }: any) {
   return (
     <div
       id="chat-window"
-      className="w-full bg-white border-2 border-gray-400 rounded-md h-fit md:min-h-full overflow-y-auto pretty-scroll"
+      className="w-full bg-white border-2 border-gray-400 rounded-md overflow-y-auto pretty-scroll min-h-full"
     >
       {/* <div className="border-b-2 border-gray-400 py-4"> */}
-        {/* <div className="text-2xl text-center font-bold text-wikichat-secondary">
+        {/* <div className="text-2xl text-center font-bold text-ovalchat-secondary">
           Menu
         </div> */}
         {/* TODO: fix autoplay */}
@@ -44,7 +56,7 @@ export default function DesktopMenu({ convoState }: any) {
               }
             }}
             className={clsx(
-              convoState.value.audio.shouldAutoPlay ? 'bg-wikichat-primary' : 'bg-gray-200',
+              convoState.value.audio.shouldAutoPlay ? 'bg-ovalchat-primary' : 'bg-gray-200',
               'relative inline-flex flex-shrink-0 h-5 w-9 border-2 border-transparent mx-1.5 -bottom-0.5 rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0'
             )}
           >
@@ -62,24 +74,26 @@ export default function DesktopMenu({ convoState }: any) {
       {/* </div> */}
       <div className="px-2 py-1">
         {sections.map((section) => (
-          <Disclosure key={section.title} defaultOpen={!section.defaultHide}>
-            {({ open }) => (
-              <div className="mx-auto w-full rounded-2xl bg-white py-1">
-                <Disclosure.Button className="flex w-full justify-between rounded-lg bg-gray-200 px-4 py-2 text-left text-sm font-medium text-wikichat-secondary hover:bg-gray-300 focus:outline-none focus-visible:ring focus-visible:ring-opacity-75">
-                  <span>{section.title}</span>
-                  <ChevronUpIcon
-                    className={`${open ? "rotate-180 transform" : ""
-                      } h-5 w-5 text-gray-500`}
-                  />
-                </Disclosure.Button>
-                <DisclosureTransition>
-                  <Disclosure.Panel className="text-sm text-gray-500">
-                    {section.component}
-                  </Disclosure.Panel>
-                </DisclosureTransition>{" "}
-              </div>
-            )}
-          </Disclosure>
+          <div className="py-1" key={section.title}>
+            <Disclosure defaultOpen={!section.defaultHide}>
+              {({ open }) => (
+                <div className="mx-auto w-full rounded-2xl bg-white py-1">
+                  <Disclosure.Button className="flex w-full justify-between rounded-lg bg-gray-200 px-4 py-2 text-left text-sm font-medium text-ovalchat-secondary hover:bg-gray-300 focus:outline-none focus-visible:ring focus-visible:ring-opacity-75 duration-75">
+                    <span>{section.title}</span>
+                    <ChevronUpIcon
+                      className={`${open ? "rotate-180 transform" : ""
+                        } h-5 w-5 text-gray-500`}
+                    />
+                  </Disclosure.Button>
+                  <DisclosureTransition>
+                    <Disclosure.Panel className="text-sm text-gray-500">
+                      {section.component}
+                    </Disclosure.Panel>
+                  </DisclosureTransition>{" "}
+                </div>
+              )}
+            </Disclosure>
+          </div>
         ))}
       </div>
     </div>

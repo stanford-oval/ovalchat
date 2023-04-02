@@ -31,7 +31,7 @@ export default function SpeechSynthesizer({
         buttonColor = "text-gray-400"
         if (convoState.value.audio.messageId == id) {
             // THIS message's audio is playing
-            buttonColor = "text-wikichat-primary"
+            buttonColor = "text-ovalchat-primary"
         }
     }
     if (convoState.value.turn.includes("microphone"))
@@ -45,7 +45,7 @@ export default function SpeechSynthesizer({
                 handler();
             }}
             className={clsx("inline-block", buttonColor)}
-            disabled={convoState.value.turn.includes("wikichat-reads") || convoState.value.turn.includes("microphone")}
+            disabled={convoState.value.turn.includes("ovalchat-reads") || convoState.value.turn.includes("microphone")}
         >
             <FontAwesomeIcon
                 icon={faVolumeUp}
@@ -87,8 +87,8 @@ export async function textToSpeech(
 
     // Create the speech synthesizer.
     let synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
-    let originalTurn = convoState.value.turn.split("-wikichat-reads")[0]
-    if (originalTurn.startsWith("user")) setTurn(originalTurn + "-wikichat-reads")
+    let originalTurn = convoState.value.turn.split("-ovalchat-reads")[0]
+    if (originalTurn.startsWith("user")) setTurn(originalTurn + "-ovalchat-reads")
 
     const ssmlStr = getSpeechSSMLStr(text, preText, postText, style, styleDegree)
 
@@ -135,7 +135,7 @@ export async function textToSpeech(
         hidden = hidden.slice(1)
         // show the next one and play its audio
         if (hidden.length == 0) {
-            convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-wikichat-reads")[0], audio: { ...cs.audio, autoPlaying: false } }))
+            convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-ovalchat-reads")[0], audio: { ...cs.audio, autoPlaying: false } }))
             return;
         }
         let item = hidden[0]

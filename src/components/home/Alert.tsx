@@ -3,13 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import { useState } from 'react';
+import { chatbotName } from '../global/branding';
 export default function Alert() {
     // state to show or hide alert
     const [showAlert, setShowAlert] = useState(true);
 
     if (showAlert)
         return (
-            <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-wikichat-primary py-2.5 px-6 sm:px-3.5 sm:before:flex-1">
+            <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-ovalchat-primary py-2.5 px-6 sm:px-3.5 sm:before:flex-1">
                 <svg
                     viewBox="0 0 577 310"
                     aria-hidden="true"
@@ -44,7 +45,7 @@ export default function Alert() {
                 </svg>
                 <div className="flex flex-wrap items-center gap-y-2 gap-x-4 justify-center">
                     <p className="text-sm leading-6 text-white text-center">
-                        <strong className="font-semibold">Restaurant Genie is under development</strong>
+                        <strong className="font-semibold">{chatbotName()} is under development</strong>
                         <svg viewBox="0 0 2 2" className="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true">
                             <circle cx={1} cy={1} r={1} />
                         </svg>
@@ -52,7 +53,7 @@ export default function Alert() {
                     </p>
                     <Link
                         href="/improve"
-                        className="mx-auto lg:mx-0 flex-none rounded-full bg-wikichat-secondary py-1 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-wikichat-secondary-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+                        className="mx-auto lg:mx-0 flex-none rounded-full bg-ovalchat-secondary py-1 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-ovalchat-secondary-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
                     >
                         Contribute <span aria-hidden="true">&rarr;</span>
                     </Link>

@@ -8,6 +8,7 @@ import Link from "next/link";
 import NavItem from "./NavItem";
 import Image from "next/image";
 import MobileNavItem from "./MobileNavItem";
+import { chatbotLogo, chatbotName } from "../branding";
 
 export default function Header() {
   const currPath = useRouter().pathname;
@@ -19,14 +20,14 @@ export default function Header() {
           <Link href="/" className="h-fit my-auto">
             <div className="flex-shrink-0 flex items-center my-auto">
               <Image
-                className="block h-12 w-auto mr-2"
+                className="block h-10 w-auto mr-2"
                 width="50"
                 height="50"
-                src="/img/logos/chatbot/ramen.png"
-                alt="WikiChat logo"
+                src={chatbotLogo()}
+                alt={chatbotName() + " logo"}
               />
-              <div className="font-bold tracking-wide my-auto text-xl text-wikichat-primary">
-                Restaurant Genie
+              <div className="font-bold tracking-wide my-auto text-xl text-ovalchat-primary">
+                {chatbotName()}
               </div>
             </div>
           </Link>

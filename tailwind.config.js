@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        wikichat: {
+        ovalchat: {
           primary: {
             DEFAULT: "#a70505",
             light: "#ed5959",
