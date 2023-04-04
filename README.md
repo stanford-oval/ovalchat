@@ -84,3 +84,19 @@ yarn run dev
 ```
 You will see a message like `ready - started server on 0.0.0.0:3000, url: http://localhost:3000`. This means that you can access the website via a web browser by visiting http://localhost:3000.
 
+## Deploy the front-end
+So far, we have been running the server in "development" mode, where changes to the code automatically refreshes any open webpage, and provides extensive debugging information when an error happens. This is not needed when deploying the front-end, and just slows down the website. To run the server in deployment mode, run:
+```bash
+yarn build
+yarn start
+```
+If you want to deploy the front-end on port 80 (so that you can visit the front-end without the need to type in a port number in the browser), you need to first give node permission to use ports below 1024. Run:
+```bash
+sudo apt-get install libcap2-bin
+sudo setcap cap_net_bind_service=+ep `readlink -f \`which node\``
+```
+Then update the following lines in `package.json` to specify the port number:
+```
+"dev": "next -p 80",
+"start": "next start -p 80",
+```
