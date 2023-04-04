@@ -35,7 +35,7 @@ export function websitePreviewImage() {
 export function footerMessage() {
     return (
         <>
-            WikiChat is part of a research project at Stanford University&apos;s{" "}
+            RestaurantGenie is part of a research project at Stanford University&apos;s{" "}
             <a
                 href="https://oval.cs.stanford.edu"
                 target="_blank"
