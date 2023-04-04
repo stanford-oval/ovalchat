@@ -25,7 +25,7 @@ export function chatbotDescription() {
 }
 
 export function chatbotLogo() {
-    return "/img/logos/chatbot/wikipedia.svg"
+    return "/img/logos/chatbot/wikipedia.png"
 }
 
 export function websitePreviewImage() {

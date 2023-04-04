@@ -95,8 +95,4 @@ If you want to deploy the front-end on port 80 (so that you can visit the front-
 sudo apt-get install libcap2-bin
 sudo setcap cap_net_bind_service=+ep `readlink -f \`which node\``
 ```
-Then update the following lines in `package.json` to specify the port number:
-```
-"dev": "next -p 80",
-"start": "next start -p 80",
-```
+Then add `-p 80` option to the above `yarn start` command.
