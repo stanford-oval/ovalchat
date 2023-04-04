@@ -29,7 +29,7 @@ export function chatbotLogo() {
 }
 
 export function websitePreviewImage() {
-    return "/img/other/preview.png"
+    return "/img/logos/chatbot/ramen.png"
 }
 
 export function footerMessage() {
