@@ -53,9 +53,7 @@ export default function Page({ fullTitle, title, desc, children }: PageProps) {
         />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <Header />
       {children}
-      <Footer />
     </>
   );
 }
