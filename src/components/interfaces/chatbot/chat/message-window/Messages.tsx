@@ -11,7 +11,7 @@ export default function Messages({ history, convoState, messagesBottom, showSpee
   useEffect(() => {
     // if (history.value.length > 0) return; // only run this on first render
 
-    if (convoState.value.autoPickMode) {
+    if (convoState.value.isHomePage) {
       // for the main page
 
       history.value.push({

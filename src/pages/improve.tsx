@@ -3,6 +3,6 @@ import OVALChat from "../components/ovalchat/OVALChat";
 
 export default function ovalchat() {
   return (
-      <OVALChat autoPickMode={false}/>
+      <OVALChat isHomePage={false}/>
   );
 }

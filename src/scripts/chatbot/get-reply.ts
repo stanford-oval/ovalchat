@@ -56,7 +56,7 @@ export default async function getReply(
       logObjects: output.map((o) => o["log_object"]),
     }
   }
-  if (convoState.value.autoPickMode)
+  if (convoState.value.isHomePage)
     newInfo["systems"] = [convoState.value.selectedSystem]
 
   convoState.setValue((cs: any) => ({
@@ -78,7 +78,7 @@ function getAiOutput(convoState, message) {
   const ri = convoState.value.responseInfo;
 
   let replies = [];
-  if (convoState.value.autoPickMode) {
+  if (convoState.value.isHomePage) {
     // only need one request, so the returned replies array will have one item
     let reply = ChatRequest(ri.experimentId, ri.dialogId, ri.turnId, message, convoState.value.selectedSystem);
     replies.push(reply);

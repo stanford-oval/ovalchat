@@ -60,7 +60,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="py-4 sm:py-6 md:py-7 2xl:py-8">
-          <Chat autoPickMode={true} showSideBar={true} showHeader={true}/>
+          <Chat isHomePage={true} showSideBar={true} showHeader={true}/>
         </div>
       </div>
     </div>

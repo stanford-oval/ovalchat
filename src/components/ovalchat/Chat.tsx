@@ -6,7 +6,7 @@ import getUniqueId from '../../scripts/utils/unique-id';
 import shuffleArray from "../../scripts/utils/shuffle-array";
 import { allAvailableSystems } from "../global/branding";
 
-export default function Chat({ autoPickMode, showSideBar, showHeader, showSpeechButton }: any) {
+export default function Chat({ isHomePage, showSideBar, showHeader, showSpeechButton }: any) {
 
   const router = useRouter();
 
@@ -35,7 +35,7 @@ export default function Chat({ autoPickMode, showSideBar, showHeader, showSpeech
     },
     allAvailableSystems: allAvailableSystems(),
     selectedSystem: null,
-    autoPickMode: autoPickMode,
+    isHomePage: isHomePage,
     finishedJob: false // whether the crowdsourcing job has finished
   });
 
@@ -47,13 +47,13 @@ export default function Chat({ autoPickMode, showSideBar, showHeader, showSpeech
     } else {
       // default value if not provided in the URL
       experiment_id = "default-experiment"
-      if (!autoPickMode) {
+      if (!isHomePage) {
         router.replace(router.asPath + "?experiment_id=" + experiment_id);
       }
 
     }
 
-    if (!cs.autoPickMode) {
+    if (!cs.isHomePage) {
       // shuffle the systems so that the order users see them is random
       convoState.setValue((cs: any) => ({
         ...cs,

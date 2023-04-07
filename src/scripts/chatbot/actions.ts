@@ -3,7 +3,7 @@ import getUniqueId from "../utils/unique-id";
 import PreferenceRequest from "../wiki-llm/PreferenceRequest";
 
 export function userSelect(convoState, history, idx: number, responseInfo?: any) {
-    // in the case of autoPickMode, we need to pass in the responseInfo because convoState for some reason doesn't have the latest updates
+    // in the case of isHomePage, we need to pass in the responseInfo because convoState for some reason doesn't have the latest updates
     const ri = responseInfo ?? convoState.value.responseInfo
 
     history.setValue((h: any) => [
@@ -35,7 +35,7 @@ export function userSelect(convoState, history, idx: number, responseInfo?: any)
         },
       }));
 
-    if (!convoState.value.autoPickMode) {
+    if (!convoState.value.isHomePage) {
         let loserSystems = [...convoState.value.allAvailableSystems]
         loserSystems.splice(idx, 1) // other than idx, every system is a loser
         PreferenceRequest(ri.experimentId, ri.dialogId, ri.turnId, convoState.value.allAvailableSystems[idx], loserSystems);

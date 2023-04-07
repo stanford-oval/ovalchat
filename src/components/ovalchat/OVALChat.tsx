@@ -4,7 +4,7 @@ import Chat from "./Chat";
 import Page from "../global/utility/Page";
 import { chatbotName, pageDescription } from "../global/branding";
 
-export default function OVALChat({ autoPickMode }: any) {
+export default function OVALChat({ isHomePage }: any) {
   return (
     <Page
       fullTitle={chatbotName()}
@@ -13,7 +13,7 @@ export default function OVALChat({ autoPickMode }: any) {
       <div>
         {/* <Preamble /> */}
         <div className="bg-gray-100 py-4 min-h-screen">
-          <Chat autoPickMode={autoPickMode} showSideBar={autoPickMode} showHeader={autoPickMode} showSpeechButton={autoPickMode} />
+          <Chat isHomePage={isHomePage} showSideBar={isHomePage} showHeader={isHomePage} showSpeechButton={isHomePage} />
         </div>
       </div>
     </Page>

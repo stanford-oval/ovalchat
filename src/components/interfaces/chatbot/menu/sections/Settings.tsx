@@ -3,13 +3,13 @@ import React from "react";
 export default function Settings({ convoState }: any) {
     return (
         <div className="px-2 mt-1 text-gray-900">
-            {convoState.value.autoPickMode
+            {convoState.value.isHomePage
                 ? <div className="font-bold mb-1">Select System: </div>
                 : <div className="font-bold mb-1">Available Systems: </div>
             }
             {convoState.value.allAvailableSystems.map((system: any) => (
                 <ul key={system} className="flex flex-row w-full items-center my-1">
-                    {convoState.value.autoPickMode
+                    {convoState.value.isHomePage
                         ?
                         <input name="system"
                             id={system}

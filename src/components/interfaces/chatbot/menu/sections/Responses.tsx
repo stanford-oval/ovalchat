@@ -17,7 +17,7 @@ export default function Responses({ convoState }: any) {
 
 function ResponseInfo({ convoState }: any) {
     const ri = convoState.value.responseInfo
-    const autoPickMode = convoState.value.autoPickMode
+    const isHomePage = convoState.value.isHomePage
     const allAvailableSystems = convoState.value.allAvailableSystems
     return (
       <div >
@@ -27,7 +27,7 @@ function ResponseInfo({ convoState }: any) {
             return (
               <Response key={index}
                 response={response}
-                system={autoPickMode ? null : allAvailableSystems[index]}
+                system={isHomePage ? null : allAvailableSystems[index]}
                 logObject={ri.logObjects[index]}
                 status={status}
               />
