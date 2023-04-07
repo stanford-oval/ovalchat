@@ -8,7 +8,14 @@ export function chatbotName() {
 }
 
 export function allAvailableSystems() {
-    return ["generate", "verify_and_correct", "retrieve_and_generate", "retrieve_generate_verify_correct", "retrieve_only"]
+    return [
+            "generate[engine=text-davinci-003]", 
+            "generate[engine=gpt-4]",
+            "verify_and_correct[engine=text-davinci-003]",
+            "retrieve_and_generate[engine=text-davinci-003]",
+            "retrieve_generate_verify_correct[engine=text-davinci-003]",
+            // "retrieve_only[engine=text-davinci-003]"
+        ]
 }
 
 
