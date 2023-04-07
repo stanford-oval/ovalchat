@@ -1,6 +1,5 @@
 import React from "react";
 import { faCheck, faQuestion, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { clsx } from 'clsx';
 import { Disclosure } from '@headlessui/react';
 import DisclosureTransition from '../../../../global/utility/DisclosureTransition';
@@ -31,7 +30,6 @@ function ResponseInfo({ convoState }: any) {
                 system={autoPickMode ? null : allAvailableSystems[index]}
                 logObject={ri.logObjects[index]}
                 status={status}
-                naturalnessRating={ri.naturalnessRatings.length > index ? ri.naturalnessRatings[index] : null}
               />
             )
           })}
@@ -40,7 +38,7 @@ function ResponseInfo({ convoState }: any) {
     );
   }
   
-  function Response({ response, system, logObject, status, naturalnessRating }: any) {
+  function Response({ response, system, logObject, status }: any) {
     let icon = faQuestion;
     let bgColor = "bg-gray-200"
     let textColor = "text-gray-600"
@@ -56,12 +54,6 @@ function ResponseInfo({ convoState }: any) {
     }
     return (
       <div className={clsx("p-2 rounded flex flex-row space-x-2 align-middle max-w-full", bgColor)}>
-        { false && // naturalnessRating === null &&
-        <div className={clsx("flex flex-col justify-center align-middle text-center", textColor)}>
-          <FontAwesomeIcon icon={icon} className={clsx("h-5 w-5 mx-1.5 my-1", textColor)} />
-          <span className="text-xs"><b>{naturalnessRating}</b>/5</span>
-        </div>
-        }
         <div className="flex flex-col text-xs break-words max-w-full">
           {system &&
             <span className="font-bold">"{system}":</span>

@@ -27,7 +27,6 @@ export default function Chat({ autoPickMode, showSideBar, showHeader }: any) {
     responseInfo: {
       responses: [],
       logObjects: [],
-      naturalnessRatings: [],
       experimentId: null,
       dialogId: null,
       turnId: 0,

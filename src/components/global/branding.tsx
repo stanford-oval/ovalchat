@@ -9,13 +9,41 @@ export function chatbotName() {
 
 export function allAvailableSystems() {
     return [
-            "generate[engine=text-davinci-003]", 
-            "generate[engine=gpt-4]",
-            "verify_and_correct[engine=text-davinci-003]",
-            "retrieve_and_generate[engine=text-davinci-003]",
-            "retrieve_generate_verify_correct[engine=text-davinci-003]",
-            // "retrieve_only[engine=text-davinci-003]"
-        ]
+        "generate[engine=text-davinci-003]",
+        // "generate[engine=gpt-4]",
+        "verify_and_correct[engine=text-davinci-003]",
+        "retrieve_and_generate[engine=text-davinci-003]",
+        // "retrieve_generate_verify_correct[engine=text-davinci-003]",
+        // "retrieve_only[engine=text-davinci-003]"
+    ]
+}
+
+export function userScores() {
+    return {
+        "user_factuality_rating": {
+            "type": "binary",
+            "prompt": "Is this reply factually correct?",
+            "backendLabel": "user_factuality_rating"
+        },
+        "user_factuality_confidence": {
+            "type": "slider",
+            "min": 1,
+            "max": 5,
+            "label1": "Not sure at all",
+            "label2": "Completely sure",
+            "prompt": "How confident are you in your choice above?",
+            "backendLabel": "user_factuality_confidence"
+        },
+        "user_naturalness_rating": {
+            "type": "slider",
+            "min": 1,
+            "max": 5,
+            "label1": "Unnatural",
+            "label2": "Natural",
+            "prompt": "How natural is this reply?",
+            "backendLabel": "user_naturalness_rating"
+        },
+    }
 }
 
 
