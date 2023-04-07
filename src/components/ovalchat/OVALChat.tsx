@@ -13,7 +13,7 @@ export default function OVALChat({ autoPickMode }: any) {
       <div>
         {/* <Preamble /> */}
         <div className="bg-gray-100 py-4 min-h-screen">
-          <Chat autoPickMode={autoPickMode} showSideBar={autoPickMode} showHeader={autoPickMode} />
+          <Chat autoPickMode={autoPickMode} showSideBar={autoPickMode} showHeader={autoPickMode} showSpeechButton={autoPickMode} />
         </div>
       </div>
     </Page>

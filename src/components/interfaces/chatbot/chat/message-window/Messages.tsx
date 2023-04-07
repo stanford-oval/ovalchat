@@ -3,7 +3,7 @@ import Message from "./Message";
 import MicrophoneInfo from "./initial-messages/MicrophoneInfo";
 import { chatbotName, crowdsourcingMessages, mainPageMessages } from "../../../../global/branding";
 
-export default function Messages({ history, convoState, messagesBottom }: any) {
+export default function Messages({ history, convoState, messagesBottom, showSpeechButton }: any) {
   let audioRef = useRef();
 
   audioRef.current = convoState.value.audio;
@@ -79,7 +79,7 @@ export default function Messages({ history, convoState, messagesBottom }: any) {
     >
       <ul>
         {history.value.map((message: any) => (
-          <Message message={message} audioRef={audioRef} convoState={convoState} key={message.id} />
+          <Message message={message} audioRef={audioRef} convoState={convoState} showSpeechButton={showSpeechButton} key={message.id} />
         ))}
         {(!convoState.value.turn.startsWith("user") && !convoState.value.turn.includes("read")) && (
           // show loading animation

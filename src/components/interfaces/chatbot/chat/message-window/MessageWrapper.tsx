@@ -3,7 +3,7 @@ import { clsx } from "clsx";
 import SpeechSynthesizer from "../../../speech/SpeechSynthesizer";
 import { messageToSpeechParams } from '../../../../../scripts/chatbot/audio_utils';
 
-export default function MessageWrapper({ message, audioRef, convoState, children }: any) {
+export default function MessageWrapper({ message, audioRef, convoState, children, showSpeechButton }: any) {
     return <div
         className={clsx(
             "rounded-3xl w-fit px-5 py-3 mx-2 mt-1.5 max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl break-words text-left",
@@ -15,7 +15,9 @@ export default function MessageWrapper({ message, audioRef, convoState, children
     >
         <div className="flex flex-row items-center gap-x-2">
             {children}
-            {message.fromChatbot && <SpeechButton audioRef={audioRef} convoState={convoState} message={message} />}
+            {message.fromChatbot && showSpeechButton &&
+                <SpeechButton audioRef={audioRef} convoState={convoState} message={message} />
+            }
         </div>
     </div>
 }
