@@ -6,7 +6,7 @@ import { messageToSpeechParams } from '../../../../../scripts/chatbot/audio_util
 export default function MessageWrapper({ message, audioRef, convoState, children, showSpeechButton }: any) {
     return <div
         className={clsx(
-            "rounded-3xl w-fit px-5 py-3 mx-2 mt-1.5 max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl break-words text-left",
+            "rounded-3xl w-fit px-6 py-3 mx-2 mt-1.5 max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl break-words text-justify",
             message.center ? "bg-gray-200 mx-auto" :
                 (message.fromChatbot
                     ? "bg-gray-200 mr-auto"

@@ -15,5 +15,8 @@ export default function Message({ message, audioRef, convoState, showSpeechButto
 }
 
 function MessageText({ message }: any) {
-    return <div>{message.text}</div>;
+    // show message.text, including '\n' as <br />
+    return <div>{message.text.split('\n').map((item: any, key: any) => {
+        return <span key={key}>{item}<br /></span>
+    })}</div>;
 }
