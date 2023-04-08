@@ -52,6 +52,7 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit,
                         fromChatbot: true,
                         center: false,
                         text: messageText,
+                        showSpeechButton: false
                     }
                 } audioRef={audioRef} convoState={convoState} />
             </ul>
@@ -65,7 +66,9 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit,
                                     <BinaryPillSelect parameter={{
                                         name: k,
                                         value: userRatings[index],
-                                        setValue: setUserRatings[index]
+                                        setValue: setUserRatings[index],
+                                        labelForTrue: v.labelForTrue,
+                                        labelForFalse: v.labelForFalse
                                     }}
                                         convoState={convoState}
                                     />
@@ -124,7 +127,7 @@ function BinaryPillSelect({ parameter, convoState }: any) {
             disabled={!convoState.value.turn.startsWith("user")}
             className={`py-1 px-4 md:px-6 focus:outline-none shadow-sm sm:text-base border-r-2 border-gray-500 rounded-l-full ${parameter.value === true ? "bg-ovalchat-secondary-bright text-white font-semibold hover:bg-ovalchat-secondary-light" : "bg-gray-300 text-gray-700 hover:bg-[#c2c6cc]"}`}
         >
-            Yes
+            {parameter.labelForTrue}
         </button>
         <button
             onClick={(e: any) => {
@@ -134,7 +137,7 @@ function BinaryPillSelect({ parameter, convoState }: any) {
             disabled={!convoState.value.turn.startsWith("user")}
             className={`py-1 px-4 md:px-6 focus:outline-none shadow-sm sm:text-base rounded-r-full  ${parameter.value === false ? "bg-ovalchat-secondary-bright text-white font-semibold hover:bg-ovalchat-secondary-light" : "bg-gray-300 text-gray-700 hover:bg-[#c2c6cc]"}`}
         >
-            No
+            {parameter.labelForFalse}
         </button>
     </div>
 }

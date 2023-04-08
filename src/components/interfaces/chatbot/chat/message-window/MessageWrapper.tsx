@@ -28,6 +28,6 @@ function SpeechButton({ convoState, message, audioRef }: any) {
     const props = messageToSpeechParams(convoState, message, audioRef, null, null)
 
     return (<SpeechSynthesizer {...props}
-        className={clsx("-mt-0.5 h-4 w-4 inline-block ", message.id == -3 ? "demo-audio" : "")} />
+        className={clsx("-mt-5 -mb-4 ml-2 -mr-3 h-9 w-9 p-2.5 inline-block hover:bg-slate-300 hover:duration-150 rounded-full", message.id == -3 ? "demo-audio" : "")} />
     )
 }

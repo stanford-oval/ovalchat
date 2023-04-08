@@ -22,27 +22,23 @@ export function userScores() {
     return {
         "user_factuality_rating": {
             "type": "binary",
-            "min": 0,
-            "max": 1,
-            "label1": "No", // actually use these instead of hardcoding Yes and No
-            "label2": "Yes",
             "prompt": "Is this reply factually correct?",
+            "labelForTrue": "Yes",
+            "labelForFalse": "No",
         },
         "user_factuality_confidence": {
-            "type": "slider",
-            "min": 1,
-            "max": 5,
-            "label1": "Not sure at all",
-            "label2": "Completely sure",
-            "prompt": "How confident are you in your choice above?",
+            "type": "binary",
+            "prompt": "Are you confident in your choice above?",
+            "labelForTrue": "Yes",
+            "labelForFalse": "No",
         },
         "user_naturalness_rating": {
             "type": "slider",
             "min": 1,
             "max": 5,
+            "prompt": "How natural is this reply?",
             "label1": "Unnatural",
             "label2": "Natural",
-            "prompt": "How natural is this reply?",
         },
     }
 }
