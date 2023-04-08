@@ -128,7 +128,7 @@ export function crowdsourcingMessages() {
         - Puss in Boots: The Last Wish\n \
         - Fantastic Beasts: The Secrets of Dumbledore\n \
         - Sonic the Hedgehog 2",
-        "Let's talk about that movie!"
+        "Let's start by talking about that movie, and see where the conversation takes us!"
     ]
 }
 
