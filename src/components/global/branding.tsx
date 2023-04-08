@@ -115,8 +115,20 @@ export function crowdsourcingMessages() {
     return [
         "Your responses will be recorded for research purposes, so please do not share any Personal Identifiable Information.",
         "I'm still in development, so if I don't understand something you said, please try and continue the conversation.",
-        "I can talk about anything recent until February 1st of this year. For example, I can talk about movies, books, music, celebrities, and many more topics.",
-        "What would you like to talk about today?"
+        // "I can talk about anything until March 23rd of this year.",
+        "First, select one of these movies from 2022 that you are familiar with or want to learn more about:\n \
+        - Avatar: The Way of Water\n \
+        - Top Gun: Maverick\n \
+        - Jurassic World: Dominion\n \
+        - Doctor Strange in the Multiverse of Madness\n \
+        - Minions: The Rise of Gru\n \
+        - Black Panther: Wakanda Forever\n \
+        - The Batman\n \
+        - Thor: Love and Thunder\n \
+        - Puss in Boots: The Last Wish\n \
+        - Fantastic Beasts: The Secrets of Dumbledore\n \
+        - Sonic the Hedgehog 2",
+        "Let's talk about that movie!"
     ]
 }
 
