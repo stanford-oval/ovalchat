@@ -124,7 +124,8 @@ export function crowdsourcingMessages() {
         - Puss in Boots: The Last Wish\n \
         - Fantastic Beasts: The Secrets of Dumbledore\n \
         - Sonic the Hedgehog 2",
-        "Let's start by talking about that movie, and see where the conversation takes us!"
+        "Start by talking about that movie, and see where the conversation takes you.",
+        "At each turn, you will see responses from " + allAvailableSystems().length.toString() + " chatbots. You are asked to rate each response, then select the response that you prefer."
     ]
 }
 

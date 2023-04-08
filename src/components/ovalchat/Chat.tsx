@@ -36,6 +36,7 @@ export default function Chat({ isHomePage, showSideBar, showHeader, showSpeechBu
     allAvailableSystems: allAvailableSystems(),
     selectedSystem: null,
     isHomePage: isHomePage,
+    messageHistory: [],
     finishedJob: false // whether the crowdsourcing job has finished
   });
 
@@ -109,7 +110,7 @@ export default function Chat({ isHomePage, showSideBar, showHeader, showSpeechBu
         <Chatbox history={history} convoState={convoState} showHeader={showHeader} showSpeechButton={showSpeechButton} />
       </div>
       {showSideBar &&
-        <div className="w-1/4 mx-auto min-h-full"><DesktopMenu convoState={convoState} /></div>
+        <div className="w-1/4 mx-auto min-h-full"><DesktopMenu convoState={convoState} history={history} /></div>
       }
     </div>
   );
