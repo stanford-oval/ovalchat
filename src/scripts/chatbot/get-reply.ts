@@ -25,7 +25,7 @@ export default async function getReply(
 
     output = output.map((response) => response.json());
     output = await Promise.all(output);
-    console.log(output)
+    // console.log(output)
   } catch (exception) {
     encounteredError = true
     console.log(exception);
