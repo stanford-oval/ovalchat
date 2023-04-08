@@ -52,14 +52,16 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit,
                         fromChatbot: true,
                         center: false,
                         text: messageText,
-                        showSpeechButton: false
                     }
-                } audioRef={audioRef} convoState={convoState} />
+                } audioRef={audioRef} convoState={convoState} showSpeechButton={false}/>
             </ul>
             <div className="flex flex-row justify-end">
                 <div className="w-fit">
                     {Object.entries(userScores()).map(([k, v], index) => {
                         if (v.type == "binary") {
+                            // convert type of v to the expected type for binary user scores
+                            v = v as { type: string; prompt: string; labelForTrue: string; labelForFalse: string; }
+                            
                             return <EvaluationBlock key={index}>
                                 <div className="flex flex-col text-center gap-y-1">
                                     <p>{v.prompt}</p>
@@ -76,6 +78,8 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit,
                             </EvaluationBlock>
                         }
                         else if (v.type == "slider") {
+                            // convert type of v to the expected type for slider user scores
+                            v = v as { type: string; prompt: string; min: number; max: number; label1: string; label2: string; }
                             return <EvaluationBlock key={index}>
                                 <div className="flex flex-col text-center gap-y-1">
                                     <p>{v.prompt} <br /> <b>{userRatings[index] !== null ? <span className="capitalize">{userRatings[index].toString()}</span> : "[please select]"}</b></p>
