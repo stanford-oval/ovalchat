@@ -135,3 +135,22 @@ export function mainPageMessages() {
         "Let's chat!"
     ]
 }
+
+// You can remove the pages you don't need. Removing an item from this list will remove all links to that page from the website,
+// but the page will still be accessible from its href
+const routes = [
+    {
+      href: "/",
+      name: "Home",
+    },
+    {
+      name: "Contribute",
+      href: "/improve",
+    },
+    {
+      name: "Compare",
+      href: "/compare",
+    },
+  ];
+  
+  export default routes;
