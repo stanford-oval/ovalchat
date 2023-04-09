@@ -19,6 +19,7 @@ export default function Messages({ history, convoState, messagesBottom, showSpee
         show: true,
         fromChatbot: true,
         text: "Hi! I am " + chatbotName() + ".",
+        isStatic: true
       });
       // Always add the microphone message
       history.value.push({
@@ -26,7 +27,8 @@ export default function Messages({ history, convoState, messagesBottom, showSpee
         fromChatbot: true,
         show: true,
         component: <MicrophoneInfo />,
-        read: "You can tap on the microphone button to start speaking. When you're done talking, click it again. Click the audio button to hear my replies"
+        read: "You can tap on the microphone button to start speaking. When you're done talking, click it again. Click the audio button to hear my replies",
+        isStatic: true
       });
 
       // Add custom messages
@@ -36,6 +38,7 @@ export default function Messages({ history, convoState, messagesBottom, showSpee
           show: true,
           fromChatbot: true,
           text: message,
+          isStatic: true
         });
       })
 
@@ -48,6 +51,7 @@ export default function Messages({ history, convoState, messagesBottom, showSpee
           show: true,
           fromChatbot: true,
           text: message,
+          isStatic: true
         });
       })
     }
