@@ -6,7 +6,7 @@ import getUniqueId from '../../scripts/utils/unique-id';
 import shuffleArray from "../../scripts/utils/shuffle-array";
 import { allAvailableSystems } from "../global/branding";
 
-export default function Chat({ isHomePage, showSideBar, showHeader, showSpeechButton }: any) {
+export default function Chat({ isHomePage, showSideBar, showHeader, showSpeechButton, skipEvaluation, shouldShuffleSystems: shouldShuffleSystems }: any) {
 
   const router = useRouter();
 
@@ -37,6 +37,8 @@ export default function Chat({ isHomePage, showSideBar, showHeader, showSpeechBu
     selectedSystem: null,
     isHomePage: isHomePage,
     messageHistory: [],
+    skipEvaluation: skipEvaluation, // whether to skip the evaluation step and jump to comparison
+    shouldShuffleSystems: shouldShuffleSystems, // whether to shuffle the systems at each turn
     finishedJob: false // whether the crowdsourcing job has finished
   });
 
@@ -54,7 +56,7 @@ export default function Chat({ isHomePage, showSideBar, showHeader, showSpeechBu
 
     }
 
-    if (!cs.isHomePage) {
+    if (shouldShuffleSystems) {
       // shuffle the systems so that the order users see them is random
       convoState.setValue((cs: any) => ({
         ...cs,

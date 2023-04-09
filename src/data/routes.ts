@@ -7,6 +7,10 @@ const routes = [
     name: "Contribute",
     href: "/improve",
   },
+  {
+    name: "Compare",
+    href: "/compare",
+  },
 ];
 
 export default routes;

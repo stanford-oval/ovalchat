@@ -57,7 +57,6 @@ SPEECH_REGION=[your API key]
 To do crowdsourcing in the "Contribute" page, set the following variables to your desired values in the same file.
 ```bash
 NEXT_PUBLIC_CROWDSOURCE_MAX_TURNS=8     # Users will be prompted to stop after this many turns
-NEXT_PUBLIC_SKIP_EVAL=true              # If true, users will not be asked to rate each chatbot reply, only to select the best reply
 ```
 
 ## Run in Development Mode
