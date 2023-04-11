@@ -2,19 +2,26 @@ import React, { useState, useEffect } from "react";
 import Message from "../message-window/Message";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { userScores } from "../../../../global/branding";
 
 export default function EvalInput({ convoState, history, audioRef, handleSubmit, responseIndex }: any) {
-    const [naturalnessRating, setNaturalnessRating] = useState(null);
-    const [factualCorrectness, setFactualCorrectness] = useState(null);
-    const [confidenceRating, setConfidenceRating] = useState(null);
+    // initialize all rating values (array of length n) to null
+    const userRatings = []
+    const setUserRatings = []
+    for (let i = 0; i < Object.keys(userScores()).length; i++) {
+        const [rating, setRating] = useState(null)
+        userRatings.push(rating)
+        setUserRatings.push(setRating)
+    }
+    // const [userRatings, setUserRatings] = useState(null)
     const [key, setKey] = useState(1);
     const messageText = convoState.value.responseInfo.responses[convoState.value.responseInfo.randomizedSystemIndices[responseIndex]]
 
     useEffect(() => {
         // reset all rating values
-        setNaturalnessRating(null)
-        setFactualCorrectness(null)
-        setConfidenceRating(null)
+        for (let i = 0; i < Object.keys(userScores()).length; i++) {
+            setUserRatings[i](null)
+        }
     }, [convoState.value.turn])
 
     return (
@@ -31,7 +38,7 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit,
                         if (responseIndex == 2)
                             return " third "
 
-                        return " " + (responseIndex+1).toString() + "th "
+                        return " " + (responseIndex + 1).toString() + "th "
                     })()
                     }
 
@@ -46,64 +53,60 @@ export default function EvalInput({ convoState, history, audioRef, handleSubmit,
                         center: false,
                         text: messageText,
                     }
-                } audioRef={audioRef} convoState={convoState} />
+                } audioRef={audioRef} convoState={convoState} showSpeechButton={false}/>
             </ul>
             <div className="flex flex-row justify-end">
                 <div className="w-fit">
-                    <EvaluationBlock>
-                        <div className="flex flex-col text-center gap-y-1">
-                            <p>Is this reply factually correct?</p>
-                            <BinaryPillSelect parameter={{
-                                name: "Naturalness",
-                                min: 1,
-                                max: 5,
-                                value: factualCorrectness,
-                                setValue: setFactualCorrectness
-                            }}
-                                convoState={convoState}
-                            />
-                        </div>
-                    </EvaluationBlock>
-                    <EvaluationBlock>
-                        <div className="flex flex-col text-center gap-y-1">
-                            <p>How confident are you in your choice above? <br /> <b>{confidenceRating !== null ? <span className="capitalize">{confidenceRating.toString()}</span> : "[please select]"}</b></p>
-                            <Slider parameter={{
-                                name: "Confidence in Factual Correctness",
-                                min: 1,
-                                max: 5,
-                                value: confidenceRating,
-                                setValue: setConfidenceRating,
-                                label1: "Not sure at all",
-                                label2: "Completely sure"
-                            }}
-                                date={key}
-                                convoState={convoState}
-                            />
-                        </div>
-                    </EvaluationBlock>
-                    <EvaluationBlock>
-                        <div className="flex flex-col text-center gap-y-1">
-                            <p>How natural is this reply? <br /> <b>{naturalnessRating !== null ? <span className="capitalize">{naturalnessRating.toString()}</span> : "[please select]"}</b></p>
-                            <Slider parameter={{
-                                name: "Naturalness",
-                                min: 1,
-                                max: 5,
-                                value: naturalnessRating,
-                                setValue: setNaturalnessRating,
-                                label1: "Unnatural",
-                                label2: "Natural"
-                            }}
-                                date={key}
-                                convoState={convoState}
-                            />
-                        </div>
-                    </EvaluationBlock>
+                    {Object.entries(userScores()).map(([k, v], index) => {
+                        if (v.type == "binary") {
+                            // convert type of v to the expected type for binary user scores
+                            v = v as { type: string; prompt: string; labelForTrue: string; labelForFalse: string; }
+                            
+                            return <EvaluationBlock key={index}>
+                                <div className="flex flex-col text-center gap-y-1">
+                                    <p>{v.prompt}</p>
+                                    <BinaryPillSelect parameter={{
+                                        name: k,
+                                        value: userRatings[index],
+                                        setValue: setUserRatings[index],
+                                        labelForTrue: v.labelForTrue,
+                                        labelForFalse: v.labelForFalse
+                                    }}
+                                        convoState={convoState}
+                                    />
+                                </div>
+                            </EvaluationBlock>
+                        }
+                        else if (v.type == "slider") {
+                            // convert type of v to the expected type for slider user scores
+                            v = v as { type: string; prompt: string; min: number; max: number; label1: string; label2: string; }
+                            return <EvaluationBlock key={index}>
+                                <div className="flex flex-col text-center gap-y-1">
+                                    <p>{v.prompt} <br /> <b>{userRatings[index] !== null ? <span className="capitalize">{userRatings[index].toString()}</span> : "[please select]"}</b></p>
+                                    <Slider parameter={{
+                                        name: k,
+                                        min: v.min,
+                                        max: v.max,
+                                        value: userRatings[index],
+                                        setValue: setUserRatings[index],
+                                        label1: v.label1,
+                                        label2: v.label2
+                                    }}
+                                        date={key}
+                                        convoState={convoState}
+                                    />
+                                </div>
+                            </EvaluationBlock>
+                        }
+                    })}
+
                     <button
                         onClick={(e: any) => {
-                            handleSubmit(e, convoState, history, naturalnessRating + ";" + factualCorrectness + ";" + confidenceRating);
+                            handleSubmit(e, convoState, history, userRatings);
                             setKey(key + 1);
                         }}
-                        disabled={convoState.value.turn.includes("ovalchat-reads") || (naturalnessRating === null) || (factualCorrectness === null) || (confidenceRating === null)}
+                        // disable button if any of the ratings are null
+                        disabled={convoState.value.turn.includes("ovalchat-reads") || userRatings.includes(null)}
                         className="mt-3 mx-auto block focus:ring-0 py-1 px-4 md:px-6 focus:outline-none shadow-sm sm:text-base border-0 rounded-full text-white bg-ovalchat-primary hover:bg-ovalchat-primary-dark1 disabled:bg-slate-400 disabled:border-slate-400 hover:border-ovalchat-secondary-light">
                         <div className="flex flex-row">
                             <b>Submit</b>
@@ -128,7 +131,7 @@ function BinaryPillSelect({ parameter, convoState }: any) {
             disabled={!convoState.value.turn.startsWith("user")}
             className={`py-1 px-4 md:px-6 focus:outline-none shadow-sm sm:text-base border-r-2 border-gray-500 rounded-l-full ${parameter.value === true ? "bg-ovalchat-secondary-bright text-white font-semibold hover:bg-ovalchat-secondary-light" : "bg-gray-300 text-gray-700 hover:bg-[#c2c6cc]"}`}
         >
-            Yes
+            {parameter.labelForTrue}
         </button>
         <button
             onClick={(e: any) => {
@@ -138,7 +141,7 @@ function BinaryPillSelect({ parameter, convoState }: any) {
             disabled={!convoState.value.turn.startsWith("user")}
             className={`py-1 px-4 md:px-6 focus:outline-none shadow-sm sm:text-base rounded-r-full  ${parameter.value === false ? "bg-ovalchat-secondary-bright text-white font-semibold hover:bg-ovalchat-secondary-light" : "bg-gray-300 text-gray-700 hover:bg-[#c2c6cc]"}`}
         >
-            No
+            {parameter.labelForFalse}
         </button>
     </div>
 }

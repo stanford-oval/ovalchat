@@ -57,7 +57,6 @@ SPEECH_REGION=[your API key]
 To do crowdsourcing in the "Contribute" page, set the following variables to your desired values in the same file.
 ```bash
 NEXT_PUBLIC_CROWDSOURCE_MAX_TURNS=8     # Users will be prompted to stop after this many turns
-NEXT_PUBLIC_SKIP_EVAL=true              # If true, users will not be asked to rate each chatbot reply, only to select the best reply
 ```
 
 ## Run in Development Mode
@@ -84,3 +83,15 @@ yarn run dev
 ```
 You will see a message like `ready - started server on 0.0.0.0:3000, url: http://localhost:3000`. This means that you can access the website via a web browser by visiting http://localhost:3000.
 
+## Deploy the front-end
+So far, we have been running the server in "development" mode, where changes to the code automatically refreshes any open webpage, and provides extensive debugging information when an error happens. This is not needed when deploying the front-end, and just slows down the website. To run the server in deployment mode, run:
+```bash
+yarn build
+yarn start
+```
+If you want to deploy the front-end on port 80 (so that you can visit the front-end without the need to type in a port number in the browser), you need to first give node permission to use ports below 1024. Run:
+```bash
+sudo apt-get install libcap2-bin
+sudo setcap cap_net_bind_service=+ep `readlink -f \`which node\``
+```
+Then add `-p 80` option to the above `yarn start` command.

@@ -25,7 +25,7 @@ export default async function getReply(
 
     output = output.map((response) => response.json());
     output = await Promise.all(output);
-    console.log(output)
+    // console.log(output)
   } catch (exception) {
     encounteredError = true
     console.log(exception);
@@ -56,12 +56,12 @@ export default async function getReply(
       logObjects: output.map((o) => o["log_object"]),
     }
   }
-  if (convoState.value.autoPickMode)
+  if (convoState.value.isHomePage)
     newInfo["systems"] = [convoState.value.selectedSystem]
 
   convoState.setValue((cs: any) => ({
     ...cs,
-    turn: process.env.NEXT_PUBLIC_SKIP_EVAL ? "user-select" : "user-eval1",
+    turn: convoState.value.skipEvaluation == true ? "user-select" : "user-eval1",
     responseInfo: {
       ...cs.responseInfo,
       ...newInfo
@@ -78,7 +78,7 @@ function getAiOutput(convoState, message) {
   const ri = convoState.value.responseInfo;
 
   let replies = [];
-  if (convoState.value.autoPickMode) {
+  if (convoState.value.isHomePage) {
     // only need one request, so the returned replies array will have one item
     let reply = ChatRequest(ri.experimentId, ri.dialogId, ri.turnId, message, convoState.value.selectedSystem);
     replies.push(reply);

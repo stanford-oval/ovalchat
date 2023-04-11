@@ -10,6 +10,6 @@ export default async function chatbotsTurn(
     const responseInfo = await getReply(message, convoState, "get-reply");
 
     // because we never see the evaluation or user select screen, we can force pick the first (and only) response
-    if (convoState.value.autoPickMode)
+    if (convoState.value.isHomePage)
         userSelect(convoState, history, 0, responseInfo)
 }

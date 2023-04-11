@@ -25,6 +25,8 @@
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-joyride": "^2.5.3",
+    "react-type-animation": "^3.0.1",
+    "sharp": "^0.32.0",
     "universal-cookie": "^4.0.4"
   },
   "devDependencies": {

@@ -86,7 +86,17 @@ export function crowdsourcingMessages() {
 
 export function mainPageMessages() {
     return [
-        "Your responses are recorded for research purposes, so please do not share any Personal Identifiable Information.",
         "Hi! How can I help you?"
     ]
 }
+
+// You can remove the pages you don't need. Removing an item from this list will remove all links to that page from the website,
+// but the page will still be accessible from its href
+const routes = [
+    {
+      href: "/",
+      name: "Home",
+    }
+  ];
+  
+  export default routes;

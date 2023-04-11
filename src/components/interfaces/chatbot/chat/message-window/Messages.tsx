@@ -3,7 +3,7 @@ import Message from "./Message";
 import MicrophoneInfo from "./initial-messages/MicrophoneInfo";
 import { chatbotName, crowdsourcingMessages, mainPageMessages } from "../../../../global/branding";
 
-export default function Messages({ history, convoState, messagesBottom }: any) {
+export default function Messages({ history, convoState, messagesBottom, showSpeechButton }: any) {
   let audioRef = useRef();
 
   audioRef.current = convoState.value.audio;
@@ -11,7 +11,7 @@ export default function Messages({ history, convoState, messagesBottom }: any) {
   useEffect(() => {
     // if (history.value.length > 0) return; // only run this on first render
 
-    if (convoState.value.autoPickMode) {
+    if (convoState.value.isHomePage) {
       // for the main page
 
       history.value.push({
@@ -19,6 +19,7 @@ export default function Messages({ history, convoState, messagesBottom }: any) {
         show: true,
         fromChatbot: true,
         text: "Hi! I am " + chatbotName() + ".",
+        isStatic: true
       });
       // Always add the microphone message
       history.value.push({
@@ -26,7 +27,8 @@ export default function Messages({ history, convoState, messagesBottom }: any) {
         fromChatbot: true,
         show: true,
         component: <MicrophoneInfo />,
-        read: "You can tap on the microphone button to start speaking. When you're done talking, click it again. Click the audio button to hear my replies"
+        read: "You can tap on the microphone button to start speaking. When you're done talking, click it again. Click the audio button to hear my replies",
+        isStatic: true
       });
 
       // Add custom messages
@@ -36,6 +38,7 @@ export default function Messages({ history, convoState, messagesBottom }: any) {
           show: true,
           fromChatbot: true,
           text: message,
+          isStatic: true
         });
       })
 
@@ -48,6 +51,7 @@ export default function Messages({ history, convoState, messagesBottom }: any) {
           show: true,
           fromChatbot: true,
           text: message,
+          isStatic: true
         });
       })
     }
@@ -79,7 +83,7 @@ export default function Messages({ history, convoState, messagesBottom }: any) {
     >
       <ul>
         {history.value.map((message: any) => (
-          <Message message={message} audioRef={audioRef} convoState={convoState} key={message.id} />
+          <Message message={message} audioRef={audioRef} convoState={convoState} showSpeechButton={showSpeechButton} key={message.id} />
         ))}
         {(!convoState.value.turn.startsWith("user") && !convoState.value.turn.includes("read")) && (
           // show loading animation

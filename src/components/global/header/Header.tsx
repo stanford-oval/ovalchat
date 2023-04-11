@@ -1,5 +1,4 @@
 import React from "react";
-import routes from "../../../data/routes";
 import { useRouter } from "next/router";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,7 +7,7 @@ import Link from "next/link";
 import NavItem from "./NavItem";
 import Image from "next/image";
 import MobileNavItem from "./MobileNavItem";
-import { chatbotLogo, chatbotName } from "../branding";
+import routes, { chatbotLogo, chatbotName } from "../branding";
 
 export default function Header() {
   const currPath = useRouter().pathname;

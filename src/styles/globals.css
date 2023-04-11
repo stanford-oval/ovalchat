@@ -63,6 +63,10 @@
     overflow: auto !important;
 }
 
+#log-item {
+    white-space: pre-line
+}
+
 .secondary-slider-thumb::-webkit-slider-thumb {
     -webkit-appearance: none;
     background: #1e4a69;
