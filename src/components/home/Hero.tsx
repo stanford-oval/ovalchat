@@ -2,6 +2,7 @@ import React from "react";
 import { chatbotDescription, chatbotTagLine, developedByHeader } from "../global/branding";
 import Chat from '../ovalchat/Chat';
 import Alert from './Alert';
+import routes from "../global/branding";
 
 export default function Hero() {
   return (
@@ -9,7 +10,11 @@ export default function Hero() {
       className="bg-white isolate flex flex-col justify-center align-center pt-16"
       id="homeHero"
     >
-      <Alert />
+      {
+        // if route has {name: "Contribute"} in it
+        routes.some((route) => route.href === "/improve") &&
+        <Alert />
+      }
       <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
         <svg
           className="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
