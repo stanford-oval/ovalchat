@@ -1,8 +1,8 @@
 import React from "react";
-import { chatbotDescription, chatbotTagLine, developedByHeader } from "../global/branding";
+import { chatbotDescription, chatbotTagLine, developedByHeader, footerSponsors, showFooter } from "../global/branding";
 import Chat from '../ovalchat/Chat';
 import Alert from './Alert';
-import routes from "../global/branding";
+import { routes } from "../global/branding";
 
 export default function Hero() {
   return (
@@ -50,21 +50,33 @@ export default function Hero() {
               {chatbotDescription()}
             </p>
             <div className="mt-4 w-full">
-              <h2 className="text-gray-500 text-lg">
-                Developed by{" "}
-                {developedByHeader()}
-              </h2>
-              <div className="mt-2 w-full flex mx-auto justify-center md:justify-start">
+
+
+              <div className="mt-5 w-full flex mx-auto justify-center">
                 <img
                   src="/img/logos/stanford/university.png"
-                  className="h-10 lg:h-12 mt-0.5 w-auto mx-auto"
+                  className="h-14 lg:h-16 w-auto mx-4"
                   alt="Stanford University"
                 />
+
+                <h2 className="text-gray-500 text-lg w-fit text-left">
+                  Developed by
+                  <br></br>
+                  {" "}
+                  {developedByHeader()}
+                </h2>
               </div>
+
+              {!showFooter &&
+                <div className="mt-6 w-full flex mx-auto justify-center">
+                  {footerSponsors()}
+                </div>
+              }
+
             </div>
           </div>
         </div>
-        <div className="py-4 sm:py-6 md:py-7 2xl:py-8">
+        <div className="py-5">
           <Chat isHomePage={true} showSideBar={true} showHeader={true} showSpeechButton={true} skipEvaluation={false} shouldShuffleSystems={false} />
         </div>
       </div>
