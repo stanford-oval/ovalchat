@@ -70,7 +70,7 @@ export function footerSponsors() {
             target="_blank"
             rel="noopener noreferrer"
         >
-            <Image alt="vercel logo" src="/img/logos/vercel/powered-by.svg" className="mx-auto" height="38" width="200" />
+            <Image alt="vercel logo" src="/img/logos/vercel/powered-by.svg" className="mx-auto" height="38" width="170" />
         </a>
     </>
 }
@@ -105,7 +105,7 @@ export function mainPageMessages() {
 
 // You can remove the pages you don't need. Removing an item from this list will remove all links to that page from the website,
 // but the page will still be accessible from its href
-const routes = [
+export const routes = [
     {
       href: "/",
       name: "Home",

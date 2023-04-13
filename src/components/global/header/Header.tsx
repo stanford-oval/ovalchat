@@ -7,7 +7,7 @@ import Link from "next/link";
 import NavItem from "./NavItem";
 import Image from "next/image";
 import MobileNavItem from "./MobileNavItem";
-import routes, { chatbotLogo, chatbotName } from "../branding";
+import {routes, chatbotLogo, chatbotName } from "../branding";
 
 export default function Header() {
   const currPath = useRouter().pathname;

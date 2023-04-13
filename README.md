@@ -95,3 +95,7 @@ sudo apt-get install libcap2-bin
 sudo setcap cap_net_bind_service=+ep `readlink -f \`which node\``
 ```
 Then add `-p 80` option to the above `yarn start` command.
+
+### Deploy the front-end to Vercel
+This website can be easily deployed to vercel.com
+If you want to deploy from a branch other than `main`, you need to change the `vercel-deploy-branch.sh` script to allow your branch to be deployed.

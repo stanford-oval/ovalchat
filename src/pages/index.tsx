@@ -1,5 +1,5 @@
 import React from "react";
-import { chatbotName, pageDescription } from "../components/global/branding";
+import { chatbotName, pageDescription, showFooter } from "../components/global/branding";
 import Page from "../components/global/utility/Page";
 import Hero from "../components/home/Hero";
 import Header from "../components/global/header/Header";
@@ -13,7 +13,9 @@ export default function index() {
     >
       <Header />
       <Hero />
-      <Footer />
+      {showFooter &&
+        <Footer />
+      }
 
     </Page>
   );
