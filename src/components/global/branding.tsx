@@ -113,4 +113,3 @@ export const routes = [
   ];
 
 export const showFooter = false
-export default routes;
