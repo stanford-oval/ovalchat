@@ -11,6 +11,24 @@ export function allAvailableSystems() {
     return ["restaurant-genie"]
 }
 
+export function userScores() {
+    return {
+        "user_naturalness_rating": {
+            "type": "slider",
+            "min": 1,
+            "max": 5,
+            "prompt": "How natural is this reply?",
+            "label1": "Unnatural",
+            "label2": "Natural",
+        },
+        "user_factuality_rating": {
+            "type": "binary",
+            "prompt": "Is this reply factually correct?",
+            "labelForTrue": "Yes",
+            "labelForFalse": "No",
+        },
+    }
+}
 
 export function pageDescription() {
     return "Wanna try some new places today? Restaurant Genie is here to help!"
