@@ -111,5 +111,6 @@ export const routes = [
       name: "Home",
     }
   ];
-  
-  export default routes;
+
+export const showFooter = false
+export default routes;
