@@ -5,11 +5,11 @@ echo "VERCEL_GIT_COMMIT_REF: $VERCEL_GIT_COMMIT_REF"
 
 if [[ "$VERCEL_GIT_COMMIT_REF" == "main" ]] ; then
   # Proceed with the build
-  echo "✅ - Build can proceed"
+  echo "✅ - Branch name check passed. Build can proceed"
   exit 1;
 
 else
   # Don't build
-  echo "🛑 - Build cancelled"
+  echo "🛑 - Branch name check failed. Build cancelled because this branch is not for deployment"
   exit 0;
 fi
