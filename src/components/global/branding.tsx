@@ -8,7 +8,7 @@ export function chatbotName() {
 }
 
 export function allAvailableSystems() {
-    return ["restaurant-genie"]
+    return ["genie-parser", "GPT-3-parser"]
 }
 
 export function userScores() {
