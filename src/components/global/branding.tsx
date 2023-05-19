@@ -8,7 +8,7 @@ export function chatbotName() {
 }
 
 export function allAvailableSystems() {
-    return ["GPT-3-parser"]
+    return ["generate_delta[then use `APPLY`]", "generate_full"]
 }
 
 export function userScores() {
