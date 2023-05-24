@@ -9,7 +9,7 @@ export function chatbotName() {
 
 export function allAvailableSystems() {
     return [
-        "ensemble_combine[engine=text-davinci-003]",
+        "early_combine[engine=text-davinci-003]",
         "generate[engine=text-davinci-003]",
         // "generate[engine=gpt-4]",
         "verify_and_correct[engine=text-davinci-003]",
