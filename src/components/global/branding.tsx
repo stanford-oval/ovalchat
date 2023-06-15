@@ -8,7 +8,7 @@ export function chatbotName() {
 }
 
 export function allAvailableSystems() {
-    return ["generate_delta[then use `APPLY`]", "generate_full"]
+    return ["v0614baseline"]
 }
 
 export function userScores() {
