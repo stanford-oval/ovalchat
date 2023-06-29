@@ -8,7 +8,7 @@ export function chatbotName() {
 }
 
 export function allAvailableSystems() {
-    return ["v0616baseline_sql", "v0614baseline_thingtalk"]
+    return ["semantic_index", "baseline_w_textfcns", "baseline_linearization", "v0614baseline_thingtalk"]
 }
 
 export function userScores() {
