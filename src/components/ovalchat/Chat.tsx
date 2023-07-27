@@ -34,7 +34,7 @@ export default function Chat({ isHomePage, showSideBar, showHeader, showSpeechBu
       randomizedSystemIndices:  [...Array(allAvailableSystems().length)].map((item, index) => index), // the order in which we display systems responses to users
     },
     allAvailableSystems: allAvailableSystems(),
-    selectedSystem: null,
+    selectedSystem: allAvailableSystems()[0],
     isHomePage: isHomePage,
     messageHistory: [],
     skipEvaluation: skipEvaluation, // whether to skip the evaluation step and jump to comparison
@@ -67,11 +67,6 @@ export default function Chat({ isHomePage, showSideBar, showHeader, showSpeechBu
       }));
     }
 
-    // set the default selectedSystem
-    convoState.setValue((cs: any) => ({
-      ...cs,
-      selectedSystem: cs.allAvailableSystems[0]
-    }));
 
 
     // set experimentId
