@@ -9,11 +9,11 @@ export function chatbotName() {
 
 export function allAvailableSystems() {
     return [
-        "early_combine[engine=text-davinci-003]",
-        "generate[engine=text-davinci-003]",
+        "early_combine[engine=gpt-4]",
+        "early_combine[engine=llama]",
         // "generate[engine=gpt-4]",
-        "verify_and_correct[engine=text-davinci-003]",
-        "retrieve_and_generate[engine=text-davinci-003]",
+        // "verify_and_correct[engine=text-davinci-003]",
+        // "retrieve_and_generate[engine=text-davinci-003]",
         // "retrieve_generate_verify_correct[engine=text-davinci-003]",
         // "retrieve_only[engine=text-davinci-003]"
     ]
@@ -113,20 +113,20 @@ export function crowdsourcingMessages() {
         "Your responses will be recorded for research purposes, so please do not share any Personal Identifiable Information.",
         "I'm still in development, so if I don't understand something you said, please try and continue the conversation.",
         // "I can talk about anything until March 23rd of this year.",
-        "First, select one of these movies from 2022 that you are familiar with or want to learn more about:\n \
-        - Avatar: The Way of Water\n \
-        - Top Gun: Maverick\n \
-        - Jurassic World: Dominion\n \
-        - Doctor Strange in the Multiverse of Madness\n \
-        - Minions: The Rise of Gru\n \
-        - Black Panther: Wakanda Forever\n \
-        - The Batman\n \
-        - Thor: Love and Thunder\n \
-        - Puss in Boots: The Last Wish\n \
-        - Fantastic Beasts: The Secrets of Dumbledore\n \
-        - Sonic the Hedgehog 2",
-        "Start by talking about that movie, and see where the conversation takes you.",
-        "At each turn, you will see responses from " + allAvailableSystems().length.toString() + " chatbots. You are asked to rate each response, then select the response that you prefer."
+        // "First, select one of these movies from 2022 that you are familiar with or want to learn more about:\n \
+        // - Avatar: The Way of Water\n \
+        // - Top Gun: Maverick\n \
+        // - Jurassic World: Dominion\n \
+        // - Doctor Strange in the Multiverse of Madness\n \
+        // - Minions: The Rise of Gru\n \
+        // - Black Panther: Wakanda Forever\n \
+        // - The Batman\n \
+        // - Thor: Love and Thunder\n \
+        // - Puss in Boots: The Last Wish\n \
+        // - Fantastic Beasts: The Secrets of Dumbledore\n \
+        // - Sonic the Hedgehog 2",
+        // "Start by talking about that movie, and see where the conversation takes you.",
+        // "At each turn, you will see responses from " + allAvailableSystems().length.toString() + " chatbots. You are asked to rate each response, then select the response that you prefer."
     ]
 }
 
