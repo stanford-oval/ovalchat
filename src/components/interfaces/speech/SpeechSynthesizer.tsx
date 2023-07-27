@@ -13,16 +13,14 @@ export default function SpeechSynthesizer({
     className,
     convoState,
     audioRef,
-    preText,
     text,
-    postText,
     id,
     style,
     styleDegree
 }: any) {
     const handler = () => {
         console.log("In speech handler");
-        textToSpeech({ text: text, preText: preText, postText: postText, style: style, id: id, styleDegree: styleDegree, convoState: convoState, audioRef: audioRef });
+        textToSpeech({ text: text, style: style, id: id, styleDegree: styleDegree, convoState: convoState, audioRef: audioRef });
     };
 
     let buttonColor = "text-gray-500"
@@ -57,8 +55,6 @@ export default function SpeechSynthesizer({
 
 export async function textToSpeech(
     { text,
-        preText,
-        postText,
         style,
         id,
         styleDegree,
@@ -90,7 +86,7 @@ export async function textToSpeech(
     let originalTurn = convoState.value.turn.split("-ovalchat-reads")[0]
     if (originalTurn.startsWith("user")) setTurn(originalTurn + "-ovalchat-reads")
 
-    const ssmlStr = getSpeechSSMLStr(text, preText, postText, style, styleDegree)
+    const ssmlStr = getSpeechSSMLStr(text, style, styleDegree)
 
     // console.log(ssmlStr)
 
