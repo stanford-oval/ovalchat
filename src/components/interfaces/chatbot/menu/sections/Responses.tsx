@@ -94,22 +94,26 @@ function TextDisclosure({ buttonText, panelText, defaultOpen }: any) {
   return (
     <Disclosure defaultOpen={defaultOpen}>
       {({ open }) => (
+
         <div className="mt-2 w-full break-words">
           <Disclosure.Button className="flex break-words w-full rounded-lg text-left font-medium text-gray-600 focus:outline-none">
-            <span className="w-full">{buttonText}:</span>
+            {open ? <span className="w-full">{buttonText}:</span> : <span className="w-full">{buttonText} ...</span>}
             {/* <ChevronUpIcon className={`${open ? "transform" : "rotate-180"} h-4 w-4 text-gray-600`} /> */}
           </Disclosure.Button>
           {/* <DisclosureTransition
             duration={{ enter: 0, leave: 0 }}
           > */}
-          <Disclosure.Panel className="text-gray-500">
-            <p id="log-item">
-              {panelText}
-            </p>
+          {open &&
+            <Disclosure.Panel className="text-gray-500">
+              <p id="log-item">
+                {panelText}
+              </p>
 
-          </Disclosure.Panel>
+            </Disclosure.Panel>
+          }
           {/* </DisclosureTransition> */}
         </div>
+
       )}
     </Disclosure>
   )
