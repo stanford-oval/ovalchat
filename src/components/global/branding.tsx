@@ -8,7 +8,7 @@ export function chatbotName() {
 }
 
 export function allAvailableSystems() {
-    return ["semantic_index", "baseline_w_textfcns", "baseline_linearization"]
+    return ["sql_textfcns_v0801", "semantic_index_w_textfncs", "baseline_linearization"]
 }
 
 export function userScores() {
