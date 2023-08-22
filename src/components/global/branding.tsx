@@ -117,6 +117,7 @@ export function crowdsourcingMessages() {
 
 export function mainPageMessages() {
     return [
+        "I am in development phase right now. For now, I can help you find restaurants in Palo Alto, Cupertino, Sunnyvale and San Francisco.",
         "Hi! How can I help you?"
     ]
 }
