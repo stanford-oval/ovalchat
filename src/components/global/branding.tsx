@@ -4,16 +4,21 @@ import Image from "next/image";
 
 
 export function chatbotName() {
-    return "WikiChat"
+    return "CookingStackExchangeChat"
 }
 
 export function allAvailableSystems() {
     return [
+        "early_combine_with_replacement[engine=text-davinci-003]",
+        "early_combine_with_replacement[engine=gpt-4]",
+        "early_combine[engine=text-davinci-003]",
         "early_combine[engine=gpt-4]",
-        "early_combine[engine=llama]",
-        // "generate[engine=gpt-4]",
+        // "early_combine[engine=llama]",
+        "generate[engine=gpt-4]",
+        "generate[engine=text-davinci-003]",
         // "verify_and_correct[engine=text-davinci-003]",
-        // "retrieve_and_generate[engine=text-davinci-003]",
+        "retrieve_and_generate[engine=text-davinci-003]",
+        "retrieve_and_generate[engine=gpt-4]",
         // "retrieve_generate_verify_correct[engine=text-davinci-003]",
         // "retrieve_only[engine=text-davinci-003]"
     ]
