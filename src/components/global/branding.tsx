@@ -9,6 +9,7 @@ export function chatbotName() {
 
 export function allAvailableSystems() {
     return [
+        "early_combine[engine=gpt-35-turbo-instruct]",
         "early_combine[engine=gpt-4]",
         "early_combine[engine=llama]",
         // "generate[engine=gpt-4]",
