@@ -20,7 +20,7 @@ export default async function getReply(
     const errors = output.filter((response) => !response.ok);
 
     if (errors.length > 0) {
-      throw errors.map((response) => Error(response.statusText));
+      throw errors.map((response) => response.statusText);
     }
 
     output = output.map((response) => response.json());
@@ -31,8 +31,10 @@ export default async function getReply(
     console.log(exception);
 
     let userFriendlyErrorMessage
-    if (exception.name == 'NetworkError' || exception.message.includes("NetworkError"))
+    if (exception.name == 'NetworkError' || ("message" in exception && exception.message.includes("NetworkError")))
       userFriendlyErrorMessage = "Encountered a network issue. Could not access the back-end."
+    else if (Array.isArray(exception) && exception.includes("TOO MANY REQUESTS"))
+      userFriendlyErrorMessage = "We have reached our daily quota. Please try again tomorrow."
     else
       userFriendlyErrorMessage = "Oops! Something went wrong. Please refresh the page and try again."
 
@@ -44,7 +46,7 @@ export default async function getReply(
     // Set all chatbot messages to the error message
     newInfo = {
       responses: outputPromises.map((o) => userFriendlyErrorMessage),
-      logObjects: outputPromises.map((o) => {})
+      logObjects: outputPromises.map((o) => { })
     }
 
   }
