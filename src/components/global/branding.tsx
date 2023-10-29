@@ -9,9 +9,9 @@ export function chatbotName() {
 
 export function allAvailableSystems() {
     return [
-        "early_combine[engine=gpt-35-turbo-instruct]",
-        "early_combine[engine=gpt-4]",
-        "early_combine[engine=llama]",
+        "WikiChat (GPT-3.5)[pipeline=early_combine, engine=gpt-35-turbo-instruct, do_refine=true]",
+        "WikiChat (GPT-4)[pipeline=early_combine, engine=gpt-4, do_refine=false]",
+        // "early_combine[engine=llama]",
         // "generate[engine=gpt-4]",
         // "verify_and_correct[engine=text-davinci-003]",
         // "retrieve_and_generate[engine=text-davinci-003]",

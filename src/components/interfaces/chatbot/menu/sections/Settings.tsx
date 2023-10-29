@@ -38,7 +38,7 @@ function stylizeSystemName(system: string) {
 
         return <>
             <div className="my-0 py-0">{systemName}</div>
-            <div className="text-xs text-gray-500">{systemParameters}</div>
+            {/* <div className="text-xs text-gray-500">{systemParameters}</div> */}
             </>
     }
     return <>{systemName}</>
