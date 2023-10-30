@@ -13,11 +13,11 @@ export default function Header() {
   const currPath = useRouter().pathname;
 
   return (
-    <nav className="z-40 w-screen bg-white shadow fixed">
-      <div className="container">
-        <div className="flex justify-between align-middle h-16">
+    <nav className="z-40 w-screen bg-white h-16">
+      <div className="container z-40">
+        <div className="flex justify-between align-middle h-16 z-40">
           <Link href="/" className="h-fit my-auto">
-            <div className="flex-shrink-0 flex items-center my-auto">
+            {/* <div className="flex-shrink-0 flex items-center my-auto">
               <Image
                 className="block h-10 w-auto mr-2"
                 width="50"
@@ -28,11 +28,11 @@ export default function Header() {
               <div className="font-bold tracking-wide my-auto text-xl text-ovalchat-primary">
                 {chatbotName()}
               </div>
-            </div>
+            </div> */}
           </Link>
           <div className="flex">
             {/* desktop navigation */}
-            <div className="hidden md:ml-6 md:flex md:space-x-6 lg:space-x-8">
+            <div className="hidden md:ml-6 md:flex md:space-x-6 lg:space-x-8 z-40">
               {routes.map((r: any) => (
                 <NavItem
                   key={r.name}
@@ -53,14 +53,14 @@ export default function Header() {
               <Disclosure>
                 {({ open }) => (
                   <>
-                    <Disclosure.Button className="toggle inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100">
+                    <Disclosure.Button className="toggle inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100  z-40">
                       <FontAwesomeIcon
                         icon={open ? faClose : faBars}
                         className="toggle h-6 w-6"
                       />
                     </Disclosure.Button>
 
-                    <Disclosure.Panel className="absolute top-16 left-0 w-screen bg-white">
+                    <Disclosure.Panel className="absolute top-16 left-0 w-screen bg-white  z-40">
                       <div className={`${open ? "block" : "hidden"} lg:hidden`}>
                         <div className="pb-2 space-y-1 shadow-md">
                           {routes.map((r: any) => (

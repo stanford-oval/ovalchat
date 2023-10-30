@@ -103,7 +103,7 @@ export default function Chat({ isHomePage, showSideBar, showHeader, showSpeechBu
 
   return (
     <div className="py-4 container flex items-stretch flex-col md:flex-row justify-center md:space-x-2 space-y-2 md:space-y-0">
-      <div className="basis-3/4 w-full mx-auto min-h-full">
+      <div className={"mx-auto min-h-full" + (showSideBar ? " w-3/4": "basis-3/4 w-5/6")}>
         <Chatbox history={history} convoState={convoState} showHeader={showHeader} showSpeechButton={showSpeechButton} />
       </div>
       {showSideBar &&

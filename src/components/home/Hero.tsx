@@ -1,13 +1,14 @@
 import React from "react";
-import { chatbotDescription, chatbotTagLine, developedByHeader, footerSponsors, showFooter } from "../global/branding";
+import { chatbotDescription, chatbotRepository, chatbotTagLine, developedByHeader, footerSponsors, showFooter } from "../global/branding";
 import Chat from '../ovalchat/Chat';
 import Alert from './Alert';
 import { routes } from "../global/branding";
+import { PageBackground } from "../global/utility/Page";
 
-export default function Hero() {
+export default function HomeHero() {
   return (
     <div
-      className="bg-white isolate flex flex-col justify-center align-center pt-16"
+      className="bg-white isolate flex flex-col justify-center align-center pt-10"
       id="homeHero"
     >
       {
@@ -15,39 +16,19 @@ export default function Hero() {
         routes.some((route) => route.href === "/improve") &&
         <Alert />
       }
-      <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
-        <svg
-          className="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
-          viewBox="0 0 1155 678"
-        >
-          <path
-            fill="url(#45de2b6b-92d5-4d68-a6a0-9b9b2abad533)"
-            fillOpacity=".3"
-            d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
-          />
-          <defs>
-            <linearGradient
-              id="45de2b6b-92d5-4d68-a6a0-9b9b2abad533"
-              x1="1155.49"
-              x2="-78.208"
-              y1=".177"
-              y2="474.645"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#2DD4BF" />
-              <stop offset={1} stopColor="#06B6D4" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-      <div className="container pt-12 sm:pt-16 md:pt-18 2xl:pt-20">
+      <PageBackground />
+
+      <div className="container pt-16 sm:pt-1">
         <div className="flex mx-auto items-center flex-col text-center gap-y-8 sm:gap-y-6 sm:gap-x-12 lg:gap-x-0 max-w-xl sm:max-w-2xl md:max-w-3xl">
           <div className="px-4 sm:px-0">
             <p className="inline leading-tight bg-gradient-to-r from-ovalchat-primary via-teal-900 to-ovalchat-primary-dark bg-clip-text font-bold text-4xl xl:text-5xl tracking-tight text-transparent">
               {chatbotTagLine()}
             </p>
-            <p className="mt-4 text-xl xl:text-2xl tracking-tight text-gray-600">
+            <p className="pt-2 pb-0 mt-4 text-xl xl:text-2xl tracking-tight text-gray-600">
               {chatbotDescription()}
+            </p>
+            <p className="pt-0 pb-2 mt-2 text-lg tracking-tight text-blue-600">
+              {chatbotRepository()}
             </p>
             <div className="mt-4 w-full">
 
@@ -77,7 +58,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="py-5">
-          <Chat isHomePage={true} showSideBar={true} showHeader={true} showSpeechButton={true} skipEvaluation={false} shouldShuffleSystems={false} />
+          <Chat isHomePage={true} showSideBar={false} showHeader={true} showSpeechButton={true} skipEvaluation={false} shouldShuffleSystems={false} />
         </div>
       </div>
     </div>
