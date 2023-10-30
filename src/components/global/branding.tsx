@@ -58,7 +58,7 @@ export function chatbotDescription() {
     return "WikiChat is an experimental chatbot that improves the factuality of large language models by retrieving data from Wikipedia."
 }
 
-export function chatbotRepository(){
+export function chatbotRepository() {
     return <a href="https://github.com/stanford-oval/WikiChat" target="_blank">https://github.com/stanford-oval/WikiChat</a>
 }
 
@@ -110,6 +110,107 @@ export function footerSponsors() {
         >
             <Image alt="vercel logo" src="/img/logos/vercel/powered-by.svg" className="mx-auto" height="38" width="170" />
         </a>
+    </>
+}
+
+export function aboutPage() {
+    return <>
+        <h3 className="text-3xl pt-10 pb-3">
+            What is WikiChat?
+        </h3>
+        <p className="text-lg">
+            Large language model (LLM) chatbots like ChatGPT and GPT-4 are great tools for quick access to knowledge.
+            But they get things wrong a lot, especially if the information you are looking for is recent ("Tell me about the last Super Bowl.") or about less popular topics ("What are some good movies I can watch from [insert your favorite foreign director]?").
+            <br></br>
+            WikiChat uses an LLM as its backbone, but it makes sure the information it provides comes from a reliable source like Wikipedia, so that its responses are more factual.
+        </p>
+
+        <h3 className="text-3xl pt-10 pb-3">
+
+            What is this website?
+        </h3>
+        <p className="text-lg">
+
+            We are hosting WikiChat to better understand the system in the wild. Thank you for giving it a try!
+            <br></br>
+            For further research on factual chatbots, we store conversations conducted on this website in a secure database. Only the text that you submit is stored. We do NOT collect or store any other information.
+        </p>
+
+
+        <h3 className="text-3xl pt-10 pb-3">
+            I found a factual mistake in WikiChat's responses.
+        </h3>
+        <p className="text-lg">
+            In our benchmarks, the version of WikiChat that uses GPT-4 as its backbone achieves a factual accuracy of 97.9%, much better than GPT-4 on its own. However, the version on this website uses OpenAI's <code className="">gpt-35-turbo-instruct</code> because of its lower cost, which means there will be more inaccuracies.
+            <br></br>
+            For highest factual accuracy, we recommend using WikiChat with GPT-4. You can try it by providing your own API key, following the step-by-step guide at the <a className="text-blue-600" href="https://github.com/stanford-oval/WikiChat" target="_blank">WikiChat GitHub Repository</a>.
+        </p>
+
+        <h3 className="text-3xl pt-10 pb-3">
+            How does WikiChat work?
+        </h3>
+        <p className="text-lg">
+            Given the user input and the history of the conversation, WikiChat performs the following actions:
+        </p>
+        <ol className="list-decimal pl-10 py-4">
+            <li>
+                Searches Wikipedia to retrieve relevant information.
+            </li>
+            <li>
+                Summarizes and filters the retrieved passages.
+            </li>
+            <li>
+                Generates a response using a Language Learning Model (LLM).
+            </li>
+            <li>
+                Extracts claims from the LLM response.
+            </li>
+            <li>
+                Fact-checks the claims in the LLM response using additional retrieved evidence it retrieves from Wikipedia.
+            </li>
+            <li>
+                Drafts a response.
+            </li>
+            <li>Refines the drafted response.
+
+            </li>
+        </ol>
+        <p className="text-lg">
+
+            The following figure shows how these steps are applied during a sample conversation about an upcoming movie at the time, edited for brevity.
+        </p>
+        <div className="flex flex-col justify-center items-center m-10 mb-5">
+
+            <Image
+                className=""
+                width="1000"
+                height="800"
+                fill={false}
+                src={"/img/other/pipeline.svg"}
+                alt={chatbotName() + " pipeline"}
+            />
+
+            {/* <div className="w-4/5">
+                                All WikiChat components, and a sample conversation about a recent movie, edited for brevity. The
+                                steps taken to generate a response include (1) generating a query to retrieve from Wikipedia, (2) summarizing
+                                and filtering the retrieved passages, (3) generating a response from an LLM, (4) extracting claims from the LLM
+                                response (5) fact-checking the claims in the LLM response using retrieved evidence, (6) drafting a response, and (7)
+                                refining the response.
+                            </div> */}
+        </div>
+
+
+        <h3 className="text-3xl pt-10 pb-3">
+            How can I learn more?
+        </h3>
+        <p className="text-lg">
+
+            Check out our paper!
+            <br></br><br></br>
+            Sina J. Semnani, Violet Z. Yao<sup>*</sup>, Heidi C. Zhang<sup>*</sup>, and Monica S. Lam. 2023. <b>WikiChat: Stopping the Hallucination of Large Language Model Chatbots by Few-Shot Grounding on Wikipedia.</b> In Findings
+            of the Association for Computational Linguistics: EMNLP 2023, Singapore. Association for Computational Linguistics.
+            [<a href="https://arxiv.org/abs/2305.14292">arXiv</a>]
+        </p>
     </>
 }
 
