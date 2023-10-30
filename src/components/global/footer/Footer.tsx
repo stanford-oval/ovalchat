@@ -6,7 +6,7 @@ import { footerMessage, footerSponsors } from "../branding";
 export default function Footer() {
   return (
     <footer className="bg-ovalchat-secondary">
-      <div className="max-w-7xl mx-auto pt-4 pb-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto pt-4 pb-4 px-4 overflow-hidden sm:px-6 lg:px-8">
         {/* <nav
           className="-mx-5 -my-2 flex flex-wrap justify-center"
           aria-label="Footer"
@@ -27,7 +27,7 @@ export default function Footer() {
         </nav> */}
         <div className="mt-8 flex justify-center space-x-6">
           {socials.map((s: any) => (
-            <a key={s.name} href={s.href}>
+            <a key={s.name} href={s.href} target="_blank">
               <FontAwesomeIcon
                 icon={s.icon}
                 className="text-gray-300 hover:text-gray-200 h-6 w-6 trans-150"

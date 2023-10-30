@@ -47,15 +47,19 @@ export function userScores() {
 
 
 export function pageDescription() {
-    return "WikiChat is an experimental chatbot aimed at improving the factuality of GPT-3 by retrieving data from Wikipedia."
+    return "WikiChat is an experimental chatbot that improves the factuality of large language models by retrieving data from Wikipedia."
 }
 
 export function chatbotTagLine() {
-    return "Stay informed with WikiChat."
+    return "Wikipedia + LLM"
 }
 
 export function chatbotDescription() {
-    return "WikiChat is an experimental chatbot aimed at improving the factuality of large language models such as GPT-3 by retrieving data from Wikipedia."
+    return "WikiChat is an experimental chatbot that improves the factuality of large language models by retrieving data from Wikipedia."
+}
+
+export function chatbotRepository(){
+    return <a href="https://github.com/stanford-oval/WikiChat" target="_blank">https://github.com/stanford-oval/WikiChat</a>
 }
 
 export function chatbotLogo() {
@@ -133,8 +137,8 @@ export function crowdsourcingMessages() {
 
 export function mainPageMessages() {
     return [
-        "Your responses are recorded for research purposes, so please do not share any Personal Identifiable Information.",
-        "Let's chat!"
+        "I'll keep our conversations for research purposes.",
+        "Ask me about anything on Wikipedia!"
     ]
 }
 
@@ -142,17 +146,21 @@ export function mainPageMessages() {
 // but the page will still be accessible from its href
 export const routes = [
     {
-        href: "/",
         name: "Home",
+        href: "/",
     },
     {
-        name: "Contribute",
-        href: "/improve",
+        name: "About",
+        href: "/about",
     },
-    {
-        name: "Compare",
-        href: "/compare",
-    },
+    // {
+    //     name: "Contribute",
+    //     href: "/improve",
+    // },
+    // {
+    //     name: "Compare",
+    //     href: "/compare",
+    // },
 ];
 
-export const showFooter = false
+export const showFooter = true

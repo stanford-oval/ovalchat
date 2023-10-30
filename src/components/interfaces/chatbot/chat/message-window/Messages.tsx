@@ -18,7 +18,7 @@ export default function Messages({ history, convoState, messagesBottom, showSpee
         id: -mainPageMessages().length-1,
         show: true,
         fromChatbot: true,
-        text: "Hi! I am " + chatbotName() + ".",
+        text: "Hi! I'm " + chatbotName() + ".",
         isStatic: true
       });
       // Always add the microphone message
