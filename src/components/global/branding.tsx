@@ -9,8 +9,8 @@ export function chatbotName() {
 
 export function allAvailableSystems() {
     return [
-        "WikiChat (GPT-3.5)[pipeline=early_combine, engine=gpt-35-turbo-instruct, do_refine=true]",
-        "WikiChat (GPT-4)[pipeline=early_combine, engine=gpt-4, do_refine=false]",
+        "WikiChat (GPT-3.5)[pipeline=early_combine, engine=gpt-35-turbo-instruct, draft_engine=gpt-4, do_refine=false]",
+        // "WikiChat (GPT-4)[pipeline=early_combine, engine=gpt-4, do_refine=false]",
         // "early_combine[engine=llama]",
         // "generate[engine=gpt-4]",
         // "verify_and_correct[engine=text-davinci-003]",
@@ -120,7 +120,7 @@ export function aboutPage() {
         </h3>
         <p className="text-lg">
             Large language model (LLM) chatbots like ChatGPT and GPT-4 are great tools for quick access to knowledge.
-            But they get things wrong a lot, especially if the information you are looking for is recent ("Tell me about the last Super Bowl.") or about less popular topics ("What are some good movies I can watch from [insert your favorite foreign director]?").
+            But they get things wrong a lot, especially if the information you are looking for is recent ("Tell me about the 2024 Super Bowl.") or about less popular topics ("What are some good movies to watch from [insert your favorite foreign director]?").
             <br></br>
             WikiChat uses an LLM as its backbone, but it makes sure the information it provides comes from a reliable source like Wikipedia, so that its responses are more factual.
         </p>
