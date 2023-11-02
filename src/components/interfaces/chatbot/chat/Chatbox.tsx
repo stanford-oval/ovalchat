@@ -9,7 +9,8 @@ export default function Chatbox({
   convoState,
   history,
   showHeader,
-  showSpeechButton
+  showSpeechButton,
+  showMicrophone
 }: any) {
   let audioRef = useRef()
 
@@ -96,28 +97,38 @@ export default function Chatbox({
   return (
     <div>
       {showHeader &&
-       <Header />
+        <Header />
       }
       {convoState.value.finishedJob ?
         <div
-        className="bg-white border-x-2 border-y-2 border-gray-400 p-2 overflow-y-auto pretty-scroll h-full flex"
-        id="chat-window">
-            <span className="m-auto text-3xl text-center leading-loose">
-              Thank You! <br/>
-              Please copy this code {' '}
-              <span className="text-ovalchat-primary hover:bg-gray-200">
-                {convoState.value.responseInfo.dialogId}
-              </span>
-              <br/>
-              And close this tab.
+          className="bg-white border-x-2 border-y-2 border-gray-400 p-2 overflow-y-auto pretty-scroll h-full flex"
+          id="chat-window">
+          <span className="m-auto text-3xl text-center leading-loose">
+            Thank You! <br />
+            Please copy this code {' '}
+            <span className="text-ovalchat-primary hover:bg-gray-200">
+              {convoState.value.responseInfo.dialogId}
             </span>
+            <br />
+            And close this tab.
+          </span>
         </div>
         :
-        <><Messages history={history} convoState={convoState} messagesBottom={messagesBottom} showSpeechButton={showSpeechButton} /><MessageBox
-          history={history}
-          convoState={convoState}
-          audioRef={audioRef}
-          messagesBottom={messagesBottom} /></>
+        <>
+          <Messages history={history}
+            convoState={convoState}
+            messagesBottom={messagesBottom}
+            showSpeechButton={showSpeechButton}
+            showMicrophone={showMicrophone}
+          />
+          <MessageBox
+            history={history}
+            convoState={convoState}
+            audioRef={audioRef}
+            messagesBottom={messagesBottom}
+            showMicrophone={showMicrophone}
+          />
+        </>
       }
     </div>
   );

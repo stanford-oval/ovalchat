@@ -5,7 +5,7 @@ import Microphone from "../../../speech/Microphone";
 import { clsx } from "clsx";
 import { chatbotName } from "../../../../global/branding";
 
-export default function TextInput({ convoState, inputBoxRef, handleSubmit }: any) {
+export default function TextInput({ convoState, inputBoxRef, showMicrophone, handleSubmit }: any) {
     const [message, setMessage] = useState("");
     return <div className="relative">
         <div className="flex absolute inset-y-0 left-0 items-center pl-5 pointer-events-none  z-10">
@@ -44,23 +44,25 @@ export default function TextInput({ convoState, inputBoxRef, handleSubmit }: any
             )}
         />
         <div className="flex absolute right-20 bottom-3 md:bottom-2.5 z-10 joyride-step-1">
-            <Microphone
-                className="bg-ovalchat-primary hover:bg-ovalchat-primary-dark disabled:bg-slate-400 focus:outline-none font-medium rounded-full text-sm px-2.5 py-2.5"
-                turn={convoState.value.turn}
-                convoState={convoState}
-                setTurn={(str: string) =>
-                    convoState.setValue((cs: any) => ({
-                        ...cs,
-                        turn: str,
-                    }))
-                }
-                setText={(str: string) => setMessage(str)}
-                currText={message}
-            />
+            {showMicrophone &&
+                <Microphone
+                    className="bg-ovalchat-primary hover:bg-ovalchat-primary-dark disabled:bg-slate-400 focus:outline-none font-medium rounded-full text-sm px-2.5 py-2.5"
+                    turn={convoState.value.turn}
+                    convoState={convoState}
+                    setTurn={(str: string) =>
+                        convoState.setValue((cs: any) => ({
+                            ...cs,
+                            turn: str,
+                        }))
+                    }
+                    setText={(str: string) => setMessage(str)}
+                    currText={message}
+                />
+            }
         </div>
         <button
             type="submit"
-            onClick={(e) => {setMessage(""); handleSubmit(e, message)}}
+            onClick={(e) => { setMessage(""); handleSubmit(e, message) }}
             disabled={
                 message.length == 0 ||
                 convoState.value.turn.includes("microphone") || convoState.value.turn.includes("read")

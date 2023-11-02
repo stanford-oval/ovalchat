@@ -3,7 +3,7 @@ import Message from "./Message";
 import MicrophoneInfo from "./initial-messages/MicrophoneInfo";
 import { chatbotName, crowdsourcingMessages, mainPageMessages } from "../../../../global/branding";
 
-export default function Messages({ history, convoState, messagesBottom, showSpeechButton }: any) {
+export default function Messages({ history, convoState, messagesBottom, showSpeechButton, showMicrophone }: any) {
   let audioRef = useRef();
 
   audioRef.current = convoState.value.audio;
@@ -15,21 +15,24 @@ export default function Messages({ history, convoState, messagesBottom, showSpee
       // for the main page
 
       history.value.push({
-        id: -mainPageMessages().length-1,
+        id: -mainPageMessages().length - 1,
         show: true,
         fromChatbot: true,
         text: "Hi! I'm " + chatbotName() + ".",
         isStatic: true
       });
-      // Always add the microphone message
-      history.value.push({
-        id: -mainPageMessages().length,
-        fromChatbot: true,
-        show: true,
-        component: <MicrophoneInfo />,
-        read: "You can tap on the microphone button to start speaking. When you're done talking, click it again. Click the audio button to hear my replies",
-        isStatic: true
-      });
+
+      if (showMicrophone) {
+        // add the microphone message
+        history.value.push({
+          id: -mainPageMessages().length,
+          fromChatbot: true,
+          show: true,
+          component: <MicrophoneInfo />,
+          read: "You can tap on the microphone button to start speaking. When you're done talking, click it again. Click the audio button to hear my replies",
+          isStatic: true
+        });
+      }
 
       // Add custom messages
       mainPageMessages().forEach((message, index) => {

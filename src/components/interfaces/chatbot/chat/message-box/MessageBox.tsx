@@ -4,7 +4,7 @@ import TextInput from "./TextInput";
 import EvalInput from './EvalInput';
 import SelectInput from './SelectInput';
 
-export default function MessageBox({ history, convoState, audioRef, messagesBottom }: any) {
+export default function MessageBox({ history, convoState, audioRef, messagesBottom, showMicrophone }: any) {
   const inputBoxRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -43,12 +43,27 @@ export default function MessageBox({ history, convoState, audioRef, messagesBott
       {(() => {
         if (convoState.value.turn.startsWith("user-eval")) {
           const responseIdx = parseInt(convoState.value.turn.substr(convoState.value.turn.length - 1)) - 1
-          return <EvalInput convoState={convoState} history={history} handleSubmit={handleSubmit} audioRef={audioRef} responseIndex={responseIdx} />
+          return <EvalInput
+            convoState={convoState}
+            history={history}
+            handleSubmit={handleSubmit}
+            audioRef={audioRef}
+            responseIndex={responseIdx}
+          />
         }
         else if (convoState.value.turn.startsWith("user-select")) {
-          return <SelectInput convoState={convoState} history={history} handleSubmit={handleSubmit} />
+          return <SelectInput
+            convoState={convoState}
+            history={history}
+            handleSubmit={handleSubmit}
+          />
         } else {
-          return <TextInput convoState={convoState} inputBoxRef={inputBoxRef} handleSubmit={(e: any, message: string) => { handleSubmit(e, convoState, history, message) }} />
+          return <TextInput
+            convoState={convoState}
+            inputBoxRef={inputBoxRef}
+            showMicrophone={showMicrophone}
+            handleSubmit={(e: any, message: string) => { handleSubmit(e, convoState, history, message) }}
+          />
         }
       })()}
 

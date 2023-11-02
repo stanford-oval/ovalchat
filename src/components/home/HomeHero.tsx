@@ -58,7 +58,15 @@ export default function HomeHero() {
           </div>
         </div>
         <div className="py-5">
-          <Chat isHomePage={true} showSideBar={false} showHeader={true} showSpeechButton={true} skipEvaluation={false} shouldShuffleSystems={false} />
+          <Chat
+            isHomePage={true}
+            showSideBar={false}
+            showHeader={true}
+            showSpeechButton={true}
+            showMicrophone={false}
+            skipEvaluation={false}
+            shouldShuffleSystems={false}
+          />
         </div>
       </div>
     </div>

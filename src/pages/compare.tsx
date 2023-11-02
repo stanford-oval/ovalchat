@@ -12,7 +12,15 @@ export default function ovalchat() {
         >
             <Header />
             <div className="container pt-12 sm:pt-16 md:pt-18 2xl:pt-20 bg-gray-100 py-4 min-h-screen min-w-full">
-                <Chat isHomePage={false} showSideBar={true} showHeader={false} showSpeechButton={false} skipEvaluation={true} shouldSuffle={false} />
+                <Chat
+                    isHomePage={false}
+                    showSideBar={true}
+                    showHeader={false}
+                    showSpeechButton={false}
+                    showMicrophone={false}
+                    skipEvaluation={true}
+                    shouldSuffle={false}
+                />
             </div>
         </Page>
     );

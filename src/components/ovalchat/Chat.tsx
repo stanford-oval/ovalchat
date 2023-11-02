@@ -6,7 +6,7 @@ import getUniqueId from '../../scripts/utils/unique-id';
 import shuffleArray from "../../scripts/utils/shuffle-array";
 import { allAvailableSystems } from "../global/branding";
 
-export default function Chat({ isHomePage, showSideBar, showHeader, showSpeechButton, skipEvaluation, shouldShuffleSystems: shouldShuffleSystems }: any) {
+export default function Chat({ isHomePage, showSideBar, showHeader, showSpeechButton, showMicrophone, skipEvaluation, shouldShuffleSystems: shouldShuffleSystems }: any) {
 
   const router = useRouter();
 
@@ -104,7 +104,7 @@ export default function Chat({ isHomePage, showSideBar, showHeader, showSpeechBu
   return (
     <div className="py-4 container flex items-stretch flex-col md:flex-row justify-center md:space-x-2 space-y-2 md:space-y-0">
       <div className={"mx-auto min-h-full" + (showSideBar ? " w-3/4": "basis-3/4 w-5/6")}>
-        <Chatbox history={history} convoState={convoState} showHeader={showHeader} showSpeechButton={showSpeechButton} />
+        <Chatbox history={history} convoState={convoState} showHeader={showHeader} showSpeechButton={showSpeechButton} showMicrophone={showMicrophone} />
       </div>
       {showSideBar &&
         <div className="w-1/4 mx-auto min-h-full"><DesktopMenu convoState={convoState} history={history} /></div>

@@ -6,14 +6,22 @@ import Chat from "../components/ovalchat/Chat";
 export default function ovalchat() {
   return (
     <Page
-    fullTitle={chatbotName()}
-    desc={pageDescription()}
-  >
-    <div>
-      <div className="bg-gray-100 py-4 min-h-screen">
-        <Chat isHomePage={false} showSideBar={false} showHeader={false} showSpeechButton={false} skipEvaluation={false} shouldShuffleSystems={true} />
+      fullTitle={chatbotName()}
+      desc={pageDescription()}
+    >
+      <div>
+        <div className="bg-gray-100 py-4 min-h-screen">
+          <Chat
+            isHomePage={false}
+            showSideBar={false}
+            showHeader={false}
+            showSpeechButton={false}
+            showMicrophone={false}
+            skipEvaluation={false}
+            shouldShuffleSystems={true}
+          />
+        </div>
       </div>
-    </div>
-  </Page>
+    </Page>
   );
 }
