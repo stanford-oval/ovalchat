@@ -52,7 +52,7 @@ export default function Hero() {
             <div className="mt-4 w-full">
 
 
-              <div className="mt-5 w-full flex mx-auto justify-center">
+              {/* <div className="mt-5 w-full flex mx-auto justify-center">
                 <img
                   src="/img/logos/stanford/university.png"
                   className="h-14 lg:h-16 w-auto mx-4"
@@ -65,7 +65,7 @@ export default function Hero() {
                   {" "}
                   {developedByHeader()}
                 </h2>
-              </div>
+              </div> */}
 
               {!showFooter &&
                 <div className="mt-6 w-full flex mx-auto justify-center">
