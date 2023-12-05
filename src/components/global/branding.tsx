@@ -211,6 +211,14 @@ export function aboutPage() {
             of the Association for Computational Linguistics: EMNLP 2023, Singapore. Association for Computational Linguistics.
             [<a href="https://arxiv.org/abs/2305.14292">arXiv</a>]
         </p>
+
+        <h3 className="text-3xl pt-10 pb-3">
+            Contact Us
+        </h3>
+        <p className="text-lg">
+            
+            Email: <a href="mailto:genie@cs.stanford.edu">genie@cs.stanford.edu</a>
+        </p>
     </>
 }
 
@@ -239,7 +247,8 @@ export function crowdsourcingMessages() {
 export function mainPageMessages() {
     return [
         "I'll keep our conversations for research purposes.",
-        "Ask me about anything on Wikipedia!"
+        "I'm a bit slow right now, but will get a lot faster soon. Stay tuned!",
+        "Ask me about anything on Wikipedia!",
     ]
 }
 
