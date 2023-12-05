@@ -99,3 +99,22 @@ Then add `-p 80` option to the above `yarn start` command.
 ### Deploy the front-end to Vercel
 This website can be easily deployed to vercel.com
 If you want to deploy from a branch other than `main`, you need to change the `vercel-deploy-branch.sh` script to allow your branch to be deployed.
+
+## Citation
+
+If you have used this repository, please cite the following paper:
+
+```bibtex
+@inproceedings{semnani-etal-2023-wikichat,
+    title = "{W}iki{C}hat: Stopping the Hallucination of Large Language Model Chatbots by Few-Shot Grounding on Wikipedia",
+    author = "Semnani, Sina  and
+      Yao, Violet and
+      Zhang, Heidi and 
+      Lam, Monica",
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2023",
+    month = dec,
+    year = "2023",
+    address = "Resorts World Convention Centre, Singapore",
+    publisher = "Association for Computational Linguistics",
+}
+```
