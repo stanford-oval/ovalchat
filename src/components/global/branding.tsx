@@ -213,7 +213,7 @@ export function aboutPage() {
             <br></br><br></br>
             Sina J. Semnani, Violet Z. Yao<sup>*</sup>, Heidi C. Zhang<sup>*</sup>, and Monica S. Lam. 2023. <b>WikiChat: Stopping the Hallucination of Large Language Model Chatbots by Few-Shot Grounding on Wikipedia.</b> In Findings
             of the Association for Computational Linguistics: EMNLP 2023, Singapore. Association for Computational Linguistics.
-            [<a href="https://arxiv.org/abs/2305.14292">arXiv</a>]
+            [<a href="https://arxiv.org/abs/2305.14292">arXiv</a>] [<a href="https://aclanthology.org/2023.findings-emnlp.157/">ACL Anthology</a>]
         </p>
 
         <h3 className="text-3xl pt-10 pb-3">
