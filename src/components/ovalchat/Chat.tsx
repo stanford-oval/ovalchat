@@ -6,7 +6,7 @@ import getUniqueId from '../../scripts/utils/unique-id';
 import shuffleArray from "../../scripts/utils/shuffle-array";
 import { allAvailableSystems } from "../global/branding";
 
-export default function Chat({ isHomePage, showSideBar, showHeader, showSpeechButton, showMicrophone, skipEvaluation, shouldShuffleSystems: shouldShuffleSystems }: any) {
+export default function Chat({ isHomePage, showSideBar, simplifiedSideBar, showHeader, showSpeechButton, showMicrophone, skipEvaluation, shouldShuffleSystems: shouldShuffleSystems }: any) {
 
   const router = useRouter();
 
@@ -31,7 +31,7 @@ export default function Chat({ isHomePage, showSideBar, showHeader, showSpeechBu
       dialogId: null,
       turnId: 0,
       preferredResponseIdx: null,
-      randomizedSystemIndices:  [...Array(allAvailableSystems().length)].map((item, index) => index), // the order in which we display systems responses to users
+      randomizedSystemIndices: [...Array(allAvailableSystems().length)].map((item, index) => index), // the order in which we display systems responses to users
     },
     allAvailableSystems: allAvailableSystems(),
     selectedSystem: allAvailableSystems()[0],
@@ -103,11 +103,13 @@ export default function Chat({ isHomePage, showSideBar, showHeader, showSpeechBu
 
   return (
     <div className="py-4 container flex items-stretch flex-col md:flex-row justify-center md:space-x-2 space-y-2 md:space-y-0">
-      <div className={"mx-auto min-h-full" + (showSideBar ? " w-3/4": "basis-3/4 w-5/6")}>
+      <div className={"mx-auto min-h-full" + (showSideBar ? (simplifiedSideBar ? " w-10/12" : " w-3/4") : "basis-3/4 w-5/6")}>
         <Chatbox history={history} convoState={convoState} showHeader={showHeader} showSpeechButton={showSpeechButton} showMicrophone={showMicrophone} />
       </div>
       {showSideBar &&
-        <div className="w-1/4 mx-auto min-h-full"><DesktopMenu convoState={convoState} history={history} /></div>
+        <div className={"mx-auto min-h-full" + (simplifiedSideBar ? " w-2/12" : " w-1/4")}>
+          <DesktopMenu convoState={convoState} history={history} simplified={simplifiedSideBar} />
+          </div>
       }
     </div>
   );

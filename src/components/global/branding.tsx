@@ -9,7 +9,9 @@ export function chatbotName() {
 
 export function allAvailableSystems() {
     return [
-        "WikiChat (GPT-3.5)[pipeline=early_combine, engine=gpt-35-turbo-instruct, draft_engine=gpt-4, do_refine=false]",
+        "Balanced     [pipeline=early_combine, engine=gpt-35-turbo-instruct, draft_engine=gpt-4, generate_engine=gpt-35-turbo-instruct, do_refine=false]",
+        "Fastest      [pipeline=early_combine, engine=gpt-35-turbo-finetuned, draft_engine=gpt-35-turbo-finetuned, generate_engine=gpt-35-turbo-finetuned, do_refine=false, fuse_claim_splitting=true]",
+        "Most Factual [pipeline=early_combine, engine=gpt-4, draft_engine=gpt-4, generate_engine=gpt-4, do_refine=true]",
         // "WikiChat (GPT-4)[pipeline=early_combine, engine=gpt-4, do_refine=false]",
         // "early_combine[engine=llama]",
         // "generate[engine=gpt-4]",
@@ -141,9 +143,9 @@ export function aboutPage() {
             I found a factual mistake in WikiChat's responses.
         </h3>
         <p className="text-lg">
-            In our benchmarks, the version of WikiChat that uses GPT-4 as its backbone achieves a factual accuracy of 97.9%, much better than GPT-4 on its own. However, the version on this website uses OpenAI's <code className="">gpt-35-turbo-instruct</code> because of its lower cost, which means there will be more inaccuracies.
+            In our benchmarks, the version of WikiChat that uses GPT-4 as its backbone achieves a factual accuracy of 97.9%, much better than GPT-4 on its own. However, the default version on this website uses OpenAI's <code className="">gpt-35-turbo-instruct</code> because of its lower cost and latency, which means there will be more inaccuracies.
             <br></br>
-            For highest factual accuracy, we recommend using WikiChat with GPT-4. You can try it by providing your own API key, following the step-by-step guide at the <a className="text-blue-600" href="https://github.com/stanford-oval/WikiChat" target="_blank">WikiChat GitHub Repository</a>.
+            For the highest factual accuracy, we recommend using WikiChat with GPT-4. You can try it by selecting the "Most Factual" system from the sidebar, or by providing your own API key, following the step-by-step guide at the <a className="text-blue-600" href="https://github.com/stanford-oval/WikiChat" target="_blank">WikiChat GitHub Repository</a>.
         </p>
 
         <h3 className="text-3xl pt-10 pb-3">
@@ -247,7 +249,7 @@ export function crowdsourcingMessages() {
 export function mainPageMessages() {
     return [
         "I'll keep our conversations for research purposes.",
-        "I'm a bit slow right now, but will get a lot faster soon. Stay tuned!",
+        "By default, I balance factuality and speed. You can try other versions of WikiChat from the sidebar.",
         "Ask me about anything on Wikipedia!",
     ]
 }

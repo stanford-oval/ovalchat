@@ -13,8 +13,8 @@ import { faCopy, faMicrophone, faRefresh } from "@fortawesome/free-solid-svg-ico
 // import { MenuAlt2Icon } from "@heroicons/react/outline";
 // import { isIOS } from 'react-device-detect';
 
-export default function DesktopMenu({ convoState, history }: any) {
-  const sections = [
+export default function DesktopMenu({ convoState, history, simplified }: any) {
+  let sections = [
     {
       title: "Technical",
       component: <Technical convoState={convoState} />,
@@ -31,6 +31,10 @@ export default function DesktopMenu({ convoState, history }: any) {
       defaultHide: false,
     },
   ];
+
+  if (simplified) {
+    sections = [sections[1]]
+  }
 
   return (
     <div

@@ -60,7 +60,8 @@ export default function HomeHero() {
         <div className="py-5">
           <Chat
             isHomePage={true}
-            showSideBar={false}
+            showSideBar={true}
+            simplifiedSideBar={true}
             showHeader={true}
             showSpeechButton={true}
             showMicrophone={false}
