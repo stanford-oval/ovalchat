@@ -145,7 +145,9 @@ export function aboutPage() {
         <p className="text-lg">
             In our benchmarks, the version of WikiChat that uses GPT-4 as its backbone achieves a factual accuracy of 97.9%, much better than GPT-4 on its own. However, the default version on this website uses OpenAI's <code className="">gpt-35-turbo-instruct</code> because of its lower cost and latency, which means there will be more inaccuracies.
             <br></br>
-            For the highest factual accuracy, we recommend using WikiChat with GPT-4. You can try it by selecting the "Most Factual" system from the sidebar, or by providing your own API key, following the step-by-step guide at the <a className="text-blue-600" href="https://github.com/stanford-oval/WikiChat" target="_blank">WikiChat GitHub Repository</a>.
+            For the highest factual accuracy, we recommend using WikiChat with GPT-4. You can try it by selecting the "Most Factual" system from the sidebar.
+            <br></br>
+            You can try changing even more settings (and prompts) by following the step-by-step guide at the <a className="text-blue-600" href="https://github.com/stanford-oval/WikiChat" target="_blank">WikiChat GitHub Repository</a>.
         </p>
 
         <h3 className="text-3xl pt-10 pb-3">
